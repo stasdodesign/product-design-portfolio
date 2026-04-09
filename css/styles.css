@@ -1,0 +1,45 @@
+body { font-family: 'Inter', sans-serif; }
+    html { scroll-behavior: smooth; }
+
+    /* Fade-in animations */
+    .fade-in { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* Card interactions */
+    .project-card { transition: transform 0.4s ease, box-shadow 0.4s ease; }
+    .project-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -10px rgba(0,0,0,0.08); }
+    
+    /* Image placeholders */
+    .img-placeholder { display: flex; flex-direction: column; align-items: center; justify-content: center; color: #9ca3af; text-align: center; padding: 20px; }
+ 
+
+/* Контейнер-строка */
+.social-row-isolated {
+    display: flex;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 16px !important;
+    margin: 0 10px !important;
+    width: auto !important;
+}
+
+/* Сама иконка-ссылка */
+.jedi-social-icon {
+    display: inline-flex !important;
+    text-decoration: none !important;
+    /* Устанавливаем базовый цвет (например, серый) */
+    color: #888888 !important; 
+    transition: all 0.2s ease-in-out !important;
+}
+
+/* Эффект при наведении */
+.jedi-social-icon:hover {
+    /* Цвет при наведении (черный или акцентный) */
+    color: #000000 !important; 
+    transform: translateY(-2px) !important;
+}
+
+/* Чтобы SVG слушался цвета ссылки */
+.jedi-social-icon svg {
+    stroke: currentColor !important;
+}
