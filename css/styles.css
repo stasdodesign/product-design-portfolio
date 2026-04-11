@@ -43,3 +43,7 @@ body { font-family: 'Inter', sans-serif; }
 .jedi-social-icon svg {
     stroke: currentColor !important;
 }
+img {
+  user-select: none;
+  pointer-events: none;
+}
