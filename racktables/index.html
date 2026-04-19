@@ -32,6 +32,9 @@
         <a href="https://instagram.com/stasdodesign" class="jedi-social-icon" target="_blank">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
         </a>
+        <a href="https://facebook.com/stasdodesign" class="jedi-social-icon" target="_blank">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>        
       </div>
 
       <div class="hidden md:flex items-center bg-gray-100 rounded-full p-0.5 text-xs font-medium">
@@ -116,7 +119,7 @@
     <p class="text-lg text-gray-500 font-light leading-relaxed mb-10">
       Оригинальный интерфейс RackTables проектировался по принципу дампа базы данных. Инженеры сталкивались с экстремальной информационной плотностью, где не было визуальной иерархии. Хаотичное цветовое кодирование, разорванные паттерны сканирования и избыточная навигация заставляли тратить критически важное время на поиск нужного статуса, а не на решение самой проблемы.
     </p>
-    <img src="placeholder_before_annotated.jpg" alt="Анализ оригинального интерфейса с выделением проблемных зон" class="w-full h-auto rounded-[32px] border border-gray-100 shadow-sm bg-gray-50">
+    <img src="racktable_before_annotated.jpg" alt="Анализ оригинального интерфейса с выделением проблемных зон" class="w-full h-auto rounded-[32px] border border-gray-100 shadow-sm bg-gray-50">
     <p class="text-center text-sm text-gray-400 mt-4 italic">Рис 1. Анализ "Before": Цветовой шум, сломанные F-паттерны и перегруженная панель вкладок.</p>
   </section>
 
@@ -146,7 +149,7 @@
       <p class="text-lg text-gray-500 font-light leading-relaxed mb-8">
         В главном списке я очистил «визуальный мусор». Цветовые заливки строк были заменены на семантические токены статусов (Alert, Active). Теги вынесены в отдельную колонку в виде бейджей, а фильтрация переведена в горизонтальный формат Faceted Search, освободив 25% ширины экрана.
       </p>
-      <img src="placeholder_grid_after.jpg" alt="Редизайн таблицы RackTables с чистыми статусами и тегами" class="w-full h-auto rounded-[32px] border border-gray-100 shadow-sm bg-gray-50">
+      <img src="racktable_grid_after.jpg" alt="Редизайн таблицы RackTables с чистыми статусами и тегами" class="w-full h-auto rounded-[32px] border border-gray-100 shadow-sm bg-gray-50">
       <p class="text-center text-xs text-gray-400 mt-6 italic">Рис 2. Data Grid: Фокус на читаемости имен и быстром сканировании статусов периферийным зрением.</p>
     </div>
 
@@ -155,7 +158,7 @@
       <p class="text-lg text-gray-500 font-light leading-relaxed mb-8">
         На экране самого объекта я отказался от 13 вкладок. Вместо этого создан единый логический поток: от физического интерфейса (IP) к маршрутизации (NATv4) и балансировщику (VS Group). Это позволяет инженеру мгновенно отследить путь трафика. Для NAT использована визуализация направления (стрелки) вместо сухих колонок.
       </p>
-      <img src="placeholder_server_view.jpg" alt="Интерфейс просмотра сервера с блоками сетевой информации" class="w-full h-auto rounded-[32px] border border-gray-100 shadow-sm bg-gray-50">
+      <img src="racktable_server_view.jpg" alt="Интерфейс просмотра сервера с блоками сетевой информации" class="w-full h-auto rounded-[32px] border border-gray-100 shadow-sm bg-gray-50">
       <p class="text-center text-xs text-gray-400 mt-4 italic">Рис 3. Группировка сетевых зависимостей и вынос критических алертов в шапку (Hero header).</p>
     </div>
 
@@ -164,7 +167,7 @@
       <p class="text-lg text-gray-500 font-light leading-relaxed mb-8">
         Оригинал страдал от смешения глобального меню (база данных) и локального (настройки сервера). Я спроектировал два масштабируемых паттерна глобальной навигации под разные нужды энтерпрайза: Collapsible Sidebar (боковая панель для глубокой вложенности) и Top Mega Menu (для экономии горизонтального пространства). 
       </p>
-      <img src="placeholder_navigation_variants.jpg" alt="Варианты навигации: Сайдбар и Мега меню" class="w-full h-auto rounded-[32px] border border-gray-100 shadow-sm bg-gray-50">
+      <img src="racktable_navigation_variants.jpg" alt="Варианты навигации: Сайдбар и Мега меню" class="w-full h-auto rounded-[32px] border border-gray-100 shadow-sm bg-gray-50">
       <p class="text-center text-xs text-gray-400 mt-4 italic">Рис 4. Вариант структуры с левым сайдбаром (Sidebar Pattern).</p>
     </div>
 
@@ -173,7 +176,7 @@
       <p class="text-lg text-gray-500 font-light leading-relaxed mb-8">
         Блок Rackspace allocation был переработан. Чтобы он не перетягивал внимание от сетевых настроек, я перевел его в режим «темной мини-карты». Инженер всегда видит, где физически находится устройство (например, Unit 8), но графически этот блок ушел на второй план.
       </p>
-      <img src="placeholder_rackspace.jpg" alt="Темная тема визуализации серверной стойки" class="w-full max-w-md mx-auto h-auto rounded-3xl border border-gray-100 shadow-sm bg-gray-50 block">
+      <img src="racktable_rackspace.jpg" alt="Темная тема визуализации серверной стойки" class="w-full max-w-md mx-auto h-auto rounded-3xl border border-gray-100 shadow-sm bg-gray-50 block">
       <p class="text-center text-xs text-gray-400 mt-4 italic">Рис 5. Боковой виджет стойки, не отвлекающий от траблшутинга.</p>
     </div>
   </section>
@@ -191,7 +194,7 @@
             </a>
         </div>
         <div class="flex-1 w-full relative">
-             <img src="placeholder_code_browser.jpg" alt="Код Tailwind CSS и окно браузера" class="w-full rounded-2xl shadow-xl border border-gray-200">
+             <img src="racktable_code_browser.png" alt="Код Tailwind CSS и окно браузера" class="w-full">
         </div>
     </div>
   </section>

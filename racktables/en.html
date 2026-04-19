@@ -28,6 +28,9 @@
                 <a href="https://instagram.com/stasdodesign" class="jedi-social-icon" target="_blank">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
                 </a>
+                <a href="https://facebook.com/stasdodesign" class="jedi-social-icon" target="_blank">
+                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                </a>        
             </div>
             <div class="hidden md:flex items-center bg-gray-100 rounded-full p-0.5 text-xs font-medium">
                 <a href="index.html" class="px-3 py-1 text-gray-500 hover:text-black transition-colors">RU</a>
@@ -101,7 +104,7 @@
         <p class="text-lg text-gray-500 font-light leading-relaxed mb-10">
             The original RackTables interface was designed akin to a raw database dump. Engineers faced extreme information density with absolutely no visual hierarchy. Chaotic color coding, broken scanning patterns, and redundant navigation forced users to waste critical time searching for statuses instead of actually solving the problem.
         </p>
-        <img src="placeholder_before_annotated.jpg" alt="Analysis of the original interface highlighting problem areas" class="w-full h-auto rounded-[32px] border border-gray-100 shadow-sm bg-gray-50">
+        <img src="racktable_before_annotated.jpg" alt="Analysis of the original interface highlighting problem areas" class="w-full h-auto rounded-[32px] border border-gray-100 shadow-sm bg-gray-50">
         <p class="text-center text-sm text-gray-400 mt-4 italic">Fig 1. "Before" Analysis: Color noise, broken F-patterns, and an overloaded tab panel.</p>
     </section>
 
@@ -131,7 +134,7 @@
             <p class="text-lg text-gray-500 font-light leading-relaxed mb-8">
                 I stripped away the "visual clutter" in the main list. Disruptive row color fills were replaced with precise semantic status tokens (Alert, Active). Tags were extracted into a separate column as standalone badges, and filtering was transitioned to a horizontal Faceted Search format, freeing up 25% of the screen width.
             </p>
-            <img src="placeholder_grid_after.jpg" alt="RackTables table redesign with clean statuses and tags" class="w-full h-auto rounded-[32px] border border-gray-100 shadow-sm bg-gray-50">
+            <img src="racktable_grid_after.jpg" alt="RackTables table redesign with clean statuses and tags" class="w-full h-auto rounded-[32px] border border-gray-100 shadow-sm bg-gray-50">
             <p class="text-center text-xs text-gray-400 mt-6 italic">Fig 2. Data Grid: Focus on name readability and rapid status scanning via peripheral vision.</p>
         </div>
 
@@ -140,7 +143,7 @@
             <p class="text-lg text-gray-500 font-light leading-relaxed mb-8">
                 On the object details screen, I eliminated the 13 scattered tabs. Instead, a unified logical flow was established: from physical interface (IP) to routing (NATv4) and load balancing (VS Group). This enables the engineer to trace the traffic path instantly. For NAT rules, I implemented directional visualization (arrows) instead of dry data columns.
             </p>
-            <img src="placeholder_server_view.jpg" alt="Server view interface with grouped network info blocks" class="w-full h-auto rounded-[32px] border border-gray-100 shadow-sm bg-gray-50">
+            <img src="racktable_server_view.jpg" alt="Server view interface with grouped network info blocks" class="w-full h-auto rounded-[32px] border border-gray-100 shadow-sm bg-gray-50">
             <p class="text-center text-xs text-gray-400 mt-4 italic">Fig 3. Grouping of network dependencies and elevation of critical alerts into the Hero header.</p>
         </div>
 
@@ -149,7 +152,7 @@
             <p class="text-lg text-gray-500 font-light leading-relaxed mb-8">
                 The original system suffered from a clash between global menus (database level) and local menus (server settings). I designed two scalable global navigation patterns tailored for diverse enterprise needs: a Collapsible Sidebar (for deep hierarchical nesting) and a Top Mega Menu (to maximize horizontal workspace).
             </p>
-            <img src="placeholder_navigation_variants.jpg" alt="Navigation variants: Sidebar and Mega Menu" class="w-full h-auto rounded-[32px] border border-gray-100 shadow-sm bg-gray-50">
+            <img src="racktable_navigation_variants.jpg" alt="Navigation variants: Sidebar and Mega Menu" class="w-full h-auto rounded-[32px] border border-gray-100 shadow-sm bg-gray-50">
             <p class="text-center text-xs text-gray-400 mt-4 italic">Fig 4. Structural variant featuring the left Sidebar Pattern.</p>
         </div>
 
@@ -158,7 +161,7 @@
             <p class="text-lg text-gray-500 font-light leading-relaxed mb-8">
                 The "Rackspace allocation" block was entirely reworked. To prevent it from stealing focus away from critical network settings, I transitioned it into a "dark mini-map" mode. Engineers can always see exactly where a device is physically located (e.g., Unit 8), but the visual weight of the block is pushed to the background.
             </p>
-            <img src="placeholder_rackspace.jpg" alt="Dark theme visualization of a server rack" class="w-full max-w-md mx-auto h-auto rounded-3xl border border-gray-100 shadow-sm bg-gray-50 block">
+            <img src="racktable_rackspace.jpg" alt="Dark theme visualization of a server rack" class="w-full max-w-md mx-auto h-auto rounded-3xl border border-gray-100 shadow-sm bg-gray-50 block">
             <p class="text-center text-xs text-gray-400 mt-4 italic">Fig 5. Sidebar rack widget acting as secondary context, not distracting from troubleshooting.</p>
         </div>
     </section>
@@ -177,7 +180,7 @@
                 </a>
             </div>
             <div class="flex-1 w-full relative">
-             <img src="placeholder_code_browser.jpg" alt="Код Tailwind CSS и окно браузера" class="w-full rounded-2xl shadow-xl border border-gray-200">
+             <img src="racktable_code_browser.png" alt="Live Prototype" class="w-full ">
         </div>
         </div>
     </section>
