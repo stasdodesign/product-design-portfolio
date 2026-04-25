@@ -42,7 +42,16 @@
         <a href="en.html" class="px-3 py-1 text-gray-500 hover:text-black transition-colors">EN</a>
       </div>
 
-      <button class="md:hidden text-sm font-medium text-gray-500" onclick="toggleMenu()">Меню</button>
+            <button
+          id="mobileMenuToggle"
+          class="text-sm font-medium text-gray-500 md:hidden"
+          type="button"
+          aria-controls="mobileMenu"
+          aria-expanded="false"
+          onclick="toggleMenu()"
+        >
+          Меню
+        </button>
     </div>
   </div>
   
@@ -217,9 +226,49 @@
 </footer>
 
 <script>
-function toggleMenu() {
-  document.getElementById('mobileMenu').classList.toggle('hidden');
-}
+  
+    function isMenuOpen() {
+      return !document.getElementById('mobileMenu').classList.contains('hidden');
+    }
+
+    function openMenu() {
+      document.getElementById('mobileMenu').classList.remove('hidden');
+      document.getElementById('mobileMenuToggle').setAttribute('aria-expanded', 'true');
+    }
+
+    function closeMenu() {
+      document.getElementById('mobileMenu').classList.add('hidden');
+      document.getElementById('mobileMenuToggle').setAttribute('aria-expanded', 'false');
+    }
+
+    function toggleMenu(forceState) {
+      const shouldOpen = typeof forceState === 'boolean' ? forceState : !isMenuOpen();
+
+      if (shouldOpen) {
+        openMenu();
+        return;
+      }
+
+      closeMenu();
+    }
+
+    
+    document.addEventListener('click', (event) => {
+      if (!isMenuOpen()) {
+        return;
+      }
+
+      const menu = document.getElementById('mobileMenu');
+      const toggleButton = document.getElementById('mobileMenuToggle');
+
+      if (menu.contains(event.target) || toggleButton.contains(event.target)) {
+        return;
+      }
+
+      closeMenu();
+    });
+
+
 
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {

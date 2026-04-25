@@ -36,9 +36,44 @@
                 <a href="index.html" class="px-3 py-1 text-gray-500 hover:text-black transition-colors">RU</a>
                 <span class="px-3 py-1 bg-white rounded-full shadow-sm text-black">EN</span>
             </div>
-            <button class="md:hidden text-sm font-medium text-gray-500" onclick="toggleMenu()">Menu</button>
+                  <button
+          id="mobileMenuToggle"
+          class="text-sm font-medium text-gray-500 md:hidden"
+          type="button"
+          aria-controls="mobileMenu"
+          aria-expanded="false"
+          onclick="toggleMenu()"
+        >
+            Menu
+        </button>
         </div>
     </div>
+  <div id="mobileMenu" class="hidden bg-white/95 backdrop-blur-xl border-b border-gray-100 absolute w-full px-6 py-8 flex flex-col gap-6 shadow-xl">
+    <nav class="flex flex-col gap-4 text-lg font-medium text-gray-900">
+      <a href="../en.html" onclick="toggleMenu()">Home</a>
+      <a href="#results" onclick="toggleMenu()">Results</a>
+      <a href="#work" onclick="toggleMenu()">Solutions</a>
+    </nav>
+    <div class="h-px bg-gray-100 w-full"></div>
+
+        <div class="flex items-center gap-6">
+       <a href="https://t.me/designat0r" class="jedi-social-icon" target="_blank">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+       </a>
+       <a href="https://instagram.com/stasdodesign" class="jedi-social-icon" target="_blank">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+       </a>
+       <a href="https://facebook.com/stasdodesign" class="jedi-social-icon" target="_blank">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+       </a>
+    </div>
+
+    <div class="flex items-center bg-gray-100 rounded-full p-1 w-max">
+      <a href="index.html" class="px-5 py-1.5 text-gray-500 text-xs font-medium">RU</a>
+      <span class="px-5 py-1.5 bg-white rounded-full shadow-sm text-black text-xs font-medium">EN</span>
+    </div>
+  </div>
+
 </header>
 
 <main class="pt-32 pb-24 px-6 max-w-4xl mx-auto">
@@ -198,23 +233,59 @@
   © 2026 Stanislav Dovidenko. Product Design Portfolio.
 </footer>
 <script>
-    // Fade-in animation logic
-    document.addEventListener('DOMContentLoaded', () => {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1 });
+    function isMenuOpen() {
+      return !document.getElementById('mobileMenu').classList.contains('hidden');
+    }
 
-        document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
+    function openMenu() {
+      document.getElementById('mobileMenu').classList.remove('hidden');
+      document.getElementById('mobileMenuToggle').setAttribute('aria-expanded', 'true');
+    }
+
+    function closeMenu() {
+      document.getElementById('mobileMenu').classList.add('hidden');
+      document.getElementById('mobileMenuToggle').setAttribute('aria-expanded', 'false');
+    }
+
+    function toggleMenu(forceState) {
+      const shouldOpen = typeof forceState === 'boolean' ? forceState : !isMenuOpen();
+
+      if (shouldOpen) {
+        openMenu();
+        return;
+      }
+
+      closeMenu();
+    }
+
+    
+    document.addEventListener('click', (event) => {
+      if (!isMenuOpen()) {
+        return;
+      }
+
+      const menu = document.getElementById('mobileMenu');
+      const toggleButton = document.getElementById('mobileMenuToggle');
+
+      if (menu.contains(event.target) || toggleButton.contains(event.target)) {
+        return;
+      }
+
+      closeMenu();
     });
 
-    function toggleMenu() {
-        const menu = document.getElementById('mobileMenu');
-        menu.classList.toggle('hidden');
-    }
+    
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
 </script>
 
 </body>
