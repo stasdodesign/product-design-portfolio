@@ -82,8 +82,6 @@ not just to identify them, but to understand them deeply.
 
 🛠 Tech
 
-(Insert your stack here, e.g.)
-
 JavaScript / TypeScript
 HTML/CSS
 Custom filtering + search system
