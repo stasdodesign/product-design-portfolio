@@ -16,25 +16,25 @@ Stanislav Dovidenko Product Design Portfolio. 2026. Includes case studies for Sb
 
 ### 🏦 Sber — Enterprise UX & Internal Platforms  
 Designing complex internal systems for large-scale financial infrastructure.  
-→ https://stasdodesign.github.io/product-design-portfolio/sber.html
+→ https://stasdodesign.github.io/product-design-portfolio/sber-usersoft/index.html
 
 ---
 
 ### 🧾 Ingosstrakh — Insurance Ecosystem  
 Redesign of core insurance flows and digital service architecture.  
-→ https://stasdodesign.github.io/product-design-portfolio/ingosstrakh.html
+→ https://stasdodesign.github.io/product-design-portfolio/ingosstrakh/index.html
 
 ---
 
 ### 🧠 Luma One — AI Product Interface  
 AI-driven interface design for next-gen product experience.  
-→ https://stasdodesign.github.io/product-design-portfolio/luma-one.html
+→ https://stasdodesign.github.io/product-design-portfolio/luma-one/index.html
 
 ---
 
 ### 🧩 Design Systems Work  
 Scalable component systems for enterprise and fintech products.  
-→ https://stasdodesign.github.io/product-design-portfolio/design-system.html
+→ [https://stasdodesign.github.io/product-design-portfolio/design-system.html](https://stasdodesign.github.io/jedi-css/index.html)
 
 ---
 
