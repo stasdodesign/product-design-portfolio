@@ -1,0 +1,990 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Тёмные паттерны - Библиотека паттернов</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-b from-[#fcfcfd] via-[#fafafa] to-[#f5f5f7] text-[#1d1d1f] antialiased">
+  <header class="fixed top-0 left-0 z-50 w-full border-b border-gray-100 bg-white/70 backdrop-blur-xl transition-all duration-300">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+      <a href="index.html" class="text-sm font-medium tracking-tight transition-opacity hover:opacity-80">
+        Stanislav Dovidenko
+      </a>
+
+      <nav class="absolute left-1/2 hidden -translate-x-1/2 gap-8 text-sm font-medium text-gray-500 md:flex">
+        <a href="#search" class="transition-colors hover:text-black">Поиск</a>
+        <a href="#filters" class="transition-colors hover:text-black">Фильтры</a>
+        <a href="#patterns" class="transition-colors hover:text-black">Все паттерны</a>
+      </nav>
+
+      <div class="flex items-center gap-6">
+        <div class="hidden items-center gap-4 social-row-isolated md:flex">
+          <a href="https://t.me/designat0r" class="jedi-social-icon" target="_blank">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+          </a>
+          <a href="https://instagram.com/stasdodesign" class="jedi-social-icon" target="_blank">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+          </a>
+          <a href="https://facebook.com/stasdodesign" class="jedi-social-icon" target="_blank">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+        </div>
+
+        <div class="hidden items-center rounded-full bg-gray-100 p-0.5 text-xs font-medium md:flex">
+          <span class="rounded-full bg-white px-3 py-1 text-black shadow-sm">RU</span>
+          <a href="en.html" class="px-3 py-1 text-gray-500 transition-colors hover:text-black">EN</a>
+        </div>
+
+        <button
+          id="mobileMenuToggle"
+          class="text-sm font-medium text-gray-500 md:hidden"
+          type="button"
+          aria-controls="mobileMenu"
+          aria-expanded="false"
+          onclick="toggleMenu()"
+        >
+          Меню
+        </button>
+      </div>
+    </div>
+                                         
+    <div id="mobileMenu" class="absolute hidden w-full flex flex-col gap-6 border-b border-gray-100 bg-white/95 px-6 py-8 shadow-xl backdrop-blur-xl">
+      <nav class="flex flex-col gap-4 text-lg font-medium text-gray-900">
+        <a href="#search" onclick="toggleMenu()">Поиск</a>
+        <a href="#filters" onclick="toggleMenu()">Фильтры</a>
+        <a href="#patterns" onclick="toggleMenu()">Все паттерны</a>
+      </nav>
+
+<div class="h-px bg-gray-100 w-full"></div>
+
+      <div class="flex items-center gap-6">
+        <a href="https://t.me/designat0r" class="jedi-social-icon" target="_blank">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+        </a>
+        <a href="https://instagram.com/stasdodesign" class="jedi-social-icon" target="_blank">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+        </a>
+        <a href="https://facebook.com/stasdodesign" class="jedi-social-icon" target="_blank">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+      </div>
+     
+    <div class="flex items-center bg-gray-100 rounded-full p-1 w-max">
+      <span class="px-5 py-1.5 bg-white rounded-full shadow-sm text-black text-xs font-medium">RU</span>
+      <a href="en.html" class="px-5 py-1.5 text-gray-500 hover:text-black transition-colors text-xs font-medium">EN</a>
+    </div> 
+    </div>
+  </header>
+
+  <main class="mx-auto flex max-w-7xl gap-8 px-4 pb-28 pt-32 sm:px-6 lg:gap-14">
+    <section class="min-w-0 flex-1">
+      <div class="fade-in mb-12">
+        <div class="mb-7 flex flex-wrap gap-2.5">
+          <span class="rounded-full bg-gray-100 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-gray-600">Тёмные паттерны</span>
+          <span class="rounded-full bg-blue-50 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-blue-600">Библиотека паттернов</span>
+        </div>
+
+        <h1 class="mb-5 max-w-4xl text-5xl font-semibold tracking-tight text-[#111113] md:text-6xl lg:text-[4.25rem]">
+          72 тёмных паттерна
+        </h1>
+        <p class="max-w-3xl text-[17px] font-light leading-8 text-gray-500 md:text-lg">
+          Минималистичный гид по тёмным паттернам с спокойной навигацией, ясной иерархией и прямыми ссылками на связанные кейсы.
+        </p>
+      </div>
+
+      <section id="search" class="jedi-panel fade-in mb-6 rounded-[32px] border border-white/70 p-5 md:p-6">
+        <label for="pattern-search" class="mb-3 block text-[10px] font-bold uppercase tracking-[0.18em] text-gray-400">
+          Поиск
+        </label>
+        <div class="jedi-control jedi-search-control flex items-center gap-3 rounded-[22px] px-4 py-3.5">
+          <svg class="h-4 w-4 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.3-4.3"></path>
+          </svg>
+          <input
+            id="pattern-search"
+            type="search"
+            placeholder="Поиск паттернов"
+            class="w-full bg-transparent text-[15px] text-gray-700 outline-none placeholder:text-gray-400"
+          />
+        </div>
+      </section>
+
+      <section id="filters" class="jedi-panel fade-in mb-8 rounded-[32px] border border-white/70 p-6 md:p-7">
+        <div class="mb-6 flex items-center justify-between gap-4">
+          <h2 class="text-[1.65rem] font-medium tracking-tight text-[#111113]">Фильтры</h2>
+          <div class="flex items-center gap-2.5">
+            <button
+              id="reset-filters"
+              type="button"
+              class="jedi-reset rounded-full px-3 py-1.5 text-xs font-medium text-gray-500"
+            >
+              Сбросить фильтры
+            </button>
+            <span class="rounded-full bg-gray-100 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-gray-500">
+              Активные фильтры
+            </span>
+          </div>
+        </div>
+
+        <div class="grid gap-3.5 md:grid-cols-2 xl:grid-cols-4">
+          <div class="jedi-filter-dropdown relative" data-open="false">
+            <select
+              id="category-filter"
+              class="sr-only"
+              tabindex="-1"
+              aria-hidden="true"
+            >
+              <option value="">Все категории</option>
+              <option value="UX">UX</option>
+              <option value="Business">Бизнес</option>
+              <option value="Product">Продукт</option>
+              <option value="Behavioural">Поведенческие</option>
+              <option value="Privacy">Приватность</option>
+              <option value="Growth">Рост</option>
+            </select>
+            <button
+              type="button"
+              data-filter-trigger
+              aria-haspopup="listbox"
+              aria-expanded="false"
+              class="jedi-dropdown-trigger jedi-control flex items-center px-4 py-3.5 text-left text-[15px]"
+            >
+              <span data-filter-label class="jedi-dropdown-label">Все категории</span>
+              <svg class="jedi-dropdown-chevron pointer-events-none absolute right-4 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="m6 9 6 6 6-6"></path>
+              </svg>
+            </button>
+            <div
+              data-filter-menu
+              role="listbox"
+              class="jedi-dropdown-panel absolute left-0 right-0 top-full z-50 mt-2 hidden rounded-[24px] p-2"
+            ></div>
+          </div>
+          <div class="jedi-filter-dropdown relative" data-open="false">
+            <select
+              id="platform-filter"
+              class="sr-only"
+              tabindex="-1"
+              aria-hidden="true"
+            >
+              <option value="">Платформа</option>
+            </select>
+            <button
+              type="button"
+              data-filter-trigger
+              aria-haspopup="listbox"
+              aria-expanded="false"
+              class="jedi-dropdown-trigger jedi-control flex items-center px-4 py-3.5 text-left text-[15px]"
+            >
+              <span data-filter-label class="jedi-dropdown-label">Платформа</span>
+              <svg class="jedi-dropdown-chevron pointer-events-none absolute right-4 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="m6 9 6 6 6-6"></path>
+              </svg>
+            </button>
+            <div
+              data-filter-menu
+              role="listbox"
+              class="jedi-dropdown-panel absolute left-0 right-0 top-full z-50 mt-2 hidden rounded-[24px] p-2"
+            ></div>
+          </div>
+          <div class="jedi-filter-dropdown relative" data-open="false">
+            <select
+              id="state-filter"
+              class="sr-only"
+              tabindex="-1"
+              aria-hidden="true"
+            >
+              <option value="">Состояние</option>
+            </select>
+            <button
+              type="button"
+              data-filter-trigger
+              aria-haspopup="listbox"
+              aria-expanded="false"
+              class="jedi-dropdown-trigger jedi-control flex items-center px-4 py-3.5 text-left text-[15px]"
+            >
+              <span data-filter-label class="jedi-dropdown-label">Состояние</span>
+              <svg class="jedi-dropdown-chevron pointer-events-none absolute right-4 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="m6 9 6 6 6-6"></path>
+              </svg>
+            </button>
+            <div
+              data-filter-menu
+              role="listbox"
+              class="jedi-dropdown-panel absolute left-0 right-0 top-full z-50 mt-2 hidden rounded-[24px] p-2"
+            ></div>
+          </div>
+          <div class="jedi-filter-dropdown relative" data-open="false">
+            <select
+              id="tag-filter"
+              class="sr-only"
+              tabindex="-1"
+              aria-hidden="true"
+            >
+              <option value="">Тег</option>
+            </select>
+            <button
+              type="button"
+              data-filter-trigger
+              aria-haspopup="listbox"
+              aria-expanded="false"
+              class="jedi-dropdown-trigger jedi-control flex items-center px-4 py-3.5 text-left text-[15px]"
+            >
+              <span data-filter-label class="jedi-dropdown-label">Тег</span>
+              <svg class="jedi-dropdown-chevron pointer-events-none absolute right-4 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="m6 9 6 6 6-6"></path>
+              </svg>
+            </button>
+            <div
+              data-filter-menu
+              role="listbox"
+              class="jedi-dropdown-panel absolute left-0 right-0 top-full z-50 mt-2 hidden rounded-[24px] p-2"
+            ></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="patterns" class="jedi-panel fade-in rounded-[40px] border border-white/70 p-5 sm:p-8 md:p-10">
+        <div class="mb-8 flex items-center justify-between gap-4 md:mb-10">
+          <div>
+            <h2 class="text-3xl font-medium tracking-tight text-[#111113]">Все паттерны</h2>
+            <p class="mt-2 text-sm leading-6 text-gray-500">Просматривайте полный список и сужайте его через поиск, категории и алфавитную навигацию.</p>
+          </div>
+          <span
+            id="pattern-count"
+            class="rounded-full bg-gray-100 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-gray-500"
+          >
+            Загрузка
+          </span>
+        </div>
+
+        <div id="pattern-list" class="grid gap-4 sm:gap-5 xl:grid-cols-2"></div>
+      </section>
+    </section>
+
+    <aside id="alphabet" class="jedi-panel fade-in sticky top-28 hidden h-fit w-24 shrink-0 rounded-[32px] border border-white/70 p-4 lg:block">
+      <div class="mb-4 text-center text-[10px] font-bold uppercase tracking-[0.18em] text-gray-400">A-Z</div>
+      <div id="alphabet-nav" class="grid grid-cols-2 gap-2 text-center text-xs font-medium"></div>
+    </aside>
+  </main>
+<section id="contact" class="py-24 px-6   border-t border-gray-100 text-center fade-in">
+  <h2 class="text-3xl font-medium tracking-tight mb-8">Связаться со мной</h2>
+  <div class="flex justify-center gap-6">
+    <a href="https://t.me/StasDoDesign" target="_blank" class="px-8 py-3.5 bg-[#1d1d1f] text-white text-sm font-medium rounded-full hover:scale-105 transition-transform">
+      Telegram
+    </a>
+    <a href="mailto:stasdodesign@gmail.com" class="px-8 py-3.5 bg-[#f5f5f7] text-[#1d1d1f] text-sm font-medium rounded-full hover:bg-[#e8e8ed] transition-colors">
+      Email
+    </a>
+  </div>
+</section>
+<footer class="py-12 border-t border-gray-100 text-center text-gray-400 text-sm font-light">
+  © 2026 Stanislav Dovidenko. Портфолио продуктового дизайнера.
+</footer>
+  <script src="js/patterns-data.js"></script>
+  <script>
+    const ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+    const RELATED_CASES = {
+      'Sber: Ecosystem Subscriptions': {
+        image: 'images/research_sber.jpg',
+        title: 'Сбер: Экосистемные подписки',
+        shortDescription: 'Анализ принудительной непрерывности и скрытых автопродлений в экосистемных подписках.',
+        link: 'index.html#research-sber'
+      },
+      'Yandex Bank: Super Split': {
+        image: 'images/research_yandex.jpg',
+        title: 'Яндекс Банк: Кредитные ловушки',
+        shortDescription: 'Разбор Супер Сплита: скрытая ПСК, искусственная срочность и манипуляции с графиком платежей.',
+        link: 'index.html#research-yandex'
+      },
+      'Plata Fintech Audit': {
+        image: 'images/research_plata.jpg',
+        title: 'Plata Fintech: Аудит дашборда',
+        shortDescription: 'Аудит визуальной иерархии, группировки элементов и влияния шума на когнитивную нагрузку.',
+        link: 'index.html#research-plata'
+      }
+    };
+
+    const FILTER_VALUE_LABELS = {
+      platform: {
+        'Mobile': { ru: 'Мобильный', en: 'Mobile' },
+        'Web': { ru: 'Веб', en: 'Web' },
+        'Cross-platform': { ru: 'Кроссплатформенный', en: 'Cross-platform' }
+      },
+      state: {
+        'Systemic': { ru: 'Системный', en: 'Systemic' },
+        'Observed': { ru: 'Наблюдаемый', en: 'Observed' },
+        'Taxonomy': { ru: 'Таксономия', en: 'Taxonomy' }
+      },
+      tag: {
+        'Attention': { ru: 'Внимание', en: 'Attention' },
+        'Retention': { ru: 'Удержание', en: 'Retention' },
+        'Pricing': { ru: 'Ценообразование', en: 'Pricing' },
+        'Privacy': { ru: 'Приватность', en: 'Privacy' },
+        'Growth': { ru: 'Рост', en: 'Growth' },
+        'Information': { ru: 'Информация', en: 'Information' },
+        'Interface': { ru: 'Интерфейс', en: 'Interface' },
+        'Trust': { ru: 'Доверие', en: 'Trust' },
+        'Flow': { ru: 'Сценарий', en: 'Flow' }
+      }
+    };
+
+    function getLocalizedFilterOptionText(filterKey, value) {
+      const localizedValue = FILTER_VALUE_LABELS[filterKey]?.[value];
+      return localizedValue?.[currentLang] || localizedValue?.ru || value;
+    }
+
+    function formatPatternCount(count) {
+      const mod10 = count % 10;
+      const mod100 = count % 100;
+
+      if (mod10 === 1 && mod100 !== 11) {
+        return count + ' паттерн';
+      }
+
+      if (mod10 >= 2 && mod10 <= 4 && (mod100 < 12 || mod100 > 14)) {
+        return count + ' паттерна';
+      }
+
+      return count + ' паттернов';
+    }
+
+    let currentLang = localStorage.getItem('lang') || 'ru';
+
+    function getLocalizedText(value, lang) {
+      if (!value) return "";
+      if (typeof value === "string") return value;
+      return value?.[lang] || value?.en || value?.ru || "";
+    }
+
+    function updateTranslations() {}
+
+function rerenderUI() {
+  const list = document.getElementById('pattern-list');
+  const alphabet = document.getElementById('alphabet-nav');
+
+  list.innerHTML = '';
+  alphabet.innerHTML = '';
+
+  setupPatternExperience();
+}
+    function setLanguage(lang) {
+      currentLang = lang;
+      localStorage.setItem('lang', lang);
+      updateTranslations();
+      rerenderUI();
+    }
+
+    function isMenuOpen() {
+      return !document.getElementById('mobileMenu').classList.contains('hidden');
+    }
+
+    function openMenu() {
+      document.getElementById('mobileMenu').classList.remove('hidden');
+      document.getElementById('mobileMenuToggle').setAttribute('aria-expanded', 'true');
+    }
+
+    function closeMenu() {
+      document.getElementById('mobileMenu').classList.add('hidden');
+      document.getElementById('mobileMenuToggle').setAttribute('aria-expanded', 'false');
+    }
+
+    function toggleMenu(forceState) {
+      const shouldOpen = typeof forceState === 'boolean' ? forceState : !isMenuOpen();
+
+      if (shouldOpen) {
+        openMenu();
+        return;
+      }
+
+      closeMenu();
+    }
+
+    function slugifyPatternName(name) {
+      return name
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '');
+    }
+
+    function createPatternCard(pattern) {
+      const article = document.createElement('article');
+      const firstLetter = pattern.name.charAt(0).toUpperCase();
+
+      article.className = 'jedi-card min-w-0 rounded-[32px] p-5 sm:p-7 md:p-8';
+      article.id = 'pattern-' + slugifyPatternName(pattern.name);
+      article.dataset.patternLetter = firstLetter;
+      article.style.scrollMarginTop = '120px';
+
+      const title = document.createElement('h3');
+      title.className = 'mb-4 text-[1.28rem] font-semibold leading-tight tracking-tight text-[#111113] sm:text-[1.42rem] md:text-[1.55rem]';
+      title.textContent = pattern.name;
+
+      const description = document.createElement('p');
+      description.className = 'max-w-none text-[15px] leading-7 text-gray-500 sm:max-w-[48ch]';
+      description.textContent = getLocalizedText(pattern.description, currentLang);
+
+      article.append(title, description);
+
+      const relatedCaseCards = getRelatedCaseCards(pattern);
+
+      if (relatedCaseCards.length) {
+        const relatedCasesLabel = document.createElement('p');
+        relatedCasesLabel.className = 'mb-3 mt-7 text-[10px] font-bold uppercase tracking-[0.18em] text-gray-400';
+        relatedCasesLabel.textContent = 'Связанные кейсы';
+
+        const relatedCasesGrid = document.createElement('div');
+        relatedCasesGrid.className = 'grid gap-3.5';
+
+        relatedCaseCards.forEach((caseCard) => {
+          relatedCasesGrid.appendChild(createRelatedCaseCard(caseCard));
+        });
+
+        article.append(relatedCasesLabel, relatedCasesGrid);
+      }
+
+      return article;
+    }
+
+    function getRelatedCaseCards(pattern) {
+      return pattern.relatedCases
+        .filter((caseName) => RELATED_CASES[caseName])
+        .map((caseName) => RELATED_CASES[caseName]);
+    }
+
+    function createRelatedCaseCard(caseData) {
+      const link = document.createElement('a');
+      link.href = caseData.link;
+      link.className = 'jedi-case-card group flex min-w-0 flex-col gap-3.5 rounded-[26px] p-3.5 sm:flex-row sm:gap-4';
+
+      const image = document.createElement('img');
+      image.src = caseData.image;
+      image.alt = caseData.title;
+      image.className = 'h-40 w-full shrink-0 rounded-[20px] border border-white/80 object-cover shadow-sm sm:h-24 sm:w-28';
+      image.loading = 'lazy';
+
+      const content = document.createElement('div');
+      content.className = 'min-w-0 sm:pt-0.5';
+
+      const title = document.createElement('h4');
+      title.className = 'mb-1.5 text-sm font-semibold leading-5 tracking-tight text-[#111113]';
+      title.textContent = caseData.title;
+
+      const description = document.createElement('p');
+      description.className = 'text-[12px] leading-5 text-gray-500';
+      description.textContent = caseData.shortDescription;
+
+      content.append(title, description);
+      link.append(image, content);
+
+      return link;
+    }
+
+    function getPatternLetter(pattern) {
+      return pattern.name.charAt(0).toUpperCase();
+    }
+
+    function filterPatternsByLetter(patterns, letter) {
+      if (!letter) {
+        return patterns;
+      }
+
+      return patterns.filter((pattern) => getPatternLetter(pattern) === letter);
+    }
+
+    function getAlphabetButtonClassName(isAvailable, isActive, isAllButton) {
+      const baseClassName = [
+        'jedi-alpha',
+        'rounded-full',
+        'px-2',
+        'py-2',
+        isAllButton ? 'col-span-2' : ''
+      ].filter(Boolean).join(' ');
+
+      if (isActive) {
+        return baseClassName + ' bg-[#111113] text-white shadow-sm';
+      }
+
+      if (isAvailable || isAllButton) {
+        return baseClassName + ' bg-[#f5f5f7] text-gray-600 hover:bg-blue-50 hover:text-blue-600';
+      }
+
+      return baseClassName + ' cursor-not-allowed bg-[#f5f5f7] text-gray-300';
+    }
+
+    function renderAlphabetNavigation(patterns, activeLetter, onSelectLetter) {
+      const nav = document.getElementById('alphabet-nav');
+      const availableLetters = new Set(
+        patterns.map((pattern) => getPatternLetter(pattern))
+      );
+
+      nav.replaceChildren();
+
+      const allButton = document.createElement('button');
+      const isAllActive = !activeLetter;
+
+      allButton.type = 'button';
+      allButton.textContent = 'ALL';
+      allButton.dataset.letter = 'ALL';
+      allButton.setAttribute('aria-pressed', isAllActive ? 'true' : 'false');
+      allButton.className = getAlphabetButtonClassName(true, isAllActive, true);
+      allButton.addEventListener('click', () => onSelectLetter(''));
+      nav.appendChild(allButton);
+
+      ALPHABET.forEach((letter) => {
+        const button = document.createElement('button');
+        const isAvailable = availableLetters.has(letter);
+        const isActive = activeLetter === letter;
+
+        button.type = 'button';
+        button.textContent = letter;
+        button.dataset.letter = letter;
+        button.disabled = !isAvailable && !isActive;
+        button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+        button.className = getAlphabetButtonClassName(isAvailable, isActive, false);
+
+        if (isAvailable || isActive) {
+          button.addEventListener('click', () => onSelectLetter(letter));
+        }
+
+        nav.appendChild(button);
+      });
+    }
+
+    function createEmptyState() {
+      const emptyState = document.createElement('div');
+      emptyState.className = 'rounded-[30px] border border-dashed border-gray-200 bg-[#fafafa] px-6 py-16 text-center xl:col-span-2';
+
+      const message = document.createElement('p');
+      message.className = 'text-sm font-medium text-gray-400';
+      message.textContent = 'Паттерны не найдены';
+
+      emptyState.appendChild(message);
+      return emptyState;
+    }
+
+    function getTopLevelCategory(pattern) {
+      const categoryMap = {
+        'Attention Capture': 'Behavioural',
+        'Behavioral Conditioning': 'Behavioural',
+        'Checkout & Pricing': 'Business',
+        'Consent & Privacy': 'Privacy',
+        'Growth & Virality': 'Growth',
+        'Information Asymmetry': 'UX',
+        'Interface Interference': 'UX',
+        'Social Manipulation': 'Behavioural',
+        'Subscription & Retention': 'Business',
+        'Task Flow Control': 'Product',
+        'Visual Manipulation': 'UX'
+      };
+
+      return categoryMap[pattern.category] || 'Product';
+    }
+
+    function getPlatformLabel(pattern) {
+      const mobileFirstPatterns = new Set([
+        'Notification Pressure',
+        'Pull-to-Refresh Loop',
+        'Red-Dot Notifications',
+        'Streaks'
+      ]);
+
+      if (mobileFirstPatterns.has(pattern.name)) {
+        return 'Mobile';
+      }
+
+      if (
+        pattern.category === 'Checkout & Pricing' ||
+        pattern.category === 'Consent & Privacy' ||
+        pattern.category === 'Interface Interference' ||
+        pattern.category === 'Information Asymmetry' ||
+        pattern.category === 'Subscription & Retention' ||
+        pattern.category === 'Visual Manipulation'
+      ) {
+        return 'Web';
+      }
+
+      return 'Cross-platform';
+    }
+
+    function getStateLabel(pattern) {
+      const linkedResearchCases = pattern.relatedCases.filter((caseName) => RELATED_CASES[caseName]).length;
+
+      if (linkedResearchCases >= 2) {
+        return 'Systemic';
+      }
+
+      if (linkedResearchCases === 1) {
+        return 'Observed';
+      }
+
+      return 'Taxonomy';
+    }
+
+    function getTagLabel(pattern) {
+      const tagMap = {
+        'Attention Capture': 'Attention',
+        'Behavioral Conditioning': 'Retention',
+        'Checkout & Pricing': 'Pricing',
+        'Consent & Privacy': 'Privacy',
+        'Growth & Virality': 'Growth',
+        'Information Asymmetry': 'Information',
+        'Interface Interference': 'Interface',
+        'Social Manipulation': 'Trust',
+        'Subscription & Retention': 'Retention',
+        'Task Flow Control': 'Flow',
+        'Visual Manipulation': 'Interface'
+      };
+
+      return tagMap[pattern.category] || 'Flow';
+    }
+
+    function getFilterMetadata(pattern) {
+      return {
+        category: getTopLevelCategory(pattern),
+        platform: getPlatformLabel(pattern),
+        state: getStateLabel(pattern),
+        tag: getTagLabel(pattern)
+      };
+    }
+
+    function getUniqueFilterValues(patterns, key) {
+      return [...new Set(patterns.map((pattern) => getFilterMetadata(pattern)[key]))].sort((a, b) => a.localeCompare(b, 'en'));
+    }
+
+    function populateSelectOptions(select, placeholder, values) {
+      select.replaceChildren();
+      const filterKey = select.id.replace('-filter', '');
+
+      const placeholderOption = document.createElement('option');
+      placeholderOption.value = '';
+      placeholderOption.textContent = placeholder;
+      select.appendChild(placeholderOption);
+
+      values.forEach((value) => {
+        const option = document.createElement('option');
+        option.value = value;
+        option.textContent = getLocalizedFilterOptionText(filterKey, value);
+        select.appendChild(option);
+      });
+    }
+
+    function filterPatternsByCategory(patterns, category) {
+      if (!category) {
+        return patterns;
+      }
+
+      return patterns.filter((pattern) => getFilterMetadata(pattern).category === category);
+    }
+
+    function filterPatternsByPlatform(patterns, platform) {
+      if (!platform) {
+        return patterns;
+      }
+
+      return patterns.filter((pattern) => getFilterMetadata(pattern).platform === platform);
+    }
+
+    function filterPatternsByState(patterns, state) {
+      if (!state) {
+        return patterns;
+      }
+
+      return patterns.filter((pattern) => getFilterMetadata(pattern).state === state);
+    }
+
+    function filterPatternsByTag(patterns, tag) {
+      if (!tag) {
+        return patterns;
+      }
+
+      return patterns.filter((pattern) => getFilterMetadata(pattern).tag === tag);
+    }
+
+    function renderPatternList(patterns) {
+      const list = document.getElementById('pattern-list');
+      const count = document.getElementById('pattern-count');
+
+      list.replaceChildren();
+
+      if (!patterns.length) {
+        list.appendChild(createEmptyState());
+        count.textContent = formatPatternCount(0);
+        return;
+      }
+
+      patterns.forEach((pattern) => {
+        list.appendChild(createPatternCard(pattern));
+      });
+
+      count.textContent = formatPatternCount(patterns.length);
+    }
+
+    function setupCustomFilterDropdown(select) {
+      const wrapper = select.closest('.jedi-filter-dropdown');
+      const trigger = wrapper ? wrapper.querySelector('[data-filter-trigger]') : null;
+      const label = wrapper ? wrapper.querySelector('[data-filter-label]') : null;
+      const menu = wrapper ? wrapper.querySelector('[data-filter-menu]') : null;
+
+      if (!wrapper || !trigger || !label || !menu) {
+        return () => {};
+      }
+
+      function closeMenu() {
+        wrapper.dataset.open = 'false';
+        trigger.setAttribute('aria-expanded', 'false');
+        menu.classList.add('hidden');
+      }
+
+      function openMenu() {
+        wrapper.dataset.open = 'true';
+        trigger.setAttribute('aria-expanded', 'true');
+        menu.classList.remove('hidden');
+      }
+
+      function syncDropdown() {
+        const selectedOption = select.options[select.selectedIndex] || select.options[0];
+
+        label.textContent = selectedOption ? selectedOption.textContent : '';
+
+        menu.querySelectorAll('[data-option-value]').forEach((optionButton) => {
+          const isActive = optionButton.dataset.optionValue === select.value;
+
+          optionButton.dataset.active = isActive ? 'true' : 'false';
+          optionButton.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        });
+      }
+
+      menu.replaceChildren();
+
+      Array.from(select.options).forEach((option) => {
+        const optionButton = document.createElement('button');
+
+        optionButton.type = 'button';
+        optionButton.textContent = option.textContent;
+        optionButton.dataset.optionValue = option.value;
+        optionButton.setAttribute('role', 'option');
+        optionButton.className = 'jedi-dropdown-option';
+        optionButton.addEventListener('click', () => {
+          const valueChanged = select.value !== option.value;
+
+          select.value = option.value;
+          syncDropdown();
+          closeMenu();
+
+          if (valueChanged) {
+            select.dispatchEvent(new Event('change', { bubbles: true }));
+          }
+        });
+
+        menu.appendChild(optionButton);
+      });
+
+      trigger.addEventListener('click', () => {
+        if (wrapper.dataset.open === 'true') {
+          closeMenu();
+          return;
+        }
+
+        openMenu();
+      });
+
+      document.addEventListener('click', (event) => {
+        if (wrapper.contains(event.target)) {
+          return;
+        }
+
+        closeMenu();
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+          closeMenu();
+        }
+      });
+
+      select.addEventListener('change', syncDropdown);
+      syncDropdown();
+
+      return syncDropdown;
+    }
+
+    function setupPatternExperience() {
+      const searchInput = document.getElementById('pattern-search');
+      const categoryFilter = document.getElementById('category-filter');
+      const platformFilter = document.getElementById('platform-filter');
+      const stateFilter = document.getElementById('state-filter');
+      const tagFilter = document.getElementById('tag-filter');
+      const resetFiltersButton = document.getElementById('reset-filters');
+      const patternsSection = document.getElementById('patterns');
+      const patternStore = globalThis.patternStore || {};
+      const allPatterns = typeof patternStore.getAllPatterns === 'function'
+        ? patternStore.getAllPatterns()
+        : Array.isArray(patternStore.patterns)
+          ? [...patternStore.patterns]
+          : [];
+      const state = {
+        search: '',
+        category: '',
+        letter: '',
+        platform: '',
+        filterState: '',
+        tag: ''
+      };
+
+      populateSelectOptions(platformFilter, 'Платформа', getUniqueFilterValues(allPatterns, 'platform'));
+      populateSelectOptions(stateFilter, 'Состояние', getUniqueFilterValues(allPatterns, 'state'));
+      populateSelectOptions(tagFilter, 'Тег', getUniqueFilterValues(allPatterns, 'tag'));
+      const syncCategoryFilterDropdown = setupCustomFilterDropdown(categoryFilter);
+      const syncPlatformFilterDropdown = setupCustomFilterDropdown(platformFilter);
+      const syncStateFilterDropdown = setupCustomFilterDropdown(stateFilter);
+      const syncTagFilterDropdown = setupCustomFilterDropdown(tagFilter);
+
+      function syncFilterControls() {
+        categoryFilter.value = state.category;
+        platformFilter.value = state.platform;
+        stateFilter.value = state.filterState;
+        tagFilter.value = state.tag;
+        syncCategoryFilterDropdown();
+        syncPlatformFilterDropdown();
+        syncStateFilterDropdown();
+        syncTagFilterDropdown();
+      }
+
+      function resetAllFilters() {
+        state.category = '';
+        state.letter = '';
+        state.platform = '';
+        state.filterState = '';
+        state.tag = '';
+        syncFilterControls();
+      }
+
+      function updateResetButtonState() {
+        const hasActiveFilters = Boolean(
+          state.category ||
+          state.letter ||
+          state.platform ||
+          state.filterState ||
+          state.tag
+        );
+
+        resetFiltersButton.disabled = !hasActiveFilters;
+      }
+
+      function scrollToPatternsSection() {
+        patternsSection.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+
+      function getSearchResults() {
+        if (!state.search) {
+          return allPatterns;
+        }
+
+        if (typeof patternStore.searchPatterns === 'function') {
+          return patternStore.searchPatterns(state.search);
+        }
+
+        return allPatterns;
+      }
+
+      function renderPatterns(options = {}) {
+        const shouldScroll = Boolean(options.shouldScroll);
+        const searchedPatterns = getSearchResults();
+        const categoryPatterns = filterPatternsByCategory(searchedPatterns, state.category);
+        const platformPatterns = filterPatternsByPlatform(categoryPatterns, state.platform);
+        const statePatterns = filterPatternsByState(platformPatterns, state.filterState);
+        const basePatterns = filterPatternsByTag(statePatterns, state.tag);
+        const visiblePatterns = filterPatternsByLetter(basePatterns, state.letter);
+
+        renderAlphabetNavigation(basePatterns, state.letter, (letter) => {
+          state.letter = letter;
+          renderPatterns({ shouldScroll: true });
+        });
+        renderPatternList(visiblePatterns);
+        updateResetButtonState();
+
+        if (shouldScroll) {
+          scrollToPatternsSection();
+        }
+      }
+
+      function handleSearchInput(event) {
+        state.search = event.target.value;
+        renderPatterns();
+      }
+
+      function handleCategoryChange() {
+        state.category = categoryFilter.value;
+        renderPatterns({ shouldScroll: true });
+      }
+
+      function handlePlatformChange() {
+        state.platform = platformFilter.value;
+        renderPatterns({ shouldScroll: true });
+      }
+
+      function handleStateChange() {
+        state.filterState = stateFilter.value;
+        renderPatterns({ shouldScroll: true });
+      }
+
+      function handleTagChange() {
+        state.tag = tagFilter.value;
+        renderPatterns({ shouldScroll: true });
+      }
+
+      searchInput.addEventListener('input', handleSearchInput);
+      categoryFilter.addEventListener('change', handleCategoryChange);
+      platformFilter.addEventListener('change', handlePlatformChange);
+      stateFilter.addEventListener('change', handleStateChange);
+      tagFilter.addEventListener('change', handleTagChange);
+      resetFiltersButton.addEventListener('click', () => {
+        resetAllFilters();
+        renderPatterns();
+      });
+
+      patternsSection.classList.add('visible');
+      syncFilterControls();
+      renderPatterns();
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.addEventListener('click', (event) => {
+      if (!isMenuOpen()) {
+        return;
+      }
+
+      const menu = document.getElementById('mobileMenu');
+      const toggleButton = document.getElementById('mobileMenuToggle');
+
+      if (menu.contains(event.target) || toggleButton.contains(event.target)) {
+        return;
+      }
+
+      closeMenu();
+    });
+
+    setupPatternExperience();
+    document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
+  
+   
+  </script>
+</body>
+</html>
