@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UX/CX Research: Dark Patterns — Станислав Довиденко</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .fade-in { animation: fadeIn 0.8s ease-in-out forwards; opacity: 0; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body class="bg-[#FAFAFA] text-[#111111] antialiased selection:bg-black selection:text-white pb-24">
+
+    <nav class="fixed top-0 w-full bg-[#FAFAFA]/80 backdrop-blur-md z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center text-sm font-medium">
+            <a href="../index.html" class="hover:opacity-60 transition-opacity">← Назад к проектам</a>
+            <div class="flex gap-6">
+                <span class="text-gray-400">RU</span>
+                <a href="en.html" class="hover:opacity-60 transition-opacity">EN</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="max-w-4xl mx-auto px-6 pt-40 pb-16 fade-in">
+        <div class="flex gap-3 mb-6 text-xs font-semibold tracking-wide uppercase text-gray-500">
+            <span class="bg-gray-100 px-3 py-1 rounded-full">UX/CX Research</span>
+            <span class="bg-gray-100 px-3 py-1 rounded-full">Fintech</span>
+            <span class="bg-gray-100 px-3 py-1 rounded-full">Этика</span>
+        </div>
+        <h1 class="text-5xl md:text-6xl font-semibold leading-tight tracking-tight mb-8">
+            Тёмные паттерны: <br><span class="text-slate-400 font-light">Когда метрики важнее этики.</span>
+        </h1>
+        <p class="text-xl text-gray-600 leading-relaxed">
+            Исследование «интерфейсов-капканов» в современном финтехе. Как банки легально изымают миллиарды рублей через Forced Continuity, скрытые условия и когнитивные искажения, и где проходит грань между бизнес-задачей и воровством.
+        </p>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 space-y-24 fade-in" style="animation-delay: 0.2s;">
+
+        <section class="space-y-8">
+            <h2 class="text-3xl font-semibold">1. Тихие списания и Forced Continuity</h2>
+            <p class="text-lg text-gray-600 leading-relaxed">
+                Пользователь обнаруживает долг -2799,34 ₽ из-за внезапного списания 3000 ₽ за годовое обслуживание. Банк не присылает пуш-уведомлений до момента списания. Юридически всё чисто — условия спрятаны глубоко в многостраничном PDF. Фактически — это использование паттерна <strong>Forced Continuity</strong> (принудительное продление) и <strong>Hidden Costs</strong>.
+            </p>
+            <div class="p-8 bg-white border border-gray-100 rounded-[32px] shadow-sm">
+                <h3 class="text-xl font-medium mb-4">Бизнес-модель vs Этика</h3>
+                <p class="text-gray-600">
+                    Такие «забывчивые» клиенты и отсутствие кнопки отмены приносят корпорациям от 3 до 5 миллиардов рублей чистой прибыли в год. 80-90% людей просто вздохнут, закроют минус и уйдут. Добавление прозрачного уведомления перед списанием убьет этот KPI.
+                </p>
+            </div>
+        </section>
+
+        <section class="space-y-8">
+            <h2 class="text-3xl font-semibold">2. Искусственные временные ловушки (Кейс Сплита)</h2>
+            <p class="text-lg text-gray-600 leading-relaxed">
+                Анализ кредитного договора с ПСК 58,223% годовых выявил жесткий темный паттерн. Клиент совершает платеж в установленную дату (например, 21-го числа), но льготный период слетает. Почему? Потому что в договоре прописано искусственное ограничение — платеж должен поступить не до 23:59, а строго до <strong>21:00</strong>.
+            </p>
+            <div class="border-l-4 border-black pl-6 py-2">
+                <p class="text-xl italic text-gray-800">
+                    «Хороший финтех-дизайн снижает неопределенность. Интерфейс-капкан, наоборот, создает искусственные барьеры, чтобы спровоцировать ошибку пользователя и начислить штраф».
+                </p>
+            </div>
+        </section>
+
+        <section class="space-y-8">
+            <h2 class="text-3xl font-semibold">3. Визуальный шум и смещение фокуса (Plata)</h2>
+            <p class="text-lg text-gray-600 leading-relaxed">
+                Внешне дашборд выглядит премиально (Glassmorphism, много воздуха). Однако за красивой UI-оберткой скрывается нарушение базовых гештальт-принципов и паттернов чтения. Ключевые данные о рисках и структуре платежа смещены в слепые зоны, а внимание пользователя искусственно перетягивается на градиентные плашки и предложения взять новые кредиты. Это фильтр: 10-20% клиентов, которые не справятся с долгами — это просто «допустимая погрешность» бизнес-модели.
+            </p>
+            <div class="p-8 bg-white border border-gray-100 rounded-[32px] shadow-sm">
+                <h4 class="font-semibold text-sm uppercase tracking-wider text-gray-500 mb-4">Вывод исследователя</h4>
+                <p class="text-gray-900 leading-relaxed">
+                    Должен ли дизайнер знать бизнес-модель до того, как начнет рисовать? Да. Этика в дизайне интерфейсов — это не просто красивые слова. Когда продакт просит «сделать условия менее заметными», он просит вас спроектировать ловушку. В финтехе доверие является высшей формой UX, а продукты, построенные на выжигании аудитории, в долгосрочной перспективе обречены.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="max-w-4xl mx-auto px-6 mt-32 border-t border-gray-200 pt-8 pb-12 fade-in" style="animation-delay: 0.4s;">
+        <div class="flex justify-between items-center text-sm text-gray-500">
+            <p>© 2026 Станислав Довиденко. UX Research & Insights.</p>
+            <a href="../index.html" class="hover:text-black transition-colors">Все проекты →</a>
+        </div>
+    </footer>
+
+    <script>
+        // Простой скрипт для fade-in анимации при скролле (если добавишь больше контента)
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>

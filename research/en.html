@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UX/CX Research: Dark Patterns — Stanislav Dovidenko</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .fade-in { animation: fadeIn 0.8s ease-in-out forwards; opacity: 0; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body class="bg-[#FAFAFA] text-[#111111] antialiased selection:bg-black selection:text-white pb-24">
+
+    <nav class="fixed top-0 w-full bg-[#FAFAFA]/80 backdrop-blur-md z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center text-sm font-medium">
+            <a href="../en.html" class="hover:opacity-60 transition-opacity">← Back to Projects</a>
+            <div class="flex gap-6">
+                <a href="index.html" class="hover:opacity-60 transition-opacity">RU</a>
+                <span class="text-gray-400">EN</span>
+                
+            </div>
+        </div>
+    </nav>
+
+    <header class="max-w-4xl mx-auto px-6 pt-40 pb-16 fade-in">
+        <div class="flex gap-3 mb-6 text-xs font-semibold tracking-wide uppercase text-gray-500">
+            <span class="bg-gray-100 px-3 py-1 rounded-full">UX/CX Research</span>
+            <span class="bg-gray-100 px-3 py-1 rounded-full">Fintech</span>
+            <span class="bg-gray-100 px-3 py-1 rounded-full">Ethics</span>
+        </div>
+        <h1 class="text-5xl md:text-6xl font-semibold leading-tight tracking-tight mb-8">
+            Dark Patterns: <br><span class="text-slate-400 font-light">When Metrics Matter More Than Ethics.</span>
+        </h1>
+        <p class="text-xl text-gray-600 leading-relaxed">
+            Research on "trap interfaces" in modern fintech. How banks legally take billions of rubles through Forced Continuity, hidden terms, and cognitive biases, and where the line is drawn between business goals and theft.
+        </p>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 space-y-24 fade-in" style="animation-delay: 0.2s;">
+
+        <section class="space-y-8">
+            <h2 class="text-3xl font-semibold">1. Silent Fees and Forced Continuity</h2>
+            <p class="text-lg text-gray-600 leading-relaxed">
+                The user discovers a debt of -2799.34 rubles due to a sudden charge of 3000 rubles for annual maintenance. The bank doesn't send push notifications until the charge is made. Legally, everything is clear—the terms are hidden deep in a multi-page PDF. In fact, this is a use of the <strong>Forced Continuity</strong> pattern and <strong>Hidden Costs</strong>.
+</p>
+            <div class="p-8 bg-white border border-gray-100 rounded-[32px] shadow-sm">
+                <h3 class="text-xl font-medium mb-4">Business Model vs. Ethics</h3>
+                <p class="text-gray-600">
+                    Such "forgetful" customers and the lack of a cancel button generate between 3 and 5 billion rubles in net profit for corporations annually. 80-90% of customers will simply sigh, close the negative balance, and leave. Adding a transparent notification before a charge would kill this KPI.
+</p>
+            </div>
+        </section>
+
+        <section class="space-y-8">
+            <h2 class="text-3xl font-semibold">2. Artificial Time Traps (Split Case)</h2>
+            <p class="text-lg text-gray-600 leading-relaxed">
+                An analysis of a credit agreement with a 58.223% annual interest rate revealed a strict dark pattern. The client makes a payment on the specified date (e.g., the 21st), but the grace period expires. Why? Because the contract stipulates an artificial restriction—the payment must be received not until 23:59, but strictly by <strong>21:00</strong>.
+            </p>
+            <div class="border-l-4 border-black pl-6 py-2">
+                <p class="text-xl italic text-gray-800">
+                    «Good fintech design reduces uncertainty. A trap interface, on the other hand, creates artificial barriers to provoke user error and impose penalties».
+                </p>
+            </div>
+        </section>
+
+        <section class="space-y-8">
+            <h2 class="text-3xl font-semibold">3. Visual Noise and Focus Shift (Plata)</h2>
+            <p class="text-lg text-gray-600 leading-relaxed">
+                Externally, the dashboard looks premium (Glassmorphism, lots of white space). However, behind the beautiful UI wrapper lies a violation of basic gestalt principles and reading patterns. Key data about risks and payment structure are shifted to blind spots, while user attention is artificially drawn to gradient panels and offers for new loans. This is a filter: 10-20% of customers who cannot manage their debts—are simply an "acceptable margin of error" in the business model.
+            </p>
+            <div class="p-8 bg-white border border-gray-100 rounded-[32px] shadow-sm">
+                <h4 class="font-semibold text-sm uppercase tracking-wider text-gray-500 mb-4">Researcher's Conclusion</h4>
+                <p class="text-gray-900 leading-relaxed">
+                    Should a designer know the business model before starting to draw? Yes. Ethics in interface design is not just pretty words. When a product team asks to "make the terms less visible," they are asking you to design a trap. In fintech, trust is the highest form of UX, and products built on exploiting the audience are doomed in the long run.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="max-w-4xl mx-auto px-6 mt-32 border-t border-gray-200 pt-8 pb-12 fade-in" style="animation-delay: 0.4s;">
+        <div class="flex justify-between items-center text-sm text-gray-500">
+            <p>© 2026 Stanislav Dovidenko. UX Research & Insights.</p>
+            <a href="../en.html" class="hover:text-black transition-colors">All Projects →</a>
+        </div>
+    </footer>
+
+    <script>
+        // Простой скрипт для fade-in анимации при скролле (если добавишь больше контента)
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
