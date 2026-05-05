@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кейс Stylo.you — Персонализированная AI-экосистема стиля</title>
+  <meta name="description" content="Единое описание кейса Stylo.You: AI-стилист, генерация образов по фото, цифровой гардероб, галерея вдохновения и социальный слой продукта.">
+  <style>
+    :root {
+      --ink: #171717;
+      --muted: #656565;
+      --line: #e6e2dc;
+      --paper: #fffdf9;
+      --surface: #ffffff;
+      --clay: #c85f45;
+      --sage: #6d8d7a;
+      --sky: #4c7d9a;
+      --gold: #c39a4b;
+      --rose: #f7dfd7;
+      --mint: #e2eee6;
+      --blue: #e0edf3;
+      --shadow: 0 22px 70px rgba(23, 23, 23, 0.11);
+      --radius: 8px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background:
+        linear-gradient(180deg, rgba(247, 223, 215, 0.6) 0, rgba(255, 253, 249, 0) 560px),
+        var(--paper);
+      line-height: 1.55;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .page-shell {
+      min-height: 100vh;
+      padding-top: 68px;
+    }
+
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 50;
+      border-bottom: 1px solid rgba(230, 226, 220, 0.75);
+      background: rgba(255, 253, 249, 0.9);
+      backdrop-filter: blur(18px);
+      transition: background 180ms ease, border-color 180ms ease;
+    }
+
+    .header-inner {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      position: relative;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      letter-spacing: 0;
+      font-size: 14px;
+      transition: opacity 180ms ease;
+    }
+
+    .brand:hover {
+      opacity: 0.78;
+    }
+
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: var(--radius);
+      display: grid;
+      place-items: center;
+      color: #fff;
+      background: var(--ink);
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #4d4d4d;
+      font-size: 14px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .nav a,
+    .button {
+      min-height: 40px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border-radius: var(--radius);
+      padding: 0 14px;
+      transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+    }
+
+    .nav a:hover,
+    .button:hover {
+      transform: translateY(-1px);
+      background: #fff;
+	  color: #000;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .social-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .social-icon {
+      width: 34px;
+      height: 34px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      color: #606060;
+      transition: color 180ms ease, background 180ms ease, transform 180ms ease;
+    }
+
+    .social-icon:hover {
+      color: #000;
+      background: #fff;
+      transform: translateY(-1px);
+    }
+
+    .language-switch {
+      display: flex;
+      align-items: center;
+      padding: 3px;
+      border-radius: 999px;
+      background: #f2f0ed;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .language-switch a,
+    .language-switch span {
+      min-width: 38px;
+      padding: 5px 11px;
+      border-radius: 999px;
+      text-align: center;
+    }
+
+    .language-switch a {
+      color: #777;
+      transition: color 180ms ease, background 180ms ease;
+    }
+
+    .language-switch a:hover {
+      color: #000;
+    }
+
+    .language-switch span {
+      color: #000;
+      background: #fff;
+      box-shadow: 0 2px 10px rgba(23, 23, 23, 0.08);
+    }
+
+    .mobile-menu-toggle {
+      display: none;
+      min-height: 38px;
+      border: 0;
+      border-radius: var(--radius);
+      padding: 0 2px;
+      color: #606060;
+      background: transparent;
+      font: inherit;
+      font-size: 14px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .mobile-menu-toggle:hover {
+      color: #000;
+    }
+
+    .mobile-menu {
+      display: none;
+      position: absolute;
+      left: 0;
+      top: 100%;
+      width: 100%;
+      padding: 28px 20px 30px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 253, 249, 0.97);
+      box-shadow: 0 24px 50px rgba(23, 23, 23, 0.12);
+      backdrop-filter: blur(18px);
+    }
+
+    .mobile-menu.is-open {
+      display: block;
+    }
+
+    .mobile-menu-inner {
+      width: min(1180px, 100%);
+      margin: 0 auto;
+      display: grid;
+      gap: 24px;
+    }
+
+    .mobile-nav {
+      display: grid;
+      gap: 14px;
+      color: #202020;
+      font-size: 19px;
+      font-weight: 800;
+    }
+
+    .mobile-nav a {
+      min-height: 34px;
+    }
+
+    .mobile-divider {
+      height: 1px;
+      background: var(--line);
+    }
+
+    .button {
+      border: 1px solid var(--ink);
+      color: #fff;
+      background: var(--ink);
+      font-weight: 800;
+    }
+
+    .button.secondary {
+      color: var(--ink);
+      background: transparent;
+      border-color: var(--line);
+    }
+	
+	.button.secondary:hover {
+      transform: translateY(-1px);
+      background: #fff;
+	  color: #000;
+    }
+
+    main {
+      overflow: hidden;
+    }
+
+    .hero {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 76px 0 52px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.02fr) minmax(320px, 0.98fr);
+      align-items: center;
+      gap: 42px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      color: var(--clay);
+      font-size: 13px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 2px;
+      background: var(--clay);
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      margin-bottom: 22px;
+      font-size: clamp(42px, 6vw, 78px);
+      line-height: 0.96;
+      letter-spacing: 0;
+      max-width: 850px;
+    }
+
+    .hero-copy {
+      margin-bottom: 28px;
+      max-width: 680px;
+      color: #3f3f3f;
+      font-size: clamp(18px, 2vw, 22px);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 30px;
+    }
+
+    .case-facts {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .fact {
+      min-height: 112px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.74);
+    }
+
+    .fact strong {
+      display: block;
+      margin-bottom: 7px;
+      font-size: 13px;
+      text-transform: uppercase;
+    }
+
+    .fact span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .product-preview {
+      position: relative;
+      min-height: 590px;
+      padding: 16px;
+      border: 1px solid rgba(23, 23, 23, 0.1);
+      border-radius: var(--radius);
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .preview-topbar {
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .preview-dots {
+      display: flex;
+      gap: 7px;
+    }
+
+    .preview-dots span {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--line);
+    }
+
+    .preview-body {
+      padding: 22px 4px 4px;
+    }
+
+    .upload-tile {
+      min-height: 170px;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      border: 1px dashed #d7cfc6;
+      border-radius: var(--radius);
+      background:
+        linear-gradient(135deg, rgba(226, 238, 230, 0.85), rgba(224, 237, 243, 0.8)),
+        #f7f3ee;
+      text-align: center;
+    }
+
+    .upload-tile strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 22px;
+    }
+
+    .upload-tile span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin: 14px 0;
+    }
+
+    .flow-step {
+      min-height: 74px;
+      padding: 13px;
+      border-radius: var(--radius);
+      color: #323232;
+      background: #f8f6f2;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .look-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .look-card {
+      min-height: 206px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .look-art {
+      min-height: 116px;
+      border-radius: 7px;
+      background: var(--rose);
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      padding: 12px;
+    }
+
+    .look-card:nth-child(2) .look-art {
+      background: var(--blue);
+    }
+
+    .look-card:nth-child(3) .look-art {
+      background: var(--mint);
+    }
+
+    .garment {
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.8);
+      min-height: 34px;
+    }
+
+    .garment:nth-child(3) {
+      grid-column: 1 / -1;
+      min-height: 42px;
+      border-radius: 7px;
+    }
+
+    .look-card h3 {
+      margin: 12px 0 2px;
+      font-size: 15px;
+    }
+
+    .look-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .section {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 72px 0;
+    }
+
+    .section-header {
+      max-width: 760px;
+      margin-bottom: 32px;
+    }
+
+    .section-kicker {
+      margin-bottom: 10px;
+      color: var(--sky);
+      font-size: 13px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin-bottom: 16px;
+      font-size: clamp(30px, 4vw, 48px);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    .section-header p {
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 0.82fr 1.18fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .problem-panel {
+      padding: 30px;
+      border-radius: var(--radius);
+      background: var(--ink);
+      color: #fff;
+    }
+
+    .problem-panel p {
+      margin-bottom: 18px;
+      color: rgba(255, 255, 255, 0.76);
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 32px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 999px;
+      padding: 0 12px;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .insight-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .insight,
+    .module,
+    .tech-row,
+    .local-video-card,
+    .video-card,
+    .source-note {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+    }
+
+    .insight {
+      min-height: 150px;
+      padding: 24px;
+    }
+
+    .insight b,
+    .module b {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 18px;
+    }
+
+    .insight p,
+    .module p {
+      margin-bottom: 0;
+      color: var(--muted);
+    }
+
+    .modules {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .module {
+      min-height: 235px;
+      padding: 24px;
+    }
+
+    .module-index {
+      width: 34px;
+      height: 34px;
+      margin-bottom: 28px;
+      display: grid;
+      place-items: center;
+      border-radius: var(--radius);
+      color: #fff;
+      background: var(--clay);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .module:nth-child(2) .module-index,
+    .module:nth-child(5) .module-index {
+      background: var(--sage);
+    }
+
+    .module:nth-child(3) .module-index,
+    .module:nth-child(4) .module-index {
+      background: var(--sky);
+    }
+
+    .workflow {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: #f7f3ee;
+    }
+
+    .workflow-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0;
+    }
+
+    .workflow-step {
+      min-height: 220px;
+      padding: 32px;
+      border-right: 1px solid var(--line);
+    }
+
+    .workflow-step:last-child {
+      border-right: 0;
+    }
+
+    .workflow-step span {
+      display: block;
+      margin-bottom: 48px;
+      color: var(--clay);
+      font-weight: 900;
+    }
+
+    .workflow-step h3 {
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+
+    .workflow-step p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .tech-table {
+      display: grid;
+      gap: 10px;
+    }
+
+    .tech-row {
+      display: grid;
+      grid-template-columns: 0.6fr 1.4fr;
+      gap: 18px;
+      padding: 18px;
+    }
+
+    .tech-row strong {
+      font-size: 15px;
+      text-transform: uppercase;
+    }
+
+    .tech-row span {
+      color: var(--muted);
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .local-video-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .local-video-card {
+      overflow: hidden;
+    }
+
+    .case-video {
+      aspect-ratio: 16 / 9;
+      width: 100%;
+      background: #111;
+      cursor: pointer;
+      object-fit: cover;
+    }
+
+    .video-card {
+      overflow: hidden;
+    }
+
+    .video-card img {
+      aspect-ratio: 16 / 9;
+      width: 100%;
+      object-fit: cover;
+      background: #e8e1d8;
+    }
+
+    .site-preview {
+      aspect-ratio: 16 / 9;
+      display: grid;
+      align-content: center;
+      gap: 14px;
+      padding: 20px;
+      background:
+        linear-gradient(135deg, rgba(247, 223, 215, 0.9), rgba(226, 238, 230, 0.86)),
+        #f7f3ee;
+    }
+
+    .site-preview strong {
+      font-size: 28px;
+      line-height: 1;
+    }
+
+    .site-preview span {
+      width: fit-content;
+      border: 1px solid rgba(23, 23, 23, 0.18);
+      border-radius: 999px;
+      padding: 6px 10px;
+      color: #3f3f3f;
+      background: rgba(255, 255, 255, 0.62);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .video-card-content {
+      padding: 18px;
+    }
+
+    .local-video-content {
+      padding: 18px;
+    }
+
+    .video-card-content b {
+      display: block;
+      margin-bottom: 8px;
+      line-height: 1.25;
+    }
+
+    .local-video-content b {
+      display: block;
+      margin-bottom: 8px;
+      line-height: 1.25;
+    }
+
+    .video-card-content p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .local-video-content p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .source-note {
+      margin-top: 18px;
+      padding: 18px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .final-band {
+      background: var(--ink);
+      color: #fff;
+    }
+
+    .final-band .section {
+      padding-bottom: 86px;
+    }
+
+    .final-band p {
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 20px;
+    }
+
+    .final-band .button {
+      border-color: #fff;
+      background: #fff;
+      color: var(--ink);
+    }
+
+    footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 24px 0;
+      color: rgba(255, 255, 255, 0.62);
+      font-size: 14px;
+    }
+
+    footer .section {
+      padding: 0;
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    @media (max-width: 980px) {
+      .hero,
+      .split {
+        grid-template-columns: 1fr;
+      }
+
+      .product-preview {
+        min-height: auto;
+      }
+
+      .modules,
+      .local-video-grid,
+      .video-grid,
+      .case-facts {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .workflow-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .workflow-step:nth-child(2) {
+        border-right: 0;
+      }
+
+      .workflow-step:nth-child(1),
+      .workflow-step:nth-child(2) {
+        border-bottom: 1px solid var(--line);
+      }
+    }
+
+    @media (max-width: 720px) {
+      .header-inner,
+      .hero,
+      .section {
+        width: min(100% - 28px, 1180px);
+      }
+
+      .header-inner {
+        min-height: 62px;
+      }
+
+      .nav {
+        display: none;
+      }
+
+      .page-shell {
+        padding-top: 62px;
+      }
+
+      .social-row.desktop-only,
+      .language-switch.desktop-only {
+        display: none;
+      }
+
+      .mobile-menu-toggle {
+        display: inline-flex;
+        align-items: center;
+      }
+
+      .hero {
+        padding-top: 44px;
+      }
+
+      .case-facts,
+      .insight-list,
+      .modules,
+      .local-video-grid,
+      .video-grid,
+      .workflow-grid,
+      .tech-row {
+        grid-template-columns: 1fr;
+      }
+
+      .flow,
+      .look-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .workflow-step,
+      .workflow-step:nth-child(2) {
+        border-right: 0;
+      }
+
+      .workflow-step:not(:last-child) {
+        border-bottom: 1px solid var(--line);
+      }
+
+      footer .section {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="../index.html" aria-label="Сайт Станислава Довиденко">
+          <span>Станислав Довиденко</span>
+        </a>
+        <nav class="nav" aria-label="Навигация по кейсу">
+          <a href="#context">Контекст</a>
+          <a href="#solution">Решение</a>
+          <a href="#workflow">Сценарий</a>
+          <a href="#sources">Видео</a>
+        </nav>
+        <div class="header-actions">
+          <div class="social-row desktop-only" aria-label="Социальные сети">
+            <a class="social-icon" href="https://t.me/designat0r" target="_blank" rel="noopener" aria-label="Telegram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+            </a>
+            <a class="social-icon" href="https://instagram.com/stasdodesign" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            </a>
+            <a class="social-icon" href="https://facebook.com/stasdodesign" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+          </div>
+          <div class="language-switch desktop-only" aria-label="Выбор языка">
+            <span aria-current="page">RU</span>
+            <a href="en.html">EN</a>
+          </div>
+          <button class="mobile-menu-toggle" id="mobileMenuToggle" type="button" aria-controls="mobileMenu" aria-expanded="false">
+            Меню
+          </button>
+        </div>
+      </div>
+      <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-inner">
+          <nav class="mobile-nav" aria-label="Мобильная навигация">
+            <a href="#context">Контекст</a>
+            <a href="#solution">Решение</a>
+            <a href="#workflow">Сценарий</a>
+            <a href="#sources">Видео</a>
+          </nav>
+          <div class="mobile-divider"></div>
+          <div class="social-row" aria-label="Социальные сети">
+            <a class="social-icon" href="https://t.me/designat0r" target="_blank" rel="noopener" aria-label="Telegram">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+            </a>
+            <a class="social-icon" href="https://instagram.com/stasdodesign" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            </a>
+            <a class="social-icon" href="https://facebook.com/stasdodesign" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+          </div>
+          <div class="language-switch" aria-label="Выбор языка">
+            <span aria-current="page">RU</span>
+            <a href="en.html">EN</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div>
+          <div class="eyebrow">AI fashion product</div>
+          <h1 id="hero-title">Stylo.You — персональный AI-стилист</h1>
+          <p class="hero-copy">
+            Продукт помогает превратить фото вещи или образа в три готовых styling-сценария: casual, business и evening. Вокруг генерации собраны цифровой гардероб, галерея вдохновения и социальный слой с профилями авторов.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="https://stylo.you/" target="_blank" rel="noopener">Открыть продукт</a>
+            <a class="button secondary" href="#sources">Видео презентации</a>
+          </div>
+          <div class="case-facts" aria-label="Краткие факты о проекте">
+            <div class="fact">
+              <strong>Задача</strong>
+              <span>Снять неопределенность при выборе образа и сделать персональный styling доступным.</span>
+            </div>
+            <div class="fact">
+              <strong>Формат</strong>
+              <span>Веб-приложение: генератор образов, кабинет, гардероб, галерея и сообщество</span>
+            </div>
+            <div class="fact">
+              <strong>Стек</strong>
+              <span>React, Google GenAI/Gemini, Firebase Auth, Firestore и Storage.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-preview" aria-label="Схема работы Stylo.You">
+          <div class="preview-topbar">
+            <div class="preview-dots" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <span>Stylo — ваш AI-стилист</span>
+          </div>
+          <div class="preview-body">
+            <div class="upload-tile">
+              <div>
+                <strong>Загрузите фото вещи</strong>
+                <span>AI анализирует цвет, фактуру, стиль и контекст пожеланий.</span>
+              </div>
+            </div>
+            <div class="flow" aria-label="Процесс генерации">
+              <div class="flow-step">1. Фото или предмет гардероба</div>
+              <div class="flow-step">2. Анализ вайба и деталей</div>
+              <div class="flow-step">3. Три готовых образа</div>
+            </div>
+            <div class="look-grid">
+              <article class="look-card">
+                <div class="look-art" aria-hidden="true">
+                  <span class="garment"></span>
+                  <span class="garment"></span>
+                  <span class="garment"></span>
+                </div>
+                <div>
+                  <h3>Casual</h3>
+                  <p>Повседневный сценарий для прогулки и города.</p>
+                </div>
+              </article>
+              <article class="look-card">
+                <div class="look-art" aria-hidden="true">
+                  <span class="garment"></span>
+                  <span class="garment"></span>
+                  <span class="garment"></span>
+                </div>
+                <div>
+                  <h3>Business</h3>
+                  <p>Собранный образ для офиса и встреч.</p>
+                </div>
+              </article>
+              <article class="look-card">
+                <div class="look-art" aria-hidden="true">
+                  <span class="garment"></span>
+                  <span class="garment"></span>
+                  <span class="garment"></span>
+                </div>
+                <div>
+                  <h3>Evening</h3>
+                  <p>Акцентный вариант для вечера и событий.</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="context" aria-labelledby="context-title">
+        <div class="section-header">
+          <div class="section-kicker">Контекст</div>
+          <h2 id="context-title">Проблема не в отсутствии вещей, а в отсутствии готового решения</h2>
+          <p>
+            У пользователя может быть полный шкаф, сохраненные референсы и желание выглядеть лучше, но выбор конкретного сочетания все равно остается ручным и утомительным. Stylo.You переводит этот момент в понятный продуктовый сценарий: загрузить фото, получить варианты, сохранить подходящее.
+          </p>
+        </div>
+        <div class="split">
+          <aside class="problem-panel">
+            <p>
+              Ключевой инсайт из материалов: пользователю нужен не просто текстовый совет, а визуальная уверенность. Поэтому результатом становится не список рекомендаций, а готовые flat-lay образы.
+            </p>
+            <div class="tag-list" aria-label="Проблемные зоны">
+              <span class="tag">Выбор образа</span>
+              <span class="tag">Недостаток контекста</span>
+              <span class="tag">Неиспользуемый гардероб</span>
+              <span class="tag">Поиск вдохновения</span>
+            </div>
+          </aside>
+          <div class="insight-list">
+            <article class="insight">
+              <b>Обычные каталоги не персональны</b>
+              <p>Они показывают вещи, но редко учитывают стиль человека, уже имеющийся гардероб и конкретный повод.</p>
+            </article>
+            <article class="insight">
+              <b>Стилистика требует визуального ответа</b>
+              <p>Пользователь быстрее принимает решение, когда видит собранный образ, а не только читает совет.</p>
+            </article>
+            <article class="insight">
+              <b>AI дает скорость</b>
+              <p>Фото превращается в набор вариантов за один сценарий, без длинного брифа и ручной подборки.</p>
+            </article>
+            <article class="insight">
+              <b>Сообщество усиливает доверие</b>
+              <p>Галерея и профили стиляг добавляют референсы, подписки и повторный вход в продукт.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="solution" aria-labelledby="solution-title">
+        <div class="section-header">
+          <div class="section-kicker">Решение</div>
+          <h2 id="solution-title">Из генератора образов — в персональную fashion-экосистему</h2>
+          <p>
+            Финальная логика продукта объединяет AI-генерацию, личное пространство пользователя и социальную механику. Так Stylo.You не заканчивается на одном результате, а возвращает пользователя к гардеробу, вдохновению и новым экспериментам.
+          </p>
+        </div>
+        <div class="modules">
+          <article class="module">
+            <span class="module-index">01</span>
+            <b>AI-стилист по фото</b>
+            <p>Пользователь загружает фото вещи или образа, добавляет пожелания, а система формирует три styling-концепции под разные сценарии.</p>
+          </article>
+          <article class="module">
+            <span class="module-index">02</span>
+            <b>Flat-lay результат</b>
+            <p>Ответ представлен как визуальные раскладки, чтобы пользователь сразу понимал сочетания, настроение и применимость образа.</p>
+          </article>
+          <article class="module">
+            <span class="module-index">03</span>
+            <b>Smart Closet</b>
+            <p>Готовые генерации можно сохранить в гардероб: это превращает разовую идею в персональную коллекцию образов.</p>
+          </article>
+          <article class="module">
+            <span class="module-index">04</span>
+            <b>Галерея стилей</b>
+            <p>Лента образов показывает работы сообщества, помогает искать вдохновение и переносит фокус с инструмента на экосистему.</p>
+          </article>
+          <article class="module">
+            <span class="module-index">05</span>
+            <b>Профили стиляг</b>
+            <p>Авторы получают публичное присутствие, подписки и социальный капитал внутри продукта.</p>
+          </article>
+          <article class="module">
+            <span class="module-index">06</span>
+            <b>Pro-сценарии</b>
+            <p>В продукте предусмотрены тарифы и лимиты генераций, что создает основу для монетизации без перегруза базового опыта.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="workflow" id="workflow" aria-labelledby="workflow-title">
+        <div class="section">
+          <div class="section-header">
+            <div class="section-kicker">Пользовательский сценарий</div>
+            <h2 id="workflow-title">Один понятный путь от фото до сохраненного образа</h2>
+          </div>
+          <div class="workflow-grid">
+            <article class="workflow-step">
+              <span>01</span>
+              <h3>Загрузить</h3>
+              <p>Фото вещи, человека или текущего образа становится входной точкой для AI-анализа.</p>
+            </article>
+            <article class="workflow-step">
+              <span>02</span>
+              <h3>Уточнить</h3>
+              <p>Пользователь добавляет пожелания: сезон, повод, настроение, цвета или стиль.</p>
+            </article>
+            <article class="workflow-step">
+              <span>03</span>
+              <h3>Получить</h3>
+              <p>Система генерирует три сценария: casual, business и evening, с визуальным результатом.</p>
+            </article>
+            <article class="workflow-step">
+              <span>04</span>
+              <h3>Сохранить</h3>
+              <p>Лучшие варианты попадают в гардероб или вдохновляют других пользователей через галерею.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="tech-title">
+        <div class="section-header">
+          <div class="section-kicker">Технологии</div>
+          <h2 id="tech-title">Стек поддерживает AI-генерацию, авторизацию и живой социальный слой</h2>
+          <p>
+            Технологическая часть описана только по тем источникам, где она подтверждается локальными материалами и публичной сборкой проекта.
+          </p>
+        </div>
+        <div class="tech-table">
+          <div class="tech-row">
+            <strong>Frontend</strong>
+            <span>React-приложение с адаптивным интерфейсом, кабинетами, галереей и состояниями генерации.</span>
+          </div>
+          <div class="tech-row">
+            <strong>AI</strong>
+            <span>Google GenAI/Gemini используется для анализа входного изображения, промптов и генерации styling-сценариев.</span>
+          </div>
+          <div class="tech-row">
+            <strong>Data layer</strong>
+            <span>Firebase Auth, Firestore и Storage закрывают регистрацию, профили, сохраненные образы, галерею и пользовательские данные.</span>
+          </div>
+          <div class="tech-row">
+            <strong>Product layer</strong>
+            <span>Лимиты генераций, Pro-аккаунты, избранное, подписки и административный dashboard формируют основу роста продукта.</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="sources" aria-labelledby="sources-title">
+        <div class="section-header">
+          <div class="section-kicker">Видео презентации</div>
+          <h2 id="sources-title">Интерактивная презентация продукта с разными примерами из жизни</h2>
+          <p>
+            Персональная AI-экосистема подбора стиля: от генерации образов до социальной сети профессиональных стилистов.
+          </p>
+        </div>
+        <div class="local-video-grid" aria-label="Локальные видео презентации Stylo.You">
+          <article class="local-video-card">
+            <video class="case-video" preload="metadata" playsinline controls aria-label="AI-стилист в твоем кармане">
+              <source src="Stylo-You_2026_Man_480.mp4" type="video/mp4">
+              Ваш браузер не поддерживает встроенное видео.
+            </video>
+            <div class="local-video-content">
+              <b>AI-стилист в твоем кармане</b>
+              <p>Демо показывает, как Stylo.You превращает одно фото в готовые сценарии образов.</p>
+            </div>
+          </article>
+          <article class="local-video-card">
+            <video class="case-video" preload="metadata" playsinline controls aria-label="Летний гардероб за секунды">
+              <source src="Stylo-You_2026_Dress_480.mp4" type="video/mp4">
+              Ваш браузер не поддерживает встроенное видео.
+            </video>
+            <div class="local-video-content">
+              <b>Летний гардероб за секунды</b>
+              <p>Видео демонстрирует быстрый подбор летних образов на основе пользовательского фото.</p>
+            </div>
+          </article>
+        </div>
+        <div class="video-grid">
+          <a class="video-card" href="https://youtu.be/DZU5ZvVNThM?si=mWCZSV7OkT54Pw8y" target="_blank" rel="noopener">
+            <img src="https://i.ytimg.com/vi/DZU5ZvVNThM/hqdefault.jpg" alt="Демо Stylo.You: AI-стилист по фото">
+            <div class="video-card-content">
+              <b>AI-стилист в твоем кармане</b>
+              <p>Демо показывает, как одно фото превращается в три образа: casual, business и evening.</p>
+            </div>
+          </a>
+          <a class="video-card" href="https://youtu.be/bxMkci7mnNI" target="_blank" rel="noopener">
+            <img src="https://i.ytimg.com/vi/bxMkci7mnNI/hqdefault.jpg" alt="Обзор Stylo.You для летнего гардероба">
+            <div class="video-card-content">
+              <b>Летний гардероб за секунды</b>
+              <p>Обзор подтверждает сценарий быстрого подбора трех летних луков по пользовательскому фото.</p>
+            </div>
+          </a>
+          <a class="video-card" href="https://stylo.you/" target="_blank" rel="noopener">
+            <div class="site-preview" aria-hidden="true">
+              <strong>Stylo</strong>
+              <span>AI stylist</span>
+              <span>upload clothes</span>
+              <span>ready looks</span>
+            </div>
+            <div class="video-card-content">
+              <b>Официальный продукт Stylo.You</b>
+              <p>Сайт продукта подтверждает позиционирование: персональный AI-стилист, загрузка одежды и готовые образы за секунды.</p>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section class="final-band" id="results" aria-labelledby="result-title">
+        <div class="section">
+          <div class="section-header">
+            <div class="section-kicker">Итог</div>
+            <h2 id="result-title">Stylo.You делает персональный стиль быстрым, визуальным и социальным</h2>
+            <p>
+              Главная ценность продукта — не просто AI-генерация, а завершенный опыт: пользователь приносит фото, получает понятные варианты, сохраняет их в гардероб и может продолжать путь через галерею, стилистов и новые эксперименты.
+            </p>
+          </div>
+          <a class="button" href="https://stylo.you/" target="_blank" rel="noopener">Перейти к Stylo.You</a>
+        </div>
+        <footer>
+          <div class="section">
+            <span>Case Study: Stylo.You</span>
+            <span>Продуктовый дизайнер <a href="http://case.stanislavdovidenko.com/">Станислав Довиденко</a> © 2026</span>
+          </div>
+        </footer>
+      </section>
+    </main>
+  </div>
+  <script>
+    (() => {
+      const toggle = document.getElementById("mobileMenuToggle");
+      const menu = document.getElementById("mobileMenu");
+
+      if (!toggle || !menu) return;
+
+      const setMenuState = (isOpen) => {
+        menu.classList.toggle("is-open", isOpen);
+        toggle.setAttribute("aria-expanded", String(isOpen));
+        toggle.textContent = isOpen ? "Закрыть" : "Меню";
+      };
+
+      const toggleMenu = () => {
+        setMenuState(!menu.classList.contains("is-open"));
+      };
+
+      toggle.addEventListener("click", toggleMenu);
+
+      menu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => setMenuState(false));
+      });
+
+      window.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") setMenuState(false);
+      });
+
+      window.addEventListener("resize", () => {
+        if (window.matchMedia("(min-width: 721px)").matches) setMenuState(false);
+      });
+
+      document.querySelectorAll(".case-video").forEach((video) => {
+        video.addEventListener("click", () => {
+          if (video.paused || video.ended) {
+            document.querySelectorAll(".case-video").forEach((otherVideo) => {
+              if (otherVideo !== video) otherVideo.pause();
+            });
+
+            const playRequest = video.play();
+            if (playRequest) playRequest.catch(() => {});
+          } else {
+            video.pause();
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
