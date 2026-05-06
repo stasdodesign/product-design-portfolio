@@ -360,8 +360,71 @@
   </div>
 </section>
 
+<section id="about" class="section" id="video-showcase">
+  <div id="about" class="py-16 px-6 max-w-5xl mx-auto text-center">
+    
+    <h2 class="text-3xl font-medium tracking-tight mb-4">
+      Showreel 2025
+    </h2>
+
+    <p class="text-gray-500 font-light text-lg mb-10">
+      Motion. Music. Products. Typography. Interfaces. AI.
+    </p>
+
+<div class="relative rounded-2xl overflow-hidden">
+  <video 
+    id="mainVideo"
+    class="w-full h-full object-cover"
+    controls
+    playsinline
+    preload="metadata"
+  >
+    <source src="video/StasDoDesign_ShowReel_2025.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="mt-6 text-center">
+  
+  <a 
+    href="https://www.youtube.com/watch?v=QErcj-aWh5I" 
+    target="_blank" 
+    rel="noopener"
+    class="inline-flex items-center gap-3 text-gray-500 hover:text-black transition-colors group"
+  >
+    
+    <!-- YouTube icon -->
+    <svg 
+      class="w-5 h-5 transition-transform group-hover:scale-110" 
+      viewBox="0 0 24 24" 
+      fill="currentColor"
+    >
+      <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.7 3.5 12 3.5 12 3.5s-7.7 0-9.4.6A3 3 0 0 0 .5 6.2 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.7.6 9.4.6 9.4.6s7.7 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.8zM9.8 15.5v-7l6.2 3.5-6.2 3.5z"/>
+    </svg>
+
+    <!-- Text -->
+    <span class="text-sm font-light">
+      Watch in high quality on YouTube
+    </span>
+
+    <!-- Arrow -->
+    <svg 
+      class="w-4 h-4 opacity-60 group-hover:translate-x-1 transition-transform" 
+      fill="none" 
+      stroke="currentColor" 
+      stroke-width="2" 
+      viewBox="0 0 24 24"
+    >
+      <path d="M5 12h14M13 5l7 7-7 7"/>
+    </svg>
+
+  </a>
+
+</div>
+  </div>
+</section>
+
 <section class="py-10 max-w-7xl mx-auto px-6 fade-in">
-  <div id="about" class="py-10 px-6 max-w-3xl mx-auto text-center fade-in"> 
+  <div class="py-10 px-6 max-w-3xl mx-auto text-center fade-in"> 
   <h2 class="text-3xl font-medium tracking-tight mb-6">My Approach</h2>
   <p class="text-gray-500 font-light text-lg leading-relaxed">
     I believe good design is invisible. My goal is to take complex backend logic, integrations, and business requirements, and turn them into interfaces where a user only needs to press one button.
@@ -505,6 +568,58 @@
     });
   }, { threshold: 0.1 });
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // 🖥 Video
+  
+// 🖥 Video
+(() => {
+  const video = document.getElementById('mainVideo');
+  if (!video) return;
+
+  let isHover = false;
+
+  // ▶ PLAY → скрываем controls
+  video.addEventListener('play', () => {
+    if (!document.fullscreenElement) {
+      video.controls = false;
+    }
+  });
+
+  // ⏸ PAUSE → возвращаем controls
+  video.addEventListener('pause', () => {
+    video.controls = true;
+  });
+
+  video.addEventListener('ended', () => {
+    video.controls = true;
+  });
+
+  // 🖱 HOVER → показываем controls
+  const container = video.parentElement;
+
+  container.addEventListener('mouseenter', () => {
+    isHover = true;
+    video.controls = true;
+  });
+
+  container.addEventListener('mouseleave', () => {
+    isHover = false;
+    if (!video.paused && !document.fullscreenElement) {
+      video.controls = false;
+    }
+  });
+
+  // 🖥 FULLSCREEN → всегда controls
+  document.addEventListener('fullscreenchange', () => {
+    if (document.fullscreenElement) {
+      video.controls = true;
+    } else {
+      if (!video.paused && !isHover) {
+        video.controls = false;
+      }
+    }
+  });
+})();
 </script>
 
 </body>
