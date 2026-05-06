@@ -380,51 +380,50 @@
     </main>
   </div>
   <script>
-    (() => {
-      const toggle = document.getElementById("mobileMenuToggle");
-      const menu = document.getElementById("mobileMenu");
+    document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.getElementById("mobileMenuToggle");
+  const menu = document.getElementById("mobileMenu");
 
-      if (!toggle || !menu) return;
+  if (!toggle || !menu) return;
 
-      const setMenuState = (isOpen) => {
-        menu.classList.toggle("is-open", isOpen);
-        toggle.setAttribute("aria-expanded", String(isOpen));
-        toggle.textContent = isOpen ? "Close" : "Menu";
-      };
+  const setMenuState = (isOpen) => {
+    menu.classList.toggle("is-open", isOpen);
+    toggle.setAttribute("aria-expanded", String(isOpen));
+    toggle.textContent = isOpen ? "Закрыть" : "Меню";
+  };
 
-      const toggleMenu = () => {
-        setMenuState(!menu.classList.contains("is-open"));
-      };
+  toggle.addEventListener("click", () => {
+    setMenuState(!menu.classList.contains("is-open"));
+  });
 
-      toggle.addEventListener("click", toggleMenu);
+  menu.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => setMenuState(false));
+  });
 
-      menu.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", () => setMenuState(false));
-      });
+  window.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") setMenuState(false);
+  });
 
-      window.addEventListener("keydown", (event) => {
-        if (event.key === "Escape") setMenuState(false);
-      });
+  window.addEventListener("resize", () => {
+    if (window.matchMedia("(min-width: 721px)").matches) {
+      setMenuState(false);
+    }
+  });
 
-      window.addEventListener("resize", () => {
-        if (window.matchMedia("(min-width: 721px)").matches) setMenuState(false);
-      });
-
-      document.querySelectorAll(".case-video").forEach((video) => {
-        video.addEventListener("click", () => {
-          if (video.paused || video.ended) {
-            document.querySelectorAll(".case-video").forEach((otherVideo) => {
-              if (otherVideo !== video) otherVideo.pause();
-            });
-
-            const playRequest = video.play();
-            if (playRequest) playRequest.catch(() => {});
-          } else {
-            video.pause();
-          }
+  document.querySelectorAll(".case-video").forEach((video) => {
+    video.addEventListener("click", () => {
+      if (video.paused || video.ended) {
+        document.querySelectorAll(".case-video").forEach((other) => {
+          if (other !== video) other.pause();
         });
-      });
-    })();
+
+        video.play().catch(() => {});
+      } else {
+        video.pause();
+      }
+    });
+  });
+});
   </script>
 </body>
 </html>
