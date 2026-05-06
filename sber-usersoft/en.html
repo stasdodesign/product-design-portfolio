@@ -303,6 +303,37 @@
     </div>
   </section>
 
+<section class="fade-in mb-24 ">
+  <h2 class="text-3xl font-medium mb-10">Visual Communications</h2>
+	<p class="text-lg text-gray-500 font-light leading-relaxed mb-8">
+		As part of the portal development, stories and banners were created to inform employees about updates and new features.</p>
+ 
+  <!-- Slider -->
+  <div class="relative w-full overflow-hidden rounded-[32px] border border-gray-100 shadow-sm">
+    
+    <div id="slider" class="flex transition-transform duration-500 ease-in-out">
+      <img src="Section-1.jpg" class="w-full flex-shrink-0" />
+      <img src="Section-2.jpg" class="w-full flex-shrink-0" />
+      <img src="Section-3.jpg" class="w-full flex-shrink-0" />
+      <img src="Section-4.jpg" class="w-full flex-shrink-0" />
+      <img src="Section-5.jpg" class="w-full flex-shrink-0" />
+      <img src="Section-6.jpg" class="w-full flex-shrink-0" />
+      <img src="Section-7.jpg" class="w-full flex-shrink-0" />
+    </div>
+
+    <!-- Buttons -->
+    <button id="prev" class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/70 backdrop-blur px-3 py-2 rounded-full shadow">
+      ←
+    </button>
+    <button id="next" class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/70 backdrop-blur px-3 py-2 rounded-full shadow">
+      →
+    </button>
+
+  </div>
+    <p class="text-center text-sm text-gray-400 mt-4 italic">
+    Additionally, banners for employee greetings and celebrations were designed for general and support chats, strengthening internal communication.
+  </p>
+</section>
   
   <section class="fade-in mb-24 bg-gray-50 p-10 md:p-16 rounded-[40px] border border-gray-100">
   <h2 class="text-3xl font-medium mb-8">Reflection: Impact & Systemic Efficiency</h2>
@@ -373,6 +404,24 @@
   }, { threshold: 0.1 });
 
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  
+      const slider = document.getElementById('slider');
+  const slides = slider.children;
+  let index = 0;
+
+  document.getElementById('next').onclick = () => {
+    index = (index + 1) % slides.length;
+    updateSlider();
+  };
+
+  document.getElementById('prev').onclick = () => {
+    index = (index - 1 + slides.length) % slides.length;
+    updateSlider();
+  };
+
+  function updateSlider() {
+    slider.style.transform = `translateX(-${index * 100}%)`;
+  }
 </script>
 
 </body>

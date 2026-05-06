@@ -285,7 +285,7 @@
     </div>
   </section>
 
-  <section class="fade-in my-24 border-t border-gray-100 pt-16">
+  <section class="fade-in my-48 border-t border-gray-100 pt-16">
     <h2 class="text-3xl font-medium mb-10">Почему это работает (Дизайн-логика)</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       <div>
@@ -302,6 +302,38 @@
       </div>
     </div>
   </section>
+
+<section class="fade-in mb-24 ">
+  <h2 class="text-3xl font-medium mb-10">Визуальные коммуникации</h2>
+	<p class="text-lg text-gray-500 font-light leading-relaxed mb-8">
+		В рамках развития портала разработаны сторис и баннеры для информирования сотрудников о новостях и новых функциях.</p>
+ 
+  <!-- Slider -->
+  <div class="relative w-full overflow-hidden rounded-[32px] border border-gray-100 shadow-sm">
+    
+    <div id="slider" class="flex transition-transform duration-500 ease-in-out">
+      <img src="Section-1.jpg" class="w-full flex-shrink-0" />
+      <img src="Section-2.jpg" class="w-full flex-shrink-0" />
+      <img src="Section-3.jpg" class="w-full flex-shrink-0" />
+      <img src="Section-4.jpg" class="w-full flex-shrink-0" />
+      <img src="Section-5.jpg" class="w-full flex-shrink-0" />
+      <img src="Section-6.jpg" class="w-full flex-shrink-0" />
+      <img src="Section-7.jpg" class="w-full flex-shrink-0" />
+    </div>
+
+    <!-- Buttons -->
+    <button id="prev" class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/70 backdrop-blur px-3 py-2 rounded-full shadow">
+      ←
+    </button>
+    <button id="next" class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/70 backdrop-blur px-3 py-2 rounded-full shadow">
+      →
+    </button>
+
+  </div>
+    <p class="text-center text-sm text-gray-400 mt-4 italic">
+    Также созданы баннеры для поздравлений в общем и поддерживающем чатах, усиливающие внутренние коммуникации.
+  </p>
+</section>
 
 <section class="fade-in mb-24 bg-gray-50 p-10 md:p-16 rounded-[40px] border border-gray-100">
   <h2 class="text-3xl font-medium mb-8">Рефлексия: Влияние и системная эффективность</h2>
@@ -373,7 +405,24 @@
   }, { threshold: 0.1 });
 
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-</script>
+  
+    const slider = document.getElementById('slider');
+  const slides = slider.children;
+  let index = 0;
 
+  document.getElementById('next').onclick = () => {
+    index = (index + 1) % slides.length;
+    updateSlider();
+  };
+
+  document.getElementById('prev').onclick = () => {
+    index = (index - 1 + slides.length) % slides.length;
+    updateSlider();
+  };
+
+  function updateSlider() {
+    slider.style.transform = `translateX(-${index * 100}%)`;
+  }
+</script>
 </body>
 </html>
