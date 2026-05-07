@@ -935,5 +935,132 @@
       footer .section {
         flex-direction: column;
       }
-    }
- 
+    }.footer {
+  margin-top: 80px;
+  padding: 56px 0 30px;
+
+  background: #171717;
+  color: rgba(255,255,255,0.92);
+
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.footer-inner {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+
+  padding-bottom: 28px;
+}
+
+.footer-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+
+  transition: opacity 0.25s ease;
+}
+
+.footer-name:hover {
+  opacity: 0.7;
+}
+
+.footer-role {
+  margin: 0;
+  color: rgba(255,255,255,0.55);
+  font-size: 14px;
+}
+
+.footer-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-button {
+  min-height: 48px;
+  padding: 0 24px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 999px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease;
+}
+
+.footer-button:hover {
+  transform: translateY(-2px);
+}
+
+/* primary */
+.footer-button.primary {
+  background: #fff;
+  color: #171717;
+}
+
+.footer-button.primary:hover {
+  background: #f1f1f1;
+}
+
+/* secondary */
+.footer-button.secondary {
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(255,255,255,0.04);
+  color: #fff;
+
+  backdrop-filter: blur(12px);
+}
+
+.footer-button.secondary:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.2);
+}
+
+.footer-bottom {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+
+  padding-top: 22px;
+
+  border-top: 1px solid rgba(255,255,255,0.08);
+
+  color: rgba(255,255,255,0.38);
+  font-size: 13px;
+}
+
+/* mobile */
+@media (max-width: 720px) {
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-actions {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .footer-button {
+    flex: 1;
+  }
+}
