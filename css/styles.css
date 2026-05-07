@@ -1,5 +1,130 @@
-body { font-family: 'Inter', sans-serif; }
+body {
+  font-family: 'Inter', sans-serif;
+  position: relative;
+  overflow-x: hidden;
+}
     html { scroll-behavior: smooth; }
+
+section,
+footer {
+  position: relative;
+  z-index: 1;
+}
+
+.laser-background {
+  --laser-tilt: -12deg;
+  --laser-cross-tilt: 13deg;
+  --laser-shift: -21px;
+  --laser-shift-reverse: 21px;
+
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  opacity: 0.42;
+  mix-blend-mode: multiply;
+  transition: opacity 180ms ease;
+}
+
+.laser-background.is-scrolling {
+  opacity: 0.7;
+}
+
+.laser-background::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(72vw, 920px);
+  height: min(72vw, 920px);
+  border-radius: 999px;
+  background:
+    radial-gradient(circle, rgba(94, 234, 212, 0.24) 0%, rgba(34, 211, 238, 0.13) 32%, rgba(163, 230, 53, 0.1) 52%, transparent 72%);
+  filter: blur(24px);
+  transform: translate(-50%, -50%);
+}
+
+.laser-background::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(34vw, 420px);
+  height: min(34vw, 420px);
+  border-radius: 999px;
+  background:
+    radial-gradient(circle, rgba(255, 255, 255, 0.95) 0 3%, rgba(94, 234, 212, 0.34) 4% 22%, rgba(163, 230, 53, 0.13) 38%, transparent 68%);
+  filter: blur(18px);
+  transform: translate(-50%, -50%);
+}
+
+.laser-background__beam {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(132vw, 1680px);
+  height: 2px;
+  border-radius: 999px;
+  background:
+    linear-gradient(90deg, transparent 0%, rgba(34, 211, 238, 0) 11%, rgba(34, 211, 238, 0.72) 36%, rgba(94, 234, 212, 0.95) 50%, rgba(163, 230, 53, 0.76) 64%, rgba(163, 230, 53, 0) 89%, transparent 100%);
+  box-shadow:
+    0 0 10px rgba(34, 211, 238, 0.5),
+    0 0 26px rgba(94, 234, 212, 0.34),
+    0 0 46px rgba(163, 230, 53, 0.22);
+  transform: translate(-50%, calc(-50% + var(--laser-shift))) rotate(var(--laser-tilt));
+  transform-origin: 50% 50%;
+}
+
+.laser-background__beam--secondary {
+  width: min(112vw, 1420px);
+  height: 1px;
+  opacity: 0.55;
+  filter: blur(0.2px);
+  transform: translate(-50%, calc(-50% + var(--laser-shift-reverse))) rotate(var(--laser-cross-tilt));
+}
+
+.laser-background__flare {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: min(28vw, 360px);
+  height: 1px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, rgba(94, 234, 212, 0.75), transparent);
+  filter: blur(0.4px);
+  opacity: 0.58;
+  transform-origin: 0 50%;
+}
+
+.laser-background__flare--one {
+  transform: translate(-6px, -50%) rotate(58deg);
+}
+
+.laser-background__flare--two {
+  transform: translate(-6px, -50%) rotate(122deg);
+  background: linear-gradient(90deg, transparent, rgba(163, 230, 53, 0.64), transparent);
+}
+
+@media (max-width: 640px) {
+  .laser-background {
+    opacity: 0.34;
+  }
+
+  .laser-background.is-scrolling {
+    opacity: 0.58;
+  }
+
+  .laser-background__beam {
+    width: 150vw;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .laser-background {
+    transition: none;
+  }
+}
 
     /* Fade-in animations */
     .fade-in { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }

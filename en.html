@@ -22,7 +22,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body class="bg-gradient-to-b from-[#ffffff] to-[#f8f9fa] text-[#1d1d1f] antialiased">
-
+  <div class="laser-background" aria-hidden="true">
+    <div class="laser-background__beam laser-background__beam--primary"></div>
+    <div class="laser-background__beam laser-background__beam--secondary"></div>
+    <div class="laser-background__flare laser-background__flare--one"></div>
+    <div class="laser-background__flare laser-background__flare--two"></div>
+  </div>
 <header class="fixed top-0 left-0 w-full bg-white/70 backdrop-blur-xl z-50 border-b border-gray-100 transition-all duration-300">
   <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
     
@@ -502,7 +507,7 @@
 </section>
 
 
-<section id="contact" class="py-24 px-6 bg-white border-t border-gray-100 text-center fade-in">
+<section id="contact" class="py-24 px-6   border-t border-gray-100 text-center fade-in">
   <h2 class="text-3xl font-medium tracking-tight mb-8">Get in touch</h2>
   <div class="flex justify-center gap-6">
     <a href="https://t.me/StasDoDesign" target="_blank" class="px-8 py-3.5 bg-[#1d1d1f] text-white text-sm font-medium rounded-full hover:scale-105 transition-transform">
@@ -571,6 +576,50 @@
     });
   }, { threshold: 0.1 });
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+(() => {
+  const laser = document.querySelector('.laser-background');
+  if (!laser) return;
+
+  let lastScrollY = window.scrollY;
+  let frameId = 0;
+  let scrollTimer = 0;
+
+  function updateLaser() {
+    const maxScroll = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
+    const scrollY = window.scrollY;
+    const progress = Math.min(Math.max(scrollY / maxScroll, 0), 1);
+    const delta = Math.min(Math.abs(scrollY - lastScrollY), 120);
+    const energy = Math.min(delta / 90, 1);
+
+    laser.style.setProperty('--laser-tilt', `${-12 + progress * 24}deg`);
+    laser.style.setProperty('--laser-cross-tilt', `${13 - progress * 22}deg`);
+    const shift = (progress - 0.5) * 42;
+    laser.style.setProperty('--laser-shift', `${shift}px`);
+    laser.style.setProperty('--laser-shift-reverse', `${-shift}px`);
+    laser.style.setProperty('--laser-energy', energy.toFixed(3));
+    laser.classList.add('is-scrolling');
+
+    window.clearTimeout(scrollTimer);
+    scrollTimer = window.setTimeout(() => {
+      laser.classList.remove('is-scrolling');
+      laser.style.setProperty('--laser-energy', '0');
+    }, 180);
+
+    lastScrollY = scrollY;
+    frameId = 0;
+  }
+
+  function requestLaserUpdate() {
+    if (frameId) return;
+    frameId = window.requestAnimationFrame(updateLaser);
+  }
+
+  window.addEventListener('scroll', requestLaserUpdate, { passive: true });
+  window.addEventListener('resize', requestLaserUpdate);
+  requestLaserUpdate();
+})();
+
 
     // 🖥 Video
   
