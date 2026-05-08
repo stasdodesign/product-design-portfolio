@@ -1,10 +1,31 @@
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --ink: #121417;
+  --muted: #666d78;
+  --soft: #f6f8f8;
+  --line: rgba(18, 20, 23, 0.1);
+  --cyan: #22d3ee;
+  --teal: #2dd4bf;
+  --lime: #a3e635;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Inter', sans-serif;
   position: relative;
   overflow-x: hidden;
+  color: var(--ink);
 }
-    html { scroll-behavior: smooth; }
 
+main,
 section,
 footer {
   position: relative;
@@ -106,10 +127,6 @@ footer {
   background: linear-gradient(90deg, transparent, rgba(163, 230, 53, 0.64), transparent);
 }
 
-@media (max-width: 640px) {
-  .laser-background {
-    opacity: 0.34;
-  }
 
   .laser-background.is-scrolling {
     opacity: 0.58;
@@ -120,15 +137,17 @@ footer {
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .laser-background {
-    transition: none;
-  }
-}
 
     /* Fade-in animations */
-    .fade-in { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
-    .fade-in.visible { opacity: 1; transform: translateY(0); }
+    .fade-in {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+  .fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
     /* Card interactions */
     .project-card { transition: transform 0.4s ease, box-shadow 0.4s ease; }
@@ -168,6 +187,112 @@ footer {
 .jedi-social-icon svg {
     stroke: currentColor !important;
 }
+
+/* Главная секция текст*/
+.brand-shell {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: 96px 24px 84px;
+}
+
+.brand-shell__content {
+  width: min(1120px, 100%);
+  text-align: center;
+}
+
+.brand-eyebrow,
+.section-eyebrow,
+.specimen__label {
+  margin: 0;
+  color: rgba(18, 20, 23, 0.56);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.brand-headline {
+  margin: 22px auto 0;
+  max-width: 1040px;
+  font-size: 4rem;
+  line-height: 0.98;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-wrap: balance;
+  overflow-wrap: break-word;
+}
+
+.brand-headline__base {
+  display: inline;
+  color: transparent;
+  background: linear-gradient(135deg, #1d1d1f 0%, #0f766e 52%, #65a30d 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.simple-word {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.simple-word--hero {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-style: italic;
+  font-weight: 700;
+  color: #0b0f0f;
+}
+
+.brand-copy {
+  max-width: 620px;
+  margin: 30px auto 0;
+  color: var(--muted);
+  font-size: 1.1rem;
+  line-height: 1.75;
+  font-weight: 400;
+  overflow-wrap: break-word;
+}
+
+.brand-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 36px;
+}
+
+.brand-button {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 0 22px;
+  background: var(--ink);
+  color: #ffffff;
+  font-size: 0.92rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 180ms ease, background 180ms ease;
+}
+
+.brand-button:hover {
+  background: #000000;
+  transform: translateY(-2px);
+}
+
+.brand-button--secondary {
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.68);
+  color: var(--ink);
+  backdrop-filter: blur(18px);
+}
+
+.brand-button--secondary:hover {
+  background: #ffffff;
+}
+
+
 img {
   user-select: none;
   pointer-events: none;
@@ -247,4 +372,87 @@ img {
 .video-shell.is-playing .video-overlay {
   opacity: 0;
   pointer-events: none;
+}
+
+
+@media (min-width: 768px) {
+  .brand-headline {
+    font-size: 6.8rem;
+  }
+}
+
+@media (max-width: 767px) {
+  header > div:first-child {
+    width: min(calc(100vw - 32px), 358px);
+    max-width: min(calc(100vw - 32px), 358px);
+    margin-left: 16px;
+    margin-right: 0;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .brand-shell {
+    min-height: auto;
+    padding: 138px 20px 62px;
+    overflow-x: hidden;
+  }
+
+  .brand-shell__content {
+    width: min(calc(100vw - 32px), 358px);
+    max-width: min(calc(100vw - 32px), 358px);
+    /**margin-left: 16px;
+    margin-right: 16px;**/
+  }
+
+  .brand-headline {
+    width: 100%;
+    max-width: 100%;
+    font-size: 2.55rem;
+    line-height: 1.05;
+  }
+
+  .simple-word--hero {
+    display: block;
+    margin-top: 0.08em;
+  }
+
+  .brand-copy {
+    width: 100%;
+    max-width: 18.75rem;
+    font-size: 1rem;
+  }
+
+}
+
+@media (max-width: 420px) {
+  .brand-headline {
+    font-size: 2.35rem;
+  }
+
+  .specimen__title {
+    font-size: 1.85rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .laser-background {
+    opacity: 0.34;
+  }
+
+  .laser-background.is-scrolling {
+    opacity: 0.58;
+  }
+
+  .laser-background__beam {
+    width: 150vw;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .laser-background,
+  .fade-in,
+  .brand-button,
+  .jedi-social-icon {
+    transition: none !important;
+  }
 }
