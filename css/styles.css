@@ -419,7 +419,7 @@ img {
     white-space: normal;
   }
 
-  
+
   .simple-word--hero {
     display: block;
     margin-top: 0.08em;
@@ -464,4 +464,18 @@ img {
   {
     transition: none !important;
   }
+}
+
+.mobile-menu-scroll {
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+
+.mobile-menu-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+
+.mobile-menu-scroll::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.12);
+  border-radius: 999px;
 }
