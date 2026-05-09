@@ -403,8 +403,8 @@ img {
 
 @media (max-width: 767px) {
   header > div:first-child {
-    width: min(calc(100vw - 32px), 358px);
-    max-width: min(calc(100vw - 32px), 358px);
+    width: min(calc(100vw - 32px);
+    max-width: min(calc(100vw - 32px);
     margin-left: 16px;
     margin-right: 0;
     padding-left: 0 !important;
