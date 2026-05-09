@@ -38,7 +38,7 @@
       Станислав Довиденко
     </a>
     
-    <nav class="hidden lg:flex gap-8 text-sm text-gray-500 font-medium absolute left-1/2 -translate-x-1/2">
+    <nav class="hidden md:flex gap-8 text-sm text-gray-500 font-medium absolute left-1/2 -translate-x-1/2">
       <a href="#work" class="hover:text-black transition-colors">Проекты</a>
       <a href="#about" class="hover:text-black transition-colors">Обо мне</a>
       <a href="#contact" class="hover:text-black transition-colors">Контакты</a>
@@ -46,7 +46,7 @@
 
     <div class="flex items-center gap-6">
       
-      <div class="hidden lg:flex items-center gap-4 social-row-isolated">
+      <div class="hidden md:flex items-center gap-4 social-row-isolated">
         <a href="https://t.me/designat0r" class="jedi-social-icon" target="_blank">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
         </a>
@@ -380,8 +380,67 @@
   </div>
 </section>
 
-<section id="about" class="section" id="video-showcase">
-  <div id="about" class="py-16 px-6 max-w-5xl mx-auto text-center">
+<section id="font" class="fade-in max-w-7xl mx-auto px-6 mb-32 mt-12">
+
+<div class="mb-14">
+
+    <!-- Label -->
+    <div class="mb-5">
+        <span class="inline-block px-3 py-1 bg-red-50 text-red-600 text-[10px] font-semibold uppercase tracking-[0.2em] rounded-full">
+            Типографика
+        </span>
+    </div>
+
+    <!-- Title -->
+    <h2 class="text-4xl md:text-6xl font-semibold tracking-tight text-slate-900 leading-[1.05] max-w-3xl">
+        Шрифты и типографика:<br>
+        <span class="text-slate-400 font-light">
+            Поиграйте шрифтами
+        </span>
+    </h2>
+
+    <!-- Divider (optional editorial touch) -->
+    <div class="mt-6 mb-8 w-16 h-px bg-slate-200"></div>
+
+    <!-- Description -->
+    <p class="text-lg md:text-xl text-slate-500 max-w-3xl leading-relaxed font-light">
+        Шрифты создают настроение вашего бренда. 
+    </p>
+
+</div>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+    <a href="type/index.html" class="group block relative overflow-hidden rounded-2xl bg-gray-100 aspect-video">
+      <img src="images/cover_type_1.jpg" alt="Выбор пары шрифтов для заголовка" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-6 flex flex-col justify-end text-white">
+        <div class="flex flex-wrap gap-2 mb-3">
+          <span class="px-3 py-1 border border-white/30 backdrop-blur-md rounded-full text-xs text-red-300">Шрифт</span>
+          <span class="px-3 py-1 border border-white/30 backdrop-blur-md rounded-full text-xs">Типографика</span>
+          <span class="px-3 py-1 border border-white/30 backdrop-blur-md rounded-full text-xs">Заголовок</span>
+        </div>
+        <h3 class="text-xl font-medium">Задача: создать акцент в длинном заголовке</h3>
+        <p class="text-sm opacity-90 mt-2">Выбор разных пар на примере четырех вариантов.</p>
+      </div>
+    </a>
+
+    <a href="https://jedi.stanislavdovidenko.com/type.html" class="group block relative overflow-hidden rounded-2xl bg-gray-100 aspect-video">
+      <img src="images/cover_type_2.png" alt="Jedi Font" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+      <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent p-6 flex flex-col justify-end text-white">
+        <div class="flex flex-wrap gap-2 mb-3">
+          <span class="px-3 py-1 border border-white/30 backdrop-blur-md rounded-full text-xs text-red-300">Jedi Font</span>
+          <span class="px-3 py-1 border border-white/30 backdrop-blur-md rounded-full text-xs">Hand Made</span>
+          <span class="px-3 py-1 border border-white/30 backdrop-blur-md rounded-full text-xs">Design System</span>
+        </div>
+        <h3 class="text-xl font-medium">Эксклюзивный шрифт для дизайн-системы</h3>
+        <p class="text-sm opacity-90 mt-2">Создан рукописный шрифт Jedi. Набирайте ваше имя прямо на странице. Пока только на английском.</p>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<section id="showreel" class="section" id="video-showcase">
+  <div class="py-16 px-6 max-w-5xl mx-auto text-center">
     
     <h2 class="text-3xl font-medium tracking-tight mb-4">
       Showreel 2025
@@ -443,7 +502,7 @@
   </div>
 </section>
 
-<section class="py-10 max-w-7xl mx-auto px-6 fade-in">
+<section  id="about" class="py-10 max-w-7xl mx-auto px-6 fade-in">
   <div class="py-10 px-6 max-w-3xl mx-auto text-center fade-in">
     <h2 class="text-3xl font-medium tracking-tight mb-6">Подход к работе</h2>
     <p class="text-gray-500 font-light text-lg leading-relaxed">

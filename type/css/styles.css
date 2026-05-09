@@ -19,7 +19,7 @@ html {
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   position: relative;
   overflow-x: hidden;
   color: var(--ink);
@@ -37,7 +37,6 @@ footer {
   --laser-cross-tilt: 13deg;
   --laser-shift: -21px;
   --laser-shift-reverse: 21px;
-
   position: fixed;
   inset: 0;
   z-index: 0;
@@ -127,73 +126,47 @@ footer {
   background: linear-gradient(90deg, transparent, rgba(163, 230, 53, 0.64), transparent);
 }
 
-
-  .laser-background.is-scrolling {
-    opacity: 0.58;
-  }
-
-  .laser-background__beam {
-    width: 150vw;
-  }
-}
-
-
-    /* Fade-in animations */
-    .fade-in {
+.fade-in {
   opacity: 0;
   transform: translateY(36px);
   transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
-  .fade-in.visible {
+
+.fade-in.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-    /* Card interactions */
-    .project-card { transition: transform 0.4s ease, box-shadow 0.4s ease; }
-    .project-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -10px rgba(0,0,0,0.08); }
-    
-    /* Image placeholders */
-    .img-placeholder { display: flex; flex-direction: column; align-items: center; justify-content: center; color: #9ca3af; text-align: center; padding: 20px; }
- 
-
-/* Контейнер-строка */
 .social-row-isolated {
-    display: flex;
-    flex-direction: row !important;
-    align-items: center !important;
-    gap: 16px !important;
-    margin: 0 10px !important;
-    width: auto !important;
+  display: flex;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 16px !important;
+  margin: 0 10px !important;
+  width: auto !important;
 }
 
-/* Сама иконка-ссылка */
 .jedi-social-icon {
-    display: inline-flex !important;
-    text-decoration: none !important;
-    /* Устанавливаем базовый цвет (например, серый) */
-    color: #888888 !important; 
-    transition: all 0.2s ease-in-out !important;
+  display: inline-flex !important;
+  color: #888888 !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease-in-out, transform 0.2s ease-in-out !important;
 }
 
-/* Эффект при наведении */
 .jedi-social-icon:hover {
-    /* Цвет при наведении (черный или акцентный) */
-    color: #000000 !important; 
-    transform: translateY(-2px) !important;
+  color: #000000 !important;
+  transform: translateY(-2px) !important;
 }
 
-/* Чтобы SVG слушался цвета ссылки */
 .jedi-social-icon svg {
-    stroke: currentColor !important;
+  stroke: currentColor !important;
 }
 
-/* Главная секция текст*/
 .brand-shell {
   min-height: 100svh;
   display: grid;
   place-items: center;
-  padding: 96px 24px 84px;
+  padding: 176px 24px 84px;
 }
 
 .brand-shell__content {
@@ -292,88 +265,143 @@ footer {
   background: #ffffff;
 }
 
-
-img {
-  user-select: none;
-  pointer-events: none;
+.contrast-principle,
+.variant-gallery {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
 }
 
-
-.video-shell {
-  position: relative;
-  width: min(980px, 100%);
-  aspect-ratio: 16 / 9;
-  border-radius: 28px;
-  overflow: hidden;
-  background: #000;
-}
-
-/* video */
-.video-element {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* overlay play */
-.video-overlay {
-  position: absolute;
-  inset: 0;
+.contrast-principle {
   display: grid;
-  place-items: center;
-  background: rgba(0,0,0,0.15);
-  transition: opacity 0.3s ease;
+  grid-template-columns: 0.82fr 1.18fr;
+  gap: 48px;
+  align-items: end;
+  padding: 76px 0 34px;
+  /**border-top: 1px solid var(--line);**/
 }
 
-.play-btn {
-  width: 84px;
-  height: 84px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.35);
-  background: rgba(255,255,255,0.15);
-  backdrop-filter: blur(10px);
-  color: #fff;
-  font-size: 26px;
-  cursor: pointer;
+.contrast-principle h2 {
+  margin: 12px 0 0;
+  max-width: 760px;
+  font-size: 2.6rem;
+  line-height: 1.08;
+  font-weight: 700;
+  letter-spacing: 0;
+  overflow-wrap: break-word;
 }
 
-/* CONTROLS (ВАЖНО: видны всегда сначала) */
-.video-controls {
-  position: absolute;
-  bottom: 14px;
-  right: 14px;
+.contrast-principle p:last-child {
+  max-width: 460px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.75;
+  overflow-wrap: break-word;
+}
+
+.variant-gallery {
+  padding: 38px 0 104px;
+}
+
+.specimen-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.specimen {
+  min-height: 360px;
   display: flex;
-  gap: 10px;
-
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 0.35s ease, transform 0.35s ease;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 24px 70px rgba(15, 23, 42, 0.06);
+  backdrop-filter: blur(18px);
 }
 
-.video-controls button {
-  width: 42px;
-  height: 42px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.25);
-  background: rgba(0,0,0,0.35);
-  backdrop-filter: blur(10px);
-  color: #fff;
-  cursor: pointer;
+.specimen__title {
+  margin: 34px 0 0;
+  max-width: 520px;
+  font-size: 3.1rem;
+  line-height: 1.02;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-wrap: balance;
+  overflow-wrap: break-word;
 }
 
-/* 👉 скрытие при уходе курсора */
-.video-shell.hide-ui .video-controls {
-  opacity: 0;
-  transform: translateY(10px);
-  pointer-events: none;
+.specimen__note {
+  max-width: 440px;
+  margin: 28px 0 0;
+  color: rgba(18, 20, 23, 0.62);
+  font-size: 0.95rem;
+  line-height: 1.7;
 }
 
-/* overlay исчезает при play */
-.video-shell.is-playing .video-overlay {
-  opacity: 0;
-  pointer-events: none;
+.specimen--editorial .simple-word {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-style: italic;
+  font-weight: 700;
+  color: #0f766e;
 }
 
+.specimen--mono {
+  background: #101418;
+  color: #f8fafc;
+}
+
+.specimen--mono .specimen__label,
+.specimen--mono .specimen__note {
+  color: rgba(248, 250, 252, 0.64);
+}
+
+.specimen--mono .specimen__title {
+  font-family: "Manrope", "Inter", sans-serif;
+  font-weight: 800;
+}
+
+.specimen--mono .simple-word {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 600;
+  color: var(--lime);
+}
+
+.specimen--display .specimen__title {
+  font-family: "Manrope", "Inter", sans-serif;
+  font-weight: 800;
+}
+
+.specimen--display .simple-word {
+  font-family: "Unbounded", "Manrope", sans-serif;
+  font-weight: 700;
+  color: #0891b2;
+}
+
+.specimen--inverse {
+  background:
+    linear-gradient(135deg, rgba(34, 211, 238, 0.18), rgba(163, 230, 53, 0.2)),
+    #ffffff;
+}
+
+.specimen--inverse .specimen__title {
+  font-family: "Manrope", "Inter", sans-serif;
+  font-weight: 800;
+}
+
+.specimen--inverse .simple-word {
+  padding: 0 0.16em 0.07em;
+  border-radius: 6px;
+  background: var(--ink);
+  color: #ffffff;
+}
+
+footer a {
+  color: inherit;
+  text-decoration: none;
+}
 
 @media (min-width: 768px) {
   .brand-headline {
@@ -383,8 +411,8 @@ img {
 
 @media (max-width: 767px) {
   header > div:first-child {
-    width: min(calc(100vw - 32px);
-    max-width: min(calc(100vw - 32px);
+    width: min(calc(100vw - 32px), 358px);
+    max-width: min(calc(100vw - 32px), 358px);
     margin-left: 16px;
     margin-right: 0;
     padding-left: 0 !important;
@@ -398,8 +426,8 @@ img {
   }
 
   .brand-shell__content {
-    width: min(calc(100vw - 32px);
-    max-width: min(calc(100vw - 32px);
+    width: min(calc(100vw - 32px), 358px);
+    max-width: min(calc(100vw - 32px), 358px);
     /**margin-left: 16px;
     margin-right: 16px;**/
   }
@@ -422,6 +450,45 @@ img {
     font-size: 1rem;
   }
 
+  .contrast-principle,
+  .variant-gallery {
+    width: min(calc(100vw - 32px), 358px);
+    max-width: min(calc(100vw - 32px), 358px);
+    margin-left: 16px;
+    margin-right: 0;
+    overflow-x: hidden;
+  }
+
+  .contrast-principle {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    padding-top: 54px;
+  }
+
+  .contrast-principle h2 {
+    max-width: 100%;
+    font-size: 1.7rem;
+    line-height: 1.12;
+  }
+
+  .contrast-principle p:last-child {
+    max-width: 100%;
+  }
+
+  .specimen-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .specimen {
+    min-height: 300px;
+    padding: 24px;
+  }
+
+  .specimen__title {
+    max-width: calc(100vw - 80px);
+    font-size: 2.15rem;
+    line-height: 1.08;
+  }
 }
 
 @media (max-width: 420px) {
@@ -452,7 +519,7 @@ img {
   .laser-background,
   .fade-in,
   .brand-button,
-  {
+  .jedi-social-icon {
     transition: none !important;
   }
 }
