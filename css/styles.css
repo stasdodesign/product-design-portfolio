@@ -381,6 +381,26 @@ img {
   }
 }
 
+@media (max-width: 1024px) {
+
+  .brand-eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+  }
+
+  .brand-headline {
+    font-size: 5rem;
+    line-height: 1;
+  }
+
+  .brand-copy {
+    max-width: 560px;
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+}
+
 @media (max-width: 767px) {
   header > div:first-child {
     width: min(calc(100vw - 32px), 358px);
@@ -479,3 +499,4 @@ img {
   background: rgba(0,0,0,0.12);
   border-radius: 999px;
 }
+
