@@ -465,21 +465,21 @@ function HypothesesSection() {
         ))}
       </div>
 
-      <div className="mt-8 md:mt-16 bg-white rounded-2xl border border-border p-6 md:p-12">
+      <div className="mt-8 md:mt-16 bg-white rounded-2xl border border-border p-4 md:p-12 overflow-hidden">
         <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-8 md:mb-12 text-center">{t.hypotheses.matrixTitle}</h3>
         
-        <div className="relative h-[300px] md:h-[400px] w-full max-w-3xl mx-auto border-l-2 border-b-2 border-gray-200">
+        <div className="relative h-[300px] md:h-[400px] w-full max-w-full md:max-w-3xl mx-auto border-l-2 border-b-2 border-gray-200">
           {/* Labels */}
-          <div className="absolute -left-10 md:-left-12 top-1/2 -rotate-90 text-[10px] md:text-xs font-bold text-gray-400 uppercase tracking-widest">Impact</div>
-          <div className="absolute -bottom-8 md:-bottom-10 left-1/2 -translate-x-1/2 text-[10px] md:text-xs font-bold text-gray-400 uppercase tracking-widest">Effort</div>
+          <div className="absolute -left-8 md:-left-12 top-1/2 -rotate-90 text-[8px] md:text-xs font-bold text-gray-400 uppercase tracking-widest">Impact</div>
+          <div className="absolute -bottom-8 md:-bottom-10 left-1/2 -translate-x-1/2 text-[8px] md:text-xs font-bold text-gray-400 uppercase tracking-widest">Effort</div>
           
-          <div className="absolute top-0 right-0 p-2 md:p-4 text-[8px] md:text-[10px] font-bold text-gray-300 uppercase tracking-widest">High Impact High Effort</div>
-          <div className="absolute top-0 left-0 p-2 md:p-4 text-[8px] md:text-[10px] font-bold text-brand uppercase tracking-widest">High Impact Low Effort</div>
+          <div className="absolute top-0 right-0 p-2 md:p-4 text-[7px] md:text-[10px] font-bold text-gray-300 uppercase tracking-widest hidden sm:block">High Impact High Effort</div>
+          <div className="absolute top-0 left-0 p-2 md:p-4 text-[7px] md:text-[10px] font-bold text-brand uppercase tracking-widest hidden sm:block">High Impact Low Effort</div>
 
           <MatrixDot x={15} y={80} label="1" title={lang === 'en' ? "Price Transparency" : "Прозрачные цены"} color="bg-brand" />
           <MatrixDot x={40} y={70} label="2" title={lang === 'en' ? "One-page Checkout" : "One-page чекаут"} color="bg-brand" />
-          <MatrixDot x={70} y={30} label="3" title={lang === 'en' ? "Trust System" : "Система доверия"} color="bg-blue-500" />
-          <MatrixDot x={85} y={15} label="4" title={lang === 'en' ? "Smart Reminders" : "Напоминания"} color="bg-blue-500" />
+          <MatrixDot x={65} y={30} label="3" title={lang === 'en' ? "Trust System" : "Система доверия"} color="bg-blue-500" />
+          <MatrixDot x={80} y={15} label="4" title={lang === 'en' ? "Smart Reminders" : "Напоминания"} color="bg-blue-500" />
         </div>
       </div>
     </section>
@@ -545,8 +545,8 @@ function SolutionsSection() {
 
 function SolutionBlock({ id, title, items, desc, impact, effort, mockup, role }: any) {
   return (
-    <div className={cn("grid lg:grid-cols-12 gap-12 lg:gap-20 items-center", role === 'reverse' && "lg:flex-row-reverse")}>
-      <div className={cn("lg:col-span-5 space-y-8 md:space-y-10", role === 'reverse' && "lg:order-2")}>
+    <div className={cn("grid lg:grid-cols-12 gap-8 lg:gap-16 items-center", role === 'reverse' && "lg:flex-row-reverse")}>
+      <div className={cn("lg:col-span-6 space-y-8 md:space-y-10", role === 'reverse' && "lg:order-2")}>
         <div className="space-y-4 md:space-y-6">
           <div className="text-brand font-black text-5xl md:text-6xl opacity-10">{id}</div>
           <h3 className="text-3xl md:text-4xl lg:text-5xl font-black text-[#1A1A1A] tracking-tighter leading-none md:leading-tight">{title}</h3>
@@ -574,10 +574,11 @@ function SolutionBlock({ id, title, items, desc, impact, effort, mockup, role }:
         </div>
       </div>
 
-      <div className={cn("lg:col-span-7 relative p-2 md:p-4", role === 'reverse' && "lg:order-1")}>
-        <div className="absolute inset-0 bg-gray-50 rounded-[30px] md:rounded-[40px] scale-105 border border-gray-100" />
-        <div className="relative z-10 bg-white rounded-[30px] md:rounded-[40px] border border-gray-100 shadow-2xl overflow-hidden h-[540px] md:h-auto md:aspect-[16/11] flex items-center justify-center p-6 md:p-12">
-          {mockup}
+      <div className={cn("lg:col-span-6 relative flex items-center justify-center overflow-visible", role === 'reverse' && "lg:order-1")}>
+        <div className="relative z-10 bg-white rounded-[24px] md:rounded-[40px] border border-gray-100 shadow-2xl w-full max-w-sm mx-auto flex items-center justify-center p-2 md:p-6 bg-gradient-to-br from-white to-gray-50 overflow-hidden">
+          <div className="scale-[0.85] md:scale-100 origin-center">
+            {mockup}
+          </div>
         </div>
       </div>
     </div>
@@ -758,15 +759,15 @@ function ResultsSection() {
     <section id="results" className="scroll-mt-24 md:scroll-mt-32">
       <SectionTag prefix="06" label={t.results.title} />
 
-      <div className="grid lg:grid-cols-12 gap-px bg-gray-100 border border-gray-100 rounded-2xl md:rounded-3xl overflow-hidden mt-8 md:mt-16 shadow-sm">
-        <div className="lg:col-span-8 p-6 md:p-12 lg:p-16 bg-white overflow-hidden">
-          <div className="overflow-x-auto -mx-6 md:mx-0 px-6 md:px-0">
-            <table className="w-full min-w-[500px]">
+      <div className="grid md:grid-cols-12 gap-px bg-gray-100 border border-gray-100 rounded-2xl md:rounded-3xl overflow-hidden mt-8 md:mt-16 shadow-sm">
+        <div className="md:col-span-9 lg:col-span-9 p-4 md:p-8 lg:p-8 bg-white overflow-hidden">
+          <div className="overflow-x-auto -mx-4 md:mx-0 px-4 md:px-0">
+            <table className="w-full min-w-[380px]">
               <thead>
                 <tr className="border-b-2 border-gray-900">
                   {t.results.table.headers.map((h, i) => (
                     <th key={i} className={cn(
-                      "pb-4 md:pb-6 text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em] text-[#1A1A1A] text-left whitespace-nowrap",
+                      "pb-4 md:pb-6 text-[8px] md:text-[10px] font-black uppercase tracking-[0.2em] text-[#1A1A1A] text-left whitespace-nowrap",
                       i > 0 && "text-right"
                     )}>{h}</th>
                   ))}
@@ -775,10 +776,10 @@ function ResultsSection() {
               <tbody className="divide-y divide-gray-50">
                 {t.results.table.rows.map((row, i) => (
                   <tr key={i} className="group hover:bg-gray-50 transition-colors">
-                    <td className="py-6 md:py-8 font-black text-base md:text-lg text-[#1A1A1A]">{row[0]}</td>
-                    <td className="py-6 md:py-8 text-right text-xs md:text-sm text-gray-400 font-bold">{row[1]}</td>
-                    <td className="py-6 md:py-8 text-right text-base md:text-lg text-[#1A1A1A] font-black">{row[2]}</td>
-                    <td className="py-6 md:py-8 text-right font-black text-brand text-lg md:text-xl">{row[3]}</td>
+                    <td className="py-5 md:py-8 font-black text-sm md:text-base lg:text-lg text-[#1A1A1A]">{row[0]}</td>
+                    <td className="py-5 md:py-8 text-right text-[10px] md:text-xs lg:text-sm text-gray-400 font-bold">{row[1]}</td>
+                    <td className="py-5 md:py-8 text-right text-sm md:text-base lg:text-lg text-[#1A1A1A] font-black">{row[2]}</td>
+                    <td className="py-5 md:py-8 text-right font-black text-brand text-base md:text-lg lg:text-xl">{row[3]}</td>
                   </tr>
                 ))}
               </tbody>
@@ -786,16 +787,16 @@ function ResultsSection() {
           </div>
         </div>
 
-        <div className="lg:col-span-4 p-8 md:p-12 lg:p-16 bg-gray-50 space-y-8 md:space-y-12">
+        <div className="md:col-span-3 lg:col-span-3 p-4 md:p-8 lg:p-8 bg-gray-50 space-y-6 md:space-y-12 border-t md:border-t-0 md:border-l border-gray-100">
           <h4 className="text-[10px] md:text-xs font-black text-gray-900 uppercase tracking-[0.3em] border-b border-gray-200 pb-4">{t.results.validation.title}</h4>
-          <div className="space-y-8 md:space-y-10">
+          <div className="space-y-6 md:space-y-10">
             {t.results.validation.plans.map((p, i) => (
-              <div key={i} className="space-y-3 md:space-y-4 group">
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 rounded-full bg-brand group-hover:scale-125 transition-transform" />
-                  <div className="text-[9px] md:text-[10px] font-black text-[#1A1A1A] uppercase tracking-[0.2em]">{p.title}</div>
+              <div key={i} className="space-y-2 md:space-y-4 group">
+                <div className="flex items-center gap-2 md:gap-3">
+                  <div className="w-1.5 h-1.5 rounded-full bg-brand group-hover:scale-125 transition-transform" />
+                  <div className="text-[8px] md:text-[10px] font-black text-[#1A1A1A] uppercase tracking-[0.2em]">{p.title}</div>
                 </div>
-                <p className="text-xs md:text-sm text-gray-400 font-bold leading-relaxed">{p.desc}</p>
+                <p className="text-[10px] md:text-sm text-gray-400 font-bold leading-relaxed">{p.desc}</p>
               </div>
             ))}
           </div>
