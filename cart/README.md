@@ -1,20 +1,47 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Strategy-Driven Product Design Case Study: Reducing Cart Abandonment
 
-# Run and deploy your AI Studio app
+This project is a high-end, responsive web-based portfolio case study for **Dovidenko Stanislav**, a Product Designer. It focuses on a strategic approach to solving cart abandonment issues on a food delivery platform.
 
-This contains everything you need to run your app locally.
+## 🚀 Overview
 
-View your app in AI Studio: https://ai.studio/apps/39875766-2ece-4244-afba-f5f5c561c029
+The case study meticulously documents the design process of improving checkout conversion. It is structured into several key stages:
+1. **The Problem**: Identifying high drop-off rates at the checkout stage.
+2. **Research**: Analysis of user sessions, competitive benchmarking, and funnel metrics.
+3. **Hypotheses**: Data-driven assumptions categorized by an Impact vs. Effort matrix.
+4. **Solutions**: Implementation of price transparency, one-page checkout, and trust-building systems.
+5. **Behavioral Principles**: Applying psychological triggers like "Goal Gradient" and "Choice Architecture".
+6. **Results**: Quantifiable business impact (+44% conversion uplift).
 
-## Run Locally
+## 🛠 Tech Stack
 
-**Prerequisites:**  Node.js
+- **React 18** + **TypeScript**
+- **Vite** (Build Tool)
+- **Tailwind CSS** (Styling)
+- **Framer Motion** (Interaction & Animations)
+- **Lucide React** (Iconography)
 
+## ✨ Key Features
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+- **Multi-language Support**: Seamless toggle between English (EN) and Russian (RU).
+- **Responsive Design**: Fully optimized for mobile, tablet, and desktop viewports with a custom mobile navigation menu.
+- **Interactive Data Visualization**: 
+  - Custom SVG conversion funnel.
+  - Interactive Impact vs. Effort Matrix.
+  - KPI counters with staggered entry animations.
+- **Glassmorphism UI**: Modern aesthetic with backdrop blurs, subtle borders, and a clean "Swiss" typography style.
+
+## 📂 Project Structure
+
+- `src/App.tsx`: Main application logic and section components.
+- `src/constants.ts`: Language translations and content data.
+- `src/index.css`: Global styles and Tailwind configuration.
+- `public/`: Static assets.
+
+## 👤 Designer
+
+**Dovidenko Stanislav**
+- [LinkedIn](http://linkedin.com/in/stasdodesign)
+- [Telegram](https://t.me/StasDoDesign)
+
+---
+
