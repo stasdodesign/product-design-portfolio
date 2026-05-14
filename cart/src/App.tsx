@@ -301,7 +301,7 @@ function ProblemSection() {
   const { t } = useContext(LanguageContext);
 
   return (
-    <section id="problem" className="scroll-mt-24 md:scroll-mt-32">
+    <section id="problem" className="scroll-mt-24 md:scroll-mt-32 pt-12">
       <SectionTag prefix="01" label={t.problem.title} />
       <div className="grid lg:grid-cols-12 gap-8 md:gap-16 items-start mt-8 md:mt-16 bg-gray-50/50 rounded-2xl md:rounded-3xl border border-gray-100 overflow-hidden">
         <div className="lg:col-span-12 p-4 md:p-10 lg:p-16 space-y-8 md:space-y-12 bg-white">
