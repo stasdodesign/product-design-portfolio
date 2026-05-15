@@ -1,4 +1,4 @@
-name: Deploy site with cart
+name: Deploy full site with cart
 
 on:
   push:
@@ -26,46 +26,36 @@ jobs:
         with:
           node-version: 20
 
-      # Build ONLY cart
+      # Build Vite app (cart)
       - name: Build cart
         working-directory: cart
         run: |
           npm ci
           npm run build
 
-      # Prepare publish folder WITHOUT breaking root site
-      - name: Prepare pages folder
+      # Prepare deploy folder
+      - name: Prepare site
         run: |
           rm -rf _site
           mkdir _site
 
-          # root site 그대로
-          cp index.html _site/
-          cp en.html _site/
-          cp 404.html _site/
-          cp -r css _site/
-          cp -r images _site/
-          cp -r dark _site/
-          cp -r video _site/ || true
+          # Copy ONLY safe root files/folders
+          rsync -av \
+            --exclude="cart" \
+            --exclude=".github" \
+            --exclude="node_modules" \
+            --exclude="cart/node_modules" \
+            ./ _site/
 
-          # cart ONLY injected as subfolder
+          # Ensure cart is built into /cart
           mkdir -p _site/cart
           cp -r cart/dist/* _site/cart/
 
-          # keep other projects untouched
-          cp -r ingosstrakh _site/ || true
-          cp -r luma-brand _site/ || true
-          cp -r luma-one _site/ || true
-          cp -r racktables _site/ || true
-          cp -r research _site/ || true
-          cp -r sber-usersoft _site/ || true
-          cp -r stylo-you _site/ || true
-          cp -r type _site/ || true
-
-      - name: Upload Pages artifact
+      # Upload to Pages
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: _site
 
-      - name: Deploy to GitHub Pages
+      - name: Deploy
         uses: actions/deploy-pages@v4
