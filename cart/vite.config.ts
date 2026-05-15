@@ -9,7 +9,8 @@ export default defineConfig(({ mode }) => {
   return {
     plugins: [react(), tailwindcss()],
 
-    base: '/cart/',
+    // 💥 ВАЖНО: теперь сайт живёт в корне
+    base: '/',
 
     define: {
       __GEMINI_API_KEY__: JSON.stringify(env.GEMINI_API_KEY),
