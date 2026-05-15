@@ -1,4 +1,4 @@
-name: Deploy Cart to Pages
+name: Deploy cart to GitHub Pages
 
 on:
   push:
@@ -14,7 +14,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -28,10 +28,12 @@ jobs:
           cache: npm
 
       - name: Install dependencies
-        run: cd cart && npm ci
+        working-directory: cart
+        run: npm ci
 
-      - name: Build cart
-        run: cd cart && npm run build
+      - name: Build Vite app
+        working-directory: cart
+        run: npm run build
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -41,5 +43,15 @@ jobs:
         with:
           path: cart/dist
 
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
       - name: Deploy
+        id: deployment
         uses: actions/deploy-pages@v4
