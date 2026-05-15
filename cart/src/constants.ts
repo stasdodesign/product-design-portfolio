@@ -10,6 +10,8 @@ export const translations = {
       tag: "Cart Optimization • Product Design • 2026",
       explore: "Explore Solutions",
       fullDoc: "Full Document",
+      viewAll: "View All Principles",
+      close: "Close",
       footerTag: "Strategy-Driven Product Design Case Study",
       confidential: "Portfolio 206 • Stanislav Dovidenko"
     },
@@ -123,7 +125,12 @@ export const translations = {
         { title: "Cognitive Load Reduction", desc: "Minimize the number of choices and visual noise." },
         { title: "Visual Hierarchy", desc: "Guide users' eyes to the most important actions logicially." },
         { title: "Predictability Principle", desc: "Users should know exactly what happens after an action." },
-        { title: "Fogg Behavior Model", desc: "Motivation, Ability, and Prompt must converge for a behavior." }
+        { title: "Fogg Behavior Model", desc: "Motivation, Ability, and Prompt must converge for a behavior." },
+        { title: "Scarcity Effect", desc: "People value things more when they are perceived as limited or rare." },
+        { title: "Social Proof", desc: "People tend to follow the actions of others in uncertain situations." },
+        { title: "Zeigarnik Effect", desc: "People remember uncompleted tasks better than completed ones." },
+        { title: "Cognitive Ease", desc: "Preference for things that are easy to think about and understand." },
+        { title: "Framing Effect", desc: "The way information is presented affects processing." }
       ]
     },
     results: {
@@ -169,6 +176,8 @@ export const translations = {
       tag: "Оптимизация корзины • Продуктовый дизайн • 2026",
       explore: "Исследовать решения",
       fullDoc: "Полный документ",
+      viewAll: "Смотреть все принципы",
+      close: "Закрыть",
       footerTag: "Кейс по продуктовому дизайну",
       confidential: "Портфолио 2026 • Станислав Довиденко"
     },
@@ -282,7 +291,12 @@ export const translations = {
         { title: "Снижение когнитивной нагрузки", desc: "Минимизация выбора и визуального шума." },
         { title: "Визуальная иерархия", desc: "Логичное направление взгляда к важным действиям." },
         { title: "Принцип предсказуемости", desc: "Пользователь понимает, что произойдет после действия." },
-        { title: "Модель Фогга", desc: "Мотивация, возможность и триггер должны сойтись в одной точке." }
+        { title: "Модель Фогга", desc: "Мотивация, возможность и триггер должны сойтись в одной точке." },
+        { title: "Эффект дефицита", desc: "Люди больше ценят то, что воспринимается как ограниченное." },
+        { title: "Социальное доказательство", desc: "Склонность следовать действиям других людей." },
+        { title: "Эффект Зейгарник", desc: "Незавершенные задачи запоминаются лучше, чем завершенные." },
+        { title: "Когнитивная легкость", desc: "Предпочтение простых и понятных паттернов." },
+        { title: "Эффект фрейминга", desc: "Форма подачи информации влияет на восприятие." }
       ]
     },
     results: {

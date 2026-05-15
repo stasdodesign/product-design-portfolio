@@ -25,6 +25,7 @@ const LanguageContext = createContext<{
 
 export default function App() {
   const [lang, setLang] = useState<Language>('en');
+  const [isBehavioralModalOpen, setIsBehavioralModalOpen] = useState(false);
   const t = translations[lang];
 
   useEffect(() => {
@@ -46,13 +47,14 @@ export default function App() {
             <ResearchSection />
             <HypothesesSection />
             <SolutionsSection />
-            <BehavioralSection />
+            <BehavioralSection onShowAll={() => setIsBehavioralModalOpen(true)} />
             <ResultsSection />
             <NextStepsSection />
           </div>
         </main>
         <Footer />
         <ScrollToTop />
+        <BehavioralModal isOpen={isBehavioralModalOpen} onClose={() => setIsBehavioralModalOpen(false)} />
       </div>
     </LanguageContext.Provider>
   );
@@ -723,15 +725,16 @@ function Mockup3() {
   );
 }
 
-function BehavioralSection() {
+function BehavioralSection({ onShowAll }: { onShowAll: () => void }) {
   const { t } = useContext(LanguageContext);
+  const displayPrinciples = t.behavioral.principles.slice(0, 5);
 
   return (
     <section id="behavioral" className="scroll-mt-24 md:scroll-mt-32">
       <SectionTag prefix="05" label={t.behavioral.title} />
 
       <div className="mt-8 md:mt-16 space-y-px bg-gray-100 border border-gray-100 rounded-2xl md:rounded-3xl overflow-hidden shadow-sm">
-        {t.behavioral.principles.map((p, i) => (
+        {displayPrinciples.map((p, i) => (
           <div key={i} className="group flex flex-col md:flex-row md:items-center justify-between p-4 md:p-10 bg-white hover:bg-gray-50 transition-all gap-4">
             <div className="flex items-start md:items-center gap-6 md:gap-10">
               <div className="text-3xl md:text-4xl font-black text-gray-100 group-hover:text-brand/50 transition-colors w-8 md:w-12">
@@ -748,7 +751,85 @@ function BehavioralSection() {
           </div>
         ))}
       </div>
+      
+      <div className="mt-6 flex justify-center">
+        <button 
+          onClick={onShowAll}
+          className="text-[10px] md:text-xs font-black text-gray-400 uppercase tracking-[0.2em] hover:text-brand transition-colors flex items-center gap-2 group"
+        >
+          {t.common.viewAll}
+          <div className="h-px w-8 bg-gray-200 group-hover:bg-brand transition-colors" />
+        </button>
+      </div>
     </section>
+  );
+}
+
+function BehavioralModal({ isOpen, onClose }: { isOpen: boolean, onClose: () => void }) {
+  const { t } = useContext(LanguageContext);
+
+  useEffect(() => {
+    if (isOpen) document.body.style.overflow = 'hidden';
+    else document.body.style.overflow = 'unset';
+    return () => { document.body.style.overflow = 'unset'; };
+  }, [isOpen]);
+
+  return (
+    <AnimatePresence>
+      {isOpen && (
+        <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 md:p-10">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={onClose}
+            className="absolute inset-0 bg-[#1A1A1A]/90 backdrop-blur-sm"
+          />
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.95, y: 20 }}
+            className="relative w-full max-w-4xl max-h-[80vh] bg-white rounded-2xl md:rounded-3xl overflow-hidden flex flex-col shadow-2xl"
+          >
+            <div className="p-6 md:p-10 border-b border-gray-100 flex items-center justify-between bg-white shrink-0">
+              <div className="space-y-1">
+                <span className="text-[10px] font-black text-brand uppercase tracking-[0.3em]">Deep Dive</span>
+                <h3 className="text-2xl md:text-3xl font-black text-[#1A1A1A] tracking-tighter">{t.behavioral.title}</h3>
+              </div>
+              <button 
+                onClick={onClose}
+                className="p-2 hover:bg-gray-50 rounded-full transition-colors text-gray-400 hover:text-[#1A1A1A]"
+              >
+                <X size={24} />
+              </button>
+            </div>
+
+            <div className="flex-1 overflow-y-auto p-6 md:p-10 custom-scrollbar">
+              <div className="grid sm:grid-cols-2 gap-px bg-gray-100 border border-gray-100 rounded-2xl overflow-hidden">
+                {t.behavioral.principles.map((p, i) => (
+                  <div key={i} className="p-6 md:p-8 bg-white space-y-4 hover:bg-gray-50 transition-colors">
+                    <div className="flex items-center gap-4">
+                      <div className="text-2xl font-black text-gray-100 w-8">0{i + 1}</div>
+                      <h4 className="text-lg font-black text-[#1A1A1A] tracking-tight">{p.title}</h4>
+                    </div>
+                    <p className="text-sm text-gray-500 font-medium leading-relaxed">{p.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="p-6 md:p-10 border-t border-gray-100 bg-gray-50 flex justify-center shrink-0">
+              <button 
+                onClick={onClose}
+                className="px-8 py-3 bg-[#1A1A1A] text-white text-xs font-black uppercase tracking-widest rounded-xl hover:bg-brand transition-colors shadow-lg shadow-black/10"
+              >
+                {t.common.close}
+              </button>
+            </div>
+          </motion.div>
+        </div>
+      )}
+    </AnimatePresence>
   );
 }
 
