@@ -1,4 +1,4 @@
-name: Deploy Cart (Vite Monorepo)
+name: Deploy Cart (Monorepo Safe)
 
 on:
   push:
@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout repo
         uses: actions/checkout@v4
 
       - name: Setup Node
@@ -32,10 +32,15 @@ jobs:
         working-directory: cart
         run: npm run build
 
+      - name: Prepare deploy folder
+        run: |
+          mkdir -p public/cart
+          cp -r cart/dist/* public/cart/
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: cart/dist
+          path: public
 
   deploy:
     needs: build
@@ -43,8 +48,4 @@ jobs:
 
     steps:
       - name: Deploy to GitHub Pages
-        id: deployment
         uses: actions/deploy-pages@v4
-
-      - name: Output URL
-        run: echo "Deployed to ${{ steps.deployment.outputs.page_url }}"
