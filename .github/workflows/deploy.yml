@@ -1,4 +1,4 @@
-name: Deploy Cart (Monorepo Safe)
+name: Deploy static site to Pages
 
 on:
   push:
@@ -10,42 +10,17 @@ permissions:
   id-token: write
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: npm
-          cache-dependency-path: cart/package-lock.json
-
-      - name: Install dependencies
-        working-directory: cart
-        run: npm ci
-
-      - name: Build Vite app
-        working-directory: cart
-        run: npm run build
-
-      - name: Prepare deploy folder
-        run: |
-          mkdir -p public/cart
-          cp -r cart/dist/* public/cart/
-
-      - name: Upload Pages artifact
+      - name: Upload site
         uses: actions/upload-pages-artifact@v3
         with:
-          path: public
+          path: .   # твой HTML/CSS/JS в корне
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Deploy to GitHub Pages
+      - name: Deploy
         uses: actions/deploy-pages@v4
