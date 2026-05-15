@@ -9,21 +9,20 @@ export default defineConfig(({ mode }) => {
   return {
     plugins: [react(), tailwindcss()],
 
-     base: '/cart/',
+    base: '/cart/',
 
     define: {
-      'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY),
+      __GEMINI_API_KEY__: JSON.stringify(env.GEMINI_API_KEY),
     },
 
     resolve: {
       alias: {
-        '@': path.resolve(process.cwd(), '.'),
+        '@': path.resolve(__dirname, './src'),
       },
     },
 
     server: {
       hmr: process.env.DISABLE_HMR !== 'true',
-      watch: process.env.DISABLE_HMR === 'true' ? null : {},
     },
   }
 })
