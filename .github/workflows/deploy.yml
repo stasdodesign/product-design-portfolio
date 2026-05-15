@@ -1,4 +1,4 @@
-name: Deploy static site to Pages
+name: Deploy Cart to Pages
 
 on:
   push:
@@ -9,6 +9,10 @@ permissions:
   pages: write
   id-token: write
 
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -17,10 +21,25 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Upload site
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: cd cart && npm ci
+
+      - name: Build cart
+        run: cd cart && npm run build
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .   # твой HTML/CSS/JS в корне
+          path: cart/dist
 
       - name: Deploy
         uses: actions/deploy-pages@v4
