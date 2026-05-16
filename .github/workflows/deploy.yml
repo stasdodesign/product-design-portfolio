@@ -108,42 +108,49 @@ jobs:
 # =========================
 # DEPLOY
 # =========================
-  deploy:
-    needs: [build-cart, build-garage]
-    runs-on: ubuntu-latest
-    if: always()
+deploy:
+  needs: [build-cart, build-garage]
+  runs-on: ubuntu-latest
+  if: always()
 
-    steps:
-      - uses: actions/checkout@v4
+  steps:
+    - uses: actions/checkout@v4
 
-      - name: Download artifacts
-        uses: actions/download-artifact@v4
-        with:
-          path: builds
+    - uses: actions/setup-node@v4
+      with:
+        node-version: 22
 
-      - name: Prepare site
-        run: |
-          rm -rf _site
-          mkdir -p _site
+    - run: npm ci
 
-          rsync -av --exclude apps ./ _site/
+    - name: Build Garage (fresh)
+      run: |
+        cd apps/garage
+        npm ci
+        npm run build
 
-          # CART
-          if [ -d "builds/cart" ]; then
-            mkdir -p _site/apps/cart
-            cp -r builds/cart/* _site/apps/cart/
-          fi
+    - name: Build Cart (fresh)
+      run: |
+        cd apps/cart
+        npm ci
+        npm run build
 
-          # GARAGE
-          if [ -d "builds/garage" ]; then
-            mkdir -p _site/apps/garage
-            cp -r builds/garage/* _site/apps/garage/
-          fi
+    - name: Prepare site
+      run: |
+        rm -rf _site
+        mkdir -p _site
 
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: _site
+        rsync -av --exclude apps ./ _site/
+
+        mkdir -p _site/apps/cart
+        cp -r apps/cart/dist/* _site/apps/cart/
+
+        mkdir -p _site/apps/garage
+        cp -r apps/garage/dist/* _site/apps/garage/
+
+    - name: Upload Pages artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: _site
 
 # =========================
 # DEPLOY PAGES
