@@ -1,8 +1,8 @@
-name: LEVEL 3 PRO MONOREPO DEPLOY
+name: LEVEL 3 PRO MONOREPO DEPLOY (SMART FIXED)
 
 on:
   push:
-    branches: [main, dev]
+    branches: [main]
   pull_request:
 
 permissions:
@@ -14,20 +14,45 @@ concurrency:
   group: pages
   cancel-in-progress: true
 
-# =========================
-# BUILD ALL APPS (MATRIX)
-# =========================
 jobs:
-  build:
+# =========================
+# DETECT CHANGES
+# =========================
+  changes:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        app: ["cart", "garage"]
+    outputs:
+      cart: ${{ steps.filter.outputs.cart }}
+      garage: ${{ steps.filter.outputs.garage }}
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+
+      - name: Detect changes
+        uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            cart:
+              - 'apps/cart/**'
+            garage:
+              - 'apps/garage/**'
+            root:
+              - 'package.json'
+              - 'package-lock.json'
+
+# =========================
+# BUILD (shared install)
+# =========================
+  build:
+    needs: changes
+    runs-on: ubuntu-latest
+
+    outputs:
+      cart_built: ${{ steps.flag.outputs.cart }}
+      garage_built: ${{ steps.flag.outputs.garage }}
+
+    steps:
+      - uses: actions/checkout@v4
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -35,32 +60,51 @@ jobs:
           node-version: 22
           cache: npm
 
-      - name: Install dependencies
-        working-directory: apps/${{ matrix.app }}
+      - name: Install root deps
         run: npm ci
 
-      - name: Build app
-        working-directory: apps/${{ matrix.app }}
-        run: npm run build
+      # ================= CART =================
+      - name: Build Cart
+        if: needs.changes.outputs.cart == 'true' || needs.changes.outputs.root == 'true'
+        run: npm run build --workspace=cart || cd apps/cart && npm run build
 
-      - name: Upload build artifact
+      # ================= GARAGE =================
+      - name: Build Garage
+        if: needs.changes.outputs.garage == 'true' || needs.changes.outputs.root == 'true'
+        run: npm run build --workspace=garage || cd apps/garage && npm run build
+
+      - name: Mark built apps
+        id: flag
+        run: |
+          echo "cart=true" >> $GITHUB_OUTPUT
+          echo "garage=true" >> $GITHUB_OUTPUT
+
+      - name: Upload Cart
+        if: hashFiles('apps/cart/dist/**') != ''
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ matrix.app }}
-          path: apps/${{ matrix.app }}/dist
+          name: cart
+          path: apps/cart/dist
+
+      - name: Upload Garage
+        if: hashFiles('apps/garage/dist/**') != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: garage
+          path: apps/garage/dist
 
 # =========================
-# DEPLOY TO GITHUB PAGES
+# DEPLOY (ONLY IF BUILD OK)
 # =========================
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    if: success() && github.ref == 'refs/heads/main'
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Download all builds
+      - name: Download artifacts
         uses: actions/download-artifact@v4
         with:
           path: builds
@@ -70,22 +114,20 @@ jobs:
           rm -rf _site
           mkdir -p _site
 
-          # optional static root site
-          if [ -d "public" ]; then
-            cp -r public/* _site/
+          if [ -d "builds/cart" ]; then
+            mkdir -p _site/cart
+            cp -r builds/cart/* _site/cart/
           fi
 
-          # map builds → routes
-          for dir in builds/*; do
-            name=$(basename "$dir")
-            mkdir -p "_site/$name"
-            cp -r "$dir/"* "_site/$name/"
-          done
+          if [ -d "builds/garage" ]; then
+            mkdir -p _site/garage
+            cp -r builds/garage/* _site/garage/
+          fi
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: _site
 
-      - name: Deploy to GitHub Pages
+      - name: Deploy
         uses: actions/deploy-pages@v4
