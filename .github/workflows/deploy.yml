@@ -1,4 +1,4 @@
-name: PRO MONOREPO BUILD + SAFE DEPLOY
+name: SAFE MONOREPO DEPLOY (FIXED)
 
 on:
   push:
@@ -28,7 +28,7 @@ jobs:
           cache: npm
 
       # =========================
-      # INSTALL ROOT (IMPORTANT)
+      # INSTALL ROOT
       # =========================
       - name: Install root deps
         run: npm ci
@@ -52,29 +52,29 @@ jobs:
           npm run build
 
       # =========================
-      # PREPARE FINAL SITE
+      # SAFE DEPLOY PREP
       # =========================
-      - name: Prepare deploy folder
+      - name: Prepare site
         run: |
           rm -rf _site
           mkdir -p _site
 
-          # 🔥 ROOT SITE (ВАЖНО: НЕ ТРОГАЕМ ТВОЙ САЙТ)
-          cp -r ./index.html _site/
-          [ -d "./assets" ] && cp -r ./assets _site/ || true
-          [ -d "./css" ] && cp -r ./css _site/ || true
-          [ -d "./js" ] && cp -r ./js _site/ || true
+          # 🔥 COPY ROOT AS-IS (ЭТО ГЛАВНОЕ ИСПРАВЛЕНИЕ)
+          rsync -av \
+            --exclude node_modules \
+            --exclude apps \
+            ./ _site/
 
-          # 🔥 CART APP
+          # 🔥 CART
           mkdir -p _site/cart
           cp -r apps/cart/dist/* _site/cart/
 
-          # 🔥 GARAGE APP
+          # 🔥 GARAGE
           mkdir -p _site/garage
           cp -r apps/garage/dist/* _site/garage/
 
       # =========================
-      # PAGES ARTIFACT
+      # DEPLOY
       # =========================
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
@@ -86,5 +86,5 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Deploy to GitHub Pages
+      - name: Deploy
         uses: actions/deploy-pages@v4
