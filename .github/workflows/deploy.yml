@@ -136,9 +136,9 @@ jobs:
           fi
 
           # GARAGE
-          if [ -d "builds/garage" ]; then
+          if [ -d "builds/garage/dist" ]; then
             mkdir -p _site/apps/garage
-            cp -r builds/garage/* _site/apps/garage/
+            cp -r builds/garage/dist/* _site/apps/garage/
           fi
 
       - name: Upload Pages artifact
