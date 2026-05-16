@@ -46,7 +46,7 @@ jobs:
               - 'package-lock.json'
 
 # =========================
-# BUILD CART (ONLY IF NEEDED)
+# BUILD CART
 # =========================
   build-cart:
     needs: changes
@@ -76,7 +76,7 @@ jobs:
           path: apps/cart/dist
 
 # =========================
-# BUILD GARAGE (ONLY IF NEEDED)
+# BUILD GARAGE
 # =========================
   build-garage:
     needs: changes
@@ -106,7 +106,7 @@ jobs:
           path: apps/garage/dist
 
 # =========================
-# DEPLOY (MERGE RESULTS)
+# DEPLOY
 # =========================
   deploy:
     needs: [build-cart, build-garage]
@@ -126,7 +126,7 @@ jobs:
           rm -rf _site
           mkdir -p _site
 
-          # ROOT SITE (static files)
+          # ROOT SITE
           rsync -av --exclude apps ./ _site/
 
           # CART
@@ -136,16 +136,19 @@ jobs:
           fi
 
           # GARAGE
-if [ -d "apps/garage/dist" ]; then
-  mkdir -p _site/apps/garage
-  cp -r apps/garage/dist/* _site/apps/garage/
-fi
+          if [ -d "builds/garage" ]; then
+            mkdir -p _site/apps/garage
+            cp -r builds/garage/* _site/apps/garage/
+          fi
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: _site
 
+# =========================
+# DEPLOY PAGES
+# =========================
   deploy-pages:
     needs: deploy
     runs-on: ubuntu-latest
