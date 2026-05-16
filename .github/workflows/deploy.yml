@@ -1,4 +1,4 @@
-name: MONOREPO SAFE BUILD (DEBUG + FIXED)
+name: SMART MONOREPO (SELECTIVE BUILD)
 
 on:
   push:
@@ -14,7 +14,43 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
+# =========================
+# DETECT CHANGES
+# =========================
+  changes:
+    runs-on: ubuntu-latest
+    outputs:
+      cart: ${{ steps.filter.outputs.cart }}
+      garage: ${{ steps.filter.outputs.garage }}
+      root: ${{ steps.filter.outputs.root }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Detect changes
+        uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            cart:
+              - 'apps/cart/**'
+            garage:
+              - 'apps/garage/**'
+            root:
+              - 'index.html'
+              - 'en.html'
+              - 'assets/**'
+              - 'css/**'
+              - 'js/**'
+              - 'package.json'
+              - 'package-lock.json'
+
+# =========================
+# BUILD CART (ONLY IF NEEDED)
+# =========================
+  build-cart:
+    needs: changes
+    if: needs.changes.outputs.cart == 'true' || needs.changes.outputs.root == 'true'
     runs-on: ubuntu-latest
 
     steps:
@@ -25,64 +61,93 @@ jobs:
           node-version: 22
           cache: npm
 
-      - name: Install root deps
-        run: npm ci
+      - run: npm ci
 
-      # =========================
-      # CART BUILD (WITH DEBUG)
-      # =========================
       - name: Build Cart
         run: |
           cd apps/cart
           npm ci
           npm run build
-          echo "=== CART DIST CHECK ==="
-          ls -la dist || echo "NO DIST FOLDER!"
 
-      # =========================
-      # GARAGE BUILD
-      # =========================
+      - name: Upload Cart
+        uses: actions/upload-artifact@v4
+        with:
+          name: cart
+          path: apps/cart/dist
+
+# =========================
+# BUILD GARAGE (ONLY IF NEEDED)
+# =========================
+  build-garage:
+    needs: changes
+    if: needs.changes.outputs.garage == 'true' || needs.changes.outputs.root == 'true'
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
       - name: Build Garage
         run: |
           cd apps/garage
           npm ci
           npm run build
-          echo "=== GARAGE DIST CHECK ==="
-          ls -la dist || echo "NO DIST FOLDER!"
 
-      # =========================
-      # PREPARE DEPLOY
-      # =========================
+      - name: Upload Garage
+        uses: actions/upload-artifact@v4
+        with:
+          name: garage
+          path: apps/garage/dist
+
+# =========================
+# DEPLOY (MERGE RESULTS)
+# =========================
+  deploy:
+    needs: [build-cart, build-garage]
+    runs-on: ubuntu-latest
+    if: always()
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: builds
+
       - name: Prepare site
         run: |
           rm -rf _site
           mkdir -p _site
 
-          # ROOT SITE
-          rsync -av --exclude node_modules ./ _site/
+          # ROOT SITE (static files)
+          rsync -av --exclude apps ./ _site/
 
-          # CART SAFE COPY
-          if [ -d "apps/cart/dist" ]; then
+          # CART
+          if [ -d "builds/cart" ]; then
             mkdir -p _site/apps/cart
-            cp -r apps/cart/dist/* _site/apps/cart/
-          else
-            echo "❌ CART DIST NOT FOUND"
+            cp -r builds/cart/* _site/apps/cart/
           fi
 
-          # GARAGE SAFE COPY
-          if [ -d "apps/garage/dist" ]; then
+          # GARAGE
+          if [ -d "builds/garage" ]; then
             mkdir -p _site/apps/garage
-            cp -r apps/garage/dist/* _site/apps/garage/
-          else
-            echo "❌ GARAGE DIST NOT FOUND"
+            cp -r builds/garage/* _site/apps/garage/
           fi
 
-      - uses: actions/upload-pages-artifact@v3
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
         with:
           path: _site
 
-  deploy:
-    needs: build
+  deploy-pages:
+    needs: deploy
     runs-on: ubuntu-latest
 
     steps:
