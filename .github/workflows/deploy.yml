@@ -1,4 +1,4 @@
-name: MONOREPO DEPLOY (ROOT + APPS STRUCTURE)
+name: MONOREPO SAFE BUILD (DEBUG + FIXED)
 
 on:
   push:
@@ -18,69 +18,66 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: npm
 
-      # =========================
-      # ROOT INSTALL (for main site)
-      # =========================
       - name: Install root deps
         run: npm ci
 
       # =========================
-      # BUILD CART
+      # CART BUILD (WITH DEBUG)
       # =========================
       - name: Build Cart
         run: |
           cd apps/cart
           npm ci
           npm run build
+          echo "=== CART DIST CHECK ==="
+          ls -la dist || echo "NO DIST FOLDER!"
 
       # =========================
-      # BUILD GARAGE
+      # GARAGE BUILD
       # =========================
       - name: Build Garage
         run: |
           cd apps/garage
           npm ci
           npm run build
+          echo "=== GARAGE DIST CHECK ==="
+          ls -la dist || echo "NO DIST FOLDER!"
 
       # =========================
-      # BUILD SITE STRUCTURE
+      # PREPARE DEPLOY
       # =========================
-      - name: Prepare deploy
+      - name: Prepare site
         run: |
           rm -rf _site
           mkdir -p _site
 
-          # =========================
-          # ROOT SITE (ВАЖНО: ТВОЙ САЙТ)
-          # =========================
-          cp -r ./*.html _site/ 2>/dev/null || true
-          cp -r ./assets _site/ 2>/dev/null || true
-          cp -r ./css _site/ 2>/dev/null || true
-          cp -r ./js _site/ 2>/dev/null || true
+          # ROOT SITE
+          rsync -av --exclude node_modules ./ _site/
 
-          # =========================
-          # APPS (СОХРАНЯЕМ /apps/* СТРУКТУРУ)
-          # =========================
-          mkdir -p _site/apps/cart
-          mkdir -p _site/apps/garage
+          # CART SAFE COPY
+          if [ -d "apps/cart/dist" ]; then
+            mkdir -p _site/apps/cart
+            cp -r apps/cart/dist/* _site/apps/cart/
+          else
+            echo "❌ CART DIST NOT FOUND"
+          fi
 
-          cp -r apps/cart/dist/* _site/apps/cart/
-          cp -r apps/garage/dist/* _site/apps/garage/
+          # GARAGE SAFE COPY
+          if [ -d "apps/garage/dist" ]; then
+            mkdir -p _site/apps/garage
+            cp -r apps/garage/dist/* _site/apps/garage/
+          else
+            echo "❌ GARAGE DIST NOT FOUND"
+          fi
 
-      # =========================
-      # PAGES ARTIFACT
-      # =========================
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
 
@@ -89,5 +86,4 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v4
+      - uses: actions/deploy-pages@v4
