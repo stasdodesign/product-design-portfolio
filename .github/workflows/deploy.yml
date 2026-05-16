@@ -1,9 +1,8 @@
-name: LEVEL 3 PRO MONOREPO DEPLOY (SMART FIXED)
+name: PRO MONOREPO BUILD + SAFE DEPLOY
 
 on:
   push:
     branches: [main]
-  pull_request:
 
 permissions:
   contents: read
@@ -15,44 +14,12 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-# =========================
-# DETECT CHANGES
-# =========================
-  changes:
-    runs-on: ubuntu-latest
-    outputs:
-      cart: ${{ steps.filter.outputs.cart }}
-      garage: ${{ steps.filter.outputs.garage }}
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Detect changes
-        uses: dorny/paths-filter@v3
-        id: filter
-        with:
-          filters: |
-            cart:
-              - 'apps/cart/**'
-            garage:
-              - 'apps/garage/**'
-            root:
-              - 'package.json'
-              - 'package-lock.json'
-
-# =========================
-# BUILD (shared install)
-# =========================
   build:
-    needs: changes
     runs-on: ubuntu-latest
 
-    outputs:
-      cart_built: ${{ steps.flag.outputs.cart }}
-      garage_built: ${{ steps.flag.outputs.garage }}
-
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -60,74 +27,64 @@ jobs:
           node-version: 22
           cache: npm
 
+      # =========================
+      # INSTALL ROOT (IMPORTANT)
+      # =========================
       - name: Install root deps
         run: npm ci
 
-      # ================= CART =================
+      # =========================
+      # BUILD CART
+      # =========================
       - name: Build Cart
-        if: needs.changes.outputs.cart == 'true' || needs.changes.outputs.root == 'true'
-        run: npm run build --workspace=cart || cd apps/cart && npm run build
-
-      # ================= GARAGE =================
-      - name: Build Garage
-        if: needs.changes.outputs.garage == 'true' || needs.changes.outputs.root == 'true'
-        run: npm run build --workspace=garage || cd apps/garage && npm run build
-
-      - name: Mark built apps
-        id: flag
         run: |
-          echo "cart=true" >> $GITHUB_OUTPUT
-          echo "garage=true" >> $GITHUB_OUTPUT
+          cd apps/cart
+          npm ci
+          npm run build
 
-      - name: Upload Cart
-        if: hashFiles('apps/cart/dist/**') != ''
-        uses: actions/upload-artifact@v4
-        with:
-          name: cart
-          path: apps/cart/dist
+      # =========================
+      # BUILD GARAGE
+      # =========================
+      - name: Build Garage
+        run: |
+          cd apps/garage
+          npm ci
+          npm run build
 
-      - name: Upload Garage
-        if: hashFiles('apps/garage/dist/**') != ''
-        uses: actions/upload-artifact@v4
-        with:
-          name: garage
-          path: apps/garage/dist
-
-# =========================
-# DEPLOY (ONLY IF BUILD OK)
-# =========================
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    if: success() && github.ref == 'refs/heads/main'
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Download artifacts
-        uses: actions/download-artifact@v4
-        with:
-          path: builds
-
-      - name: Prepare site
+      # =========================
+      # PREPARE FINAL SITE
+      # =========================
+      - name: Prepare deploy folder
         run: |
           rm -rf _site
           mkdir -p _site
 
-          if [ -d "builds/cart" ]; then
-            mkdir -p _site/cart
-            cp -r builds/cart/* _site/cart/
-          fi
+          # 🔥 ROOT SITE (ВАЖНО: НЕ ТРОГАЕМ ТВОЙ САЙТ)
+          cp -r ./index.html _site/
+          [ -d "./assets" ] && cp -r ./assets _site/ || true
+          [ -d "./css" ] && cp -r ./css _site/ || true
+          [ -d "./js" ] && cp -r ./js _site/ || true
 
-          if [ -d "builds/garage" ]; then
-            mkdir -p _site/garage
-            cp -r builds/garage/* _site/garage/
-          fi
+          # 🔥 CART APP
+          mkdir -p _site/cart
+          cp -r apps/cart/dist/* _site/cart/
 
+          # 🔥 GARAGE APP
+          mkdir -p _site/garage
+          cp -r apps/garage/dist/* _site/garage/
+
+      # =========================
+      # PAGES ARTIFACT
+      # =========================
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: _site
 
-      - name: Deploy
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
