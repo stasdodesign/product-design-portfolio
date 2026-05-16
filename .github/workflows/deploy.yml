@@ -126,7 +126,6 @@ jobs:
           rm -rf _site
           mkdir -p _site
 
-          # ROOT SITE
           rsync -av --exclude apps ./ _site/
 
           # CART
