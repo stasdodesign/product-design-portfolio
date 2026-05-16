@@ -14,6 +14,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+
 # =========================
 # DETECT CHANGES
 # =========================
@@ -106,51 +107,52 @@ jobs:
           path: apps/garage/dist
 
 # =========================
-# DEPLOY
+# DEPLOY (NO ARTIFACT RISK VERSION)
 # =========================
-deploy:
-  needs: [build-cart, build-garage]
-  runs-on: ubuntu-latest
-  if: always()
+  deploy:
+    needs: [build-cart, build-garage]
+    runs-on: ubuntu-latest
+    if: always()
 
-  steps:
-    - uses: actions/checkout@v4
+    steps:
+      - uses: actions/checkout@v4
 
-    - uses: actions/setup-node@v4
-      with:
-        node-version: 22
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
 
-    - run: npm ci
+      - run: npm ci
 
-    - name: Build Garage (fresh)
-      run: |
-        cd apps/garage
-        npm ci
-        npm run build
+      # rebuild everything in deploy stage (100% safe)
+      - name: Build Cart (deploy)
+        run: |
+          cd apps/cart
+          npm ci
+          npm run build
 
-    - name: Build Cart (fresh)
-      run: |
-        cd apps/cart
-        npm ci
-        npm run build
+      - name: Build Garage (deploy)
+        run: |
+          cd apps/garage
+          npm ci
+          npm run build
 
-    - name: Prepare site
-      run: |
-        rm -rf _site
-        mkdir -p _site
+      - name: Prepare site
+        run: |
+          rm -rf _site
+          mkdir -p _site
 
-        rsync -av --exclude apps ./ _site/
+          rsync -av --exclude apps ./ _site/
 
-        mkdir -p _site/apps/cart
-        cp -r apps/cart/dist/* _site/apps/cart/
+          mkdir -p _site/apps/cart
+          cp -r apps/cart/dist/* _site/apps/cart/
 
-        mkdir -p _site/apps/garage
-        cp -r apps/garage/dist/* _site/apps/garage/
+          mkdir -p _site/apps/garage
+          cp -r apps/garage/dist/* _site/apps/garage/
 
-    - name: Upload Pages artifact
-      uses: actions/upload-pages-artifact@v3
-      with:
-        path: _site
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
 
 # =========================
 # DEPLOY PAGES
