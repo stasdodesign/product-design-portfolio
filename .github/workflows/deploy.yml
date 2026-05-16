@@ -15,43 +15,7 @@ concurrency:
 
 jobs:
 
-# =========================
-# DETECT CHANGES
-# =========================
-  changes:
-    runs-on: ubuntu-latest
-    outputs:
-      cart: ${{ steps.filter.outputs.cart }}
-      garage: ${{ steps.filter.outputs.garage }}
-      root: ${{ steps.filter.outputs.root }}
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Detect changes
-        uses: dorny/paths-filter@v3
-        id: filter
-        with:
-          filters: |
-            cart:
-              - 'apps/cart/**'
-            garage:
-              - 'apps/garage/**'
-            root:
-              - 'index.html'
-              - 'en.html'
-              - 'assets/**'
-              - 'css/**'
-              - 'js/**'
-              - 'package.json'
-              - 'package-lock.json'
-
-# =========================
-# BUILD CART
-# =========================
-  build-cart:
-    needs: changes
-    if: needs.changes.outputs.cart == 'true' || needs.changes.outputs.root == 'true'
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -64,99 +28,51 @@ jobs:
 
       - run: npm ci
 
+      # =========================
+      # BUILD CART
+      # =========================
       - name: Build Cart
         run: |
           cd apps/cart
           npm ci
           npm run build
 
-      - name: Upload Cart
-        uses: actions/upload-artifact@v4
-        with:
-          name: cart
-          path: apps/cart/dist
-
-# =========================
-# BUILD GARAGE
-# =========================
-  build-garage:
-    needs: changes
-    if: needs.changes.outputs.garage == 'true' || needs.changes.outputs.root == 'true'
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: npm
-
-      - run: npm ci
-
+      # =========================
+      # BUILD GARAGE
+      # =========================
       - name: Build Garage
         run: |
           cd apps/garage
           npm ci
           npm run build
 
-      - name: Upload Garage
-        uses: actions/upload-artifact@v4
-        with:
-          name: garage
-          path: apps/garage/dist
-
-# =========================
-# DEPLOY (NO ARTIFACT RISK VERSION)
-# =========================
-  deploy:
-    needs: [build-cart, build-garage]
-    runs-on: ubuntu-latest
-    if: always()
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-
-      - run: npm ci
-
-      # rebuild everything in deploy stage (100% safe)
-      - name: Build Cart (deploy)
-        run: |
-          cd apps/cart
-          npm ci
-          npm run build
-
-      - name: Build Garage (deploy)
-        run: |
-          cd apps/garage
-          npm ci
-          npm run build
-
+      # =========================
+      # BUILD SITE (FINAL OUTPUT)
+      # =========================
       - name: Prepare site
         run: |
           rm -rf _site
           mkdir -p _site
 
+          # root files
           rsync -av --exclude apps ./ _site/
 
+          # CART (FULL DIST INCLUDING CSS)
           mkdir -p _site/apps/cart
           cp -r apps/cart/dist/* _site/apps/cart/
 
+          # GARAGE (FULL DIST INCLUDING CSS)
           mkdir -p _site/apps/garage
           cp -r apps/garage/dist/* _site/apps/garage/
 
+      # =========================
+      # PAGES DEPLOY
+      # =========================
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: _site
 
-# =========================
-# DEPLOY PAGES
-# =========================
   deploy-pages:
     needs: deploy
     runs-on: ubuntu-latest
