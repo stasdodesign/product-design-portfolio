@@ -1,4 +1,4 @@
-name: SAFE MONOREPO DEPLOY (FIXED)
+name: MONOREPO DEPLOY (ROOT + APPS STRUCTURE)
 
 on:
   push:
@@ -28,7 +28,7 @@ jobs:
           cache: npm
 
       # =========================
-      # INSTALL ROOT
+      # ROOT INSTALL (for main site)
       # =========================
       - name: Install root deps
         run: npm ci
@@ -52,29 +52,32 @@ jobs:
           npm run build
 
       # =========================
-      # SAFE DEPLOY PREP
+      # BUILD SITE STRUCTURE
       # =========================
-      - name: Prepare site
+      - name: Prepare deploy
         run: |
           rm -rf _site
           mkdir -p _site
 
-          # 🔥 COPY ROOT AS-IS (ЭТО ГЛАВНОЕ ИСПРАВЛЕНИЕ)
-          rsync -av \
-            --exclude node_modules \
-            --exclude apps \
-            ./ _site/
+          # =========================
+          # ROOT SITE (ВАЖНО: ТВОЙ САЙТ)
+          # =========================
+          cp -r ./*.html _site/ 2>/dev/null || true
+          cp -r ./assets _site/ 2>/dev/null || true
+          cp -r ./css _site/ 2>/dev/null || true
+          cp -r ./js _site/ 2>/dev/null || true
 
-          # 🔥 CART
-          mkdir -p _site/cart
-          cp -r apps/cart/dist/* _site/cart/
+          # =========================
+          # APPS (СОХРАНЯЕМ /apps/* СТРУКТУРУ)
+          # =========================
+          mkdir -p _site/apps/cart
+          mkdir -p _site/apps/garage
 
-          # 🔥 GARAGE
-          mkdir -p _site/garage
-          cp -r apps/garage/dist/* _site/garage/
+          cp -r apps/cart/dist/* _site/apps/cart/
+          cp -r apps/garage/dist/* _site/apps/garage/
 
       # =========================
-      # DEPLOY
+      # PAGES ARTIFACT
       # =========================
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
@@ -86,5 +89,5 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Deploy
+      - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
