@@ -1,0 +1,14 @@
+{
+  "name": "product-design-portfolio",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev:cart": "npm --workspace apps/cart run dev",
+    "dev:garage": "npm --workspace apps/garage run dev",
+
+    "build:cart": "npm --workspace apps/cart run build",
+    "build:garage": "npm --workspace apps/garage run build"
+  }
+}
