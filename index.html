@@ -943,7 +943,7 @@
   </div>
 </section>
 
-<section  id="about" class="py-10 max-w-7xl mx-auto px-6 fade-in">
+<section  id="about" class="py-20 max-w-7xl mx-auto px-6 fade-in">
   <div class="py-10 px-6 max-w-3xl mx-auto text-center fade-in">
     <h2 class="text-3xl font-medium tracking-tight mb-6">Подход к работе</h2>
     <p class="text-gray-500 font-light text-lg leading-relaxed">
@@ -1025,7 +1025,354 @@
   </div>
 </section>
 
-<section id="contact" class="py-24 px-6   border-t border-gray-100 text-center fade-in">
+<section id="faq" class="py-12 bg-white/60 backdrop-blur-md border border-white/20 fade-in">
+  <div class="max-w-4xl mx-auto text-center mb-14">
+    <h2 class="text-4xl md:text-5xl font-semibold tracking-tight mb-5">
+      FAQ
+    </h2>
+
+    <p class="text-[#6e6e73] text-lg font-normalleading-relaxed max-w-2xl mx-auto">
+      Подход к продуктовой разработке, AI-first UX, исследованиям, метрикам и проектированию сложных B2B/ERP интерфейсов
+    </p>
+  </div>
+
+  <div class="max-w-4xl mx-auto divide-y divide-[#d2d2d7]">
+
+    <!-- 1 -->
+    <details class="group py-6">
+      <summary class="flex cursor-pointer list-none items-center justify-between">
+        <span class="text-left text-xl font-medium tracking-tight">
+          Как я собираю данные для формирования интерфейсных гипотез и как оцениваю их эффективность?
+        </span>
+
+        <span class="ml-6 text-3xl font-light text-[#86868b] transition-transform duration-300 group-open:rotate-45">
+          +
+        </span>
+      </summary>
+
+      <div class="mt-6 text-[#6e6e73] leading-8 text-[17px] font-normalspace-y-4">
+        <p>
+          Я собирааю данные, комбинируя качественные и количественные методы. Сначала анализирую продуктовые метрики: воронки, точки оттока, время выполнения задач, затем дополняю их качественными инсайтами через CustDev, интервью и юзабилити-тесты.
+        </p>
+
+        <p>
+          На основе этого формулирую гипотезы через JTBD и Job Stories, чтобы они были привязаны к реальным задачам пользователей.
+        </p>
+
+        <p>
+          Эффективность гипотез оцениваю через заранее определённые метрики: A/B-тесты, изменение ключевых показателей, конверсию, время выполнения задачи, количество ошибок, а также CSI/CSAT.
+        </p>
+
+        <p>
+          Сравниваю результаты с baseline и принимаю решение о масштабировании или доработке решения.
+        </p>
+      </div>
+    </details>
+
+    <!-- 2 -->
+    <details class="group py-6">
+      <summary class="flex cursor-pointer list-none items-center justify-between">
+        <span class="text-left text-xl font-medium tracking-tight">
+          Как я принимаю решения в условиях неопределённости, когда нет данных или они противоречивы?
+        </span>
+
+        <span class="ml-6 text-3xl font-light text-[#86868b] transition-transform duration-300 group-open:rotate-45">
+          +
+        </span>
+      </summary>
+
+      <div class="mt-6 text-[#6e6e73] leading-8 text-[17px] font-normalspace-y-4">
+        <p>
+          В условиях неопределённости я опираюсь на комбинацию продуктовой логики, качественных инсайтов и быстрых проверок гипотез.
+        </p>
+
+        <p>
+          Если данных недостаточно или они противоречивы, сначала формулирую несколько возможных гипотез через JTBD и опыт пользователей, затем уточняю их через быстрые качественные методы: интервью, прототипирование и юзабилити-тесты.
+        </p>
+
+        <p>
+          Далее принимаю решение на основе наименьшего риска для пользователя и бизнеса — выбираю вариант, который проще и быстрее проверить.
+        </p>
+
+        <p>
+          После внедрения обязательно закладываю метрики и проверяю результат через аналитику или A/B-тест, чтобы подтвердить или скорректировать решение.
+        </p>
+      </div>
+    </details>
+
+    <!-- 3 -->
+    <details class="group py-6">
+      <summary class="flex cursor-pointer list-none items-center justify-between">
+        <span class="text-left text-xl font-medium tracking-tight">
+          Случай использования JTBD в проектах: какие инсайты помогли изменить продукт?
+        </span>
+
+        <span class="ml-6 text-3xl font-light text-[#86868b] transition-transform duration-300 group-open:rotate-45">
+          +
+        </span>
+      </summary>
+
+      <div class="mt-6 text-[#6e6e73] leading-8 text-[17px] font-normalspace-y-4">
+        <p>
+          В одном из B2B-проектов я использовал JTBD при переработке сценария работы с заявками в CRM.
+        </p>
+
+        <p>
+          Интервью показали, что пользователям важна не сама функция изменения статуса, а возможность быстро понимать текущее состояние клиента и не терять контекст работы.
+        </p>
+
+        <p>
+          Это изменило подход к проектированию: вместо добавления новых функций мы упростили user flow, объединили ключевые действия в одном экране и переработали структуру карточки клиента.
+        </p>
+
+        <p>
+          В результате сократилось время выполнения основных операций и снизилось количество ошибок.
+        </p>
+      </div>
+    </details>
+
+    <!-- 4 -->
+    <details class="group py-6">
+      <summary class="flex cursor-pointer list-none items-center justify-between">
+        <span class="text-left text-xl font-medium tracking-tight">
+          Кейс из опыта, где моё решение повлияло на продуктовую метрику
+        </span>
+
+        <span class="ml-6 text-3xl font-light text-[#86868b] transition-transform duration-300 group-open:rotate-45">
+          +
+        </span>
+      </summary>
+
+      <div class="mt-6 text-[#6e6e73] leading-8 text-[17px] font-normalspace-y-4">
+        <p>
+          В одном из проектов для B2B CRM я работал над модулем обработки заявок.
+        </p>
+
+        <p>
+          По данным аналитики и обратной связи пользователей выявили, что основной сценарий занимает слишком много времени и сопровождается ошибками из-за разрозненного интерфейса.
+        </p>
+
+        <p>
+          Я переработал структуру карточки заявки, объединил ключевые действия в единый контекстный сценарий и упростил user flow на основе CJM и результатов CustDev.
+        </p>
+
+        <p>
+          После внедрения решения время обработки заявки сократилось примерно на 25–30%, снизилось количество ошибок и уменьшилось число обращений в поддержку по этому сценарию.
+        </p>
+      </div>
+    </details>
+
+    <!-- 5 -->
+    <details class="group py-6">
+      <summary class="flex cursor-pointer list-none items-center justify-between">
+        <span class="text-left text-xl font-medium tracking-tight">
+          Какие AI-инструменты я использую в повседневной работе и для чего?
+        </span>
+
+        <span class="ml-6 text-3xl font-light text-[#86868b] transition-transform duration-300 group-open:rotate-45">
+          +
+        </span>
+      </summary>
+
+      <div class="mt-6 text-[#6e6e73] leading-8 text-[17px] font-normalspace-y-4">
+        <p>
+          Использую AI как инструмент для ускорения исследований, проектирования и подготовки материалов.
+        </p>
+
+        <p>
+          ChatGPT помогает в формулировке и структурировании гипотез, JTBD, Job Stories, сценариев, UX-текстов и анализе результатов интервью.
+        </p>
+
+        <p>
+          Codex OpenAI, AI Studio и VSCode использую для создания интерактивных прототипов, презентаций и продуктов на React, TypeScript и Tailwind.
+        </p>
+
+        <p>
+          Gemini Google и NotebookLM применяю для генерации UX-решений, альтернативных флоу и быстрого прототипирования идей.
+        </p>
+
+        <p>
+          Google Flow Pro Nana Banana использую для визуальных концептов, а Kimi — для подготовки презентаций PowerPoint.
+        </p>
+      </div>
+    </details>
+
+    <!-- 6 -->
+    <details class="group py-6">
+      <summary class="flex cursor-pointer list-none items-center justify-between">
+        <span class="text-left text-xl font-medium tracking-tight">
+          Какой вклад я вносил в разработку AI-сценариев?
+        </span>
+
+        <span class="ml-6 text-3xl font-light text-[#86868b] transition-transform duration-300 group-open:rotate-45">
+          +
+        </span>
+      </summary>
+
+      <div class="mt-6 text-[#6e6e73] leading-8 text-[17px] font-normalspace-y-4">
+        <p>
+          В своих проектах я участвовал в проектировании AI-сценариев для B2B и ERP-интерфейсов — в основном это были сценарии помощи пользователю, генерации контента и упрощения сложных процессов через AI-assisted UX.
+        </p>
+
+        <p>
+          Мой вклад включал исследование пользовательских сценариев и выявление точек, где AI действительно снижает нагрузку пользователя.
+        </p>
+
+        <p>
+          Также я проектировал AI-flow и состояния интерфейса, формировал JTBD и Job Stories для AI-функций, создавал и тестировал прототипы AI-взаимодействий.
+        </p>
+
+        <p>
+          Дополнительно прорабатывал UX для edge cases, ошибок и уровня доверия к AI-ответам.
+        </p>
+
+        <p>
+          В работе использовал CustDev, CJM, JTBD, сценарное моделирование, быстрые прототипы и юзабилити-тестирование.
+        </p>
+      </div>
+    </details>
+
+    <!-- 7 -->
+    <details class="group py-6">
+      <summary class="flex cursor-pointer list-none items-center justify-between">
+        <span class="text-left text-xl font-medium tracking-tight">
+          Что я делаю, если дизайн не принимает продакт или бизнес?
+        </span>
+
+        <span class="ml-6 text-3xl font-light text-[#86868b] transition-transform duration-300 group-open:rotate-45">
+          +
+        </span>
+      </summary>
+
+      <div class="mt-6 text-[#6e6e73] leading-8 text-[17px] font-normalspace-y-4">
+        <p>
+          В такой ситуации сначала уточняю причины несогласия: бизнес-ограничения, метрики, риски или различие в понимании проблемы.
+        </p>
+
+        <p>
+          Сопоставляю это с пользовательскими данными и целями продукта, чтобы понять, где именно расхождение — в решении или в постановке задачи.
+        </p>
+
+        <p>
+          Далее либо аргументированно отстаиваю решение через исследования, CJM, метрики и результаты тестов, либо предлагаю альтернативы и компромиссные варианты.
+        </p>
+
+        <p>
+          Если данных недостаточно, быстро проверяю гипотезу через прототипирование или тестирование и возвращаюсь к обсуждению уже с фактами.
+        </p>
+      </div>
+    </details>
+
+    <!-- 8 -->
+    <details class="group py-6">
+      <summary class="flex cursor-pointer list-none items-center justify-between">
+        <span class="text-left text-xl font-medium tracking-tight">
+          С какими компонентами Service Blueprint я работал чаще всего?
+        </span>
+
+        <span class="ml-6 text-3xl font-light text-[#86868b] transition-transform duration-300 group-open:rotate-45">
+          +
+        </span>
+      </summary>
+
+      <div class="mt-6 text-[#6e6e73] leading-8 text-[17px] font-normalspace-y-4">
+        <p>
+          Чаще всего при построении Service Blueprint мне приходилось работать с backstage processes и support processes, так как именно они сильнее всего влияют на стабильность пользовательского сценария в B2B/ERP-системах.
+        </p>
+
+        <p>
+          Основная сложность возникала в синхронизации внутренних процессов между разными отделами — когда пользователь ожидает мгновенное действие, а внутри системы запрос проходит через несколько сервисов или этапов согласования.
+        </p>
+
+        <p>
+          В таких случаях важно было выявить точки задержек и потери информации, согласовать SLA и зоны ответственности между командами, упростить сценарии и снизить зависимость пользователя от внутренних процессов.
+        </p>
+
+        <p>
+          Также я делал системные статусы и обратную связь более прозрачными для пользователя.
+        </p>
+
+        <p>
+          В одном из ERP-проектов такой анализ помог сократить количество ручных согласований и упростить сценарий обработки заявок.
+        </p>
+      </div>
+    </details>
+
+    <!-- 9 -->
+    <details class="group py-6">
+      <summary class="flex cursor-pointer list-none items-center justify-between">
+        <span class="text-left text-xl font-medium tracking-tight">
+          Приходилось ли мне формализовывать требования в технические задания и спецификации?
+        </span>
+
+        <span class="ml-6 text-3xl font-light text-[#86868b] transition-transform duration-300 group-open:rotate-45">
+          +
+        </span>
+      </summary>
+
+      <div class="mt-6 text-[#6e6e73] leading-8 text-[17px] font-normalspace-y-4">
+        <p>
+          Да, регулярно. В продуктовых и B2B/ERP-проектах мне часто приходилось формализовывать входящие требования в виде функциональных спецификаций и UX-документации для разработки.
+        </p>
+
+        <p>
+          Обычно я структурировал бизнес-требования и пользовательские сценарии, описывал user flow, edge cases и состояния интерфейсов.
+        </p>
+
+        <p>
+          Формировал acceptance criteria совместно с PM и разработкой, документировал поведение компонентов и логику взаимодействий.
+        </p>
+
+        <p>
+          Также участвовал в проработке API и системных ограничений вместе с аналитиками и инженерами.
+        </p>
+
+        <p>
+          Для этого использовал Figma, Jira, Confluence, User Stories, Job Stories и схемы сценариев.
+        </p>
+      </div>
+    </details>
+
+    <!-- 10 -->
+    <details class="group py-6">
+      <summary class="flex cursor-pointer list-none items-center justify-between">
+        <span class="text-left text-xl font-medium tracking-tight">
+          Как я исследовал эффективность коммуникационных кампаний?
+        </span>
+
+        <span class="ml-6 text-3xl font-light text-[#86868b] transition-transform duration-300 group-open:rotate-45">
+          +
+        </span>
+      </summary>
+
+      <div class="mt-6 text-[#6e6e73] leading-8 text-[17px] font-normalspace-y-4">
+        <p>
+          В одном из B2B-проектов я участвовал в исследовании эффективности коммуникационной кампании внутри CRM-платформы, связанной с внедрением нового функционала для менеджеров и операторов.
+        </p>
+
+        <p>
+          Для определения целевых сегментов использовались анализ ролей пользователей, поведенческие данные, глубина использования функций и сегментация по уровню вовлечённости.
+        </p>
+
+        <p>
+          После сегментации для каждой группы были адаптированы коммуникационные сценарии и интерфейсные подсказки.
+        </p>
+
+        <p>
+          Эффективность оценивали через open rate, CTR, adoption rate нового функционала, изменение частоты использования ключевых сценариев, CSI/CSAT и снижение количества обращений в поддержку.
+        </p>
+
+        <p>
+          Такой подход помог повысить вовлечённость пользователей и точнее адаптировать коммуникацию под разные сегменты.
+        </p>
+      </div>
+    </details>
+
+  </div>
+</section>
+
+
+<section id="contact" class="py-24 border-t border-gray-100 text-center fade-in">
   <h2 class="text-3xl font-medium tracking-tight mb-8">Связь со мной</h2>
   <div class="flex justify-center gap-6">
     <a href="https://t.me/StasDoDesign" target="_blank" class="px-8 py-3.5 bg-[#1d1d1f] text-white text-sm font-medium rounded-full hover:scale-105 transition-transform">
