@@ -217,10 +217,10 @@ footer {
 
 .brand-headline {
   margin: 0;
-  max-width: 1040px;
-  font-size: 4rem;
+  max-width: 1200px;
+  font-size: 15rem;
   line-height: 0.98;
-  font-weight: 700;
+  font-weight: 300;
   letter-spacing: 0;
   text-wrap: balance;
   overflow-wrap: break-word;
@@ -229,19 +229,26 @@ footer {
 .brand-headline__base {
   display: inline;
   color: transparent;
-  background: linear-gradient(325deg, #22d3ee 0%, #0f766e 52%, #65a30d 100%);
+  background: linear-gradient(
+  325deg,
+  #7AC0FF 0%,
+  #42E3B4 40%,
+  #4BE87B 70%,
+  #A0E720 100%
+);
   -webkit-background-clip: text;
   background-clip: text;
+  font-family: "Cormorant Garamond", Georgia, serif;
 }
 
 .simple-word {
   display: inline-block;
   white-space: nowrap;
-  font-size: clamp(4rem, 7vw, 5rem);
+  font-size: clamp(2.35rem, 7vw, 3.5rem);
 }
 
 .simple-word--hero {
-  font-family: "Cormorant Garamond", Georgia, serif;
+  
   font-style: italic;
   font-weight: 500;
   color: #ffffff;
@@ -381,7 +388,7 @@ img {
 
 @media (min-width: 768px) {
   .brand-headline {
-    font-size: 5.5rem;
+    font-size: 7rem;
   }
 }
 
@@ -393,16 +400,16 @@ img {
   }
 
   .brand-headline {
-    font-size: 5rem;
+    font-size: 5.5rem;
     line-height: 1;
   }
 
     .simple-word {
-    font-size: 4.6rem;
+    font-size: 3rem;
   }
 
   .brand-copy {
-    max-width: 560px;
+    max-width: 480px;
     font-size: 1rem;
     line-height: 1.65;
   }
@@ -434,14 +441,15 @@ img {
   .brand-headline {
     width: 100%;
     max-width: 100%;
-    font-size: clamp(2rem, 8vw, 2.55rem);
+    font-size: clamp(2rem, 16vw, 3.5rem);
     line-height: 1.05;
     overflow-wrap: anywhere;
     word-break: break-word;
   }
 
-      .simple-word {
-    font-size: 2.25rem;
+    .simple-word {
+    padding-top: 10px;
+    font-size: 1.75rem;
   }
     .simple-word {
     display: inline;
@@ -464,11 +472,11 @@ img {
 
 @media (max-width: 420px) {
   .brand-headline {
-    font-size: 2.35rem;
+    font-size: 3.25rem;
   }
 
     .simple-word {
-    font-size: 2.35rem;
+    font-size: 1.5rem;
   }
   
   .specimen__title {
