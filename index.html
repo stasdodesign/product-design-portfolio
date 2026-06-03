@@ -1420,15 +1420,55 @@ class="hidden lg:hidden bg-white/95 backdrop-blur-xl border-b border-gray-100 ab
   </div>
 </section>
  
-
-<footer class="py-12 bg-white text-center text-gray-400 text-xs font-light tracking-widest  ">
-  <p class="text-gray-600 text-xl"><a href="http://case.stanislavdovidenko.com/">Станислав Довиденко </a></p>
-  <p class="text-gray-400 text-sm font-light mb-4">UX · AI Продуктовый дизайнер · Москва</p>
-  <span>© 2026 Dovidenko. All rights reserved.</span>
  
+<footer class="footer">
+  
+  <div class="footer-top">
+    <p class="name">
+      <a href="https://case.stanislavdovidenko.com/">Станислав Довиденко</a>
+    </p>
+
+    <p class="role">UX · AI Product Designer · Москва</p>
+  </div>
+
+  <div class="footer-logo">
+    Dovidenko
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2026 Dovidenko</span>
+    <span>All rights reserved</span>
+  </div>
+
+  
+<div class="font-credit">
+  Typeface: ZVEZDA NHZDN by Kuznetsov Konstantin
+</div>
+
 </footer>
 <script>
-    
+        function fitText() {
+  const el = document.getElementById("logo");
+
+  let fontSize = 10;
+  el.style.fontSize = fontSize + "vw";
+
+  while (el.scrollWidth < window.innerWidth * 0.98 && fontSize < 50) {
+    fontSize += 0.2;
+    el.style.fontSize = fontSize + "vw";
+  }
+
+  while (el.scrollWidth > window.innerWidth * 0.98 && fontSize > 5) {
+    fontSize -= 0.2;
+    el.style.fontSize = fontSize + "vw";
+  }
+
+  // бонус: поджимаем tracking как в студиях
+  const ratio = window.innerWidth / el.scrollWidth;
+  el.style.letterSpacing = (ratio - 1) * 10 + "px";
+}
+
+ 
     function isMenuOpen() {
       return !document.getElementById('mobileMenu').classList.contains('hidden');
     }
