@@ -574,7 +574,7 @@ img {
   display: flex;
   justify-content: space-between;
   padding: 0 24px;
-  margin-top: 40px;
+  //** margin-top: 40px;**//
 
   font-size: 12px;
   color: #aaa;
