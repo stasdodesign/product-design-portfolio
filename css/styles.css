@@ -557,16 +557,15 @@ img {
   font-family: "Zvezda", sans-serif;
 
   font-size: 15.2vw;
+  line-height: 1;
   letter-spacing: -0.08em;
 
   width: 100%;
   text-align: center;
-
   white-space: nowrap;
+
+  padding-inline: 1vw;
   overflow: hidden;
-
-  padding-inline: 2vw;
-
   transform: scaleY(1.02);
 }
 
@@ -574,8 +573,7 @@ img {
   display: flex;
   justify-content: space-between;
   padding: 0 24px;
-  //** margin-top: 40px;**//
-
+  /**margin-top: 40px;**/
   font-size: 12px;
   color: #aaa;
 }
