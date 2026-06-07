@@ -5,7 +5,8 @@
     GENERAL: ["Dark Patterns: Ethics vs KPI"],
     PRICING: ["Dark Patterns: Ethics vs KPI", "Yandex Bank: Super Split"],
     SUBSCRIPTION: ["Dark Patterns: Ethics vs KPI", "Sber: Ecosystem Subscriptions"],
-    VISUAL: ["Dark Patterns: Ethics vs KPI", "Plata Fintech Audit"]
+    VISUAL: ["Dark Patterns: Ethics vs KPI", "Plata Fintech Audit"],
+    IA_SHIFT: ["Dark Patterns: Ethics vs KPI", "Alfa Bank: False Hierarchy / IA Shift"]
   };
 
   const patterns = [
@@ -31,7 +32,10 @@
       name: "Asymmetric Choice",
       description: "Согласие сделано крупным, ярким и простым, а отказ визуально ослаблен, спрятан или требует больше усилий.",
       category: "Interface Interference",
-      relatedCases: CASES.GENERAL
+      relatedCases: [
+  ...CASES.GENERAL,
+  ...CASES.IA_SHIFT
+]
     },
     {
       name: "Attention Capture",
@@ -133,7 +137,10 @@
       name: "False Hierarchy",
       description: "Визуальная иерархия специально искажает значимость вариантов, чтобы нужный бизнесу путь воспринимался как естественный.",
       category: "Visual Manipulation",
-      relatedCases: CASES.VISUAL
+relatedCases: [
+  ...CASES.VISUAL,
+  ...CASES.IA_SHIFT
+]
     },
     {
       name: "Fickle",
@@ -247,7 +254,10 @@
       name: "Interface Interference",
       description: "Общая группа приёмов, где форма интерфейса работает против намерений пользователя и в пользу бизнес-метрики.",
       category: "Interface Interference",
-      relatedCases: CASES.VISUAL
+relatedCases: [
+  ...CASES.VISUAL,
+  ...CASES.IA_SHIFT
+] 
     },
     {
       name: "Intermittent Rewards",
@@ -277,7 +287,11 @@
       name: "Misdirection",
       description: "Визуальный акцент направляет внимание к нужной бизнесу опции, а более полезный пользователю выбор становится менее заметным.",
       category: "Visual Manipulation",
-      relatedCases: CASES.VISUAL
+      relatedCases: [
+  ...CASES.VISUAL,
+  ...CASES.IA_SHIFT
+]
+      
     },
     {
       name: "Nagging",
