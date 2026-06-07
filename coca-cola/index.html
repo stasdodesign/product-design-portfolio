@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coca-Cola: Evolution Through Time (1934-2110)</title>
+  <meta name="description" content="Premium bilingual case study about Coca-Cola brand evolution across eight eras from 1934 to 2110." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    :root {
+      --coke-red: #E61A27;
+      --ink: #111113;
+      --muted: #686b73;
+      --line: rgba(17, 17, 19, 0.1);
+      --paper: #fbfbfc;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", sans-serif;
+      color: var(--ink);
+      background: linear-gradient(180deg, #ffffff 0%, #f7f7f8 48%, #ffffff 100%);
+      text-rendering: geometricPrecision;
+      overflow-x: hidden;
+    }
+
+    img {
+      user-select: none;
+    }
+
+    .site-actions {
+      display: flex;
+      min-width: 0;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 24px;
+    }
+
+    .desktop-lang {
+      display: none;
+    }
+
+    .mobile-toggle {
+      display: block;
+      border: 0;
+      padding: 0;
+      background: transparent;
+      color: #6b7280;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1;
+    }
+
+    @media (min-width: 640px) {
+      .site-header__bar {
+        padding-inline: 24px;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .site-header__bar {
+        width: 100% !important;
+        grid-template-columns: auto minmax(0, 1fr) auto !important;
+        padding-inline: 32px;
+      }
+
+      .desktop-lang {
+        display: flex;
+      }
+
+      .mobile-toggle {
+        display: none;
+      }
+    }
+
+    .hero {
+      min-height: 100svh;
+      isolation: isolate;
+      width: 100vw;
+      max-width: 100vw;
+    }
+
+    .hero h1,
+    .hero p {
+      overflow-wrap: anywhere;
+    }
+
+    .hero > div {
+      max-width: min(80rem, calc(100vw - 40px)) !important;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background:
+        linear-gradient(90deg, rgba(0, 0, 0, 0.82) 0%, rgba(0, 0, 0, 0.52) 44%, rgba(0, 0, 0, 0.1) 100%),
+        linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.72) 100%);
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .scroll-cue {
+      animation: scrollCue 1.6s ease-in-out infinite;
+    }
+
+    @keyframes scrollCue {
+      0%, 100% { transform: translateY(0); opacity: 0.55; }
+      50% { transform: translateY(8px); opacity: 1; }
+    }
+
+    .timeline-link.is-active {
+      background: var(--coke-red);
+      color: #ffffff;
+      border-color: var(--coke-red);
+    }
+
+    .era-grid {
+      min-height: 100svh;
+    }
+
+    .era-image {
+      aspect-ratio: 4 / 5;
+      box-shadow: 0 28px 80px rgba(17, 17, 19, 0.18);
+    }
+
+    .spec-card {
+      border: 1px solid rgba(17, 17, 19, 0.08);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.72);
+    }
+
+    .table-wrap {
+      scrollbar-width: thin;
+    }
+
+    .mobile-menu-scroll {
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+    }
+
+    @media (max-width: 767px) {
+      .hero {
+        min-height: 92svh;
+      }
+
+      .era-grid {
+        min-height: auto;
+      }
+
+      .era-image {
+        aspect-ratio: 16 / 11;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .fade-in,
+      .scroll-cue {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+<body class="antialiased">
+
+        <header class="glass fixed top-0 left-0 w-full bg-white/85 backdrop-blur-xl z-50 border-b border-gray-100 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 grid grid-cols-2 lg:grid-cols-[auto_1fr_auto] items-center">
+
+      <a href="#top" class="text-base font-extrabold tracking-tight text-black sm:text-base" aria-label="Coca-Cola case study" data-i18n="nav.brand">
+        Станислав Довиденко
+      </a>
+
+      <nav class="hidden justify-center gap-7 text-xs font-bold uppercase tracking-[0.18em] text-neutral-500 lg:flex">
+        <a class="transition hover:text-black" href="#intro" data-i18n="nav.intro">Введение</a>
+        <a class="transition hover:text-black" href="#timeline" data-i18n="nav.timeline">Таймлайн</a>
+        <a class="transition hover:text-black" href="#eras" data-i18n="nav.eras">Эпохи</a>
+        <a class="transition hover:text-black" href="#summary" data-i18n="nav.summary">Сводка</a>
+        <a class="transition hover:text-black" href="#final" data-i18n="nav.final">Финал</a>
+      </nav>
+
+      <div class="site-actions">
+        <div class="desktop-lang rounded-full bg-neutral-100 p-1 text-xs font-extrabold">
+          <button class="lang-btn rounded-full px-3 py-1.5 transition" type="button" data-lang="ru" aria-pressed="true">RU</button>
+          <button class="lang-btn rounded-full px-3 py-1.5 transition" type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <button id="mobileMenuToggle" class="mobile-toggle" type="button" aria-controls="mobileMenu" aria-expanded="false" aria-label="Меню" data-i18n="nav.menu">
+          Меню
+        </button>
+      </div>
+    </div>
+ <div id="mobileMenu"
+class="hidden lg:hidden bg-white/95 backdrop-blur-xl border-b border-gray-100 absolute top-full left-0 w-full max-h-[calc(100vh-72px)] overflow-y-auto px-4 sm:px-6 lg:px-8 py-2 flex flex-col gap-6 shadow-xl mobile-menu-scroll">
+      <nav class="flex flex-col gap-3 text-base font-medium text-neutral-900">
+        <a href="#intro" data-mobile-link data-i18n="nav.intro">Введение</a>
+        <a href="#timeline" data-mobile-link data-i18n="nav.timeline">Таймлайн</a>
+        <a href="#eras" data-mobile-link data-i18n="nav.eras">Эпохи</a>
+        <a href="#summary" data-mobile-link data-i18n="nav.summary">Сводка</a>
+        <a href="#final" data-mobile-link data-i18n="nav.final">Финал</a>
+      </nav>
+      
+      <div class="h-px bg-gray-200 w-full"></div>
+
+      <div class="flex w-max rounded-full bg-neutral-100 p-1 text-xs font-extrabold">
+        <button class="lang-btn rounded-full px-5 py-1.5 transition" type="button" data-lang="ru" aria-pressed="true">RU</button>
+        <button class="lang-btn rounded-full px-5 py-1.5 transition" type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero relative flex items-end overflow-hidden px-5 pb-16 pt-32 text-white sm:items-center sm:pb-20 lg:px-8">
+      <img
+        class="absolute inset-0 -z-10 h-full w-full object-cover"
+        src="https://images.unsplash.com/photo-1554866585-cd94860890b7?auto=format&fit=crop&w=1800&q=78"
+        alt="Coca-Cola bottles in red light"
+        fetchpriority="high"
+      />
+      <div class="mx-auto w-full max-w-7xl">
+        <div class="max-w-4xl fade-in">
+          <p class="mb-6 inline-flex rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-extrabold uppercase tracking-[0.24em] text-white/80 backdrop-blur" data-i18n="hero.kicker">Дизайн-кейс / 1934-2110</p>
+          <h1 class="max-w-5xl text-5xl font-black leading-[0.92] tracking-tight sm:text-7xl lg:text-8xl" data-i18n="hero.title">Coca-Cola: Эволюция сквозь время</h1>
+          <p class="mt-8 max-w-2xl text-xl font-light leading-relaxed text-white/78 sm:text-2xl" data-i18n="hero.subtitle">Что если бренд - это не логотип, а живая система, развивающаяся вместе с человечеством?</p>
+          <div class="mt-10 flex flex-wrap gap-3 text-xs font-extrabold uppercase tracking-[0.18em] text-white/80">
+            <span class="rounded-full bg-white/12 px-4 py-2 backdrop-blur">Refreshment</span>
+            <span class="rounded-full bg-white/12 px-4 py-2 backdrop-blur">Joy</span>
+            <span class="rounded-full bg-white/12 px-4 py-2 backdrop-blur">Connection</span>
+          </div>
+        </div>
+      </div>
+      <a href="#intro" class="scroll-cue absolute bottom-7 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-[10px] font-bold uppercase tracking-[0.3em] text-white/70 sm:flex">
+        <span data-i18n="hero.scroll">Скролл</span>
+        <span class="block h-10 w-px bg-white/50"></span>
+      </a>
+    </section>
+
+    <section id="intro" class="px-5 py-24 lg:px-8 lg:py-32">
+      <div class="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+        <div class="fade-in">
+          <p class="mb-5 text-xs font-black uppercase tracking-[0.28em] text-[var(--coke-red)]" data-i18n="intro.kicker">Введение</p>
+          <h2 class="text-4xl font-black leading-[0.95] tracking-tight sm:text-6xl" data-i18n="intro.title">Бренд как временная цивилизация</h2>
+        </div>
+        <div class="fade-in space-y-8">
+          <p class="text-xl font-light leading-relaxed text-neutral-600" data-i18n="intro.lead">Я собрал визуальную концепцию эволюции Coca-Cola через ключевые временные эпохи - от 1934 года до гипотетического 2110. Это не редизайн. Это бренд как временная цивилизация.</p>
+          <div class="grid gap-4 md:grid-cols-3" id="introCards"></div>
+        </div>
+      </div>
+    </section>
+
+    <nav id="timeline" class="sticky top-[65px] z-40 border-y border-neutral-200 bg-white/86 px-4 py-3 backdrop-blur">
+      <div id="timelineLinks" class="mx-auto flex max-w-7xl gap-2 overflow-x-auto"></div>
+    </nav>
+
+    <section id="eras" aria-label="Coca-Cola eras">
+      <div id="eraRoot"></div>
+    </section>
+
+    <section id="summary" class="px-5 py-24 lg:px-8 lg:py-32">
+      <div class="mx-auto max-w-7xl">
+        <div class="mb-12 max-w-3xl fade-in">
+          <p class="mb-5 text-xs font-black uppercase tracking-[0.28em] text-[var(--coke-red)]" data-i18n="summary.kicker">Сводка эволюции</p>
+          <h2 class="text-4xl font-black leading-none tracking-tight sm:text-6xl" data-i18n="summary.title">Как меняется форма, когда ДНК остается прежней</h2>
+        </div>
+        <div class="table-wrap overflow-x-auto rounded-[28px] border border-neutral-200 bg-white shadow-sm fade-in">
+          <table class="w-full min-w-[900px] text-left">
+            <thead class="bg-neutral-50 text-[11px] font-black uppercase tracking-[0.2em] text-neutral-400">
+              <tr>
+                <th class="px-7 py-5" data-i18n="summary.columns.era">Эпоха</th>
+                <th class="px-7 py-5" data-i18n="summary.columns.logo">Логотип</th>
+                <th class="px-7 py-5" data-i18n="summary.columns.technology">Технология</th>
+                <th class="px-7 py-5" data-i18n="summary.columns.emotion">Эмоция</th>
+                <th class="px-7 py-5" data-i18n="summary.columns.medium">Медиа</th>
+              </tr>
+            </thead>
+            <tbody id="summaryRows" class="divide-y divide-neutral-100 text-sm leading-relaxed text-neutral-600"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-black px-5 py-28 text-white lg:px-8 lg:py-20">
+      <div class="mx-auto max-w-5xl text-center fade-in lg:py-20">
+        <p class="mx-auto mb-8 h-1 w-20 rounded-full bg-[var(--coke-red)]"></p>
+        <blockquote class="text-4xl font-black leading-tight tracking-tight sm:text-6xl" data-i18n="insight.quote">Coca-Cola остаётся узнаваемой не благодаря форме, а благодаря своей эмоциональной ДНК.</blockquote>
+        <p class="mt-10 text-sm font-extrabold uppercase tracking-[0.34em] text-white/46">refreshment / joy / connection</p>
+      </div>
+      <div class="footer-logo">
+       Сoca-Cola
+       </div>
+       <div class="font-credit">
+        Typeface: ZVEZDA NHZDN by Kuznetsov Konstantin
+      </div>
+    </section>
+
+    <section id="final" class="relative overflow-hidden px-5 py-24 text-white lg:px-8 lg:py-2">
+      <img
+        class="absolute inset-0 -z-10 h-full w-full object-cover"
+        src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=1800&q=75"
+        alt="Abstract cosmic red light"
+        loading="lazy"
+      />
+      <div class="absolute inset-0 -z-10 bg-black/70"></div>
+      <div class="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-end lg:py-40">
+        <div class="fade-in">
+          <p class="mb-5 text-xs font-black uppercase tracking-[0.28em] text-white/54" data-i18n="final.kicker">Финальный вопрос</p>
+          <h2 class="text-4xl font-black leading-[0.98] tracking-tight sm:text-6xl lg:text-7xl" data-i18n="final.title">Если бренд способен пережить восемь эпох будущего - каким он должен быть уже сегодня?</h2>
+        </div>
+        <p class="fade-in text-xl font-light leading-relaxed text-white/72" data-i18n="final.copy">Coca-Cola превращается из упаковки и знака в систему узнаваемого чувства: стабильного красного, жеста связи и обещания освежения, которое меняет носители, но не теряет смысл.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-neutral-200 bg-white px-5 py-12 lg:px-8">
+    <div class="mx-auto flex max-w-7xl flex-col gap-6 text-sm text-neutral-500 sm:flex-row sm:items-center sm:justify-between">
+      <p class="font-semibold text-neutral-900" data-i18n="footer.text">Станислав Довиденко: UX · AI Product Designer · Москва</p>
+      <p data-i18n="footer.copy">© 2026 Dovidenko · All rights reserved</p>
+    </div>
+  </footer>
+
+  <script>
+    const translations = {
+      ru: {
+        nav: {
+          brand: "Станислав Довиденко",
+          intro: "Введение",
+          timeline: "Таймлайн",
+          eras: "Эпохи",
+          summary: "Сводка",
+          final: "Финал",
+          menu: "Меню"
+        },
+        hero: {
+          kicker: "Дизайн-кейс / 1934-2110",
+          title: "Coca-Cola: Эволюция сквозь время",
+          subtitle: "Что если бренд - это не логотип, а живая система, развивающаяся вместе с человечеством?",
+          scroll: "Скролл"
+        },
+        intro: {
+          kicker: "Введение",
+          title: "Бренд как временная цивилизация",
+          lead: "Я собрал визуальную концепцию эволюции Coca-Cola через ключевые временные эпохи - от 1934 года до гипотетического 2110. Это не редизайн. Это бренд как временная цивилизация.",
+          cards: [
+            { title: "Цель проекта", text: "Проследить, как Coca-Cola может сохранять узнаваемость, меняя форму, медиа и материальность на протяжении восьми эпох." },
+            { title: "Исследовательская концепция", text: "Бренд рассматривается как живая система, которая адаптируется к культуре, технологиям и ожиданиям людей." },
+            { title: "ДНК бренда", text: "Refreshment, joy и connection остаются эмоциональной основой, даже когда носители становятся цифровыми, биологическими или постматериальными." }
+          ]
+        },
+        labels: {
+          visual: "Визуальная концепция",
+          direction: "Направление бренда",
+          logo: "Работа с логотипом",
+          type: "Типографика",
+          color: "Цвет и материалы",
+          emotion: "Культурная эмоция",
+          media: "Медиа",
+          timeless: "Вневременность"
+        },
+        summary: {
+          kicker: "Сводка эволюции",
+          title: "Как меняется форма, когда ДНК остается прежней",
+          columns: {
+            era: "Эпоха",
+            logo: "Логотип",
+            technology: "Технология",
+            emotion: "Эмоция",
+            medium: "Медиа"
+          }
+        },
+        insight: {
+          quote: "Coca-Cola остаётся узнаваемой не благодаря форме, а благодаря своей эмоциональной ДНК."
+        },
+        final: {
+          kicker: "Финальный вопрос",
+          title: "Если бренд способен пережить восемь эпох будущего - каким он должен быть уже сегодня?",
+          copy: "Coca-Cola превращается из упаковки и знака в систему узнаваемого чувства: стабильного красного, жеста связи и обещания освежения, которое меняет носители, но не теряет смысл."
+        },
+        footer: {
+          text: "Станислав Довиденко: UX · AI Product Designer · Москва",
+          copy: "© 2026 Dovidenko · Все права защищены"
+        },
+        eras: [
+          {
+            year: "1934",
+            title: "Эпоха оптимизма",
+            englishTitle: "The Era of Optimism",
+            subtitle: "Эпоха простоты, стекла и доверия.",
+            description: "Эта концепция закрепляет бренд в его золотом веке классической рекламы, делая акцент на теплоте и доступности после Великой депрессии.",
+            image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1400&q=76",
+            alt: "Vintage diner counter",
+            bg: "#fff7f7",
+            points: {
+              visual: "Мир, который восстанавливается и ищет утешения. Визуальные эффекты приземленные, надежные и оптимистичные. Представьте себе автоматы с газировкой, классические американские образы и влияние ар-деко в рекламе.",
+              direction: "Акцент на стабильности, простых радостях и подлинности. Coca-Cola - это «Настоящая вещь» (The Real Thing).",
+              logo: "Классический спенсеровский шрифт (Spencerian Script), выполненный в солидной, дружелюбной манере, часто обведенный белым контуром на красном фоне. Это определяющая, полностью узнаваемая точка отсчета.",
+              type: "Сильные, располагающие к себе брусковые шрифты (slab-serif) и рукописные заголовки (brush-script) для рекламы, транслирующие дружелюбие и надежность.",
+              color: "«Красный цвет Coke» (Coke Red) - плотный, теплый, матовый. В основном используется на стеклянных бутылках и окрашенных металлических вывесках.",
+              emotion: "Доверие, комфорт и ностальгия. Видеть Coke означает, что всё в порядке.",
+              media: "Печатная реклама, нарисованные вручную билборды, вывески автоматов с газировкой и ранняя стеклянная упаковка.",
+              timeless: "Непоколебимая стабильность спенсеровского шрифта и основного красного цвета."
+            },
+            table: {
+              logo: "Классический Spencerian Script",
+              technology: "Стекло, металл, печатная реклама",
+              emotion: "Доверие и комфорт",
+              medium: "Билборды, содовые автоматы, упаковка"
+            }
+          },
+          {
+            year: "2003",
+            title: "Волна миллениума",
+            englishTitle: "The Millennium Wave",
+            subtitle: "Мир глобализации, поп-культуры и цифрового драйва.",
+            description: "Эта эпоха улавливает энергию начала 2000-х, когда цифровая культура начинает влиять на физический дизайн. Речь идет об энергии, поп-культуре и связи.",
+            image: "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=1400&q=76",
+            alt: "Music festival crowd",
+            bg: "#ffffff",
+            points: {
+              visual: "Расцвет цифровой эпохи, широкополосный интернет, музыкальные фестивали и экстремальные виды спорта. Визуальный ряд динамичный, яркий и немного глянцевый.",
+              direction: "Принятие динамичной молодежной культуры, спонтанности и «Светлой стороны жизни» (Coke Side of Life).",
+              logo: "Спенсеровский шрифт становится немного жирнее и часто дополняется динамичным элементом ленты («Dynamic Ribbon»), которая может закручиваться независимо от текста. Узнаваемо, но энергично.",
+              type: "Энергичные и смелые шрифты без засечек, например в стиле Gotham, используются для слоганов, контрастируя с рукописным логотипом.",
+              color: "Глянцевые красные оттенки на алюминиевых банках и пластиковых бутылках. Внедрение металлических серебряных акцентов.",
+              emotion: "Энергия, веселье, драйв и общение с друзьями.",
+              media: "Высокобюджетные телевизионные ролики, яркие торговые автоматы, спонсорство музыкальных мероприятий и интерактивные веб-сайты с обилием графики.",
+              timeless: "Сочетание культового шрифта с плавной лентой, создающее мощную, узнаваемую композицию."
+            },
+            table: {
+              logo: "Script + Dynamic Ribbon",
+              technology: "Broadband, TV, interactive web",
+              emotion: "Energy and fun",
+              medium: "Festivals, vending machines, websites"
+            }
+          },
+          {
+            year: "2029",
+            title: "Эпоха синхронизированной реальности",
+            englishTitle: "The Synced Reality Era",
+            subtitle: "Физическое и цифровое соединяются в единый phygital-опыт.",
+            description: "Эта эпоха знаменует массовое внедрение дополненной реальности и постоянной связи, переход к опыту Physical + Digital.",
+            image: "https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1400&q=76",
+            alt: "Future city at night",
+            bg: "#f7fbff",
+            points: {
+              visual: "AR-устройства, очки и контактные линзы стали обычным явлением. Социальное взаимодействие плавно перетекает из физического в цифровое пространство. Визуальные эффекты адаптивны и персонализированы.",
+              direction: "Гиперперсонализация, спонтанность и содействие совместным цифровым/физическим моментам.",
+              logo: "Шрифт сохраняется, но часто отображается как светящийся, полупрозрачный AR-актив. Он «активируется» в ответ на социальное взаимодействие или местоположение.",
+              type: "Изящные, адаптивные вариативные шрифты без засечек, которые меняют толщину и интервалы в зависимости от цифрового интерфейса или окружения.",
+              color: "«Красный цвет Coke» эволюционирует в адаптивные «Цифровые красные» (Digital Reds), которые пульсируют энергией на экранах и в носимых интерфейсах. Физические банки имеют тонко интегрированные светодиоды.",
+              emotion: "Связь, спонтанность и легкость разделенной радости.",
+              media: "AR-фильтры, интерактивные цифровые билборды, реагирующие на прохожих, и «умные» банки, отображающие персонализированные сообщения или анимацию.",
+              timeless: "Форма шрифта остается главным якорем идентичности, узнаваемым даже в виде цифровой световой структуры."
+            },
+            table: {
+              logo: "Glowing translucent AR script",
+              technology: "AR wearables and smart cans",
+              emotion: "Shared spontaneous joy",
+              medium: "AR filters, digital billboards, smart packaging"
+            }
+          },
+          {
+            year: "2049",
+            title: "Эпоха биоустойчивости",
+            englishTitle: "The Bio-Resilience Era",
+            subtitle: "Устойчивость, сообщества и осознанное освежение.",
+            description: "Будущее, ориентированное на экологичность, сообщество и рациональное использование ресурсов в мире после эпохи их интенсивного потребления.",
+            image: "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1400&q=76",
+            alt: "Sustainable architecture with greenery",
+            bg: "#f7fff8",
+            points: {
+              visual: "Города становятся зеленее, устойчивее и ориентированы на сообщества. Технологии высокоэффективны и интегрированы с природой. Эстетика чистая, функциональная и осознанная.",
+              direction: "Сообщество, стабильность, ответственность и освежение в осознанном мире.",
+              logo: "Шрифт утончен и часто выполняется из функциональных, экологичных материалов. Иногда он упрощается, позволяя красному цвету и базовому изгибу нести на себе функцию узнаваемости.",
+              type: "Чистые, геометрические шрифты без засечек, передающие эффективность и современную ясность, в сочетании с теплыми, дружелюбными акцентами с засечками.",
+              color: "Красный цвет смещается от яркого к более глубоким, землистым «Органическим красным» (Organic Reds). Материалы включают устойчивые биопленки для упаковки и энергосберегающие светодиодные проекции на общественных структурах.",
+              emotion: "Уверенность, комфорт и стабильность. Coke - надежная часть устойчивого сообщества.",
+              media: "Интерактивные общественные станции розлива, тонкие светодиодные проекции на экологичной архитектуре и персонализированная упаковка из биопленки.",
+              timeless: "Фирменный цвет и непреходящий изгиб шрифта, адаптированные к функциональным и экологичным применениям."
+            },
+            table: {
+              logo: "Refined script in sustainable materials",
+              technology: "Bio-films, low-energy projection",
+              emotion: "Reassurance and stability",
+              medium: "Refill stations, architecture, bio-packaging"
+            }
+          },
+          {
+            year: "2050",
+            title: "Эпоха нео-оптимизма",
+            englishTitle: "The Neo-Optimist Era",
+            subtitle: "Чистый модернизм, автоматизация и легкое счастье.",
+            description: "Праздник эффективности, чистого дизайна и ретро-футуристического мировоззрения, черпающий вдохновение в оптимизме модерна середины XX века.",
+            image: "https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=1400&q=76",
+            alt: "Modernist futuristic architecture",
+            bg: "#ffffff",
+            points: {
+              visual: "Элегантные, автоматизированные и сверхэффективные общества. «Новый модернизм». Дизайн чистый, оптимистичный и безупречно функциональный.",
+              direction: "Эффективность, простота и обеспечение безупречной радости и легкого освежения.",
+              logo: "Шрифт оптимизирован и часто сочетается со смелыми геометрическими формами, например кругами. Общая компоновка чистая и сбалансированная.",
+              type: "Чистые, геометрические шрифты без засечек, потомки Futura или Helvetica, используемые симметрично и минималистично.",
+              color: "Полированные, хорошо отражающие свет «Атомные красные» (Atomic Reds) на поверхностях вроде полированного хрома и смарт-стекла. Упаковка сверхгладкая.",
+              emotion: "Восторг, легкость и непринужденное счастье.",
+              media: "Интеграция в домашние умные интерфейсы, эффективные роботизированные центры доставки и ненавязчивый голографический брендинг в общественном транспорте.",
+              timeless: "Мощное использование основной цветовой иерархии и классической формы шрифта, переданных с абсолютной модернистской ясностью."
+            },
+            table: {
+              logo: "Streamlined script with geometry",
+              technology: "Smart glass, automation, holograms",
+              emotion: "Delight and lightness",
+              medium: "Smart homes, robotic hubs, transit"
+            }
+          },
+          {
+            year: "2085",
+            title: "Эпоха взаимосвязанного потока",
+            englishTitle: "The Interconnected Flow",
+            subtitle: "Биология, технологии и среда растворяются друг в друге.",
+            description: "Эпоха, когда границы между биологией, технологией и окружающей средой полностью стираются, двигаясь к органическим вычислениям и прямому нейронному взаимодействию.",
+            image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=76",
+            alt: "Organic landscape with water and greenery",
+            bg: "#f8fbf7",
+            points: {
+              visual: "Размытие границ между физическим и воспринимаемым. Технологии симбиотичны и часто невидимы. Визуальные эффекты органичны, плавны и генеративны.",
+              direction: "Комплексное благополучие, жизненная сила и экспериментальная гармония.",
+              logo: "Полностью абстрактный. «Логотип» - это фирменное состояние потока: закручивающийся, генеративный световой паттерн или энергетическое поле, которое ощущается как изгиб спенсеровского шрифта, но полностью распознается только в движении или восприятии.",
+              type: "Вариативная, нелинейная, часто передается через прямое восприятие или световые паттерны. Текст существует как импульс, а не статичная форма.",
+              color: "«Голографические красные» (Holographic Reds), которые меняют оттенок в зависимости от перспективы, взаимодействия и эмоционального контекста. Использование экологичных биополимеров и нейронных интерфейсов.",
+              emotion: "Гармония, открытия и жизненная энергия.",
+              media: "Воспринимается через иммерсивные сенсорные среды, общие пространства нейронных проекций и прямые перцептивные «активации».",
+              timeless: "Суть освежения - особое чувство и энергетический поток, ассоциирующиеся с Coca-Cola."
+            },
+            table: {
+              logo: "Generative flow-state signature",
+              technology: "Biopolymers and neural interfaces",
+              emotion: "Harmony and vitality",
+              medium: "Sensory environments, neural projections"
+            }
+          },
+          {
+            year: "2099",
+            title: "Эпоха космических первопроходцев",
+            englishTitle: "The Cosmic Pioneer Era",
+            subtitle: "Coke как связь человечества на орбитальных расстояниях.",
+            description: "Взгляд вперед, в следующее тысячелетие. Люди осваивают орбитальное пространство, открывая новую эру исследований и вселенских связей.",
+            image: "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=1400&q=76",
+            alt: "Earth from space",
+            bg: "#f7f8fb",
+            points: {
+              visual: "Исследование околоземного пространства и среды обитания. Изящная, утилитарная эстетика с оттенком оптимизма космической эры, напоминающая футуризм 1960-х.",
+              direction: "Дух первооткрывателей, вселенская связь и содействие радости без границ.",
+              logo: "Шрифт комбинируется с геометрическими, орбитальными и небесными символами: звездами, кольцами. Он сильный, индустриальный и оптимистичный.",
+              type: "Элегантные, строгие индустриально-футуристичные акцидентные шрифты без засечек, подходящие для использования в высокотехнологичных космических условиях.",
+              color: "Глубокие, насыщенные «Космические красные» (Cosmic Reds) на прочных, многоразовых орбитальных сплавах и тонкой проекционной световой упаковке.",
+              emotion: "Трепет, жажда исследований и праздник. Coke объединяет человечество сквозь расстояния.",
+              media: "Брендинг на космических станциях, орбитальных пересадочных узлах и в интерактивных порталах космического туризма.",
+              timeless: "Шрифт остается основой идентичности, теперь интегрированной с символами исследований."
+            },
+            table: {
+              logo: "Script with orbital symbols",
+              technology: "Orbital alloys and projected packaging",
+              emotion: "Awe and exploration",
+              medium: "Space habitats, transfer stations, portals"
+            }
+          },
+          {
+            year: "2110",
+            title: "Постматериальный пульс",
+            englishTitle: "The Post-Material Pulse",
+            subtitle: "Форма исчезает, а ощущение остается.",
+            description: "Будущее, сфокусированное на чистой информации, переносе сознания и оптимизированном опыте, превосходящем физическое владение.",
+            image: "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=1400&q=76",
+            alt: "Abstract cosmic light",
+            bg: "#fff8f8",
+            points: {
+              visual: "Исключительно эмпирическая и текучая. Присутствие оптимизировано, а материальные потребности минимальны. Эстетика сугубо субъективна и перцептивна.",
+              direction: "Прямое ощущение счастья, легкость связи и фундаментальный человеческий резонанс.",
+              logo: "Концептуальная световая подпись или нейроимпульс. Бренд существует как специфический энергетический паттерн, соответствующий изгибу и динамике оригинального шрифта.",
+              type: "Передается исключительно через восприятие. «Текст» является самим опытом.",
+              color: "Чистые, мерцающие «Квантовые красные» (Quantum Reds), символизирующие поток энергии. Воспринимаются через нейронные световые интерфейсы и общие концептуальные пространства.",
+              emotion: "Чистая радость, непринужденная связь и присутствие.",
+              media: "Брендинг представляет собой прямую нейронную активацию, присутствующую в общих реальностях восприятия и фундаментальных энергетических сигнатурах.",
+              timeless: "Непреходящий опыт чистого освежения и стойкая сигнатура «Красного Coke» внутри концептуального/перцептивного поля."
+            },
+            table: {
+              logo: "Neural light signature",
+              technology: "Neural light interfaces",
+              emotion: "Pure joy and presence",
+              medium: "Shared perceptual realities"
+            }
+          }
+        ]
+      },
+      en: {
+        nav: {
+          brand: "Stanislav Dovidenko",
+          intro: "Intro",
+          timeline: "Timeline",
+          eras: "Eras",
+          summary: "Summary",
+          final: "Final",
+          menu: "Menu"
+        },
+        hero: {
+          kicker: "Design Case / 1934-2110",
+          title: "Coca-Cola: Evolution Through Time",
+          subtitle: "What if a brand is not a logo, but a living system evolving alongside humanity?",
+          scroll: "Scroll"
+        },
+        intro: {
+          kicker: "Introduction",
+          title: "A brand as a temporal civilization",
+          lead: "This visual identity system tracks Coca-Cola's journey across eight distinct design civilizations, from a historical anchor point in 1934 to a purely experiential future in 2110. It is not a redesign. It is a brand imagined as a civilization moving through time.",
+          cards: [
+            { title: "Project Goal", text: "Trace how Coca-Cola can remain recognizable while its form, media, and materiality transform across eight eras." },
+            { title: "Research Concept", text: "The brand is treated as a living system adapting to culture, technology, and evolving human expectations." },
+            { title: "Brand DNA", text: "Refreshment, joy, and connection remain the emotional foundation, even when the medium becomes digital, biological, or post-material." }
+          ]
+        },
+        labels: {
+          visual: "Visual Concept",
+          direction: "Brand Direction",
+          logo: "Logo Treatment",
+          type: "Typography System",
+          color: "Color & Materials",
+          emotion: "Cultural Emotion",
+          media: "Media Presence",
+          timeless: "Timelessness Strategy"
+        },
+        summary: {
+          kicker: "Evolution Summary",
+          title: "How form changes while the DNA remains",
+          columns: {
+            era: "Era",
+            logo: "Logo",
+            technology: "Technology",
+            emotion: "Emotion",
+            medium: "Medium"
+          }
+        },
+        insight: {
+          quote: "Coca-Cola remains recognizable not because of its form, but because of its emotional DNA."
+        },
+        final: {
+          kicker: "Final Question",
+          title: "If a brand can survive eight future eras - what should it become today?",
+          copy: "Coca-Cola evolves from packaging and sign into a system of recognizable feeling: consistent red, a gesture of connection, and a promise of refreshment that changes its medium without losing its meaning."
+        },
+        footer: {
+          text: "Stanislav Dovidenko: UX · AI Product Designer · Москва",
+          copy: "© 2026 Dovidenko · All rights reserved"
+        },
+        eras: [
+          {
+            year: "1934",
+            title: "The Era of Optimism",
+            englishTitle: "The Classic Era",
+            subtitle: "An era of simplicity, glass, and trust.",
+            description: "This concept anchors the brand in its golden age of classic advertising, focusing on warmth and accessibility following the Great Depression.",
+            image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1400&q=76",
+            alt: "Vintage diner counter",
+            bg: "#fff7f7",
+            points: {
+              visual: "A world recovering and seeking comfort. Visuals are grounded, reliable, and optimistic. Think soda fountains, classic American imagery, and art deco influences in advertising.",
+              direction: "Focus on stability, simple pleasures, and authenticity. Coca-Cola is \"The Real Thing.\"",
+              logo: "The classic Spencerian Script, rendered in a solid, friendly manner, often outlined in white on a red background. It is the definitive anchor point, fully recognizable.",
+              type: "Strong, approachable slab-serif and brush-script headlines for advertising, projecting friendliness and dependability.",
+              color: "\"Coke Red\" is a solid, warm, matte color. Primarily used on glass bottles and painted metal signage.",
+              emotion: "Trust, comfort, and nostalgia. Seeing Coke means things are okay.",
+              media: "Print advertisements, hand-painted billboards, soda fountain signage, and early glass packaging.",
+              timeless: "The unwavering consistency of the Spencerian script and the primary red."
+            },
+            table: {
+              logo: "Classic Spencerian Script",
+              technology: "Glass, metal, print advertising",
+              emotion: "Trust and comfort",
+              medium: "Billboards, soda fountains, packaging"
+            }
+          },
+          {
+            year: "2003",
+            title: "The Millennium Wave",
+            englishTitle: "The Global Modern Era",
+            subtitle: "Global culture, youth energy, and glossy digital confidence.",
+            description: "This era captures the energy of the early 2000s, where digital culture begins to influence physical design. It's about energy, pop culture, and connection.",
+            image: "https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=1400&q=76",
+            alt: "Music festival crowd",
+            bg: "#ffffff",
+            points: {
+              visual: "The rise of the digital age, broadband internet, music festivals like Glastonbury, and extreme sports. Visuals are dynamic, vibrant, and slightly glossy.",
+              direction: "Embracing dynamic youth culture, spontaneity, and \"Coke Side of Life.\"",
+              logo: "The Spencerian script is slightly bolder and often features a dynamic ribbon device, the \"Dynamic Ribbon,\" that can swirl independently of the text. It's recognizable but energetic.",
+              type: "Energetic and bold sans-serif typefaces, for example Gotham-esque, are used for slogans, contrasting with the script.",
+              color: "High-gloss reds on aluminum cans and plastic bottles. The introduction of metallic silver accents.",
+              emotion: "Energy, fun, excitement, and connecting with friends.",
+              media: "Highly produced TV commercials, vibrant vending machines, sponsorship of music events, and interactive, graphics-heavy websites.",
+              timeless: "The combination of the iconic script with the flowing ribbon, creating a powerful, recognizable lockup."
+            },
+            table: {
+              logo: "Script + Dynamic Ribbon",
+              technology: "Broadband, TV, interactive web",
+              emotion: "Energy and fun",
+              medium: "Festivals, vending machines, websites"
+            }
+          },
+          {
+            year: "2029",
+            title: "The Synced Reality Era",
+            englishTitle: "The Conscious Era",
+            subtitle: "Physical and digital experience sync into one shared moment.",
+            description: "This era marks the mainstream integration of Augmented Reality and persistent connectivity, moving toward phygital experiences.",
+            image: "https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=1400&q=76",
+            alt: "Future city at night",
+            bg: "#f7fbff",
+            points: {
+              visual: "AR wearables, glasses, and contact lenses are common. Social connection is fluid between physical and digital spaces. Visuals are adaptive and personalized.",
+              direction: "Hyper-personalization, spontaneity, and facilitating shared digital/physical moments.",
+              logo: "The script remains, but is often rendered as a glowing, translucent AR asset. It \"activates\" in response to social interaction or location.",
+              type: "Sleek, adaptive, variable sans-serif fonts that change weight and spacing depending on the digital interface or environment.",
+              color: "\"Coke Red\" evolves into adaptive \"Digital Reds\" that pulse with energy on screens and wearable interfaces. Physical cans feature subtle LED integration.",
+              emotion: "Connection, spontaneity, and effortless shared joy.",
+              media: "AR filters, interactive digital billboards that respond to passersby, and smart-can packaging that displays personalized messages or animations.",
+              timeless: "The shape of the script remains the core identity anchor, recognizable even as a digital light structure."
+            },
+            table: {
+              logo: "Glowing translucent AR script",
+              technology: "AR wearables and smart cans",
+              emotion: "Shared spontaneous joy",
+              medium: "AR filters, digital billboards, smart packaging"
+            }
+          },
+          {
+            year: "2049",
+            title: "The Bio-Resilience Era",
+            englishTitle: "The Immersive Era",
+            subtitle: "Sustainability, community, and mindful refreshment.",
+            description: "A future focused on sustainability, community, and resourcefulness in a post-resource-intensive world, a solarpunk/cyberpunk fusion.",
+            image: "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1400&q=76",
+            alt: "Sustainable architecture with greenery",
+            bg: "#f7fff8",
+            points: {
+              visual: "Cities are greener, more resilient, and community-focused. Technology is high-efficiency and integrated with nature. The aesthetic is clean, functional, and mindful.",
+              direction: "Community, stability, responsibility, and refreshment in a conscious world.",
+              logo: "The script is refined and often rendered in functional, sustainable materials. It is sometimes simplified, allowing the red color and basic curve to carry the recognition.",
+              type: "Clean, geometric sans-serif fonts that convey efficiency and modern clarity, paired with warm, friendly serif accents.",
+              color: "The red shifts from bright to deeper, earthier \"Organic Reds.\" Materials include sustainable bio-films for packaging and low-energy LED projections on community structures.",
+              emotion: "Reassurance, comfort, and stability. Coke is a reliable part of the resilient community.",
+              media: "Interactive community refill stations, subtle LED projections on sustainable architecture, and personalized bio-film packaging.",
+              timeless: "The signature color and the enduring curve of the script, adapted to functional and sustainable applications."
+            },
+            table: {
+              logo: "Refined script in sustainable materials",
+              technology: "Bio-films, low-energy projection",
+              emotion: "Reassurance and stability",
+              medium: "Refill stations, architecture, bio-packaging"
+            }
+          },
+          {
+            year: "2050",
+            title: "The Neo-Optimist Era",
+            englishTitle: "The Transition Era",
+            subtitle: "Clean modernism, automation, and effortless happiness.",
+            description: "A celebration of efficiency, clean design, and a retro-futuristic outlook, drawing inspiration from mid-century modern optimism.",
+            image: "https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=1400&q=76",
+            alt: "Modernist futuristic architecture",
+            bg: "#ffffff",
+            points: {
+              visual: "Sleek, automated, and hyper-efficient societies. A \"New Modernism.\" Design is clean, optimistic, and effortlessly functional.",
+              direction: "Efficiency, simplicity, and providing seamless joy and effortless refreshment.",
+              logo: "The script is streamlined and often paired with bold, geometric shapes like circles. The overall layout is clean and balanced.",
+              type: "Clean, geometric sans-serif fonts like Futura or Helvetica descendants, used symmetrically and minimally.",
+              color: "Polished, highly reflective \"Atomic Reds\" on surfaces like polished chrome and smart glass. Packaging is ultra-sleek.",
+              emotion: "Delight, lightness, and effortless happiness.",
+              media: "Integrated into domestic smart interfaces, efficient robotic delivery hubs, and subtle, holographic branding on public transport.",
+              timeless: "The powerful use of the core color hierarchy and the classic script shape, rendered with absolute modernist clarity."
+            },
+            table: {
+              logo: "Streamlined script with geometry",
+              technology: "Smart glass, automation, holograms",
+              emotion: "Delight and lightness",
+              medium: "Smart homes, robotic hubs, transit"
+            }
+          },
+          {
+            year: "2085",
+            title: "The Interconnected Flow",
+            englishTitle: "The Bio-Connected Era",
+            subtitle: "Biology, technology, and environment dissolve into one flow.",
+            description: "The era where the lines between biology, technology, and environment fully dissolve, moving toward organic computing and direct neural interaction.",
+            image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=76",
+            alt: "Organic landscape with water and greenery",
+            bg: "#f8fbf7",
+            points: {
+              visual: "Blurring lines between the physical and the perceived. Technology is symbiotic and often invisible. Visuals are organic, fluid, and generative.",
+              direction: "Integrated wellness, vitality, and experiential harmony.",
+              logo: "Fully abstract. The \"logo\" is a signature flow state - a swirling, generative light pattern or energy field that feels like the curve of the Spencerian script, only fully recognizable in motion or perception.",
+              type: "Variable, non-linear, and often communicated via direct perception or light patterns. Text exists as an impulse rather than a static form.",
+              color: "\"Holographic Reds\" that shift and change hue based on perspective, interaction, and emotional context. Utilizing sustainable biopolymers and neural interfaces.",
+              emotion: "Harmony, discovery, and vitality.",
+              media: "Experienced through immersive sensory environments, shared neural projection spaces, and direct perceptual \"activations.\"",
+              timeless: "The essence of refreshment - the specific feeling and energy flow signature associated with Coca-Cola."
+            },
+            table: {
+              logo: "Generative flow-state signature",
+              technology: "Biopolymers and neural interfaces",
+              emotion: "Harmony and vitality",
+              medium: "Sensory environments, neural projections"
+            }
+          },
+          {
+            year: "2099",
+            title: "The Cosmic Pioneer Era",
+            englishTitle: "The Quantum Era",
+            subtitle: "Coke as human connection across orbital distance.",
+            description: "Looking forward to the next millennium. Humans are expanding into orbital space, leading to a new era of exploration and universal connection.",
+            image: "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=1400&q=76",
+            alt: "Earth from space",
+            bg: "#f7f8fb",
+            points: {
+              visual: "Exploration of near-Earth space and habitats. A sleek, utilitarian aesthetic with a touch of space-age optimism, reminiscent of 1960s futurism.",
+              direction: "Pioneering spirit, universal connection, and facilitating joy across boundaries.",
+              logo: "The script is combined with geometric, orbital, and celestial symbols such as stars and rings. It is strong, industrial, and optimistic.",
+              type: "Sleek, strong, future-industrial sans-serif display fonts, suitable for use in high-tech space environments.",
+              color: "Deep, robust \"Cosmic Reds\" on durable, reusable orbital alloys and subtle, projected light packaging.",
+              emotion: "Awe, exploration, and celebration. Coke connects humanity across distances.",
+              media: "Branding on space habitats, orbital transfer stations, and interactive space-tourism portals.",
+              timeless: "The script remains the core identity, now integrated with the symbols of exploration."
+            },
+            table: {
+              logo: "Script with orbital symbols",
+              technology: "Orbital alloys and projected packaging",
+              emotion: "Awe and exploration",
+              medium: "Space habitats, transfer stations, portals"
+            }
+          },
+          {
+            year: "2110",
+            title: "The Post-Material Pulse",
+            englishTitle: "The Eternal Era",
+            subtitle: "Form disappears while the feeling remains.",
+            description: "A future focused on pure information, consciousness transfer, and optimized experiences over physical ownership.",
+            image: "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=1400&q=76",
+            alt: "Abstract cosmic light",
+            bg: "#fff8f8",
+            points: {
+              visual: "Purely experiential and fluid. Presence is optimized, and material needs are minimal. The aesthetic is purely subjective and perceptual.",
+              direction: "Direct happiness, effortless connection, and fundamental human resonance.",
+              logo: "A conceptual light signature or neural-impulse. The brand exists as a specific energy pattern that corresponds to the curve and flow of the original script.",
+              type: "Communicated entirely through perception. The \"text\" is the experience.",
+              color: "Pure, shimmering \"Quantum Reds\" that represent energy flow. Experienced via neural light interfaces and shared conceptual spaces.",
+              emotion: "Pure joy, effortless connection, and presence.",
+              media: "Branding is a direct neural activation, present in shared perceptual realities and fundamental energy signatures.",
+              timeless: "The enduring experience of pure refreshment and the persistent signature of \"Coke Red\" within the conceptual/perceptual field."
+            },
+            table: {
+              logo: "Neural light signature",
+              technology: "Neural light interfaces",
+              emotion: "Pure joy and presence",
+              medium: "Shared perceptual realities"
+            }
+          }
+        ]
+      }
+    };
+
+    let currentLanguage = "ru";
+    const pointOrder = ["visual", "direction", "logo", "type", "color", "emotion", "media", "timeless"];
+
+    function getValue(path, source) {
+      return path.split(".").reduce((acc, key) => acc && acc[key], source);
+    }
+
+    function setLanguage(lang) {
+      currentLanguage = lang;
+      const data = translations[lang];
+      document.documentElement.lang = lang;
+
+      document.querySelectorAll("[data-i18n]").forEach((node) => {
+        const value = getValue(node.dataset.i18n, data);
+        if (typeof value === "string") node.textContent = value;
+      });
+
+      document.getElementById("mobileMenuToggle").setAttribute("aria-label", data.nav.menu);
+
+      document.querySelectorAll(".lang-btn").forEach((button) => {
+        const active = button.dataset.lang === lang;
+        button.setAttribute("aria-pressed", String(active));
+        button.classList.toggle("bg-black", active);
+        button.classList.toggle("text-white", active);
+        button.classList.toggle("text-neutral-500", !active);
+      });
+
+      renderIntroCards(data);
+      renderTimeline(data);
+      renderEras(data);
+      renderSummary(data);
+      setupObservers();
+      updateActiveTimeline();
+    }
+
+    function renderIntroCards(data) {
+      const root = document.getElementById("introCards");
+      root.innerHTML = data.intro.cards.map((card) => `
+        <article class="spec-card p-6">
+          <h3 class="mb-3 text-lg font-extrabold tracking-tight">${card.title}</h3>
+          <p class="text-sm leading-relaxed text-neutral-600">${card.text}</p>
+        </article>
+      `).join("");
+    }
+
+    function renderTimeline(data) {
+      const root = document.getElementById("timelineLinks");
+      root.innerHTML = data.eras.map((era) => `
+        <a class="timeline-link shrink-0 rounded-full border border-neutral-200 bg-white px-4 py-2 text-xs font-black text-neutral-500 transition hover:border-neutral-900 hover:text-neutral-900" href="#era-${era.year}" data-year="${era.year}">
+          ${era.year}
+        </a>
+      `).join("");
+    }
+
+    function renderEras(data) {
+      const root = document.getElementById("eraRoot");
+      root.innerHTML = data.eras.map((era, index) => {
+        const imageFirst = index % 2 === 0;
+        const imageColumn = `
+          <div class="fade-in ${imageFirst ? "lg:order-1" : "lg:order-2"}">
+            <div class="era-image overflow-hidden rounded-[32px] bg-neutral-200">
+              <img class="h-full w-full object-cover" src="${era.image}" alt="${era.alt}" loading="${index === 0 ? "eager" : "lazy"}">
+            </div>
+          </div>
+        `;
+
+        const textColumn = `
+          <div class="fade-in ${imageFirst ? "lg:order-2" : "lg:order-1"}">
+            <div class="mb-8 flex items-center gap-4">
+              <span class="text-6xl font-black tracking-tight text-[var(--coke-red)]">${era.year}</span>
+              <span class="h-px flex-1 bg-neutral-200"></span>
+            </div>
+            <p class="mb-3 text-xs font-black uppercase tracking-[0.28em] text-neutral-400">${era.englishTitle}</p>
+            <h2 class="mb-5 text-4xl font-black leading-[0.96] tracking-tight sm:text-5xl lg:text-6xl">${era.title}</h2>
+            <p class="mb-4 text-xl font-semibold leading-relaxed text-neutral-800">${era.subtitle}</p>
+            <p class="mb-8 text-base font-light leading-relaxed text-neutral-600 sm:text-lg">${era.description}</p>
+            <div class="grid gap-3 sm:grid-cols-2">
+              ${pointOrder.map((key) => `
+                <article class="spec-card p-5">
+                  <h3 class="mb-2 text-[11px] font-black uppercase tracking-[0.2em] text-[var(--coke-red)]">${data.labels[key]}</h3>
+                  <p class="text-sm leading-relaxed text-neutral-600">${era.points[key]}</p>
+                </article>
+              `).join("")}
+            </div>
+          </div>
+        `;
+
+        return `
+          <section id="era-${era.year}" class="era-grid px-5 py-24 lg:px-8 lg:py-32" style="background:${era.bg}">
+            <div class="mx-auto grid max-w-7xl gap-12 lg:grid-cols-2 lg:items-center">
+              ${imageColumn}
+              ${textColumn}
+            </div>
+          </section>
+        `;
+      }).join("");
+    }
+
+    function renderSummary(data) {
+      const root = document.getElementById("summaryRows");
+      root.innerHTML = data.eras.map((era) => `
+        <tr>
+          <td class="px-7 py-6 align-top">
+            <span class="block text-xs font-black uppercase tracking-[0.18em] text-[var(--coke-red)]">${era.year}</span>
+            <span class="mt-1 block font-extrabold text-neutral-950">${era.title}</span>
+          </td>
+          <td class="px-7 py-6 align-top">${era.table.logo}</td>
+          <td class="px-7 py-6 align-top">${era.table.technology}</td>
+          <td class="px-7 py-6 align-top">${era.table.emotion}</td>
+          <td class="px-7 py-6 align-top">${era.table.medium}</td>
+        </tr>
+      `).join("");
+    }
+
+    let fadeObserver;
+    function setupObservers() {
+      if (fadeObserver) fadeObserver.disconnect();
+      fadeObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            fadeObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      document.querySelectorAll(".fade-in").forEach((element) => fadeObserver.observe(element));
+    }
+
+    function updateActiveTimeline() {
+      const links = [...document.querySelectorAll(".timeline-link")];
+      const sections = links.map((link) => document.getElementById(`era-${link.dataset.year}`)).filter(Boolean);
+      let activeYear = links[0]?.dataset.year;
+
+      sections.forEach((section) => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= window.innerHeight * 0.45) activeYear = section.id.replace("era-", "");
+      });
+
+      links.forEach((link) => link.classList.toggle("is-active", link.dataset.year === activeYear));
+    }
+
+    document.querySelectorAll(".lang-btn").forEach((button) => {
+      button.addEventListener("click", () => setLanguage(button.dataset.lang));
+    });
+
+    const menuButton = document.getElementById("mobileMenuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+    menuButton.addEventListener("click", () => {
+      const isOpen = !mobileMenu.classList.contains("hidden");
+      mobileMenu.classList.toggle("hidden", isOpen);
+      menuButton.setAttribute("aria-expanded", String(!isOpen));
+    });
+
+    document.querySelectorAll("[data-mobile-link]").forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+        menuButton.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    window.addEventListener("scroll", updateActiveTimeline, { passive: true });
+    window.addEventListener("resize", updateActiveTimeline);
+
+    setLanguage("ru");
+  </script>
+</body>
+</html>

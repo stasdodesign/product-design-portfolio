@@ -81,7 +81,7 @@
     </div>
   </div>
 </header>    
-    <header class="max-w-4xl mx-auto px-6 pt-40 pb-16 fade-in">
+    <header class="max-w-5xl mx-auto px-6 pt-40 pb-16 fade-in">
         <div class="flex gap-3 mb-6 text-xs font-semibold tracking-wide uppercase text-gray-500">
             <span class="bg-gray-100 px-3 py-1 rounded-full">UX/CX Research</span>
             <span class="bg-gray-100 px-3 py-1 rounded-full">Fintech</span>
@@ -95,46 +95,376 @@
         </p>
     </header>
 
-    <main class="max-w-4xl mx-auto px-6 space-y-24 fade-in" style="animation-delay: 0.2s;">
+    <main class="max-w-5xl mx-auto px-4 sm:px-6
+             space-y-12 sm:space-y-24
+             leading-relaxed text-gray-900
+             fade-in"
+      style="animation-delay: 0.2s;">
  
-        <section id="results" class="space-y-8">
 
-            <h2 class="text-3xl font-semibold">1. Тихие списания и Forced Continuity</h2>
-            <p class="text-lg text-gray-600 leading-relaxed">
-                Пользователь обнаруживает долг -2799,34 ₽ из-за внезапного списания 3000 ₽ за годовое обслуживание. Банк не присылает пуш-уведомлений до момента списания. Юридически всё чисто — условия спрятаны глубоко в многостраничном PDF. Фактически — это использование паттерна <strong>Forced Continuity</strong> (принудительное продление) и <strong>Hidden Costs</strong>.
-            </p>
-            <div class="p-8 bg-white border border-gray-100 rounded-[32px] shadow-sm">
-                <h3 class="text-xl font-medium mb-4">Бизнес-модель vs Этика</h3>
-                <p class="text-gray-600">
-                    Такие «забывчивые» клиенты и отсутствие кнопки отмены приносят корпорациям от 3 до 5 миллиардов рублей чистой прибыли в год. 80-90% людей просто вздохнут, закроют минус и уйдут. Добавление прозрачного уведомления перед списанием убьет этот KPI.
-                </p>
-            </div>
-        </section>
+<section id="results" class="space-y-8">
 
-        <section class="space-y-8">
-            <h2 class="text-3xl font-semibold">2. Искусственные временные ловушки (Кейс Сплита)</h2>
+    <h2 class="text-3xl font-semibold">
+        1. Тихие списания и Forced Continuity (кейс СберБанка)
+    </h2>
+
+    <!-- MAIN LAYOUT -->
+    <div class="flex flex-col md:flex-row gap-10 items-start">
+
+        <!-- LEFT CONTENT -->
+        <div class="flex-1 space-y-6">
+
             <p class="text-lg text-gray-600 leading-relaxed">
-                Анализ кредитного договора с ПСК 58,223% годовых выявил жесткий темный паттерн. Клиент совершает платеж в установленную дату (например, 21-го числа), но льготный период слетает. Почему? Потому что в договоре прописано искусственное ограничение — платеж должен поступить не до 23:59, а строго до <strong>21:00</strong>.
+                В рамках анализа пользовательского опыта в продуктах СберБанка выявляется паттерн
+                <strong>Forced Continuity</strong> (принудительная непрерывность обслуживания),
+                реализуемый через автоматическое списание ежегодной комиссии за обслуживание.
+                В одном из кейсов пользователь обнаруживает задолженность −2799,34 ₽ после списания 3000 ₽
+                за годовой тариф.
             </p>
+
+            <p class="text-lg text-gray-600 leading-relaxed">
+                Ключевая UX-проблема заключается не в самом факте списания, а в его “тихом” характере:
+                уведомления о предстоящем списании отсутствуют либо не акцентируются в момент,
+                когда пользователь мог бы предотвратить транзакцию. Списание происходит как
+                операционное событие по умолчанию.
+            </p>
+
+            <p class="text-lg text-gray-600 leading-relaxed">
+                Юридически механизм может соответствовать подписанным условиям обслуживания,
+                однако с точки зрения UX-информирования критический параметр — прозрачность —
+                реализован через многоуровневые документы (включая длинные PDF-условия),
+                что снижает вероятность осознанного согласия в момент продления услуги.
+            </p>
+
+            <!-- QUOTE BLOCK -->
             <div class="border-l-4 border-black pl-6 py-2">
                 <p class="text-xl italic text-gray-800">
-                    «Хороший финтех-дизайн снижает неопределенность. Интерфейс-капкан, наоборот, создает искусственные барьеры, чтобы спровоцировать ошибку пользователя и начислить штраф».
+                    «Forced Continuity работает не через запрет отмены, а через инерцию пользователя:
+                    подписка продолжается по умолчанию, а момент продления становится невидимым».
                 </p>
             </div>
-        </section>
 
-        <section class="space-y-8">
-            <h2 class="text-3xl font-semibold">3. Визуальный шум и смещение фокуса (Plata)</h2>
+        </div>
+
+        <!-- RIGHT MOCKUP -->
+        <div class="mx-auto md:mx-0 md:scale-100 origin-center">
+
+            <div class=" md:scale-100 origin-center">
+
+                <div class="w-full max-w-[240px] border-[6px] border-gray-900 rounded-[40px] h-[480px] bg-black  relative overflow-hidden shadow-lg">
+
+                    <div class="w-20 h-5 bg-gray-900 absolute top-0 left-1/2 -translate-x-1/2 rounded-b-2xl z-20"></div>
+
+                    <div class="h-full overflow-hidden rounded-[28px] pt-3 ">
+
+                        <img
+                            src="./images/sber-subscription-screen.jpg"
+                            alt="SberBank subscription charge interface showing silent renewal behavior"
+                            class="w-full h-full object-cover rounded-[20px]"
+                        />
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- INSIGHT BLOCK -->
+    <div class="p-8 bg-white border border-gray-100 rounded-[32px] shadow-sm">
+
+        <h3 class="text-xl font-medium mb-4">
+            Бизнес-модель vs UX-этика
+        </h3>
+
+        <p class="text-gray-600 leading-relaxed">
+            Модель тихих списаний опирается на поведенческую инерцию: значительная часть пользователей
+            не отслеживает дату продления и не ожидает автоматического списания. В результате возникает
+            высокая доля пост-фактум реакций (закрытие задолженности вместо предотвращения платежа).
+        </p>
+
+        <p class="text-gray-600 leading-relaxed mt-3">
+            Экономический эффект такой модели масштабируется за счёт низкой активности отмен и
+            отсутствия явного “pre-charge warning”. Любое усиление прозрачного уведомления перед списанием
+            напрямую снижает конверсию в автоматическое продление.
+        </p>
+
+    </div>
+
+</section>
+
+<section class="space-y-8">
+
+    <h2 class="text-3xl font-semibold">
+        2. Искусственные временные ловушки (Кейс Яндекс Супер Сплита)
+    </h2>
+
+    <!-- MAIN LAYOUT -->
+    <div class="flex flex-col md:flex-row gap-10 items-start">
+
+        <!-- LEFT CONTENT -->
+        <div class="flex-1 space-y-6">
+
             <p class="text-lg text-gray-600 leading-relaxed">
-                Внешне дашборд выглядит премиально (Glassmorphism, много воздуха). Однако за красивой UI-оберткой скрывается нарушение базовых гештальт-принципов и паттернов чтения. Ключевые данные о рисках и структуре платежа смещены в слепые зоны, а внимание пользователя искусственно перетягивается на градиентные плашки и предложения взять новые кредиты. Это фильтр: 10-20% клиентов, которые не справятся с долгами — это просто «допустимая погрешность» бизнес-модели.
+                Анализ кредитного продукта Яндекс Банка (Яндекс Пэй / Супер Сплит) с ПСК 58,223% годовых выявляет
+                механизм скрытого временного триггера, влияющего на структуру кредитного договора.
+                Пользователь совершает оплату в установленную дату, однако критическим параметром является
+                не день платежа, а точное время до <strong>21:00 по МСК</strong>.
             </p>
-            <div class="p-8 bg-white border border-gray-100 rounded-[32px] shadow-sm">
-                <h4 class="font-semibold text-sm uppercase tracking-wider text-gray-500 mb-4">Вывод исследователя</h4>
-                <p class="text-gray-900 leading-relaxed">
-                    Должен ли дизайнер знать бизнес-модель до того, как начнет рисовать? Да. Этика в дизайне интерфейсов — это не просто красивые слова. Когда продакт просит «сделать условия менее заметными», он просит вас спроектировать ловушку. В финтехе доверие является высшей формой UX, а продукты, построенные на выжигании аудитории, в долгосрочной перспективе обречены.
+
+            <p class="text-lg text-gray-600 leading-relaxed">
+                При внесении платежа после 21:00 (например, в 21:15) система не ограничивается стандартной
+                пеней или штрафом за просрочку. Вместо этого Яндекс Супер Сплит автоматически пересчитывает
+                кредитную модель: может изменяться срок погашения (до 24 месяцев), пересобираться график
+                платежей и увеличиваться итоговая переплата по договору.
+            </p>
+
+            <p class="text-lg text-gray-600 leading-relaxed">
+                Таким образом, даже минимальное нарушение временного окна приводит не к линейной санкции,
+                а к структурному изменению условий кредитного продукта, что фактически эквивалентно
+                пересогласованию финансовой модели без отдельного явного действия пользователя.
+            </p>
+
+            <!-- QUOTE BLOCK -->
+            <div class="border-l-4 border-black pl-6 py-2">
+                <p class="text-xl italic text-gray-800">
+                    «Когда финтех-продукт меняет не штраф, а саму кредитную модель после дедлайна —
+                    временной UX превращается в механизм скрытой переоценки договора».
                 </p>
             </div>
-        </section>
+
+        </div>
+
+        <!-- RIGHT: DEVICE MOCKUP -->
+        <div class="mx-auto md:mx-0 md:scale-100 origin-center">
+
+            <div class=" md:scale-100 origin-center">
+
+                <div class="w-full max-w-[240px] border-[6px] border-gray-900 rounded-[40px] h-[480px] bg-white   relative overflow-hidden shadow-lg">
+
+                    <div class="w-20 h-5 bg-gray-900 absolute top-0 left-1/2 -translate-x-1/2 rounded-b-2xl z-20"></div>
+
+                    <div class="h-full overflow-hidden rounded-[28px]  ">
+
+                        <img
+                            src="./images/yandex-home-screen.jpg"
+                            alt="Yandex Pay Super Split payment interface showing timing cutoff behavior"
+                            class="w-full h-full object-cover rounded-[20px]"
+                        />
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- OPTIONAL INSIGHT BLOCK -->
+    <div class="p-8 bg-white border border-gray-100 rounded-[32px] shadow-sm">
+
+        <h3 class="text-xl font-medium mb-4">
+            UX-эффект
+        </h3>
+
+        <p class="text-gray-600 leading-relaxed">
+            В рамках Яндекс Пэй / Яндекс Банка временной порог 21:00 функционирует не только как дедлайн,
+            но и как триггер изменения кредитной логики Супер Сплита. Пользователь ожидает штрафную модель,
+            однако система применяет нелинейную пересборку условий договора.
+        </p>
+
+        <p class="text-gray-600 leading-relaxed mt-3">
+            Это формирует скрытую асимметрию: интерфейс транслирует простое правило «успей до времени»,
+            тогда как реальный эффект — изменение финансовой конструкции кредита.
+        </p>
+
+    </div>
+
+</section>
+
+<section class="space-y-8">
+             <h2 class="text-3xl font-semibold">
+                  3. Визуальный шум и смещение фокуса (Plata)
+             </h2>    
+    <!-- MAIN SPLIT LAYOUT -->
+    <div class="flex flex-col md:flex-row gap-10 items-start">
+
+        <!-- LEFT: TEXT -->
+        <div class="flex-1 space-y-6">
+
+            <p class="text-lg text-gray-600 leading-relaxed">
+                Внешне дашборд выглядит премиально (glassmorphism, воздух, мягкие градиенты).
+                Однако за визуальной чистотой скрывается нарушение базовых принципов визуальной иерархии:
+                ключевые финансовые показатели и риск-информация смещены в менее заметные зоны интерфейса.
+                Внимание пользователя перенаправляется на декоративные элементы и маркетинговые блоки,
+                связанные с кредитами и дополнительными продуктами.
+            </p>
+        </div>
+
+        <!-- RIGHT: DEVICE MOCKUP -->
+        <div class="mx-auto md:mx-0 md:scale-100 origin-center">
+
+            <div class="  md:scale-100 origin-center">
+
+                <div class="w-full max-w-[240px] border-[6px] border-gray-900 rounded-[40px] h-[480px] bg-white  relative overflow-hidden shadow-lg">
+
+                    <!-- NOTCH -->
+                    <div class="w-20 h-5 bg-gray-900 absolute top-0 left-1/2 -translate-x-1/2 rounded-b-2xl z-20"></div>
+
+                    <!-- SCREEN -->
+                    <div class="h-full overflow-hidden rounded-[28px] pt-4">
+
+                        <img
+                            src="./images/plata-home-screen.jpg"
+                            alt="Plata banking dashboard visual noise interface"
+                            class="w-full h-full object-cover rounded-[20px]"
+                        />
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+  
+    </div>
+
+    <!-- FULL-WIDTH INSIGHT (ВАЖНО!) -->
+    <div class="p-8 bg-white border border-gray-100 rounded-[32px] shadow-sm">
+
+        <h4 class="font-semibold text-sm uppercase tracking-wider text-gray-500 mb-4">
+            Вывод исследователя
+        </h4>
+
+        <p class="text-gray-900 leading-relaxed">
+            Когда продакт просит «сделать условия менее заметными», он фактически просит спроектировать
+            когнитивную ловушку.
+        </p>
+
+        <p class="text-gray-900 leading-relaxed mt-4">
+            В финтехе доверие является ключевым UX-активом, и его разрушение
+            через визуальный шум приводит к долгосрочной эрозии пользовательского доверия.
+        </p>
+
+    </div>
+
+</section>
+
+<section class="space-y-8">
+
+    <h2 class="text-3xl font-semibold">
+        4. Смещение финансового ядра и маркетинговая переиерархизация (Alfa Bank Home Screen)
+    </h2>
+
+    <!-- MAIN LAYOUT -->
+    <div class="flex flex-col md:flex-row gap-10 items-start">
+
+        <!-- LEFT CONTENT -->
+        <div class="flex-1 space-y-6">
+
+            <p class="text-lg text-gray-600 leading-relaxed">
+                Главный экран Альфа-Банка демонстрирует системное нарушение информационной архитектуры,
+                при котором финансовое ядро продукта (баланс, карта, операции) теряет первичный визуальный и
+                смысловой приоритет. Вместо этого верхний уровень интерфейса формируется маркетинговыми и
+                продуктово-эмоциональными блоками: «защита ваших денег», бонусы, вклады и акции.
+            </p>
+
+            <p class="text-lg text-gray-600 leading-relaxed">
+                Это создаёт паттерн <strong>False Hierarchy</strong>: визуальная и смысловая иерархия интерфейса
+                не отражает реальную значимость сущностей для пользователя. Финансовое состояние аккаунта
+                перестаёт быть точкой входа в систему и смещается ниже по структуре экрана, уступая место
+                коммерческим сценариям банка.
+            </p>
+
+            <p class="text-lg text-gray-600 leading-relaxed">
+                Дополнительно фиксируется эффект <strong>Misdirection</strong>: пользователь приходит в приложение
+                с задачей контроля денег (баланс, карта, операции), но первичные интерфейсные паттерны
+                перенаправляют внимание в сторону «выгоды», «защиты» и инвестиционных предложений.
+                Таким образом, core task заменяется бизнес-ориентированными сценариями вовлечения.
+            </p>
+
+            <p class="text-lg text-gray-600 leading-relaxed">
+                На визуальном уровне возникает <strong>Visual Noise</strong> и частичный <strong>Overloading</strong>:
+                несколько финансовых показателей и разнотипных карточек конкурируют за внимание,
+                при этом отсутствует единый доминирующий объект (например, баланс как визуальный якорь).
+                Это дробит восприятие и усложняет быстрый счёт текущего состояния средств.
+            </p>
+
+            <!-- QUOTE BLOCK -->
+            <div class="border-l-4 border-black pl-6 py-2">
+                <p class="text-xl italic text-gray-800">
+                    «Когда финансовое ядро уступает место маркетинговой витрине,
+                    интерфейс перестаёт отвечать на главный вопрос пользователя —
+                    и начинает конкурировать за его внимание»
+                </p>
+            </div>
+
+        </div>
+
+        <!-- RIGHT MOCKUP -->
+        <div class="mx-auto md:mx-0 md:scale-100 origin-center">
+
+            <div class="  md:scale-100 origin-center">
+
+                <div class="w-full max-w-[240px] border-[6px] border-gray-900 rounded-[40px] h-[480px] bg-white  relative overflow-hidden shadow-lg">
+
+                    <div class="w-20 h-5 bg-gray-900 absolute top-0 left-1/2 -translate-x-1/2 rounded-b-2xl z-20"></div>
+
+                    <div class="h-full overflow-hidden rounded-[28px] pt-3 py-2">
+
+                        <img
+                            src="./images/alfa-home-screen.jpg"
+                            alt="Alfa Bank home screen showing marketing-first information hierarchy"
+                            class="w-full h-full object-cover rounded-[20px]"
+                        />
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- INSIGHT BLOCK -->
+    <div class="p-8 bg-white border border-gray-100 rounded-[32px] shadow-sm">
+
+        <h3 class="text-xl font-medium mb-4">
+            UX-интерпретация (IA / Visual / Behavioral)
+        </h3>
+
+        <p class="text-gray-600 leading-relaxed">
+            На уровне информационной архитектуры (IA) наблюдается смещение приоритетов:
+            маркетинговые и продуктовые сущности поднимаются выше финансового ядра.
+            Это формирует <strong>False Hierarchy</strong>, где коммерческая ценность интерфейса
+            начинает доминировать над пользовательской задачей управления деньгами.
+        </p>
+
+        <p class="text-gray-600 leading-relaxed mt-3">
+            На визуальном уровне интерфейс усиливает конкуренцию за внимание через множественные
+            карточки, разнотипные метрики и отсутствие единого фокуса. Это приводит к
+            <strong>Visual Noise</strong> и частичному <strong>Overloading</strong>, снижая скорость
+            считывания финансового состояния.
+        </p>
+
+        <p class="text-gray-600 leading-relaxed mt-3">
+            На поведенческом уровне формируется <strong>Goal Substitution эффект</strong>:
+            пользователь вместо проверки баланса начинает взаимодействовать с продуктовой витриной
+            (вклады, бонусы, защита), что увеличивает вовлечённость в экосистему банка,
+            но снижает прямую эффективность выполнения базовой задачи.
+        </p>
+
+    </div>
+
+</section>
 
     </main>
 

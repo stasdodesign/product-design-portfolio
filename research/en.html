@@ -78,7 +78,7 @@
 
 </header>
 
-    <header class="max-w-4xl mx-auto px-6 pt-40 pb-16 fade-in">
+    <header class="max-w-5xl mx-auto px-6 pt-40 pb-16 fade-in">
         <div class="flex gap-3 mb-6 text-xs font-semibold tracking-wide uppercase text-gray-500">
             <span class="bg-gray-100 px-3 py-1 rounded-full">UX/CX Research</span>
             <span class="bg-gray-100 px-3 py-1 rounded-full">Fintech</span>
@@ -92,32 +92,190 @@
         </p>
     </header>
 
-    <main class="max-w-4xl mx-auto px-6 space-y-24 fade-in" style="animation-delay: 0.2s;">
+    <main class="max-w-5xl mx-auto px-4 sm:px-6
+             space-y-12 sm:space-y-24
+             leading-relaxed text-gray-900
+             fade-in"
+      style="animation-delay: 0.2s;">
 
-        <section id="results" class="space-y-8">
-            <h2 class="text-3xl font-semibold">1. Silent Fees and Forced Continuity</h2>
-            <p class="text-lg text-gray-600 leading-relaxed">
-                The user discovers a debt of -2799.34 rubles due to a sudden charge of 3000 rubles for annual maintenance. The bank doesn't send push notifications until the charge is made. Legally, everything is clear—the terms are hidden deep in a multi-page PDF. In fact, this is a use of the <strong>Forced Continuity</strong> pattern and <strong>Hidden Costs</strong>.
-</p>
-            <div class="p-8 bg-white border border-gray-100 rounded-[32px] shadow-sm">
-                <h3 class="text-xl font-medium mb-4">Business Model vs. Ethics</h3>
-                <p class="text-gray-600">
-                    Such "forgetful" customers and the lack of a cancel button generate between 3 and 5 billion rubles in net profit for corporations annually. 80-90% of customers will simply sigh, close the negative balance, and leave. Adding a transparent notification before a charge would kill this KPI.
-</p>
-            </div>
-        </section>
+<section id="results" class="space-y-8">
 
-        <section class="space-y-8">
-            <h2 class="text-3xl font-semibold">2. Artificial Time Traps (Split Case)</h2>
+    <h2 class="text-3xl font-semibold">
+        1. Silent Charges and Forced Continuity (SberBank Case)
+    </h2>
+
+    <!-- MAIN LAYOUT -->
+    <div class="flex flex-col md:flex-row gap-10 items-start">
+
+        <!-- LEFT CONTENT -->
+        <div class="flex-1 space-y-6">
+
             <p class="text-lg text-gray-600 leading-relaxed">
-                An analysis of a credit agreement with a 58.223% annual interest rate revealed a strict dark pattern. The client makes a payment on the specified date (e.g., the 21st), but the grace period expires. Why? Because the contract stipulates an artificial restriction—the payment must be received not until 23:59, but strictly by <strong>21:00</strong>.
+                In the context of analyzing user experience in SberBank products, a pattern is identified:
+                <strong>Forced Continuity</strong> (forced service continuity),
+                implemented through automatic annual fee deduction.
+                In one of the cases, a user discovers a debt of −2799.34 ₽ after a charge of 3000 ₽
+                for the annual tariff.
             </p>
+
+            <p class="text-lg text-gray-600 leading-relaxed">
+                The key UX problem is not the act of charging itself, but its "silent" nature:
+                notifications about upcoming charges are absent or not emphasized at the moment
+                when the user could prevent the transaction. The charge occurs as a
+                default operational event.
+            </p>
+
+            <p class="text-lg text-gray-600 leading-relaxed">
+                Legally, the mechanism may comply with the signed service terms,
+                but from a UX information perspective, the critical parameter — transparency —
+                is implemented through multi-level documents (including long PDF terms),
+                which reduces the likelihood of informed consent at the time of service renewal.
+            </p>
+
+            <!-- QUOTE BLOCK -->
             <div class="border-l-4 border-black pl-6 py-2">
                 <p class="text-xl italic text-gray-800">
-                    «Good fintech design reduces uncertainty. A trap interface, on the other hand, creates artificial barriers to provoke user error and impose penalties».
+                    «Forced Continuity works not through a ban on cancellation, but through user inertia:
+                    the subscription continues by default, and the moment of renewal becomes invisible».
                 </p>
             </div>
-        </section>
+
+        </div>
+
+        <!-- RIGHT MOCKUP -->
+        <div class="mx-auto md:mx-0 md:scale-100 origin-center">
+
+            <div class=" md:scale-100 origin-center">
+
+                <div class="w-full max-w-[240px] border-[6px] border-gray-900 rounded-[40px] h-[480px] bg-black  relative overflow-hidden shadow-lg">
+
+                    <div class="w-20 h-5 bg-gray-900 absolute top-0 left-1/2 -translate-x-1/2 rounded-b-2xl z-20"></div>
+
+                    <div class="h-full overflow-hidden rounded-[28px] pt-3 ">
+
+                        <img
+                            src="./images/sber-subscription-screen.jpg"
+                            alt="SberBank subscription charge interface showing silent renewal behavior"
+                            class="w-full h-full object-cover rounded-[20px]"
+                        />
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- INSIGHT BLOCK -->
+    <div class="p-8 bg-white border border-gray-100 rounded-[32px] shadow-sm">
+
+        <h3 class="text-xl font-medium mb-4">
+            Business Model vs. UX Ethics
+        </h3>
+
+        <p class="text-gray-600 leading-relaxed">
+            The model of silent charges relies on behavioral inertia: a significant portion of users
+            do not track the renewal date and do not expect automatic charging. As a result, there is
+            a high proportion of post-factum reactions (closing debt instead of preventing the payment).
+        </p>
+
+        <p class="text-gray-600 leading-relaxed mt-3">
+            The economic effect of such a model scales due to low cancellation activity and
+
+            the absence of a clear “pre-charge warning”. Any increase in transparent notification before charging
+            directly reduces the conversion to automatic renewal.
+        </p>
+
+    </div>
+
+</section>
+
+<section class="space-y-8">
+
+    <h2 class="text-3xl font-semibold">
+        2. Artificial Time Traps (Yandex Super Split Case)
+    </h2>
+
+    <!-- MAIN LAYOUT -->
+    <div class="flex flex-col md:flex-row gap-10 items-start">
+
+        <!-- LEFT CONTENT -->
+        <div class="flex-1 space-y-6">
+
+            <p class="text-lg text-gray-600 leading-relaxed">
+                An analysis of a credit product from Yandex Bank (Yandex Pay / Super Split) with an APR of 58.223% annually reveals
+                a hidden temporal trigger mechanism that influences the structure of the credit agreement.
+                The user makes a payment on the specified date, but the critical parameter is
+                not the day of the payment, but the exact time before <strong>21:00 MSK</strong>.
+            </p>
+
+            <p class="text-lg text-gray-600 leading-relaxed">
+                Thus, even a minor violation of the time window leads to a non-linear sanction,
+                but to a structural change in the terms of the credit product, which is essentially
+                equivalent to renegotiating the financial model without explicit user action.
+            </p>
+
+            <!-- QUOTE BLOCK -->
+            <div class="border-l-4 border-black pl-6 py-2">
+                <p class="text-xl italic text-gray-800">
+                    «When a fintech product changes not a penalty but the credit model itself after the deadline —
+                    temporal UX becomes a mechanism of hidden contract revaluation».
+                </p>
+            </div>
+
+        </div>
+
+        <!-- RIGHT: DEVICE MOCKUP -->
+        <div class="mx-auto md:mx-0 md:scale-100 origin-center">
+
+            <div class=" md:scale-100 origin-center">
+
+                <div class="w-full max-w-[240px] border-[6px] border-gray-900 rounded-[40px] h-[480px] bg-white   relative overflow-hidden shadow-lg">
+
+                    <div class="w-20 h-5 bg-gray-900 absolute top-0 left-1/2 -translate-x-1/2 rounded-b-2xl z-20"></div>
+
+                    <div class="h-full overflow-hidden rounded-[28px]  ">
+
+                        <img
+                            src="./images/yandex-home-screen.jpg"
+                            alt="Yandex Pay Super Split payment interface showing timing cutoff behavior"
+                            class="w-full h-full object-cover rounded-[20px]"
+                        />
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- OPTIONAL INSIGHT BLOCK -->
+    <div class="p-8 bg-white border border-gray-100 rounded-[32px] shadow-sm">
+
+        <h3 class="text-xl font-medium mb-4">
+            UX Effect
+        </h3>
+
+        <p class="text-gray-600 leading-relaxed">
+            In the context of Yandex Pay / Yandex Bank, the temporal threshold of 21:00 functions not only as a deadline,
+            but also as a trigger for changing the credit logic of Super Split. Users expect a penalty model,
+            but the system applies a non-linear recalculation of the contract terms.
+        </p>
+
+        <p class="text-gray-600 leading-relaxed mt-3">
+            This creates a hidden asymmetry: the interface conveys a simple rule "make it before the time,"
+            whereas the actual effect is the modification of the financial structure of the loan.
+        </p>
+
+    </div>
+
+</section>
 
         <section class="space-y-8">
             <h2 class="text-3xl font-semibold">3. Visual Noise and Focus Shift (Plata)</h2>
@@ -131,6 +289,182 @@
                 </p>
             </div>
         </section>
+
+<section class="space-y-8">
+             <h2 class="text-3xl font-semibold">
+                  3. Visual Noise and Focus Shift (Plata)
+             </h2>    
+    <!-- MAIN SPLIT LAYOUT -->
+    <div class="flex flex-col md:flex-row gap-10 items-start">
+
+        <!-- LEFT: TEXT -->
+        <div class="flex-1 space-y-6">
+
+            <p class="text-lg text-gray-600 leading-relaxed">
+                Externally, the dashboard looks premium (Glassmorphism, lots of white space). However, behind the beautiful UI wrapper lies a violation of basic gestalt principles and reading patterns. Key data about risks and payment structure are shifted to blind spots, while user attention is artificially drawn to gradient panels and offers for new loans. This is a filter: 10-20% of customers who cannot manage their debts—are simply an "acceptable margin of error" in the business model.
+            </p>
+        </div>
+
+        <!-- RIGHT: DEVICE MOCKUP -->
+        <div class="mx-auto md:mx-0 md:scale-100 origin-center">
+
+            <div class="  md:scale-100 origin-center">
+
+                <div class="w-full max-w-[240px] border-[6px] border-gray-900 rounded-[40px] h-[480px] bg-white  relative overflow-hidden shadow-lg">
+
+                    <!-- NOTCH -->
+                    <div class="w-20 h-5 bg-gray-900 absolute top-0 left-1/2 -translate-x-1/2 rounded-b-2xl z-20"></div>
+
+                    <!-- SCREEN -->
+                    <div class="h-full overflow-hidden rounded-[28px] pt-4">
+
+                        <img
+                            src="./images/plata-home-screen.jpg"
+                            alt="Plata banking dashboard visual noise interface"
+                            class="w-full h-full object-cover rounded-[20px]"
+                        />
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+  
+    </div>
+
+    <!-- FULL-WIDTH INSIGHT (ВАЖНО!) -->
+    <div class="p-8 bg-white border border-gray-100 rounded-[32px] shadow-sm">
+
+        <h4 class="font-semibold text-sm uppercase tracking-wider text-gray-500 mb-4">
+            Researcher's Conclusion
+        </h4>
+
+        <p class="text-gray-900 leading-relaxed">
+            When a product team asks to "make the terms less noticeable," they are essentially asking to design
+            a cognitive trap.
+        </p>
+
+        <p class="text-gray-900 leading-relaxed mt-4">
+            In fintech, trust is a key UX asset, and its erosion
+            through visual noise leads to long-term damage to user trust.
+        </p>
+
+    </div>
+
+</section>
+ 
+<section class="space-y-8">
+
+    <h2 class="text-3xl font-semibold">
+        4. Shift in Financial Core and Marketing-Driven Re-hierarchy (Alfa Bank Home Screen)
+    </h2>
+
+    <!-- MAIN LAYOUT -->
+    <div class="flex flex-col md:flex-row gap-10 items-start">
+
+        <!-- LEFT CONTENT -->
+        <div class="flex-1 space-y-6">
+
+            <p class="text-lg text-gray-600 leading-relaxed">
+                The main screen of Alfa Bank demonstrates a systemic violation of information architecture,
+                where the financial core of the product (balance, card, transactions) loses its primary visual and
+                semantic priority. Instead, the upper level of the interface is formed by marketing and
+                product-emotional blocks: "protection of your money", bonuses, deposits and offers.
+            </p>
+
+            <p class="text-lg text-gray-600 leading-relaxed">
+                This creates a <strong>False Hierarchy</strong> pattern: the visual and semantic hierarchy of the interface
+                does not reflect the actual significance of entities for the user. The financial state of the account
+                stops being the entry point into the system and is shifted lower in the screen structure, yielding space
+                to commercial scenarios of the bank.
+            </p>
+
+            <p class="text-lg text-gray-600 leading-relaxed">
+                Additionally, the effect of <strong>Misdirection</strong> is observed: users come to the application
+                with the task of controlling their money (balance, card, transactions), but the primary interface patterns
+                redirect attention towards "benefits", "protection", and investment offers.
+                As a result, the core task is replaced by business-oriented engagement scenarios.
+            </p>
+
+            <p class="text-lg text-gray-600 leading-relaxed">
+                On the visual level, <strong>Visual Noise</strong> and partial <strong>Overloading</strong> occur:
+                several financial indicators and heterogeneous cards compete for attention,
+                while there is no single dominant object (for example, balance as a visual anchor).
+                This fragments perception and complicates the quick assessment of the current financial status.
+            </p>
+
+            <!-- QUOTE BLOCK -->
+            <div class="border-l-4 border-black pl-6 py-2">
+                <p class="text-xl italic text-gray-800">
+                    «When the financial core yields to the marketing showcase,
+                    the interface stops answering the user's main question —
+                    and begins to compete for their attention»
+                </p>
+            </div>
+
+        </div>
+
+        <!-- RIGHT MOCKUP -->
+        <div class="mx-auto md:mx-0 md:scale-100 origin-center">
+
+            <div class="  md:scale-100 origin-center">
+
+                <div class="w-full max-w-[240px] border-[6px] border-gray-900 rounded-[40px] h-[480px] bg-white  relative overflow-hidden shadow-lg">
+
+                    <div class="w-20 h-5 bg-gray-900 absolute top-0 left-1/2 -translate-x-1/2 rounded-b-2xl z-20"></div>
+
+                    <div class="h-full overflow-hidden rounded-[28px] pt-3 py-2">
+
+                        <img
+                            src="./images/alfa-home-screen.jpg"
+                            alt="Alfa Bank home screen showing marketing-first information hierarchy"
+                            class="w-full h-full object-cover rounded-[20px]"
+                        />
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- INSIGHT BLOCK -->
+    <div class="p-8 bg-white border border-gray-100 rounded-[32px] shadow-sm">
+
+        <h3 class="text-xl font-medium mb-4">
+            UX-interpretation (IA / Visual / Behavioral)
+        </h3>
+
+        <p class="text-gray-600 leading-relaxed">
+            At the level of information architecture (IA), a shift in priorities is observed:
+            marketing and product entities are elevated above the financial core.
+            This forms a <strong>False Hierarchy</strong>, where the commercial value of the interface
+            begins to dominate over the user's task of managing their money.
+        </p>
+
+        <p class="text-gray-600 leading-relaxed mt-3">
+            On the visual level, the interface intensifies competition for attention through multiple
+            cards, heterogeneous metrics, and the lack of a single focal point. This leads to
+            <strong>Visual Noise</strong> and partial <strong>Overloading</strong>, reducing the speed
+            of assessing the financial status.
+        </p>
+
+        <p class="text-gray-600 leading-relaxed mt-3">
+            On the behavioral level, a <strong>Goal Substitution effect</strong> is formed:
+            the user, instead of checking their balance, begins to interact with the product showcase
+            (deposits, bonuses, protection), which increases engagement with the bank's ecosystem,
+            but reduces the direct efficiency of completing the core task.
+        </p>
+
+    </div>
+
+</section>
+
 
     </main>
 
