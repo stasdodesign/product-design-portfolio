@@ -33,6 +33,163 @@ footer {
   z-index: 1;
 }
 
+.site-header {
+  background: rgba(255,255,255,.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0,0,0,.06);
+
+  transition: all .3s ease;
+}
+
+/* только первый экран */
+.site-header.hero-mode {
+  background: transparent !important;
+  backdrop-filter: none !important;
+  border-color: transparent !important;
+}
+
+/* текст поверх тёмного hero */
+.site-header {
+  --text: #6b7280;
+  --logo: #111827;
+}
+
+.site-header a,
+.site-header button {
+  color: var(--text);
+}
+
+.site-header .site-logo {
+  color: var(--logo);
+}
+
+.site-header.hero-mode {
+  --text: rgba(255,255,255,.75);
+  --logo: #fff;
+}
+
+/* состояние после скролла */
+.site-header.scrolled {
+  background: rgba(255,255,255,.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  border-bottom: 1px solid rgba(0,0,0,.06);
+}
+
+/* текст становится тёмным */
+.site-header.scrolled,
+.site-header.scrolled a,
+.site-header.scrolled button, 
+.site-header.scrolled .jedi-social-icon {
+  color: #21252e;
+}
+
+/* вторичный текст */
+.site-header nav {
+  color: rgba(255,255,255,.65);
+}
+
+.site-header.scrolled nav {
+  color: #6b7280;
+}
+
+/* HERO MODE */
+
+.hero-mode {
+  background: transparent;
+  border-color: transparent;
+}
+
+.hero-mode .site-logo,
+.hero-mode .jedi-social-icon,
+.hero-mode #mobileMenuToggle {
+  color: white;
+}
+
+/* обычные пункты меню */
+
+.hero-mode nav a,
+.hero-mode nav button {
+  color: rgba(255,255,255,.75);
+}
+
+.hero-mode nav a:hover,
+.hero-mode nav button:hover {
+  color: #B7FF54; /* фирменный лайм */
+}
+
+/* стрелка у Еще */
+
+.hero-mode svg {
+  color: inherit;
+}
+
+.hero-mode .dropdown-panel {
+  background: rgba(15,15,15,.92);
+  border-color: rgba(255,255,255,.08);
+  backdrop-filter: blur(24px);
+}
+
+.hero-mode .dropdown-panel a {
+  color: rgba(255,255,255,.85);
+}
+
+.hero-mode .dropdown-panel a:hover {
+  background: rgba(255,255,255,.05);
+  color: #B7FF54;
+}
+
+.hero-mode .lang-switcher {
+  background: rgba(255,255,255,.08);
+}
+
+.hero-mode .lang-switcher span {
+  background: rgba(255,255,255,.14);
+  color: white;
+}
+
+.hero-mode .lang-switcher a {
+  color: rgba(255,255,255,.7);
+}
+
+.hero-mode .lang-switcher a:hover {
+  color: #B7FF54;
+}
+
+header.hero-mode .jedi-social-icon:hover {
+  color: #B7FF54 !important;
+}
+
+header.hero-mode #mobileMenu {
+  background: rgba(10, 10, 10, 0.96);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+header.hero-mode #mobileMenu nav {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+header.hero-mode #mobileMenu a:hover {
+  color: #B7FF54;
+}
+
+header.hero-mode #mobileMenu .h-px {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+header.hero-mode #mobileMenu .jedi-social-icon {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+header.hero-mode #mobileMenu .jedi-social-icon:hover {
+  color: #B7FF54;
+}
+
 .laser-background {
   --laser-tilt: -12deg;
   --laser-cross-tilt: 13deg;
@@ -271,38 +428,117 @@ footer {
   gap: 12px;
   margin-top: 36px;
 }
-
 .brand-button {
   display: inline-flex;
   min-height: 44px;
   align-items: center;
   justify-content: center;
-  border-radius: 999px;
+
   padding: 0 22px;
-  background: var(--ink);
+  border-radius: 999px;
+
+  background: #111827;
   color: #ffffff;
+
   font-size: 0.92rem;
-  font-weight: 700;
+  font-weight: 600;
+
   text-decoration: none;
-  transition: transform 180ms ease, background 180ms ease;
+
+  transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
 }
 
 .brand-button:hover {
-  background: #000000;
   transform: translateY(-2px);
+
+  background: #0f172a;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,.25);
+}
+
+/* HERO MODE */
+.site-header.hero-mode ~ * .brand-button {
+  background: #ffffff;
+  color: #111827;
+}
+
+.site-header.hero-mode ~ * .brand-button:hover {
+  background: #B7FF54;
+  color: #0a0a0a;
+  box-shadow: 0 10px 30px rgba(183,255,84,.25);
 }
 
 .brand-button--secondary {
-  border: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.68);
-  color: var(--ink);
-  backdrop-filter: blur(18px);
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 22px;
+  border-radius: 999px;
+
+  border: 1px solid rgba(0,0,0,.08);
+  background: rgba(255,255,255,.6);
+  backdrop-filter: blur(20px);
+
+  color: #111827;
+
+  font-size: 0.92rem;
+  font-weight: 600;
+
+  transition: transform .2s ease, background .2s ease, border-color .2s ease;
 }
 
 .brand-button--secondary:hover {
-  background: #ffffff;
+  transform: translateY(-2px);
+  background: rgba(255,255,255,.9);
+  border-color: rgba(0,0,0,.12);
 }
 
+/* HERO MODE */
+.site-header.hero-mode ~ * .brand-button--secondary {
+  background: rgba(255,255,255,.08);
+  border-color: rgba(255,255,255,.12);
+  color: #fff;
+}
+
+.site-header.hero-mode ~ * .brand-button--secondary:hover {
+  background: rgba(183,255,84,.15);
+  border-color: #B7FF54;
+  color: #B7FF54;
+}
+
+.brand-button--ghost {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+
+  padding: 0 10px;
+
+  background: transparent;
+  border: none;
+
+  color: #6b7280;
+
+  font-size: 0.92rem;
+  font-weight: 500;
+
+  transition: color .2s ease, transform .2s ease;
+}
+
+.brand-button--ghost:hover {
+  color: #111827;
+  transform: translateY(-1px);
+}
+
+/* HERO MODE */
+.site-header.hero-mode ~ * .brand-button--ghost {
+  color: rgba(255,255,255,.7);
+}
+
+.site-header.hero-mode ~ * .brand-button--ghost:hover {
+  color: #B7FF54;
+}
 
 img {
   user-select: none;
