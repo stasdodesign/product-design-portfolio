@@ -349,13 +349,16 @@ header.hero-mode #mobileMenu .jedi-social-icon:hover {
 /* Главная секция текст*/
 .brand-shell {
   min-height: 100svh;
-  display: grid;
-  place-items: left center;
+  display: flex;
+  align-items: center;
   padding: 96px 24px 84px;
+}
+.brand-shell__content {
+  position: relative;
 }
 
 .brand-shell__content {
-  width: min(1120px, 100%);
+  width: min(1280px, 100%);
   text-align: left;
 }
 
@@ -372,15 +375,15 @@ header.hero-mode #mobileMenu .jedi-social-icon:hover {
   text-transform: uppercase;
 }
 
+.brand-eyebrow {
+  letter-spacing: 0.14em;
+  opacity: 0.5;
+}
+
 .brand-headline {
-  margin: 0;
-  max-width: 1200px;
-  font-size: 15rem;
-  line-height: 0.98;
+  font-size: clamp(3rem, 6vw, 6.5rem);
+  line-height: 0.95;
   font-weight: 300;
-  letter-spacing: 0;
-  text-wrap: balance;
-  overflow-wrap: break-word;
 }
 
 .brand-headline__base {
@@ -401,7 +404,8 @@ header.hero-mode #mobileMenu .jedi-social-icon:hover {
 .simple-word {
   display: inline-block;
   white-space: nowrap;
-  font-size: clamp(2.35rem, 7vw, 3.5rem);
+  font-size: clamp(1.25rem, 5vw, 2rem);
+  line-height: 1.2;
 }
 
 .simple-word--hero {
@@ -419,6 +423,8 @@ header.hero-mode #mobileMenu .jedi-social-icon:hover {
   line-height: 1.75;
   font-weight: 500;
   overflow-wrap: break-word;
+  margin-top: 24px;
+  opacity: 0.72;
 }
 
 .brand-actions {
@@ -543,6 +549,14 @@ header.hero-mode #mobileMenu .jedi-social-icon:hover {
 img {
   user-select: none;
   pointer-events: none;
+  transform-origin: center;
+  will-change: transform;
+}
+
+@media (max-width: 1024px) {
+  img {
+    transform: translateY(-10px);
+  }
 }
 
 
@@ -624,7 +638,7 @@ img {
 
 @media (min-width: 768px) {
   .brand-headline {
-    font-size: 7rem;
+    font-size: 5rem;
   }
 }
 
@@ -636,12 +650,13 @@ img {
   }
 
   .brand-headline {
-    font-size: 5.5rem;
+    font-size: 4rem;
     line-height: 1;
   }
 
     .simple-word {
-    font-size: 3rem;
+    font-size: 2rem;
+    line-height: 1.5;
   }
 
   .brand-copy {
