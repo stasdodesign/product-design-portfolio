@@ -211,7 +211,7 @@ class="hidden lg:hidden bg-white/95 backdrop-blur-xl border-b border-gray-100 ab
     <div class="brand-shell__content max-w-xl">
 
       <p class="brand-eyebrow">
-        Product Design / AI Systems
+        Product Designer / AI Systems
       </p>
 
       <h1 class="brand-headline flex flex-col gap-2">
@@ -229,14 +229,12 @@ class="hidden lg:hidden bg-white/95 backdrop-blur-xl border-b border-gray-100 ab
       <div class="w-48 h-px bg-gradient-to-r from-teal-500 via-lime-500 to-transparent mb-8"></div>
 
       <p class="brand-copy">
-        Product Designer. Translating heavy Enterprise
-        processes and AI technologies into human-centered
-        experiences.
+        Transforming intricate Enterprise processes and complex AI into intuitive interfaces that drive user adoption and reduce friction.
       </p>
 
        <div class="brand-actions">
-          <a class="brand-button" href="#work">View work</a>
-          <a class="brand-button brand-button--secondary" href="mailto:stasdodesign@gmail.com">Email</a>
+          <a class="brand-button" href="#work">View Projects</a>
+          <a class="brand-button brand-button--secondary" href="mailto:stasdodesign@gmail.com">Get in Touch</a>
         </div>
     </div>
 
@@ -1099,6 +1097,16 @@ class="hidden lg:hidden bg-white/95 backdrop-blur-xl border-b border-gray-100 ab
 </footer>
 
 <script>
+  const header = document.getElementById('header');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 80) {
+    header.classList.remove('hero-mode');
+  } else {
+    header.classList.add('hero-mode');
+  }
+});
+
      function fitText() {
   const el = document.getElementById("logo");
 
