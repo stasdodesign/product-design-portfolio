@@ -413,7 +413,7 @@ mobileMenuToggle
   font-style: italic;
   font-weight: 500;
   color: #ffffff;
-}
+} 
 
 .brand-copy {
   max-width: 560px;
@@ -423,7 +423,7 @@ mobileMenuToggle
   line-height: 1.75;
   font-weight: 500;
   overflow-wrap: break-word;
-  margin-top: 24px;
+  margin-top: 10px;
   opacity: 0.72;
 }
 
@@ -432,7 +432,7 @@ mobileMenuToggle
   justify-content: left;
   flex-wrap: wrap;
   gap: 12px;
-  margin-top: 36px;
+  margin-top: 20px;
 }
 
 /* 1. БАЗА (Общая структура) */
@@ -673,7 +673,7 @@ img {
   }
 
     .simple-word {
-    padding-top: 10px;
+    /*padding-top: 10px;*/
     font-size: 1.75rem;
   }
     .simple-word {
@@ -815,12 +815,12 @@ img {
 /* Уменьшаем основной заголовок на разрешении 1024px и ниже */
 @media (max-width: 1024px) {
         .brand-headline__base {
-            font-size: clamp(3rem, 6vw, 4rem) !important; /* Динамический размер: не меньше 2rem, но не больше 3rem */
-            line-height: 1.1;
-            padding-bottom: 1rem;
+            font-size: clamp(2.75rem, 6vw, 3.75rem) !important; /* Динамический размер: не меньше 2rem, но не больше 3rem */
+            line-height: 1;
+            /*padding-bottom: 1rem;*/
         }
         /* Также пропорционально уменьшаем вторую строку для баланса */
     .simple-word--hero {
-        font-size: clamp(1.5rem, 4vw, 1.5rem) !important;
+        font-size: clamp(1.25rem, 4vw, 1.25rem) !important;
     }
 }
