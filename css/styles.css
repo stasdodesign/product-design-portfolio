@@ -189,7 +189,7 @@ header.hero-mode #mobileMenu .jedi-social-icon {
 header.hero-mode #mobileMenu .jedi-social-icon:hover {
   color: #2dd4bf;
 }
-
+/**
 .laser-background {
   --laser-tilt: -12deg;
   --laser-cross-tilt: 13deg;
@@ -284,7 +284,7 @@ header.hero-mode #mobileMenu .jedi-social-icon:hover {
   transform: translate(-6px, -50%) rotate(122deg);
   background: linear-gradient(90deg, transparent, rgba(163, 230, 53, 0.64), transparent);
 }
-
+mobileMenuToggle
 
   .laser-background.is-scrolling {
     opacity: 0.58;
@@ -294,7 +294,7 @@ header.hero-mode #mobileMenu .jedi-social-icon:hover {
     width: 150vw;
   }
 }
-
+*/
 
     /* Fade-in animations */
     .fade-in {
@@ -381,7 +381,7 @@ header.hero-mode #mobileMenu .jedi-social-icon:hover {
 }
 
 .brand-headline {
-  font-size: clamp(3rem, 6vw, 6.5rem);
+  font-size: clamp(3rem, 8vw, 10rem);
   line-height: 0.95;
   font-weight: 300;
 }
@@ -403,7 +403,7 @@ header.hero-mode #mobileMenu .jedi-social-icon:hover {
 
 .simple-word {
   display: inline-block;
-  white-space: nowrap;
+  /**white-space: nowrap;*/
   font-size: clamp(1.25rem, 5vw, 2rem);
   line-height: 1.2;
 }
@@ -434,32 +434,56 @@ header.hero-mode #mobileMenu .jedi-social-icon:hover {
   gap: 12px;
   margin-top: 36px;
 }
+
+/* 1. БАЗА (Общая структура) */
 .brand-button {
   display: inline-flex;
-  min-height: 44px;
+  min-height: 56px;
   align-items: center;
   justify-content: center;
-
-  padding: 0 22px;
+  padding: 0 32px;
   border-radius: 999px;
-
-  background: #111827;
-  color: #ffffff;
-
-  font-size: 0.92rem;
+  font-size: 1rem;
   font-weight: 600;
-
   text-decoration: none;
-
-  transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  white-space: nowrap;
 }
 
-.brand-button:hover {
-  transform: translateY(-2px);
+/* 2. ЦВЕТА (Разделяем основную и вторичную) */
 
-  background: #0f172a;
+/* Белая кнопка (View Projects) */
+/* Используем :not, чтобы белым не закрасило вторую кнопку */
+.brand-actions .brand-button:not(.brand-button--secondary) {
+  background: #ffffff !important;
+  color: #0f172a !important;
+}
 
-  box-shadow: 0 10px 30px rgba(0,0,0,.25);
+/* Прозрачная кнопка (Hire Me) */
+.brand-button--secondary {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  color: #ffffff !important;
+  backdrop-filter: blur(15px);
+}
+
+/* 3. ХОВЕР (Твой зеленый #2dd4bf) */
+/* Один блок для всех состояний наведения и клика */
+.brand-actions .brand-button:hover,
+.brand-actions .brand-button:active,
+.brand-actions .brand-button:focus {
+  background: #2dd4bf !important;
+  color: #0a0a0a !important;
+  border-color: #2dd4bf !important;
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(45, 212, 191, 0.4) !important;
+}
+
+/* Опционально: легкий зеленый тинт для прозрачной кнопки при наведении */
+.brand-actions .brand-button--secondary:hover {
+  background: rgba(45, 212, 191, 0.15) !important;
+  color: #2dd4bf !important;
 }
 
 /* HERO MODE */
@@ -474,33 +498,6 @@ header.hero-mode #mobileMenu .jedi-social-icon:hover {
   box-shadow: 0 10px 30px rgba(45, 212, 191, 0.25);
 }
 
-.brand-button--secondary {
-  display: inline-flex;
-  min-height: 44px;
-  align-items: center;
-  justify-content: center;
-
-  padding: 0 22px;
-  border-radius: 999px;
-
-  border: 1px solid rgba(0,0,0,.08);
-  background: rgba(255,255,255,.6);
-  backdrop-filter: blur(20px);
-
-  color: #111827;
-
-  font-size: 0.92rem;
-  font-weight: 600;
-
-  transition: transform .2s ease, background .2s ease, border-color .2s ease;
-}
-
-.brand-button--secondary:hover {
-  transform: translateY(-2px);
-  background: rgba(255,255,255,.9);
-  border-color: rgba(0,0,0,.12);
-}
-
 /* HERO MODE */
 .site-header.hero-mode ~ * .brand-button--secondary {
   background: rgba(255,255,255,.08);
@@ -512,29 +509,6 @@ header.hero-mode #mobileMenu .jedi-social-icon:hover {
   background: rgba(45, 212, 191, 0.15);
   border-color: #2dd4bf;
   color: #2dd4bf;
-}
-
-.brand-button--ghost {
-  display: inline-flex;
-  min-height: 44px;
-  align-items: center;
-
-  padding: 0 10px;
-
-  background: transparent;
-  border: none;
-
-  color: #6b7280;
-
-  font-size: 0.92rem;
-  font-weight: 500;
-
-  transition: color .2s ease, transform .2s ease;
-}
-
-.brand-button--ghost:hover {
-  color: #111827;
-  transform: translateY(-1px);
 }
 
 /* HERO MODE */
@@ -836,4 +810,17 @@ img {
   text-align: center;
   padding: 24px 16px 0;
   opacity: 0.7;
+}
+
+/* Уменьшаем основной заголовок на разрешении 1024px и ниже */
+@media (max-width: 1024px) {
+        .brand-headline__base {
+            font-size: clamp(3rem, 6vw, 4rem) !important; /* Динамический размер: не меньше 2rem, но не больше 3rem */
+            line-height: 1.1;
+            padding-bottom: 1rem;
+        }
+        /* Также пропорционально уменьшаем вторую строку для баланса */
+    .simple-word--hero {
+        font-size: clamp(1.5rem, 4vw, 1.5rem) !important;
+    }
 }

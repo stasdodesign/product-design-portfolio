@@ -1,1663 +1,632 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Станислав Довиденко — продуктовый дизайнер систем и AI-интерфейсов</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Станислав Довиденко — продуктовый дизайнер систем и AI-интерфейсов</title>
+    <meta name="description" content="Продуктовый дизайнер. Проектирую сложные enterprise-системы, AI-интерфейсы и цифровые продукты. Кейсы: Sber, fintech, AI-экосистемы и дизайн-системы.">
+    <meta property="og:title" content="Станислав Довиденко — продуктовый дизайнер систем и AI-интерфейсов" />
+    <meta property="og:description" content="Проектирую сложные системы и AI-продукты. Кейсы enterprise UX, fintech и дизайн-систем." />
+    <meta property="og:image" content="https://case.stanislavdovidenko.com/images/preview.jpg" />
+    <meta property="og:url" content="https://case.stanislavdovidenko.com/" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Станислав Довиденко — продуктовый дизайнер систем и AI-интерфейсов" />
+    <meta name="twitter:description" content="Enterprise UX, AI-интерфейсы, сложные системы и продуктовый дизайн." />
+    <meta name="twitter:image" content="https://case.stanislavdovidenko.com/images/preview.jpg" />
 
-<meta name="description" content="Продуктовый дизайнер. Проектирую сложные enterprise-системы, AI-интерфейсы и цифровые продукты. Кейсы: Sber, fintech, AI-экосистемы и дизайн-системы.">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-<meta property="og:title" content="Станислав Довиденко — продуктовый дизайнер систем и AI-интерфейсов" />
-<meta property="og:description" content="Проектирую сложные системы и AI-продукты. Кейсы enterprise UX, fintech и дизайн-систем." />
-<meta property="og:image" content="https://case.stanislavdovidenko.com/images/preview.jpg" />
-<meta property="og:url" content="https://case.stanislavdovidenko.com/" />
-<meta property="og:type" content="website" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&family=IBM+Plex+Mono:wght@500;600&family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;700;800&family=Unbounded:wght@600;700&display=swap" rel="stylesheet">
 
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Станислав Довиденко — продуктовый дизайнер систем и AI-интерфейсов" />
-<meta name="twitter:description" content="Enterprise UX, AI-интерфейсы, сложные системы и продуктовый дизайн." />
-<meta name="twitter:image" content="https://case.stanislavdovidenko.com/images/preview.jpg" />
-
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&amp;family=IBM+Plex+Mono:wght@500;600&amp;family=Inter:wght@300;400;500;600;700&amp;family=Manrope:wght@400;500;700;800&amp;family=Unbounded:wght@600;700&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+    <!-- External Styles -->
+    <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body class="bg-gradient-to-b from-[#ffffff] to-[#f8f9fa] text-[#1d1d1f] antialiased">
-  <div class="laser-background" aria-hidden="true">
-    <div class="laser-background__beam laser-background__beam--primary"></div>
-    <div class="laser-background__beam laser-background__beam--secondary"></div>
-    <div class="laser-background__flare laser-background__flare--one"></div>
-    <div class="laser-background__flare laser-background__flare--two"></div>
-  </div>
-<header
-  id="header"
-  class="site-header hero-mode fixed top-0 left-0 w-full bg-white/85 backdrop-blur-xl border-b border-gray-100 z-50 transition-all duration-300"
->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 grid grid-cols-2 lg:grid-cols-[auto_1fr_auto] items-center">
 
-
-    <a href="index.html" class="site-logo text-base font-medium tracking-tight hover:opacity-80 transition-opacity whitespace-nowrap">
-      Станислав Довиденко
-    </a>
-    
-<nav class="hidden lg:flex justify-center gap-6 text-sm text-gray-500 font-medium">
-
-  <a href="#work" class="hover:text-black transition-colors">
-    Проекты
-  </a>
-
-  <a href="#laboratory" class="hover:text-black transition-colors">
-    Лаборатория
-  </a>
-
-  <a href="#research" class="hover:text-black transition-colors">
-    Исследования
-  </a>
-
-  <!-- DROPDOWN -->
-  <div class="relative group">
-
-    <button class="flex items-center gap-1 hover:text-black transition-colors">
-      Другое
-
-      <svg
-        class="w-4 h-4 transition-transform duration-200 group-hover:rotate-180"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        viewBox="0 0 24 24"
-      >
-        <path d="M6 9l6 6 6-6"/>
-      </svg>
-    </button>
-
-    <!-- MENU -->
-    <div class="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-
-      <div class="dropdown-panel w-56 rounded-2xl border border-gray-100 bg-white/95 backdrop-blur-xl shadow-2xl p-2">
-
-        <a
-          href="#font"
-          class="block px-4 py-3 rounded-xl hover:bg-gray-50 transition-colors"
-        >
-          Шрифты
-        </a>
-
-        <a
-          href="#presentations"
-          class="block px-4 py-3 rounded-xl hover:bg-gray-50 transition-colors"
-        >
-          Презентации
-        </a>
-
-        <a
-          href="#branding"
-          class="block px-4 py-3 rounded-xl hover:bg-gray-50 transition-colors"
-        >
-          Айдентика
-        </a>
-
-        <a
-          href="#showreel"
-          class="block px-4 py-3 rounded-xl hover:bg-gray-50 transition-colors"
-        >
-          Шоурил
-        </a>
-
-        <a
-          href="#about"
-          class="block px-4 py-3 rounded-xl hover:bg-gray-50 transition-colors"
-        >
-          Обо мне
-        </a>
-
-        <a
-          href="#contact"
-          class="block px-4 py-3 rounded-xl hover:bg-gray-50 transition-colors"
-        >
-          Контакты
-        </a>
-
-      </div>
-    </div>
-  </div>
-</nav>
-
-    <div class="flex items-center gap-6 justify-end">
-      
-      <div class="hidden lg:flex items-center gap-4 social-row-isolated">
-        <a href="https://t.me/designat0r" class="jedi-social-icon" target="_blank">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
-        </a>
-        <a href="https://instagram.com/stasdodesign" class="jedi-social-icon" target="_blank">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-        </a>
-        <a href="https://facebook.com/stasdodesign" class="jedi-social-icon" target="_blank">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-        </a>
-      </div>
-
-      <div class="lang-switcher hidden lg:flex items-center bg-gray-100 rounded-full p-0.5 text-xs font-medium">
-        <span class="px-3 py-1 bg-white rounded-full shadow-sm text-black">RU</span>
-        <a href="en.html" class="px-3 py-1 text-gray-500 hover:text-black transition-colors">EN</a>
-      </div>
-
-      <button
-          id="mobileMenuToggle"
-          class="text-base font-medium text-gray-500 lg:hidden z-50"
-          type="button"
-          aria-controls="mobileMenu"
-          aria-expanded="false"
-          onclick="toggleMenu()"
-        >
-          Меню
-        </button>
-    </div>
-  </div>
-  
- <div id="mobileMenu"
-class="hidden lg:hidden bg-white/95 backdrop-blur-xl border-b border-gray-100 absolute top-full left-0 w-full max-h-[calc(100vh-72px)] overflow-y-auto px-4 sm:px-6 lg:px-8 py-2 flex flex-col gap-6 shadow-xl mobile-menu-scroll">
-  <nav class="flex flex-col gap-3 text-base font-medium text-gray-900">
-      <a href="#work" onclick="toggleMenu()">Проекты</a>
-      <a href="#laboratory" onclick="toggleMenu()">Лаборатория</a>
-      <a href="#research" onclick="toggleMenu()">Исследования</a>
-      <a href="#font" onclick="toggleMenu()">Шрифты</a>
-      <a href="#presentations" onclick="toggleMenu()">Презентации</a>   
-      <a href="#branding" onclick="toggleMenu()">Айдентика</a>  
-      <a href="#showreel" onclick="toggleMenu()">Шоурил</a>
-      <a href="#about" onclick="toggleMenu()">Обо мне</a>
-      <a href="#contact" onclick="toggleMenu()">Контакты</a>
-    </nav>
-
-    <div class="h-px bg-gray-100 w-full"></div>
-
-    <div class="flex items-center gap-6">
-       <a href="https://t.me/designat0r" class="jedi-social-icon" target="_blank">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
-       </a>
-       <a href="https://instagram.com/stasdodesign" class="jedi-social-icon" target="_blank">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-       </a>
-       <a href="https://facebook.com/stasdodesign" class="jedi-social-icon" target="_blank">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-       </a>
+    <!-- Фоновые элементы (Laser Background) -->
+    <div class="laser-background" aria-hidden="true">
+        <div class="laser-background__beam laser-background__beam--primary"></div>
+        <div class="laser-background__beam laser-background__beam--secondary"></div>
+        <div class="laser-background__flare laser-background__flare--one"></div>
+        <div class="laser-background__flare laser-background__flare--two"></div>
     </div>
 
-    <div class="lang-switcher flex items-center bg-gray-100 rounded-full p-1 w-max">
-      <span class="px-5 py-1.5 bg-white rounded-full shadow-sm text-black text-xs font-medium">RU</span>
-      <a href="en.html" class="px-5 py-1.5 text-gray-500 hover:text-black transition-colors text-xs font-medium">EN</a>
-    </div>
-  </div>
-</header>
-<section class="relative min-h-screen overflow-hidden bg-slate-950 flex items-center fade-in">
-
-  <div class="absolute inset-0 bg-gradient-to-br from-slate-950 via-[#0f172a] to-black z-0"></div>
-
-  <div class="absolute inset-0 z-0 opacity-20"
-       style="background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px); background-size: 40px 40px;">
-  </div>
-
-  <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-[#7AC0FF]/10 rounded-full blur-[120px] pointer-events-none z-0"></div>
-  <div class="absolute bottom-0 left-1/4 w-[600px] h-[600px] bg-[#42E3B4]/10 rounded-full blur-[150px] pointer-events-none z-0"></div>
-  <div class="brand-shell relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pt-20">
-    
-  <div class="brand-shell__content w-full flex flex-col lg:grid lg:grid-cols-2 items-center gap-16">
-  <!-- LEFT -->
-  <div class="max-w-2xl relative z-10">
-
-    <div class="flex items-center gap-4 mb-8">
-      <p class="brand-eyebrow">
-        B2B / B2C / Fintech / SaaS / AI / Enterprise
-      </p>
-    </div>
-
-    <h1 class="brand-headline flex flex-col mb-12">
-      <span class="block brand-headline__base pb-4">
-        Проектирую логику систем.
-      </span>
-      <span class="simple-word simple-word--hero">
-        Эстетика — это база.
-      </span>
-    </h1>
-
-    <p class="brand-copy text-lg md:text-xl text-slate-400 leading-relaxed max-w-2xl mb-12">
-      Мой фокус — сложные B2B-интерфейсы и внутренние порталы, где функциональность решает всё.
-    </p>
-
-    <div class="brand-actions flex flex-wrap items-center gap-4">
-      <a class="brand-button px-8 py-4 rounded-full bg-white text-slate-900" href="#work">
-        К проектам
-      </a>
-      <a target="blank" class="brand-button brand-button--secondary px-8 py-4 rounded-full border border-slate-700 text-white" href="https://planerka.app/stanislav-dovidenko-exsl9q/15min">
-        Нанять меня
-      </a>
-    </div>
-
-  </div>
-
-  <!-- RIGHT -->
-<div class="order-first lg:order-none flex justify-center lg:justify-end">
-  <img 
-    src="images/Dash.png"
-    class="w-full max-w-xl lg:scale-[1.15] object-contain drop-shadow-2xl"
-  />
-</div>
-
-</div>
-
-</section>
- 
-<section id="work" class="py-16 px-6 max-w-7xl mx-auto px-6 py-24">
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
-
-    <a href="./stylo-you/index.html" class="project-card block bg-white rounded-3xl overflow-hidden border border-gray-100 fade-in cursor-pointer">
-<div class="h-72 md:h-80 bg-[#f5f5f7]  relative overflow-hidden  border border-gray-100 group">
-  <img 
-    src="images/cover_stylo-you.jpg" 
-    alt="Luma One — Smart Space Intelligence" 
-    class="w-full h-full object-cover transition-all duration-1000 group-hover:scale-105"
-  >
-  <div class="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
-</div>
-      <div class="p-8">
-        <div class="flex gap-2 mb-4">
-          <span class="px-3 py-1 bg-gray-100 text-gray-600 text-xs font-semibold rounded-full tracking-wide">AI Fashion</span>
-          <span class="px-3 py-1 bg-pink-50 text-pink-600 text-emerald-600 text-xs font-semibold rounded-full tracking-wide">E-commerce 2.0</span>
-        </div>
-        <h2 class="text-2xl font-semibold tracking-tight mb-3">Stylo.You</h2>
-        <p class="text-gray-500 font-light leading-relaxed">
-          Персональная AI-экосистема подбора стиля: от генерации образов до социальной сети профессиональных стилистов.
-        </p>
-      </div>
-    </a>
-
-    <a href="./luma-one/index.html" class="project-card block bg-white rounded-3xl overflow-hidden border border-gray-100 fade-in cursor-pointer">
-<div class="h-72 md:h-80 bg-[#f5f5f7]  relative overflow-hidden  border border-gray-100 group">
-  <img 
-    src="images/cover_luma.jpg" 
-    alt="Luma One — Smart Space Intelligence" 
-    class="w-full h-full object-cover transition-all duration-1000 group-hover:scale-105"
-  >
-  <div class="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
-</div>
-      <div class="p-8">
-        <div class="flex gap-2 mb-4">
-          <span class="px-3 py-1 bg-gray-100 text-gray-600 text-xs font-semibold rounded-full tracking-wide">Spatial UI</span>
-          <span class="px-3 py-1 bg-cyan-50 text-cyan-600 text-xs font-semibold rounded-full tracking-wide">AI Environment</span>
-        </div>
-        <h2 class="text-2xl font-semibold tracking-tight mb-3">Luma One / Halo</h2>
-        <p class="text-gray-500 font-light leading-relaxed">
-          Концепт умной домашней среды. Проектирование адаптивного пространства и кинематографичного визуального опыта, управляемого через ИИ-промпты.
-        </p>
-      </div>
-    </a>
-	
-    <a href="./sber-usersoft/index.html" class="project-card block bg-white rounded-3xl overflow-hidden border border-gray-100 fade-in cursor-pointer">
-<div class="h-72 md:h-80 bg-[#f4f7f9]  relative overflow-hidden  border border-gray-100 group">
-  <img 
-    src="images/cover_sber.jpg" 
-    alt="AI Software Management Ecosystem — Sber UserSoft" 
-    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-  >
-</div>
-      <div class="p-8">
-        <div class="flex gap-2 mb-4">
-          <span class="px-3 py-1 bg-gray-100 text-gray-600 text-xs font-semibold rounded-full tracking-wide">Enterprise</span>
-          <span class="px-3 py-1 bg-teal-50 text-teal-600 text-xs font-semibold rounded-full tracking-wide">AI Agent</span>
-        </div>
-        <h2 class="text-2xl font-semibold tracking-tight mb-3">Sber User Soft</h2>
-        <p class="text-gray-500 font-light leading-relaxed">
-          Проектирование омниканальной AI-экосистемы. ИИ-Агент, бесшовная миграция рабочих профилей и редизайн заявок для 250k+ сотрудников.
-        </p>
-      </div>
-    </a>
-
-    <a href="./ingosstrakh/index.html" class="project-card block bg-white rounded-3xl overflow-hidden border border-gray-100 fade-in cursor-pointer">
-<div class="h-72 md:h-80 bg-[#fdf8f5]   relative overflow-hidden   border border-orange-100/50 group">
-  <img 
-    src="images/cover_ingos.jpg" 
-    alt="BNPL Experience — Ingosstrakh Case Study" 
-    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-  >
-  <div class="absolute inset-0 bg-gradient-to-t from-orange-900/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-</div>
-      <div class="p-8">
-        <div class="flex gap-2 mb-4">
-          <span class="px-3 py-1 bg-gray-100 text-gray-600 text-xs font-semibold rounded-full tracking-wide">Fintech</span>
-          <span class="px-3 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-full tracking-wide">B2C/B2B</span>
-        </div>
-        <h2 class="text-2xl font-semibold tracking-tight mb-3">Ингосстрах</h2>
-        <p class="text-gray-500 font-light leading-relaxed">
-          Редизайн ключевых пользовательских сценариев и страховых продуктов. Оптимизация конверсии и обновление визуального языка.
-        </p>
-      </div>
-    </a>
-
-    <a href="https://jedi.stanislavdovidenko.com" target="_blank" class="project-card block bg-white rounded-3xl overflow-hidden border border-gray-100 fade-in cursor-pointer">
-<div class="h-72 md:h-80 bg-[#fff]   relative overflow-hidden  border border-white/5 group">
-  <img 
-    src="images/cover_jedi.jpg" 
-    alt="Jedi CSS Library — Lightweight Utility-First Framework" 
-    class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-90 group-hover:opacity-100"
-  >
-  <div class="absolute inset-0 bg-gradient-to-tr from-blue-500/10 via-transparent to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
-</div>
-      <div class="p-8">
-        <div class="flex gap-2 mb-4">
-          <span class="px-3 py-1 bg-gray-100 text-gray-600 text-xs font-semibold rounded-full tracking-wide">Design System</span>
-          <span class="px-3 py-1 bg-purple-50 text-purple-600 text-xs font-semibold rounded-full tracking-wide">Architecture</span>
-        </div>
-        <h2 class="text-2xl font-semibold tracking-tight mb-3">Jedi CSS</h2>
-        <p class="text-gray-500 font-light leading-relaxed">
-          Масштабируемая дизайн-система. Создана для ускорения фронтенд-разработки и поддержания строгого визуального консистентности продуктов.
-        </p>
-      </div>
-    </a>
-  </div>
-</section>
-
-<section id="laboratory" class="fade-in max-w-7xl mx-auto px-6 py-24">
-<div class="mb-24">
-
-    <!-- Label -->
-    <div class="mb-5">
-        <span class="inline-block px-3 py-1 bg-indigo-50 text-indigo-600 text-[10px] font-semibold uppercase tracking-[0.2em] rounded-full">
-            Сборка интерфейсов
-        </span>
-    </div>
-
-    <!-- Title -->
-    <h2 class="text-4xl md:text-6xl font-semibold tracking-tight text-slate-900 leading-[1.05] max-w-3xl">
-        Живые прототипы в коде
-    </h2>
-
-    <!-- Divider -->
-    <div class="mt-6 mb-8 w-16 h-px bg-slate-200"></div>
-
-    <!-- Description -->
-    <p class="text-lg md:text-xl text-slate-500 max-w-3xl leading-relaxed font-light">
-       Я исследую интерфейсы через переход от статичных макетов к живым прототипам на реальном коде (React + TypeScript + Tailwind + AI).
-      <br>Это даёт возможность проверять плотность информации и поведение интерфейсов прямо в браузере.
-    </p>
-
-</div>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-
-<a href="garage/index.html" class="group project-card block bg-white rounded-[32px] p-3 border border-slate-100 shadow-sm hover:shadow-xl hover:border-slate-200 transition-all duration-300">
-
-  <div class="aspect-[16/9] w-full rounded-[24px] overflow-hidden bg-[#F3F4F6] relative mb-6">
-    <img src="images/cover_garage.jpg" alt="Garage Door Repair Case Study"
-         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-  </div>
-
-  <div class="px-5 pb-5">
-
-    <div class="flex flex-wrap gap-2 mb-4">
-      <span class="px-3 py-1 bg-orange-50 text-orange-600 text-[10px] font-bold uppercase tracking-widest rounded-full">
-        UX/UI Design
-      </span>
-      <span class="px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold uppercase tracking-widest rounded-full">
-        Conversion
-      </span>
-      <span class="px-3 py-1 bg-blue-50 text-blue-600 text-[10px] font-bold uppercase tracking-widest rounded-full">
-        Landing Page
-      </span>
-    </div>
-
-    <h3 class="text-2xl font-semibold text-slate-900 mb-2">
-      Garage Door Repair
-    </h3>
-
-    <p class="text-slate-500 text-sm leading-relaxed">
-      Редизайн конверсионного лендинга локального сервиса. Основной фокус — доверие в первые 5 секунд,
-      усиление CTA и переработка структуры под звонки и заявки. Рост конверсии за счёт trust-layer и упрощения сценариев.
-    </p>
-
-  </div>
-
-</a>
-
-<a href="/apps/cart/index.html?lang=ru" class="group project-card block bg-white rounded-[32px] p-3 border border-slate-100 shadow-sm hover:shadow-xl hover:border-slate-200 transition-all duration-300">
-    <div class="aspect-[16/9] w-full rounded-[24px] overflow-hidden bg-[#fff] relative mb-6">
-        <img src="images/cover_cart.jpg" alt="Cart Optimization Case Study" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-    </div>
-    <div class="px-5 pb-5">
-        <div class="flex flex-wrap gap-2 mb-4">
-            <span class="px-3 py-1 bg-orange-50 text-orange-600 text-[10px] font-bold uppercase tracking-widest rounded-full">Product Design</span>
-            <span class="px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold uppercase tracking-widest rounded-full">Strategy</span>
-        </div>
-        <h3 class="text-2xl font-semibold text-slate-900 mb-2">Cart Optimization</h3>
-        <p class="text-slate-500 text-sm leading-relaxed">Стратегический UX-кейс по снижению процента брошенных корзин. Рост конверсии чекаута на 44% через оптимизацию интерфейсных решений и систем доверия.</p>
-    </div>
-</a>
-
-        <a href="./racktables/index.html"  class="group project-card block bg-white rounded-[32px] p-3 border border-slate-100 shadow-sm hover:shadow-xl hover:border-slate-200 transition-all duration-300">
-            <div class="aspect-[16/9] w-full rounded-[24px] overflow-hidden bg-[#0f172a] relative mb-6">
-                <img src="images/cover_racktables.jpg" alt="RackTables Redesign" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-            </div>
-            <div class="px-5 pb-5">
-                <div class="flex flex-wrap gap-2 mb-4">
-                    <span class="px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold uppercase tracking-widest rounded-full">Enterprise</span>
-                    <span class="px-3 py-1 bg-blue-50 text-blue-600 text-[10px] font-bold uppercase tracking-widest rounded-full">Infrastructure</span>
+<!-- Global Header -->
+    <header id="header" class="site-header hero-mode fixed top-0 left-0 w-full bg-white/85 backdrop-blur-xl border-b border-gray-100 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 grid grid-cols-2 lg:grid-cols-[auto_1fr_auto] items-center">
+            <a href="index.html" class="site-logo text-base font-medium tracking-tight hover:opacity-80 transition-opacity whitespace-nowrap">
+                Станислав Довиденко
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <nav class="hidden lg:flex justify-center gap-6 text-sm text-gray-500 font-medium">
+                <a href="#work" class="hover:text-black transition-colors">Проекты</a>
+                <a href="#laboratory" class="hover:text-black transition-colors">Лаборатория</a>
+                <a href="#research" class="hover:text-black transition-colors">Исследования</a>
+                
+                <!-- Выпадающее меню -->
+                <div class="relative group">
+                    <button class="flex items-center gap-1 hover:text-black transition-colors">
+                        Другое
+                        <svg class="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M6 9l6 6 6-6"/>
+                        </svg>
+                    </button>
+                    <div class="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                        <div class="dropdown-panel w-56 rounded-2xl border border-gray-100 bg-white/95 backdrop-blur-xl shadow-2xl p-2">
+                            <a href="#font" class="block px-4 py-3 rounded-xl hover:bg-gray-50 transition-colors">Шрифты</a>
+                            <a href="#presentations" class="block px-4 py-3 rounded-xl hover:bg-gray-50 transition-colors">Презентации</a>
+                            <a href="#branding" class="block px-4 py-3 rounded-xl hover:bg-gray-50 transition-colors">Айдентика</a>
+                            <a href="#showreel" class="block px-4 py-3 rounded-xl hover:bg-gray-50 transition-colors">Шоурил</a>
+                            <a href="#about" class="block px-4 py-3 rounded-xl hover:bg-gray-50 transition-colors">Обо мне</a>
+                            <a href="#contact" class="block px-4 py-3 rounded-xl hover:bg-gray-50 transition-colors">Контакты</a>
+                        </div>
+                    </div>
                 </div>
-                <h3 class="text-2xl font-semibold text-slate-900 mb-2">RackTables Redesign</h3>
-                <p class="text-slate-500 text-sm leading-relaxed">Укрощение сложности легаси-системы. Оптимизация когнитивной нагрузки и слоистая архитектура данных.</p>
-            </div>
-        </a>
+            </nav>
 
-        <a href="https://jedi.stanislavdovidenko.com/logistics_dashboard_v1.html" target="_blank" class="group project-card block bg-white rounded-[32px] p-3 border border-slate-100 shadow-sm hover:shadow-xl hover:border-slate-200 transition-all duration-300">
-            <div class="aspect-[16/9] w-full rounded-[24px] overflow-hidden bg-[#f3f4f6] relative mb-6">
-                <img src="images/cover_logistics.jpg" alt="Logistics Platform" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-            </div>
-            <div class="px-5 pb-5">
-                <div class="flex flex-wrap gap-2 mb-4">
-                    <span class="px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold uppercase tracking-widest rounded-full">B2B SaaS</span>
-                    <span class="px-3 py-1 bg-emerald-50 text-emerald-600 text-[10px] font-bold uppercase tracking-widest rounded-full">Logistics</span>
+            <div class="flex items-center gap-6 justify-end">
+                <div class="hidden lg:flex items-center gap-4 social-row-isolated">
+                    <a href="https://t.me/designat0r" class="jedi-social-icon" target="_blank" aria-label="Telegram">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+                    </a>
+                    <a href="https://instagram.com/stasdodesign" class="jedi-social-icon" target="_blank" aria-label="Instagram">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                    </a>
+                    <a href="https://facebook.com/stasdodesign" class="jedi-social-icon" target="_blank" aria-label="Facebook">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                    </a>
                 </div>
-                <h3 class="text-2xl font-semibold text-slate-900 mb-2">Logistics Dashboard</h3>
-                <p class="text-slate-500 text-sm leading-relaxed">Управление цепочками поставок, мониторинг метрик и маршрутизация в реальном времени.</p>
-            </div>
-        </a>
 
-        <a href="https://jedi.stanislavdovidenko.com/software_store.html" target="_blank" class="group project-card block bg-white rounded-[32px] p-3 border border-slate-100 shadow-sm hover:shadow-xl hover:border-slate-200 transition-all duration-300">
-            <div class="aspect-[16/9] w-full rounded-[24px] overflow-hidden bg-[#fff] relative mb-6">
-                <img src="images/cover_software-store.jpg" alt="Software Store" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-            </div>
-            <div class="px-5 pb-5">
-                <div class="flex flex-wrap gap-2 mb-4">
-                    <span class="px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold uppercase tracking-widest rounded-full">E-Commerce</span>
-                    <span class="px-3 py-1 bg-purple-50 text-purple-600 text-[10px] font-bold uppercase tracking-widest rounded-full">Web</span>
+                <div class="lang-switcher hidden lg:flex items-center bg-gray-100 rounded-full p-0.5 text-xs font-medium">
+                    <span class="px-3 py-1 bg-white rounded-full shadow-sm text-black">RU</span>
+                    <a href="en.html" class="px-3 py-1 text-gray-500 hover:text-black transition-colors">EN</a>
                 </div>
-                <h3 class="text-2xl font-semibold text-slate-900 mb-2">Software Store</h3>
-                <p class="text-slate-500 text-sm leading-relaxed">Платформа цифровой дистрибуции. Фокус на конверсионных паттернах и чистом UI.</p>
+
+            <button id="mobileMenuToggle" class="text-base font-medium text-gray-500 lg:hidden z-50" type="button" aria-controls="mobileMenu" aria-expanded="false" onclick="toggleMenu()">
+                Меню
+            </button>
             </div>
-        </a>
+        </div>
+
+    <!-- Mobile Menu Overlay -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-white/95 backdrop-blur-xl border-b border-gray-100 absolute top-full left-0 w-full max-h-[calc(100vh-72px)] overflow-y-auto px-4 sm:px-6 lg:px-8 py-2 flex flex-col gap-6 shadow-xl mobile-menu-scroll">
+            <nav class="flex flex-col gap-5 text-base font-medium text-gray-900">
+                <a href="#work" class="mobile-nav-link">Проекты</a>
+                <a href="#laboratory" class="mobile-nav-link">Лаборатория</a>
+                <a href="#research" class="mobile-nav-link">Исследования</a>
+                <a href="#font" class="mobile-nav-link">Шрифты</a>
+                <a href="#presentations" class="mobile-nav-link">Презентации</a>
+                <a href="#branding" class="mobile-nav-link">Айдентика</a>
+                <a href="#showreel" class="mobile-nav-link">Шоурил</a>
+                <a href="#about" class="mobile-nav-link">Обо мне</a>
+                <a href="#contact" class="mobile-nav-link">Контакты</a>
+            </nav>
+            <div class="h-px bg-gray-100 w-full"></div>
+            <div class="flex items-center gap-6">
+                <a href="https://t.me/designat0r" class="jedi-social-icon" target="_blank" aria-label="Telegram">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+                </a>
+                <a href="https://instagram.com/stasdodesign" class="jedi-social-icon" target="_blank" aria-label="Instagram">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                </a>
+                <a href="https://facebook.com/stasdodesign" class="jedi-social-icon" target="_blank" aria-label="Facebook">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                </a>
+            </div>
+            <div class="lang-switcher flex items-center bg-gray-100 rounded-full p-1 w-max">
+                <span class="px-5 py-1.5 bg-white rounded-full shadow-sm text-black text-xs font-medium">RU</span>
+                <a href="en.html" class="px-5 py-1.5 text-gray-500 hover:text-black transition-colors text-xs font-medium">EN</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Первый экран (Hero Section) -->
+    <section class="relative min-h-screen overflow-hidden bg-slate-950 flex items-center fade-in">
+        <div class="absolute inset-0 bg-gradient-to-br from-slate-950 via-[#0f172a] to-black z-0"></div>
+        <div class="absolute inset-0 z-0 opacity-20" style="background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px); background-size: 40px 40px;"></div>
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-[#7AC0FF]/10 rounded-full blur-[120px] pointer-events-none z-0"></div>
+        <div class="absolute bottom-0 left-1/4 w-[600px] h-[600px] bg-[#42E3B4]/10 rounded-full blur-[150px] pointer-events-none z-0"></div>
         
-        <div class="group block bg-slate-50/40 rounded-[32px] p-3 border border-slate-200 border-dashed relative overflow-hidden transition-all duration-300 cursor-default">
-            <div class="aspect-[16/9] w-full rounded-[24px] overflow-hidden bg-[#fff] relative mb-6">
-                <img src="images/cover_development.jpg" alt="Software Store" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-100">
-            </div>
-            <div class="px-5 pb-5 opacity-60">
-                <div class="flex flex-wrap gap-2 mb-4">
-                    <span class="px-3 py-1 bg-slate-200 text-slate-600 text-[10px] font-bold uppercase tracking-widest rounded-full">In Development</span>
-                    <span class="px-3 py-1 bg-slate-200 text-slate-600 text-[10px] font-bold uppercase tracking-widest rounded-full">Fintech</span>
-                    <span class="px-3 py-1 bg-slate-200 text-slate-600 text-[10px] font-bold uppercase tracking-widest rounded-full">Web3</span>
+        <div class="brand-shell relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pt-20">
+            <div class="brand-shell__content w-full flex flex-col lg:grid lg:grid-cols-2 items-center gap-16">
+                <div class="max-w-2xl relative z-10">
+                    <div class="flex items-center gap-4 mb-8">
+                        <p class="brand-eyebrow">B2B / B2C / Fintech / SaaS / AI / Enterprise</p>
+                    </div>
+                    <h1 class="brand-headline flex flex-col mb-4">
+                        <span class="block brand-headline__base pb-4">Проектирую логику систем.</span>
+                        <span class="simple-word simple-word--hero">Понятный путь для пользователя.</span>
+                    </h1>
+                    <p class="brand-copy text-lg md:text-xl text-slate-400 leading-relaxed max-w-2xl mb-4">
+                        Мой фокус — сложные B2B-интерфейсы и внутренние порталы, где функциональность решает всё.
+                    </p>
+                    <div class="brand-actions flex flex-row items-center gap-4 mt-12">
+                        <a class="brand-button px-6 sm:px-8 py-4 rounded-full bg-white text-slate-900 transition-all hover:scale-105 active:scale-95 duration-200 inline-flex items-center justify-center text-center whitespace-nowrap font-semibold" href="#work">К проектам</a>
+                        <a target="_blank" rel="noopener" class="brand-button brand-button--secondary px-6 sm:px-8 py-4 rounded-full border border-slate-700 text-white transition-all hover:scale-105 active:scale-95 duration-200 inline-flex items-center justify-center text-center whitespace-nowrap font-semibold" href="https://planerka.app/stanislav-dovidenko-exsl9q/15min">Нанять меня</a>
+                    </div>
                 </div>
-                <h3 class="text-2xl font-semibold text-slate-900 mb-2">Crypto Wallet</h3>
-                <p class="text-slate-500 text-sm leading-relaxed">Безопасный и интуитивный интерфейс для управления активами и транзакциями.</p>
+                <div class="order-first lg:order-none flex justify-center lg:justify-end">
+                    <img src="images/Dash.png" class="w-full w-full lg:scale-110 object-contain drop-shadow-2xl" alt="Dashboard Preview">
+                </div>
             </div>
         </div>
+    </section>
 
-    </div>
-</section>
-
-<section id="research" class="fade-in max-w-7xl mx-auto px-6 py-24">
-
-<div class="mb-24">
-
-    <!-- Label -->
-    <div class="mb-5">
-        <span class="inline-block px-3 py-1 bg-red-50 text-red-600 text-[10px] font-semibold uppercase tracking-[0.2em] rounded-full">
-            Исследования
-        </span>
-    </div>
-
-    <!-- Title -->
-    <h2 class="text-4xl md:text-6xl font-semibold tracking-tight text-slate-900 leading-[1.05] max-w-3xl">
-        UX/CX Исследования:<br>
-        <span class="text-slate-400 font-light">
-            Темные паттерны и этика
-        </span>
-    </h2>
-
-    <!-- Divider (optional editorial touch) -->
-    <div class="mt-6 mb-8 w-16 h-px bg-slate-200"></div>
-
-    <!-- Description -->
-    <p class="text-lg md:text-xl text-slate-500 max-w-3xl leading-relaxed font-light">
-        Глубокий разбор манипулятивных интерфейсов, скрытых комиссий и интерфейсов-капканов.
-        Анализ конфликта между агрессивными бизнес-метриками (KPI) и этичным продуктовым дизайном в финтехе.
-    </p>
-
-</div>
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-
-        <a href="research/index.html"   class="group project-card block bg-white rounded-[32px] p-3 border border-slate-100 shadow-sm hover:shadow-xl hover:border-slate-200 transition-all duration-300">
-            <div class="aspect-[16/9] w-full rounded-[24px] overflow-hidden bg-[#fff] relative mb-6">
-                <img src="images/cover_72-dark-patterns.jpg"alt="Темные паттерны и скрытые затраты" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-            </div>
-            <div class="px-5 pb-5">
-                <div class="flex flex-wrap gap-2 mb-4">
-                    <span class="px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold uppercase tracking-widest rounded-full">Темные паттерны</span>
-                    <span class="px-3 py-1 bg-red-50 text-red-600 text-[10px] font-bold uppercase tracking-widest rounded-full">Принудительная непрерывность</span>
-                    <span class="px-3 py-1 bg-red-50 text-red-600 text-[10px] font-bold uppercase tracking-widest rounded-full">Бизнес-модель</span>
+    <!-- Секция проектов (Work) -->
+    <section id="work" class="py-16 px-6 max-w-7xl mx-auto py-24 fade-in">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10">
+            <a href="./stylo-you/index.html" class="project-card block bg-white rounded-3xl overflow-hidden border border-gray-100 cursor-pointer">
+                <div class="h-72 md:h-80 bg-[#f5f5f7] relative overflow-hidden border border-gray-100 group">
+                    <img src="images/cover_stylo-you.jpg" loading="lazy" alt="Stylo.You Case Study" class="w-full h-full object-cover transition-all duration-1000 group-hover:scale-105">
                 </div>
-                <h3 class="text-2xl font-semibold text-slate-900 mb-2">Тёмные паттерны: Этика vs KPI</h3>
-                <p class="text-slate-500 text-sm leading-relaxed">Анализ "тихих списаний" (штрафы и комиссии по 3000₽) и скрытых условий. Почему отсутствие кнопки "отменить" приносит бизнесу миллиарды, а интерфейсы-капканы закладываются в unit-экономику.</p>
-            </div>
-        </a>    
-
-        <a href="/dark/index.html" class="group project-card block bg-white rounded-[32px] p-3 border border-slate-100 shadow-sm hover:shadow-xl hover:border-slate-200 transition-all duration-300">
-            <div class="aspect-[16/9] w-full rounded-[24px] overflow-hidden bg-[#fff] relative mb-6">
-                <img src="images/cover_72-dark-patterns.png" alt="Темные паттерны и скрытые затраты" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-            </div>
-            <div class="px-5 pb-5">
-                <div class="flex flex-wrap gap-2 mb-4">
-                    <span class="px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold uppercase tracking-widest rounded-full">72 паттерна</span>
-                    <span class="px-3 py-1 bg-blue-50 text-blue-600 text-[10px] font-bold uppercase tracking-widest rounded-full">Реальные кейсы</span>
-                    <span class="px-3 py-1 bg-blue-50 text-blue-600 text-[10px] font-bold uppercase tracking-widest rounded-full">Поиск и фильтры</span>
+                <div class="p-8">
+                    <div class="flex gap-2 mb-4">
+                        <span class="px-3 py-1 bg-gray-100 text-gray-600 text-xs font-semibold rounded-full tracking-wide">AI Fashion</span>
+                        <span class="px-3 py-1 bg-pink-50 text-pink-600 text-emerald-600 text-xs font-semibold rounded-full tracking-wide">E-commerce 2.0</span>
+                    </div>
+                    <h2 class="text-2xl font-semibold tracking-tight mb-3">Stylo.You</h2>
+                    <p class="text-gray-500 font-light leading-relaxed">Персональная AI-экосистема подбора стиля: от генерации образов до социальной сети профессиональных стилистов.</p>
                 </div>
-                <h3 class="text-2xl font-semibold text-slate-900 mb-2">Каталог тёмных UX-паттернов</h3>
-                <p class="text-slate-500 text-sm leading-relaxed">72 паттерна с кейсами</p>
-            </div>
-        </a>    
-  </div>
-</section>
+            </a>
 
-<section id="font" class="fade-in max-w-7xl mx-auto px-6 py-24">
-
-<div class="mb-24">
-
-    <!-- Label -->
-    <div class="mb-5">
-        <span class="inline-block px-3 py-1 bg-emerald-50 text-emerald-600 text-[10px] font-semibold uppercase tracking-[0.2em] rounded-full">
-            Типографика
-        </span>
-    </div>
-
-    <!-- Title -->
-    <h2 class="text-4xl md:text-6xl font-semibold tracking-tight text-slate-900 leading-[1.05] max-w-3xl">
-        Шрифты и типографика:<br>
-        <span class="text-slate-400 font-light">
-            Поиграйте шрифтами
-        </span>
-    </h2>
-
-    <!-- Divider (optional editorial touch) -->
-    <div class="mt-6 mb-8 w-16 h-px bg-slate-200"></div>
-
-    <!-- Description -->
-    <p class="text-lg md:text-xl text-slate-500 max-w-3xl leading-relaxed font-light">
-        Шрифты создают настроение вашего бренда. 
-    </p>
-
-</div>
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <a href="type/index.html"  class="group project-card block bg-white rounded-[32px] p-3 border border-slate-100 shadow-sm hover:shadow-xl hover:border-slate-200 transition-all duration-300">
-            <div class="aspect-[16/9] w-full rounded-[24px] overflow-hidden bg-[#fff] relative mb-6">
-                <img src="images/cover_type_1.jpg"alt="Выбор пары шрифтов для заголовка" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-            </div>
-            <div class="px-5 pb-5">
-                <div class="flex flex-wrap gap-2 mb-4">
-                    <span class="px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold uppercase tracking-widest rounded-full">Шрифт</span>
-                    <span class="px-3 py-1 bg-teal-50 text-teal-600 text-[10px] font-bold uppercase tracking-widest rounded-full">Типографика</span>
-                    <span class="px-3 py-1 bg-teal-50 text-teal-600 text-[10px] font-bold uppercase tracking-widest rounded-full">Заголовок</span>
+            <a href="./luma-one/index.html" class="project-card block bg-white rounded-3xl overflow-hidden border border-gray-100 cursor-pointer">
+                <div class="h-72 md:h-80 bg-[#f5f5f7] relative overflow-hidden border border-gray-100 group">
+                    <img src="images/cover_luma.jpg" loading="lazy" alt="Luma One Case Study" class="w-full h-full object-cover transition-all duration-1000 group-hover:scale-105">
                 </div>
-                <h3 class="text-2xl font-semibold text-slate-900 mb-2">Выбор пары шрифтов для заголовка</h3>
-                <p class="text-slate-500 text-sm leading-relaxed">Выбор разных пар на примере четырех вариантов.</p>
-            </div>
-        </a>    
-        
-        <a href="https://jedi.stanislavdovidenko.com/type.html" target="_blank" class="group project-card block bg-white rounded-[32px] p-3 border border-slate-100 shadow-sm hover:shadow-xl hover:border-slate-200 transition-all duration-300">
-            <div class="aspect-[16/9] w-full rounded-[24px] overflow-hidden bg-[#fff] relative mb-6">
-                <img src="images/cover_type_2.png" alt="Jedi Font" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-            </div>
-            <div class="px-5 pb-5">
-                <div class="flex flex-wrap gap-2 mb-4">
-                    <span class="px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold uppercase tracking-widest rounded-full">Jedi Font</span>
-                    <span class="px-3 py-1 bg-emerald-50 text-emerald-600 text-[10px] font-bold uppercase tracking-widest rounded-full">Hand Made</span>
-                    <span class="px-3 py-1 bg-emerald-50 text-emerald-600 text-[10px] font-bold uppercase tracking-widest rounded-full">Design System</span>
+                <div class="p-8">
+                    <div class="flex gap-2 mb-4">
+                        <span class="px-3 py-1 bg-gray-100 text-gray-600 text-xs font-semibold rounded-full tracking-wide">Spatial UI</span>
+                        <span class="px-3 py-1 bg-cyan-50 text-cyan-600 text-xs font-semibold rounded-full tracking-wide">AI Environment</span>
+                    </div>
+                    <h2 class="text-2xl font-semibold tracking-tight mb-3">Luma One / Halo</h2>
+                    <p class="text-gray-500 font-light leading-relaxed">Концепт умной домашней среды. Проектирование адаптивного пространства и кинематографичного визуального опыта, управляемого через ИИ-промпты.</p>
                 </div>
-                <h3 class="text-2xl font-semibold text-slate-900 mb-2">Эксклюзивный шрифт для дизайн-системы Jedi</h3>
-                <p class="text-slate-500 text-sm leading-relaxed">Создан рукописный шрифт Jedi. Набирайте ваше имя прямо на странице. Пока только на английском.</p>
-            </div>
-        </a>    
+            </a>
 
-  </div>
-</section>
-
-<section id="presentations" class="fade-in max-w-7xl mx-auto px-6 py-24">
-
-<div class="mb-14">
-
-    <!-- Label -->
-    <div class="mb-5">
-        <span class="inline-block px-3 py-1 bg-fuchsia-50 text-fuchsia-600 text-[10px] font-semibold uppercase tracking-[0.2em] rounded-full">
-            Презентации
-        </span>
-    </div>
-
-    <!-- Title -->
-    <h2 class="text-4xl md:text-6xl font-semibold tracking-tight text-slate-900 leading-[1.05] max-w-3xl">
-       Дизайн презентации:<br>
-        <span class="text-slate-400 font-light">
-             Внешние и внутренние коммуникации
-        </span>
-    </h2>
-
-    <!-- Divider (optional editorial touch) -->
-    <div class="mt-6 mb-8 w-16 h-px bg-slate-200"></div>
-
-    <!-- Description -->
-    <p class="text-lg md:text-xl text-slate-500 max-w-3xl leading-relaxed font-light">
-        Презентации для внутрикорпоративных и публичных выступлений.
-    </p>
-
-</div>
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <a href="https://drive.google.com/drive/folders/1AgoKxU9s7ofv0FB2Nl69YzQNB3w03jFv?usp=sharing"  target="_blank"  class="group project-card block bg-white rounded-[32px] p-3 border border-slate-100 shadow-sm hover:shadow-xl hover:border-slate-200 transition-all duration-300">
-            <div class="aspect-[16/9] w-full rounded-[24px] overflow-hidden bg-[#fff] relative mb-6">
-                <img src="images/cover_presentation_1.jpg"alt="25 презентаций" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-            </div>
-            <div class="px-5 pb-5">
-                <div class="flex flex-wrap gap-2 mb-4">
-                    <span class="px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold uppercase tracking-widest rounded-full">Презентация</span>
-                    <span class="px-3 py-1 bg-fuchsia-50 text-fuchsia-600 text-[10px] font-bold uppercase tracking-widest rounded-full">Коммуникации</span>
-                    <span class="px-3 py-1 bg-blue-50 text-blue-600 text-[10px] font-bold uppercase tracking-widest rounded-full">Бизнес</span>
+            <a href="./sber-usersoft/index.html" class="project-card block bg-white rounded-3xl overflow-hidden border border-gray-100 cursor-pointer">
+                <div class="h-72 md:h-80 bg-[#f4f7f9] relative overflow-hidden border border-gray-100 group">
+                    <img src="images/cover_sber.jpg" loading="lazy" alt="Sber User Soft Case Study" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                 </div>
-                <h3 class="text-2xl font-semibold text-slate-900 mb-2">Избранное</h3>
-                <p class="text-slate-500 text-sm leading-relaxed">25 презентаций</p>
-            </div>
-        </a>      
-
-        <a href="https://www.figma.com/deck/EjvZxCiheMIoUrQWe7Dge9"  target="_blank"  class="group project-card block bg-white rounded-[32px] p-3 border border-slate-100 shadow-sm hover:shadow-xl hover:border-slate-200 transition-all duration-300">
-            <div class="aspect-[16/9] w-full rounded-[24px] overflow-hidden bg-[#fff] relative mb-6">
-                <img src="images/cover_presentation_2.jpg"alt="25 презентаций" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-            </div>
-            <div class="px-5 pb-5">
-                <div class="flex flex-wrap gap-2 mb-4">
-                    <span class="px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold uppercase tracking-widest rounded-full">Презентация</span>
-                    <span class="px-3 py-1 bg-fuchsia-50 text-fuchsia-600 text-[10px] font-bold uppercase tracking-widest rounded-full">Коммуникации</span>
-                    <span class="px-3 py-1 bg-blue-50 text-blue-600 text-[10px] font-bold uppercase tracking-widest rounded-full">Бизнес</span>
+                <div class="p-8">
+                    <div class="flex gap-2 mb-4">
+                        <span class="px-3 py-1 bg-gray-100 text-gray-600 text-xs font-semibold rounded-full tracking-wide">Enterprise</span>
+                        <span class="px-3 py-1 bg-teal-50 text-teal-600 text-xs font-semibold rounded-full tracking-wide">AI Agent</span>
+                    </div>
+                    <h2 class="text-2xl font-semibold tracking-tight mb-3">Sber User Soft</h2>
+                    <p class="text-gray-500 font-light leading-relaxed">Проектирование омниканальной AI-экосистемы. ИИ-Агент, бесшовная миграция рабочих профилей и редизайн заявок для 250k+ сотрудников.</p>
                 </div>
-                <h3 class="text-2xl font-semibold text-slate-900 mb-2">Визуальные коммуникации</h3>
-                <p class="text-slate-500 text-sm leading-relaxed">Примеры работ внешних и внутренних коммуникации в Сбер User Soft в течении 2025-2026</p>
-            </div>
-        </a>           
-  </div>
-</section>
+            </a>
 
+            <a href="./ingosstrakh/index.html" class="project-card block bg-white rounded-3xl overflow-hidden border border-gray-100 cursor-pointer">
+                <div class="h-72 md:h-80 bg-[#fdf8f5] relative overflow-hidden border border-orange-100/50 group">
+                    <img src="images/cover_ingos.jpg" loading="lazy" alt="Ингосстрах Case Study" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                </div>
+                <div class="p-8">
+                    <div class="flex gap-2 mb-4">
+                        <span class="px-3 py-1 bg-gray-100 text-gray-600 text-xs font-semibold rounded-full tracking-wide">Fintech</span>
+                        <span class="px-3 py-1 bg-orange-50 text-orange-600 text-xs font-semibold rounded-full tracking-wide">B2C/B2B</span>
+                    </div>
+                    <h2 class="text-2xl font-semibold tracking-tight mb-3">Ингосстрах</h2>
+                    <p class="text-gray-500 font-light leading-relaxed">Редизайн ключевых пользовательских сценариев и страховых продуктов. Оптимизация конверсии и обновление визуального языка.</p>
+                </div>
+            </a>
+
+            <a href="https://jedi.stanislavdovidenko.com" target="_blank" rel="noopener" class="project-card block bg-white rounded-3xl overflow-hidden border border-gray-100 cursor-pointer">
+                <div class="h-72 md:h-80 bg-[#fff] relative overflow-hidden border border-white/5 group">
+                    <img src="images/cover_jedi.jpg" loading="lazy" alt="Jedi CSS Library" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-90 group-hover:opacity-100">
+                </div>
+                <div class="p-8">
+                    <div class="flex gap-2 mb-4">
+                        <span class="px-3 py-1 bg-gray-100 text-gray-600 text-xs font-semibold rounded-full tracking-wide">Design System</span>
+                        <span class="px-3 py-1 bg-purple-50 text-purple-600 text-xs font-semibold rounded-full tracking-wide">Architecture</span>
+                    </div>
+                    <h2 class="text-2xl font-semibold tracking-tight mb-3">Jedi CSS</h2>
+                    <p class="text-gray-500 font-light leading-relaxed">Масштабируемая дизайн-система. Создана для ускорения фронтенд-разработки и поддержания строгого визуального консистентности продуктов.</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Лаборатория (Laboratory) -->
+    <section id="laboratory" class="fade-in max-w-7xl mx-auto px-6 py-24">
+        <div class="mb-24">
+            <div class="mb-5">
+                <span class="inline-block px-3 py-1 bg-indigo-50 text-indigo-600 text-[10px] font-semibold uppercase tracking-[0.2em] rounded-full">Сборка интерфейсов</span>
+            </div>
+            <h2 class="text-4xl md:text-6xl font-semibold tracking-tight text-slate-900 leading-[1.05] max-w-3xl">Живые прототипы в коде</h2>
+            <div class="mt-6 mb-8 w-16 h-px bg-slate-200"></div>
+            <p class="text-lg md:text-xl text-slate-500 max-w-3xl leading-relaxed font-light">
+                Я исследую интерфейсы через переход от статичных макетов к живым прототипам на реальном коде (React + TypeScript + Tailwind + AI).<br>Это даёт возможность проверять плотность информации и поведение интерфейсов прямо в браузере.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <a href="garage/index.html" class="group project-card block bg-white rounded-[32px] p-3 border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300">
+                <div class="aspect-[16/9] w-full rounded-[24px] overflow-hidden bg-[#F3F4F6] relative mb-6">
+                    <img src="images/cover_garage.jpg" loading="lazy" alt="Garage Door Repair Case" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                </div>
+                <div class="px-5 pb-5">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 bg-orange-50 text-orange-600 text-[10px] font-bold uppercase tracking-widest rounded-full">UX/UI Design</span>
+                        <span class="px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold uppercase tracking-widest rounded-full">Conversion</span>
+                        <span class="px-3 py-1 bg-blue-50 text-blue-600 text-[10px] font-bold uppercase tracking-widest rounded-full">Landing Page</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-slate-900 mb-2">Garage Door Repair</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Редизайн конверсионного лендинга. Рост конверсии за счёт trust-layer и упрощения сценариев.</p>
+                </div>
+            </a>
+
+            <a href="/apps/cart/index.html?lang=ru" class="group project-card block bg-white rounded-[32px] p-3 border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300">
+                <div class="aspect-[16/9] w-full rounded-[24px] overflow-hidden bg-[#fff] relative mb-6">
+                    <img src="images/cover_cart.jpg" loading="lazy" alt="Cart Optimization Case" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                </div>
+                <div class="px-5 pb-5">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 bg-orange-50 text-orange-600 text-[10px] font-bold uppercase tracking-widest rounded-full">Product Design</span>
+                        <span class="px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold uppercase tracking-widest rounded-full">Strategy</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-slate-900 mb-2">Cart Optimization</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Стратегический UX-кейс по снижению процента брошенных корзин. Рост конверсии на 44%.</p>
+                </div>
+            </a>
+
+            <a href="./racktables/index.html" class="group project-card block bg-white rounded-[32px] p-3 border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300">
+                <div class="aspect-[16/9] w-full rounded-[24px] overflow-hidden bg-[#0f172a] relative mb-6">
+                    <img src="images/cover_racktables.jpg" loading="lazy" alt="RackTables Redesign" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                </div>
+                <div class="px-5 pb-5">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold uppercase tracking-widest rounded-full">Enterprise</span>
+                        <span class="px-3 py-1 bg-blue-50 text-blue-600 text-[10px] font-bold uppercase tracking-widest rounded-full">Infrastructure</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-slate-900 mb-2">RackTables Redesign</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Укрощение сложности легаси-системы. Оптимизация когнитивной нагрузки.</p>
+                </div>
+            </a>
+
+            <a href="https://jedi.stanislavdovidenko.com/logistics_dashboard_v1.html" target="_blank" rel="noopener" class="group project-card block bg-white rounded-[32px] p-3 border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300">
+                <div class="aspect-[16/9] w-full rounded-[24px] overflow-hidden bg-[#f3f4f6] relative mb-6">
+                    <img src="images/cover_logistics.jpg" loading="lazy" alt="Logistics Dashboard" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                </div>
+                <div class="px-5 pb-5">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold uppercase tracking-widest rounded-full">B2B SaaS</span>
+                        <span class="px-3 py-1 bg-emerald-50 text-emerald-600 text-[10px] font-bold uppercase tracking-widest rounded-full">Logistics</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-slate-900 mb-2">Logistics Dashboard</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Управление цепочками поставок и маршрутизация в реальном времени.</p>
+                </div>
+            </a>
+
+            <a href="https://jedi.stanislavdovidenko.com/software_store.html" target="_blank" rel="noopener" class="group project-card block bg-white rounded-[32px] p-3 border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300">
+                <div class="aspect-[16/9] w-full rounded-[24px] overflow-hidden bg-[#fff] relative mb-6">
+                    <img src="images/cover_software-store.jpg" loading="lazy" alt="Software Store" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                </div>
+                <div class="px-5 pb-5">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold uppercase tracking-widest rounded-full">E-Commerce</span>
+                        <span class="px-3 py-1 bg-purple-50 text-purple-600 text-[10px] font-bold uppercase tracking-widest rounded-full">Web</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-slate-900 mb-2">Software Store</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Платформа цифровой дистрибуции. Фокус на конверсионных паттернах.</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Исследования (Research) -->
+    <section id="research" class="fade-in max-w-7xl mx-auto px-6 py-24">
+        <div class="mb-24">
+            <div class="mb-5">
+                <span class="inline-block px-3 py-1 bg-red-50 text-red-600 text-[10px] font-semibold uppercase tracking-[0.2em] rounded-full">Исследования</span>
+            </div>
+            <h2 class="text-4xl md:text-6xl font-semibold tracking-tight text-slate-900 leading-[1.05] max-w-3xl">UX/CX Исследования:<br><span class="text-slate-400 font-light">Темные паттерны и этика</span></h2>
+            <div class="mt-6 mb-8 w-16 h-px bg-slate-200"></div>
+            <p class="text-lg md:text-xl text-slate-500 max-w-3xl leading-relaxed font-light">Глубокий разбор манипулятивных интерфейсов, скрытых комиссий и интерфейсов-капканов.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <a href="research/index.html" class="group project-card block bg-white rounded-[32px] p-3 border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300">
+                <div class="aspect-[16/9] w-full rounded-[24px] overflow-hidden bg-[#fff] relative mb-6">
+                    <img src="images/cover_72-dark-patterns.jpg" loading="lazy" alt="Dark Patterns Ethics" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                </div>
+                <div class="px-5 pb-5">
+                    <h3 class="text-2xl font-semibold text-slate-900 mb-2">Тёмные паттерны: Этика vs KPI</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Анализ "тихих списаний" и скрытых условий. Почему trap-интерфейсы приносят миллиарды.</p>
+                </div>
+            </a>
+            <a href="/dark/index.html" class="group project-card block bg-white rounded-[32px] p-3 border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300">
+                <div class="aspect-[16/9] w-full rounded-[24px] overflow-hidden bg-[#fff] relative mb-6">
+                    <img src="images/cover_72-dark-patterns.png" loading="lazy" alt="Dark UX Catalog" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                </div>
+                <div class="px-5 pb-5">
+                    <h3 class="text-2xl font-semibold text-slate-900 mb-2">Каталог тёмных UX-паттернов</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">72 паттерна с реальными кейсами.</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Шрифты (Fonts) -->
+    <section id="font" class="fade-in max-w-7xl mx-auto px-6 py-24">
+        <div class="mb-24">
+            <div class="mb-5">
+                <span class="inline-block px-3 py-1 bg-emerald-50 text-emerald-600 text-[10px] font-semibold uppercase tracking-[0.2em] rounded-full">Типографика</span>
+            </div>
+            <h2 class="text-4xl md:text-6xl font-semibold tracking-tight text-slate-900 leading-[1.05] max-w-3xl">Шрифты и типографика:<br><span class="text-slate-400 font-light">Поиграйте шрифтами</span></h2>
+            <div class="mt-6 mb-8 w-16 h-px bg-slate-200"></div>
+            <p class="text-lg md:text-xl text-slate-500 max-w-3xl leading-relaxed font-light">Шрифты создают настроение вашего бренда.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <a href="type/index.html" class="group project-card block bg-white rounded-[32px] p-3 border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300">
+                <div class="aspect-[16/9] w-full rounded-[24px] overflow-hidden bg-[#fff] relative mb-6">
+                    <img src="images/cover_type_1.jpg" loading="lazy" alt="Type Case Study" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                </div>
+                <div class="px-5 pb-5">
+                    <h3 class="text-2xl font-semibold text-slate-900 mb-2">Выбор пары шрифтов для заголовка</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Выбор разных пар на примере четырех вариантов.</p>
+                </div>
+            </a>
+            <a href="https://jedi.stanislavdovidenko.com/type.html" target="_blank" rel="noopener" class="group project-card block bg-white rounded-[32px] p-3 border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300">
+                <div class="aspect-[16/9] w-full rounded-[24px] overflow-hidden bg-[#fff] relative mb-6">
+                    <img src="images/cover_type_2.png" loading="lazy" alt="Jedi Font" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                </div>
+                <div class="px-5 pb-5">
+                    <h3 class="text-2xl font-semibold text-slate-900 mb-2">Эксклюзивный шрифт Jedi</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Создан рукописный шрифт Jedi. Набирайте ваше имя прямо на странице.</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Презентации и Айдентика (Presentations & Branding) -->
+    <section id="presentations" class="fade-in max-w-7xl mx-auto px-6 py-24">
+        <div class="mb-14">
+            <div class="mb-5">
+                <span class="inline-block px-3 py-1 bg-fuchsia-50 text-fuchsia-600 text-[10px] font-semibold uppercase tracking-[0.2em] rounded-full">Презентации</span>
+            </div>
+            <h2 class="text-4xl md:text-6xl font-semibold tracking-tight text-slate-900 leading-[1.05] max-w-3xl">Дизайн презентации:<br><span class="text-slate-400 font-light">Коммуникации</span></h2>
+            <div class="mt-6 mb-8 w-16 h-px bg-slate-200"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
+            <a href="https://drive.google.com/drive/folders/1AgoKxU9s7ofv0FB2Nl69YzQNB3w03jFv?usp=sharing" target="_blank" rel="noopener" class="group project-card block bg-white rounded-[32px] p-3 border border-slate-100 shadow-sm hover:shadow-xl transition-all">
+                <div class="aspect-[16/9] w-full rounded-[24px] overflow-hidden bg-[#fff] relative mb-6">
+                    <img src="images/cover_presentation_1.jpg" loading="lazy" alt="Archive" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                </div>
+                <div class="px-5 pb-5">
+                    <h3 class="text-2xl font-semibold text-slate-900 mb-2">Избранное</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">25 презентаций для корпоративных и публичных выступлений.</p>
+                </div>
+            </a>
+            <a href="https://www.figma.com/deck/EjvZxCiheMIoUrQWe7Dge9" target="_blank" rel="noopener" class="group project-card block bg-white rounded-[32px] p-3 border border-slate-100 shadow-sm hover:shadow-xl transition-all">
+                <div class="aspect-[16/9] w-full rounded-[24px] overflow-hidden bg-[#fff] relative mb-6">
+                    <img src="images/cover_presentation_2.jpg" loading="lazy" alt="Sber User Soft Works" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                </div>
+                <div class="px-5 pb-5">
+                    <h3 class="text-2xl font-semibold text-slate-900 mb-2">Визуальные коммуникации</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Примеры работ в Сбер User Soft в течение 2025-2026.</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+<!-- Branding & Identity -->
 <section id="branding" class="fade-in max-w-7xl mx-auto px-6 py-24">
-
-    <!-- INTRO -->
     <div class="mb-24">
-
-        <!-- Label -->
         <div class="mb-5">
-            <span class="inline-block px-3 py-1 bg-rose-50 text-rose-600 text-[10px] font-semibold uppercase tracking-[0.2em] rounded-full">
-                Айдентика и Брендинг
-            </span>
+            <span class="inline-block px-3 py-1 bg-rose-50 text-rose-600 text-[10px] font-semibold uppercase tracking-[0.2em] rounded-full">Айдентика и Брендинг</span>
         </div>
-
-        <!-- Title -->
-        <h2 class="text-4xl md:text-6xl font-semibold tracking-tight text-slate-900 leading-[1.05] max-w-4xl">
-            Айдентика<br>
-            <span class="text-slate-400 font-light">
-                Логотипы и визуальные системы
-            </span>
-        </h2>
-
-        <!-- Divider -->
+        <h2 class="text-4xl md:text-6xl font-semibold tracking-tight text-slate-900 leading-[1.05] max-w-4xl">Айдентика <span class="text-slate-400 font-light">Логотипы и визуальные системы</span></h2>
         <div class="mt-6 mb-8 w-16 h-px bg-slate-200"></div>
-
-        <!-- Description -->
-        <p class="text-lg md:text-xl text-slate-500 max-w-3xl leading-relaxed font-light">
-            Избранные логотипы, фирменные стили и визуальные системы для digital-продуктов, брендов и медиа.
-        </p>
-
+        <p class="text-lg md:text-xl text-slate-500 max-w-3xl leading-relaxed font-light">Избранные логотипы, фирменные стили и визуальные системы для digital-продуктов, брендов и медиа.</p>
     </div>
 
-
-    <!-- FEATURED IDENTITIES -->
     <div class="mb-32">
-
-        <div class="flex items-end justify-between mb-12">
-
-            <div>
                 <p class="text-xs uppercase tracking-[0.2em] text-slate-400 mb-3">
                     Избранное
-                </p>
-
-                <h3 class="text-3xl md:text-5xl font-semibold tracking-tight text-slate-900">
-                    Избранная айдентика
-                </h3>
-            </div>
-
-        </div>
-
-        <!-- GRID -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-
-
-            <!-- CARD 1 -->
-            <a href="branding/logo-brand1-luma/index.html"
-               class="group block bg-white rounded-[32px] p-3 border border-slate-100 shadow-sm hover:shadow-xl hover:border-slate-200 transition-all duration-500">
-
-                <!-- IMAGE -->
+                </p>      
+        <h3 class="text-3xl md:text-5xl font-semibold tracking-tight text-slate-900 mb-12">Избранная айдентика</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Case 1 -->
+            <a href="branding/logo-brand1-luma/index.html" class="group block bg-white rounded-[32px] p-3 border border-slate-100 shadow-sm hover:shadow-xl hover:border-slate-200 transition-all duration-500">
                 <div class="aspect-[16/10] w-full rounded-[24px] overflow-hidden bg-[#f8f8f8] relative mb-6">
-
-                    <img src="images/cover_logo_1.jpg"
-                         alt="Brand Identity"
-                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-
+                    <img src="images/cover_logo_1.jpg" alt="Luma One Brand Identity" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                 </div>
-
-                <!-- CONTENT -->
                 <div class="px-5 pb-5">
-
-                    <!-- TAG -->
-                    <div class="mb-4">
-                        <span class="px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-semibold uppercase tracking-[0.2em] rounded-full">
-                            Визуальная айдентика
-                        </span>
-                    </div>
-
-                    <!-- TITLE -->
-                    <h4 class="text-2xl font-semibold text-slate-900 mb-3 tracking-tight">
-                        Luma One Brand Identity
-                    </h4>
-
-                    <!-- TEXT -->
-                    <p class="text-slate-500 text-sm leading-relaxed mb-6">
-                        Логотип, типографика и визуальная система для цифрового бренда.
-                    </p>
-
-                    <!-- LINK -->
-                    <div class="flex items-center text-sm font-medium text-slate-900">
-                        Смотреть кейс
-                        <span class="ml-2 transition-transform duration-300 group-hover:translate-x-1">
-                            →
-                        </span>
-                    </div>
-
+                    <span class="px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-semibold uppercase tracking-[0.2em] rounded-full mb-4 inline-block">Визуальная айдентика</span>
+                    <h4 class="text-2xl font-semibold text-slate-900 mb-3 tracking-tight">Luma One Brand Identity</h4>
+                    <p class="text-slate-500 text-sm leading-relaxed mb-6">Логотип, типографика и визуальная система для цифрового бренда.</p>
+                    <div class="flex items-center text-sm font-medium text-slate-900">Смотреть кейс <span class="ml-2 transition-transform duration-300 group-hover:translate-x-1">→</span></div>
                 </div>
-
             </a>
-
-
-            <!-- CARD 2 -->
-            <a href="#"
-               class="group block bg-white rounded-[32px] p-3 border border-slate-100 opacity-60">
-
+            <!-- Placeholder 1 -->
+            <a href="#" class="group block bg-white rounded-[32px] p-3 border border-slate-100 opacity-60">
                 <div class="aspect-[16/10] w-full rounded-[24px] bg-slate-100 mb-6"></div>
-
                 <div class="px-5 pb-5">
-
                     <div class="mb-4">
-                        <span class="px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-semibold uppercase tracking-[0.2em] rounded-full">
-                            В работе
-                        </span>
+                        <span class="px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-semibold uppercase tracking-[0.2em] rounded-full">В работе</span>
                     </div>
-
-                    <h4 class="text-2xl font-semibold text-slate-900 mb-3 tracking-tight">
-                        Будущая айдентика
-                    </h4>
-
-                    <p class="text-slate-500 text-sm leading-relaxed">
-                        Новый кейс.
-                    </p>
-
+                    <h4 class="text-2xl font-semibold text-slate-900 mb-3 tracking-tight">Будущая айдентика</h4>
+                    <p class="text-slate-500 text-sm leading-relaxed">Новый кейс.</p>
                 </div>
-
             </a>
-
-
-            <!-- CARD 3 -->
-            <a href="#"
-               class="group block bg-white rounded-[32px] p-3 border border-slate-100 opacity-60">
-
+            <!-- Placeholder 2 -->
+            <a href="#" class="group block bg-white rounded-[32px] p-3 border border-slate-100 opacity-60">
                 <div class="aspect-[16/10] w-full rounded-[24px] bg-slate-100 mb-6"></div>
-
                 <div class="px-5 pb-5">
-
                     <div class="mb-4">
-                        <span class="px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-semibold uppercase tracking-[0.2em] rounded-full">
-                            В работе
-                        </span>
+                        <span class="px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-semibold uppercase tracking-[0.2em] rounded-full">В работе</span>
                     </div>
-
-                    <h4 class="text-2xl font-semibold text-slate-900 mb-3 tracking-tight">
-                        Будущая айдентика
-                    </h4>
-
-                    <p class="text-slate-500 text-sm leading-relaxed">
-                         Новый кейс.
-                    </p>
-
+                    <h4 class="text-2xl font-semibold text-slate-900 mb-3 tracking-tight">Будущая айдентика</h4>
+                    <p class="text-slate-500 text-sm leading-relaxed">Новый кейс.</p>
                 </div>
-
             </a>
-
         </div>
-
     </div>
 
-
-    <!-- SELECTED MARKS -->
     <div class="mb-24">
-
-        <div class="mb-12">
-
-            <p class="text-xs uppercase tracking-[0.2em] text-slate-400 mb-3">
+                  <p class="text-xs uppercase tracking-[0.2em] text-slate-400 mb-3">
                 Архив
             </p>
-
-            <h3 class="text-3xl md:text-5xl font-semibold tracking-tight text-slate-900">
-                Избранные логотипы
-            </h3>
-
-        </div>
-
-
-        <!-- LOGO GRID -->
+        <h3 class="text-3xl md:text-5xl font-semibold tracking-tight text-slate-900 mb-12">Избранные логотипы</h3>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-slate-200 border border-slate-200 rounded-[32px] overflow-hidden">
-
-
-            <!-- ITEM -->
-            <div class="aspect-square bg-white flex items-center justify-center p-10 hover:bg-slate-50 transition">
-                <img src="images/logo1.png" class="max-w-[135px] opacity-90">
-            </div>
-
-            <div class="aspect-square bg-white flex items-center justify-center p-10 hover:bg-slate-50 transition">
-                <img src="images/logo2.png" class="max-w-[135px] opacity-90">
-            </div>
-
-            <div class="aspect-square bg-white flex items-center justify-center p-10 hover:bg-slate-50 transition">
-                <img src="images/logo3.png" class="max-w-[135px] opacity-90">
-            </div>
-
-            <div class="aspect-square bg-white flex items-center justify-center p-10 hover:bg-slate-50 transition">
-                <img src="images/logo4.png" class="max-w-[135px] opacity-90">
-            </div>
-
-            <div class="aspect-square bg-white flex items-center justify-center p-10 hover:bg-slate-50 transition">
-                <img src="images/logo5.png" class="max-w-[135px] opacity-90">
-            </div>
-
-            <div class="aspect-square bg-white flex items-center justify-center p-10 hover:bg-slate-50 transition">
-                <img src="images/logo6.png" class="max-w-[135px] opacity-90">
-            </div>
-
-            <div class="aspect-square bg-white flex items-center justify-center p-10 hover:bg-slate-50 transition">
-                <img src="images/logo7.png" class="max-w-[135px] opacity-90">
-            </div>
-
-            <div class="aspect-square bg-white flex items-center justify-center p-10 hover:bg-slate-50 transition">
-                <img src="images/logo8.png" class="max-w-[135px] opacity-90">
-            </div>
-
+            <div class="aspect-square bg-white flex items-center justify-center p-10 hover:bg-slate-50 transition"><img src="images/logo1.png" class="max-w-[135px] opacity-90"></div>
+            <div class="aspect-square bg-white flex items-center justify-center p-10 hover:bg-slate-50 transition"><img src="images/logo2_en.png" class="max-w-[135px] opacity-90"></div>
+            <div class="aspect-square bg-white flex items-center justify-center p-10 hover:bg-slate-50 transition"><img src="images/logo3.png" class="max-w-[135px] opacity-90"></div>
+            <div class="aspect-square bg-white flex items-center justify-center p-10 hover:bg-slate-50 transition"><img src="images/logo4.png" class="max-w-[135px] opacity-90"></div>
+            <div class="aspect-square bg-white flex items-center justify-center p-10 hover:bg-slate-50 transition"><img src="images/logo5.png" class="max-w-[135px] opacity-90"></div>
+            <div class="aspect-square bg-white flex items-center justify-center p-10 hover:bg-slate-50 transition"><img src="images/logo6.png" class="max-w-[135px] opacity-90"></div>
+            <div class="aspect-square bg-white flex items-center justify-center p-10 hover:bg-slate-50 transition"><img src="images/logo7.png" class="max-w-[135px] opacity-90"></div>
+            <div class="aspect-square bg-white flex items-center justify-center p-10 hover:bg-slate-50 transition"><img src="images/logo8.png" class="max-w-[135px] opacity-90"></div>
         </div>
-
     </div>
 
-
-    <!-- ARCHIVE -->
+    <!-- Branding Archive Link -->
     <div class="border-t border-slate-200 pt-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-
         <div>
-
-            <p class="text-xs uppercase tracking-[0.2em] text-slate-400 mb-3">
-                Полный архив
-            </p>
-
-            <p class="text-slate-500 text-lg leading-relaxed max-w-2xl">
-                Больше логотипов, архивных проектов и визуальных экспериментов.
-            </p>
-
+            <p class="text-xs uppercase tracking-[0.2em] text-slate-400 mb-3">Полный архив</p>
+            <p class="text-slate-500 text-lg leading-relaxed max-w-2xl">Больше логотипов, архивных проектов и визуальных экспериментов.</p>
         </div>
-
-        <!-- LINK -->
-        <a href="https://www.figma.com/design/DrFOo98CYebauISOAzA6hy/Logotypes-Stanislav-Dovidenko-2026?node-id=0-1&t=F60HlFaKm0qK8nl9-1"
-           target="_blank"
-           class="inline-flex items-center text-slate-900 font-medium hover:opacity-60 transition">
-
-            Открыть архив
-
-            <span class="ml-2">
-                →
-            </span>
-
+        <a href="https://www.figma.com/design/DrFOo98CYebauISOAzA6hy/Logotypes-Stanislav-Dovidenko-2026?node-id=0-1&t=F60HlFaKm0qK8nl9-1" target="_blank" rel="noopener" class="inline-flex items-center text-slate-900 font-medium hover:opacity-60 transition">
+            Открыть архив <span class="ml-2">→</span>
         </a>
-
     </div>
-
 </section>
 
-<section id="showreel" class="section" id="video-showcase">
-  <div class="py-16 px-6 max-w-5xl mx-auto text-center">
-    
-    <h2 class="text-3xl font-medium tracking-tight mb-4">
-      Showreel 2025
-    </h2>
-
-    <p class="text-gray-500 font-light text-lg mb-10">
-      Анимация. Музыка. Продукты. Типографика. Интерфейсы. AI.
-    </p>
-
-<div class="relative rounded-2xl overflow-hidden">
-  <video 
-    id="mainVideo"
-    class="w-full h-full object-cover"
-    controls
-    playsinline
-    preload="metadata"
-  >
-    <source src="video/StasDoDesign_ShowReel_2025.mp4" type="video/mp4">
-  </video>
-</div>
-
-<div class="mt-6 text-center">
-  
-  <a 
-    href="https://www.youtube.com/watch?v=QErcj-aWh5I" 
-    target="_blank" 
-    rel="noopener"
-    class="inline-flex items-center gap-3 text-gray-500 hover:text-black transition-colors group"
-  >
-    
-    <!-- YouTube icon -->
-    <svg 
-      class="w-5 h-5 transition-transform group-hover:scale-110" 
-      viewBox="0 0 24 24" 
-      fill="currentColor"
-    >
-      <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.7 3.5 12 3.5 12 3.5s-7.7 0-9.4.6A3 3 0 0 0 .5 6.2 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.7.6 9.4.6 9.4.6s7.7 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.8zM9.8 15.5v-7l6.2 3.5-6.2 3.5z"/>
-    </svg>
-
-    <!-- Text -->
-    <span class="text-sm font-light">
-      Смотреть в высоком качестве на YouTube
-    </span>
-
-    <!-- Arrow -->
-    <svg 
-      class="w-4 h-4 opacity-60 group-hover:translate-x-1 transition-transform" 
-      fill="none" 
-      stroke="currentColor" 
-      stroke-width="2" 
-      viewBox="0 0 24 24"
-    >
-      <path d="M5 12h14M13 5l7 7-7 7"/>
-    </svg>
-
-  </a>
-
-</div>
-  </div>
-</section>
-
-<section  id="about" class="py-20 max-w-7xl mx-auto px-6 fade-in">
-  <div class="py-10 px-6 max-w-3xl mx-auto text-center fade-in">
-    <h2 class="text-3xl font-medium tracking-tight mb-6">Подход к работе</h2>
-    <p class="text-gray-500 font-light text-lg leading-relaxed">
-      Я считаю, что хороший дизайн должен быть незаметным. Моя задача — превращать сложную бэкенд-логику, интеграции и бизнес-требования в интерфейсы, где пользователю достаточно нажать одну кнопку.
-    </p>
-  </div>
-
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-
-    <!-- CARD 1 -->
-    <a href="#" class="group block relative h-[400px] overflow-hidden rounded-[32px] bg-gray-100 border border-gray-200/60 shadow-sm">
-      
-      <img 
-        src="images/Morning UX structure & problem framing.jpg" 
-        alt="Утро: UX-структура и формулирование проблемы" 
-        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-      >
-
-      <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent p-6 flex flex-col justify-end text-white">
-        
-        <div class="flex flex-wrap gap-2 mb-3">
-          <span class="px-3 py-1 border border-white/30 backdrop-blur-md rounded-full text-xs">Утро</span>
-          <span class="px-3 py-1 border border-white/30 backdrop-blur-md rounded-full text-xs">UX</span>
-          <span class="px-3 py-1 border border-white/30 backdrop-blur-md rounded-full text-xs">Мышление</span>
+    <!-- Шоурил (Showreel) -->
+    <section id="showreel" class="py-16 px-6 max-w-5xl mx-auto text-center fade-in">
+        <h2 class="text-3xl font-medium tracking-tight mb-4">Showreel 2025</h2>
+        <p class="text-gray-500 font-light text-lg mb-10">Анимация. Музыка. Продукты. Типографика. Интерфейсы. AI.</p>
+        <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+            <video id="mainVideo" class="w-full h-full object-cover" controls playsinline preload="metadata">
+                <source src="video/StasDoDesign_ShowReel_2025.mp4" type="video/mp4">
+            </video>
         </div>
-
-        <h3 class="text-xl font-medium">UX-структура и задачи</h3>
-        <p class="text-sm opacity-90 mt-2">Начинаю с логики системы, а не с экранов</p>
-
-      </div>
-    </a>
-
-    <!-- CARD 2 -->
-    <a href="#" class="group block relative h-[400px] overflow-hidden rounded-[32px] bg-gray-100 border border-gray-200/60 shadow-sm">
-      
-      <img 
-        src="images/Day system design & product work.jpg" 
-        alt="День: системный дизайн и продуктовая работа" 
-        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-      >
-
-      <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent p-6 flex flex-col justify-end text-white">
-        
-        <div class="flex flex-wrap gap-2 mb-3">
-          <span class="px-3 py-1 border border-white/30 backdrop-blur-md rounded-full text-xs">День</span>
-          <span class="px-3 py-1 border border-white/30 backdrop-blur-md rounded-full text-xs">Системный дизайн</span>
-          <span class="px-3 py-1 border border-white/30 backdrop-blur-md rounded-full text-xs">Продукт</span>
+        <div class="mt-8">
+            <a href="https://www.youtube.com/watch?v=QErcj-aWh5I" target="_blank" rel="noopener" class="inline-flex items-center gap-3 text-gray-500 hover:text-black transition-colors group">
+                <svg class="w-5 h-5 transition-transform group-hover:scale-110" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.7 3.5 12 3.5 12 3.5s-7.7 0-9.4.6A3 3 0 0 0 .5 6.2 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.7.6 9.4.6 9.4.6s7.7 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.8zM9.8 15.5v-7l6.2 3.5-6.2 3.5z"/></svg>
+                <span class="text-sm">Смотреть в высоком качестве на YouTube</span>
+            </a>
         </div>
+    </section>
 
-        <h3 class="text-xl font-medium">Системная работа над продуктом</h3>
-        <p class="text-sm opacity-90 mt-2">Проектирование сценариев, логики и масштабируемых UX-систем</p>
-
-      </div>
-    </a>
-
-    <!-- CARD 3 -->
-    <a href="#" class="group block relative h-[400px] overflow-hidden rounded-[32px] bg-gray-100 border border-gray-200/60 shadow-sm">
-      
-      <img 
-        src="images/Evening AI exploration & design systems.jpg" 
-        alt="Вечер: исследование AI и дизайн-системы" 
-        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-      >
-
-      <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent p-6 flex flex-col justify-end text-white">
-        
-        <div class="flex flex-wrap gap-2 mb-3">
-          <span class="px-3 py-1 border border-white/30 backdrop-blur-md rounded-full text-xs">Вечер</span>
-          <span class="px-3 py-1 border border-white/30 backdrop-blur-md rounded-full text-xs">AI</span>
-          <span class="px-3 py-1 border border-white/30 backdrop-blur-md rounded-full text-xs">Дизайн-системы</span>
+    <!-- Обо мне (About) -->
+    <section id="about" class="py-20 max-w-7xl mx-auto px-6 fade-in">
+        <div class="py-10 px-6 max-w-3xl mx-auto text-center mb-12">
+            <h2 class="text-3xl font-medium tracking-tight mb-6">Подход к работе</h2>
+            <p class="text-gray-500 font-light text-lg leading-relaxed">Я считаю, что хороший дизайн должен быть незаметным. Моя задача — превращать сложную бэкенд-логику в интерфейсы, где пользователю достаточно нажать одну кнопку.</p>
         </div>
-
-        <h3 class="text-xl font-medium">	AI и дизайн-системы</h3>
-        <p class="text-sm opacity-90 mt-2">Изучаю AI-driven UX и создаю масштабируемые компоненты</p>
-
-      </div>
-    </a>
-
-  </div>
-</section>
-
-<section id="faq" class="py-12 px-4 sm:px-6 lg:px-8 bg-white/60 backdrop-blur-md border border-white/20 fade-in">
-  <div class="max-w-4xl mx-auto text-center mb-12">
-    <h2 class="text-4xl md:text-5xl font-semibold tracking-tight mb-5">
-      FAQ
-    </h2>
-
-    <p class="text-[#6e6e73] text-lg font-normalleading-relaxed max-w-2xl mx-auto">
-      Подход к продуктовой разработке, AI-first UX, исследованиям, метрикам и проектированию сложных B2B/ERP интерфейсов
-    </p>
-  </div>
-
-  <div class="max-w-4xl mx-auto divide-y divide-[#d2d2d7]">
-
-    <!-- 1 -->
-    <details class="group py-6">
-      <summary class="flex cursor-pointer list-none items-center justify-between">
-        <span class="text-left text-xl font-medium tracking-tight">
-          Как я собираю данные для формирования интерфейсных гипотез и как оцениваю их эффективность?
-        </span>
-
-        <span class="ml-6 text-3xl font-light text-[#86868b] transition-transform duration-300 group-open:rotate-45">
-          +
-        </span>
-      </summary>
-
-      <div class="mt-6 text-[#6e6e73] leading-8 text-[17px] font-normalspace-y-4">
-        <p>
-          Я собирааю данные, комбинируя качественные и количественные методы. Сначала анализирую продуктовые метрики: воронки, точки оттока, время выполнения задач, затем дополняю их качественными инсайтами через CustDev, интервью и юзабилити-тесты.
-        </p>
-
-        <p>
-          На основе этого формулирую гипотезы через JTBD и Job Stories, чтобы они были привязаны к реальным задачам пользователей.
-        </p>
-
-        <p>
-          Эффективность гипотез оцениваю через заранее определённые метрики: A/B-тесты, изменение ключевых показателей, конверсию, время выполнения задачи, количество ошибок, а также CSI/CSAT.
-        </p>
-
-        <p>
-          Сравниваю результаты с baseline и принимаю решение о масштабировании или доработке решения.
-        </p>
-      </div>
-    </details>
-
-    <!-- 2 -->
-    <details class="group py-6">
-      <summary class="flex cursor-pointer list-none items-center justify-between">
-        <span class="text-left text-xl font-medium tracking-tight">
-          Как я принимаю решения в условиях неопределённости, когда нет данных или они противоречивы?
-        </span>
-
-        <span class="ml-6 text-3xl font-light text-[#86868b] transition-transform duration-300 group-open:rotate-45">
-          +
-        </span>
-      </summary>
-
-      <div class="mt-6 text-[#6e6e73] leading-8 text-[17px] font-normalspace-y-4">
-        <p>
-          В условиях неопределённости я опираюсь на комбинацию продуктовой логики, качественных инсайтов и быстрых проверок гипотез.
-        </p>
-
-        <p>
-          Если данных недостаточно или они противоречивы, сначала формулирую несколько возможных гипотез через JTBD и опыт пользователей, затем уточняю их через быстрые качественные методы: интервью, прототипирование и юзабилити-тесты.
-        </p>
-
-        <p>
-          Далее принимаю решение на основе наименьшего риска для пользователя и бизнеса — выбираю вариант, который проще и быстрее проверить.
-        </p>
-
-        <p>
-          После внедрения обязательно закладываю метрики и проверяю результат через аналитику или A/B-тест, чтобы подтвердить или скорректировать решение.
-        </p>
-      </div>
-    </details>
-
-    <!-- 3 -->
-    <details class="group py-6">
-      <summary class="flex cursor-pointer list-none items-center justify-between">
-        <span class="text-left text-xl font-medium tracking-tight">
-          Случай использования JTBD в проектах: какие инсайты помогли изменить продукт?
-        </span>
-
-        <span class="ml-6 text-3xl font-light text-[#86868b] transition-transform duration-300 group-open:rotate-45">
-          +
-        </span>
-      </summary>
-
-      <div class="mt-6 text-[#6e6e73] leading-8 text-[17px] font-normalspace-y-4">
-        <p>
-          В одном из B2B-проектов я использовал JTBD при переработке сценария работы с заявками в CRM.
-        </p>
-
-        <p>
-          Интервью показали, что пользователям важна не сама функция изменения статуса, а возможность быстро понимать текущее состояние клиента и не терять контекст работы.
-        </p>
-
-        <p>
-          Это изменило подход к проектированию: вместо добавления новых функций мы упростили user flow, объединили ключевые действия в одном экране и переработали структуру карточки клиента.
-        </p>
-
-        <p>
-          В результате сократилось время выполнения основных операций и снизилось количество ошибок.
-        </p>
-      </div>
-    </details>
-
-    <!-- 4 -->
-    <details class="group py-6">
-      <summary class="flex cursor-pointer list-none items-center justify-between">
-        <span class="text-left text-xl font-medium tracking-tight">
-          Кейс из опыта, где моё решение повлияло на продуктовую метрику
-        </span>
-
-        <span class="ml-6 text-3xl font-light text-[#86868b] transition-transform duration-300 group-open:rotate-45">
-          +
-        </span>
-      </summary>
-
-      <div class="mt-6 text-[#6e6e73] leading-8 text-[17px] font-normalspace-y-4">
-        <p>
-          В одном из проектов для B2B CRM я работал над модулем обработки заявок.
-        </p>
-
-        <p>
-          По данным аналитики и обратной связи пользователей выявили, что основной сценарий занимает слишком много времени и сопровождается ошибками из-за разрозненного интерфейса.
-        </p>
-
-        <p>
-          Я переработал структуру карточки заявки, объединил ключевые действия в единый контекстный сценарий и упростил user flow на основе CJM и результатов CustDev.
-        </p>
-
-        <p>
-          После внедрения решения время обработки заявки сократилось примерно на 25–30%, снизилось количество ошибок и уменьшилось число обращений в поддержку по этому сценарию.
-        </p>
-      </div>
-    </details>
-
-    <!-- 5 -->
-    <details class="group py-6">
-      <summary class="flex cursor-pointer list-none items-center justify-between">
-        <span class="text-left text-xl font-medium tracking-tight">
-          Какие AI-инструменты я использую в повседневной работе и для чего?
-        </span>
-
-        <span class="ml-6 text-3xl font-light text-[#86868b] transition-transform duration-300 group-open:rotate-45">
-          +
-        </span>
-      </summary>
-
-      <div class="mt-6 text-[#6e6e73] leading-8 text-[17px] font-normalspace-y-4">
-        <p>
-          Использую AI как инструмент для ускорения исследований, проектирования и подготовки материалов.
-        </p>
-
-        <p>
-          ChatGPT помогает в формулировке и структурировании гипотез, JTBD, Job Stories, сценариев, UX-текстов и анализе результатов интервью.
-        </p>
-
-        <p>
-          Codex OpenAI, AI Studio и VSCode использую для создания интерактивных прототипов, презентаций и продуктов на React, TypeScript и Tailwind.
-        </p>
-
-        <p>
-          Gemini Google и NotebookLM применяю для генерации UX-решений, альтернативных флоу и быстрого прототипирования идей.
-        </p>
-
-        <p>
-          Google Flow Pro Nana Banana использую для визуальных концептов, а Kimi — для подготовки презентаций PowerPoint.
-        </p>
-      </div>
-    </details>
-
-    <!-- 6 -->
-    <details class="group py-6">
-      <summary class="flex cursor-pointer list-none items-center justify-between">
-        <span class="text-left text-xl font-medium tracking-tight">
-          Какой вклад я вносил в разработку AI-сценариев?
-        </span>
-
-        <span class="ml-6 text-3xl font-light text-[#86868b] transition-transform duration-300 group-open:rotate-45">
-          +
-        </span>
-      </summary>
-
-      <div class="mt-6 text-[#6e6e73] leading-8 text-[17px] font-normalspace-y-4">
-        <p>
-          В своих проектах я участвовал в проектировании AI-сценариев для B2B и ERP-интерфейсов — в основном это были сценарии помощи пользователю, генерации контента и упрощения сложных процессов через AI-assisted UX.
-        </p>
-
-        <p>
-          Мой вклад включал исследование пользовательских сценариев и выявление точек, где AI действительно снижает нагрузку пользователя.
-        </p>
-
-        <p>
-          Также я проектировал AI-flow и состояния интерфейса, формировал JTBD и Job Stories для AI-функций, создавал и тестировал прототипы AI-взаимодействий.
-        </p>
-
-        <p>
-          Дополнительно прорабатывал UX для edge cases, ошибок и уровня доверия к AI-ответам.
-        </p>
-
-        <p>
-          В работе использовал CustDev, CJM, JTBD, сценарное моделирование, быстрые прототипы и юзабилити-тестирование.
-        </p>
-      </div>
-    </details>
-
-    <!-- 7 -->
-    <details class="group py-6">
-      <summary class="flex cursor-pointer list-none items-center justify-between">
-        <span class="text-left text-xl font-medium tracking-tight">
-          Что я делаю, если дизайн не принимает продакт или бизнес?
-        </span>
-
-        <span class="ml-6 text-3xl font-light text-[#86868b] transition-transform duration-300 group-open:rotate-45">
-          +
-        </span>
-      </summary>
-
-      <div class="mt-6 text-[#6e6e73] leading-8 text-[17px] font-normalspace-y-4">
-        <p>
-          В такой ситуации сначала уточняю причины несогласия: бизнес-ограничения, метрики, риски или различие в понимании проблемы.
-        </p>
-
-        <p>
-          Сопоставляю это с пользовательскими данными и целями продукта, чтобы понять, где именно расхождение — в решении или в постановке задачи.
-        </p>
-
-        <p>
-          Далее либо аргументированно отстаиваю решение через исследования, CJM, метрики и результаты тестов, либо предлагаю альтернативы и компромиссные варианты.
-        </p>
-
-        <p>
-          Если данных недостаточно, быстро проверяю гипотезу через прототипирование или тестирование и возвращаюсь к обсуждению уже с фактами.
-        </p>
-      </div>
-    </details>
-
-    <!-- 8 -->
-    <details class="group py-6">
-      <summary class="flex cursor-pointer list-none items-center justify-between">
-        <span class="text-left text-xl font-medium tracking-tight">
-          С какими компонентами Service Blueprint я работал чаще всего?
-        </span>
-
-        <span class="ml-6 text-3xl font-light text-[#86868b] transition-transform duration-300 group-open:rotate-45">
-          +
-        </span>
-      </summary>
-
-      <div class="mt-6 text-[#6e6e73] leading-8 text-[17px] font-normalspace-y-4">
-        <p>
-          Чаще всего при построении Service Blueprint мне приходилось работать с backstage processes и support processes, так как именно они сильнее всего влияют на стабильность пользовательского сценария в B2B/ERP-системах.
-        </p>
-
-        <p>
-          Основная сложность возникала в синхронизации внутренних процессов между разными отделами — когда пользователь ожидает мгновенное действие, а внутри системы запрос проходит через несколько сервисов или этапов согласования.
-        </p>
-
-        <p>
-          В таких случаях важно было выявить точки задержек и потери информации, согласовать SLA и зоны ответственности между командами, упростить сценарии и снизить зависимость пользователя от внутренних процессов.
-        </p>
-
-        <p>
-          Также я делал системные статусы и обратную связь более прозрачными для пользователя.
-        </p>
-
-        <p>
-          В одном из ERP-проектов такой анализ помог сократить количество ручных согласований и упростить сценарий обработки заявок.
-        </p>
-      </div>
-    </details>
-
-    <!-- 9 -->
-    <details class="group py-6">
-      <summary class="flex cursor-pointer list-none items-center justify-between">
-        <span class="text-left text-xl font-medium tracking-tight">
-          Приходилось ли мне формализовывать требования в технические задания и спецификации?
-        </span>
-
-        <span class="ml-6 text-3xl font-light text-[#86868b] transition-transform duration-300 group-open:rotate-45">
-          +
-        </span>
-      </summary>
-
-      <div class="mt-6 text-[#6e6e73] leading-8 text-[17px] font-normalspace-y-4">
-        <p>
-          Да, регулярно. В продуктовых и B2B/ERP-проектах мне часто приходилось формализовывать входящие требования в виде функциональных спецификаций и UX-документации для разработки.
-        </p>
-
-        <p>
-          Обычно я структурировал бизнес-требования и пользовательские сценарии, описывал user flow, edge cases и состояния интерфейсов.
-        </p>
-
-        <p>
-          Формировал acceptance criteria совместно с PM и разработкой, документировал поведение компонентов и логику взаимодействий.
-        </p>
-
-        <p>
-          Также участвовал в проработке API и системных ограничений вместе с аналитиками и инженерами.
-        </p>
-
-        <p>
-          Для этого использовал Figma, Jira, Confluence, User Stories, Job Stories и схемы сценариев.
-        </p>
-      </div>
-    </details>
-
-    <!-- 10 -->
-    <details class="group py-6">
-      <summary class="flex cursor-pointer list-none items-center justify-between">
-        <span class="text-left text-xl font-medium tracking-tight">
-          Как я исследовал эффективность коммуникационных кампаний?
-        </span>
-
-        <span class="ml-6 text-3xl font-light text-[#86868b] transition-transform duration-300 group-open:rotate-45">
-          +
-        </span>
-      </summary>
-
-      <div class="mt-6 text-[#6e6e73] leading-8 text-[17px] font-normalspace-y-4">
-        <p>
-          В одном из B2B-проектов я участвовал в исследовании эффективности коммуникационной кампании внутри CRM-платформы, связанной с внедрением нового функционала для менеджеров и операторов.
-        </p>
-
-        <p>
-          Для определения целевых сегментов использовались анализ ролей пользователей, поведенческие данные, глубина использования функций и сегментация по уровню вовлечённости.
-        </p>
-
-        <p>
-          После сегментации для каждой группы были адаптированы коммуникационные сценарии и интерфейсные подсказки.
-        </p>
-
-        <p>
-          Эффективность оценивали через open rate, CTR, adoption rate нового функционала, изменение частоты использования ключевых сценариев, CSI/CSAT и снижение количества обращений в поддержку.
-        </p>
-
-        <p>
-          Такой подход помог повысить вовлечённость пользователей и точнее адаптировать коммуникацию под разные сегменты.
-        </p>
-      </div>
-    </details>
-
-  </div>
-</section>
-
-
-<section id="contact" class="py-24 border-t border-gray-100 text-center fade-in">
-  <h2 class="text-3xl font-medium tracking-tight mb-4">Обсудим ваш продукт?</h2>
-  
-  <p class="text-[#6e6e73] text-lg mb-10 max-w-lg mx-auto leading-relaxed">
-    Забронируйте 15-минутный звонок, чтобы разобрать узкие места вашей системы и наметить план действий. Только конкретика и профессиональный разбор.
-  </p>
-
-  <div class="flex flex-col items-center gap-6">
-    <a href="https://planerka.app/stanislav-dovidenko-exsl9q/15min" target="_blank" 
-       class="px-10 py-4 bg-[#1d1d1f] text-white text-base font-medium rounded-full hover:bg-black hover:scale-105 transition-all shadow-lg">
-      Записаться на звонок
-    </a>
-
-    <div class="text-sm text-[#6e6e73]">
-      Или свяжитесь напрямую: 
-      <a href="https://t.me/StasDoDesign" class="underline underline-offset-4 hover:text-black transition-colors ml-2 font-medium">Telegram</a> 
-      <span class="mx-2">•</span> 
-      <a href="mailto:stasdodesign@gmail.com" class="underline underline-offset-4 hover:text-black transition-colors font-medium">Email</a>
-    </div>
-  </div>
-</section>
- 
- 
-<footer class="footer">
-  
-  <div class="footer-top">
-    <p class="name">
-      <a href="https://case.stanislavdovidenko.com/">Станислав Довиденко</a>
-    </p>
-
-    <p class="role">UX · AI Product Designer · Москва</p>
-  </div>
-
-  <div class="footer-logo">
-    Д0виденко
-  </div>
-
-  <div class="footer-bottom">
-    <span>© 2026 Dovidenko</span>
-    <span>All rights reserved</span>
-  </div>
-
-  
-<div class="font-credit">
-  Typeface: ZVEZDA NHZDN by Kuznetsov Konstantin
-</div>
-
-</footer>
-<script>
-const header = document.getElementById('header');
-
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 80) {
-    header.classList.remove('hero-mode');
-  } else {
-    header.classList.add('hero-mode');
-  }
-});
-
-        function fitText() {
-  const el = document.getElementById("logo");
-
-  let fontSize = 10;
-  el.style.fontSize = fontSize + "vw";
-
-  while (el.scrollWidth < window.innerWidth * 0.98 && fontSize < 50) {
-    fontSize += 0.2;
-    el.style.fontSize = fontSize + "vw";
-  }
-
-  while (el.scrollWidth > window.innerWidth * 0.98 && fontSize > 5) {
-    fontSize -= 0.2;
-    el.style.fontSize = fontSize + "vw";
-  }
-
-  // бонус: поджимаем tracking как в студиях
-  const ratio = window.innerWidth / el.scrollWidth;
-  el.style.letterSpacing = (ratio - 1) * 10 + "px";
-}
-
- 
-    function isMenuOpen() {
-      return !document.getElementById('mobileMenu').classList.contains('hidden');
-    }
-
-    function openMenu() {
-      document.getElementById('mobileMenu').classList.remove('hidden');
-      document.getElementById('mobileMenuToggle').setAttribute('aria-expanded', 'true');
-    }
-
-    function closeMenu() {
-      document.getElementById('mobileMenu').classList.add('hidden');
-      document.getElementById('mobileMenuToggle').setAttribute('aria-expanded', 'false');
-    }
-
-    function toggleMenu(forceState) {
-      const shouldOpen = typeof forceState === 'boolean' ? forceState : !isMenuOpen();
-
-      if (shouldOpen) {
-        openMenu();
-        return;
-      }
-
-      closeMenu();
-    }
-
-    
-    document.addEventListener('click', (event) => {
-      if (!isMenuOpen()) {
-        return;
-      }
-
-      const menu = document.getElementById('mobileMenu');
-      const toggleButton = document.getElementById('mobileMenuToggle');
-
-      if (menu.contains(event.target) || toggleButton.contains(event.target)) {
-        return;
-      }
-
-      closeMenu();
-    });
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
-    });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-  const fadeItems = document.querySelectorAll('.fade-in');
-    function revealVisibleFadeIns() {
-      fadeItems.forEach(el => {
-        const box = el.getBoundingClientRect();
-        if (box.top < window.innerHeight && box.bottom > 0) {
-          el.classList.add('visible');
-        }
-      });
-    }
-
-    fadeItems.forEach(el => {
-      observer.observe(el);
-    });
-    revealVisibleFadeIns();
-    window.addEventListener('load', revealVisibleFadeIns);
-    window.addEventListener('hashchange', () => window.setTimeout(revealVisibleFadeIns, 60));
-    window.setTimeout(revealVisibleFadeIns, 300);
-
-
-(() => {
-  const laser = document.querySelector('.laser-background');
-  if (!laser) return;
-
-  let lastScrollY = window.scrollY;
-  let frameId = 0;
-  let scrollTimer = 0;
-
-  function updateLaser() {
-    const maxScroll = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
-    const scrollY = window.scrollY;
-    const progress = Math.min(Math.max(scrollY / maxScroll, 0), 1);
-    const delta = Math.min(Math.abs(scrollY - lastScrollY), 120);
-    const energy = Math.min(delta / 90, 1);
-
-    laser.style.setProperty('--laser-tilt', `${-12 + progress * 24}deg`);
-    laser.style.setProperty('--laser-cross-tilt', `${13 - progress * 22}deg`);
-    const shift = (progress - 0.5) * 42;
-    laser.style.setProperty('--laser-shift', `${shift}px`);
-    laser.style.setProperty('--laser-shift-reverse', `${-shift}px`);
-    laser.style.setProperty('--laser-energy', energy.toFixed(3));
-    laser.classList.add('is-scrolling');
-
-    window.clearTimeout(scrollTimer);
-    scrollTimer = window.setTimeout(() => {
-      laser.classList.remove('is-scrolling');
-      laser.style.setProperty('--laser-energy', '0');
-    }, 180);
-
-    lastScrollY = scrollY;
-    frameId = 0;
-  }
-
-  function requestLaserUpdate() {
-    if (frameId) return;
-    frameId = window.requestAnimationFrame(updateLaser);
-  }
-
-  window.addEventListener('scroll', requestLaserUpdate, { passive: true });
-  window.addEventListener('resize', requestLaserUpdate);
-  requestLaserUpdate();
-})();
-
-
-// 🖥 Video
-(() => {
-  const video = document.getElementById('mainVideo');
-  if (!video) return;
-
-  let isHover = false;
-
-  // ▶ PLAY → скрываем controls
-  video.addEventListener('play', () => {
-    if (!document.fullscreenElement) {
-      video.controls = false;
-    }
-  });
-
-  // ⏸ PAUSE → возвращаем controls
-  video.addEventListener('pause', () => {
-    video.controls = true;
-  });
-
-  video.addEventListener('ended', () => {
-    video.controls = true;
-  });
-
-  // 🖱 HOVER → показываем controls
-  const container = video.parentElement;
-
-  container.addEventListener('mouseenter', () => {
-    isHover = true;
-    video.controls = true;
-  });
-
-  container.addEventListener('mouseleave', () => {
-    isHover = false;
-    if (!video.paused && !document.fullscreenElement) {
-      video.controls = false;
-    }
-  });
-
-  // 🖥 FULLSCREEN → всегда controls
-  document.addEventListener('fullscreenchange', () => {
-    if (document.fullscreenElement) {
-      video.controls = true;
-    } else {
-      if (!video.paused && !isHover) {
-        video.controls = false;
-      }
-    }
-  });
-})();
-</script>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="group block relative h-[400px] overflow-hidden rounded-[32px] bg-gray-100 border border-gray-200/60 shadow-sm">
+                <img src="images/Morning UX structure & problem framing.jpg" loading="lazy" alt="Утро" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent p-6 flex flex-col justify-end text-white">
+                    <h3 class="text-xl font-medium">UX-структура и задачи</h3>
+                    <p class="text-sm opacity-90">Начинаю с логики системы, а не с экранов</p>
+                </div>
+            </div>
+            <div class="group block relative h-[400px] overflow-hidden rounded-[32px] bg-gray-100 border border-gray-200/60 shadow-sm">
+                <img src="images/Day system design & product work.jpg" loading="lazy" alt="День" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent p-6 flex flex-col justify-end text-white">
+                    <h3 class="text-xl font-medium">Системная работа над продуктом</h3>
+                    <p class="text-sm opacity-90">Проектирование сценариев и UX-систем</p>
+                </div>
+            </div>
+            <div class="group block relative h-[400px] overflow-hidden rounded-[32px] bg-gray-100 border border-gray-200/60 shadow-sm">
+                <img src="images/Evening AI exploration & design systems.jpg" loading="lazy" alt="Вечер" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent p-6 flex flex-col justify-end text-white">
+                    <h3 class="text-xl font-medium">AI и дизайн-системы</h3>
+                    <p class="text-sm opacity-90">Изучаю AI-driven UX и создаю компоненты</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-12 px-4 sm:px-6 lg:px-8 bg-white/60 backdrop-blur-md border border-white/20 fade-in">
+        <div class="max-w-4xl mx-auto text-center mb-12">
+            <h2 class="text-4xl md:text-5xl font-semibold tracking-tight mb-5">FAQ</h2>
+            <p class="text-[#6e6e73] text-lg max-w-2xl mx-auto">Подход к разработке, AI-first UX, метрикам и проектированию сложных B2B интерфейсов</p>
+        </div>
+        <div class="max-w-4xl mx-auto divide-y divide-[#d2d2d7]">
+            <details class="group py-6">
+                <summary class="flex cursor-pointer list-none items-center justify-between"><span class="text-left text-xl font-medium tracking-tight">Как я собираю данные для гипотез?</span><span class="ml-6 text-3xl font-light text-[#86868b] transition-transform duration-300 group-open:rotate-45">+</span></summary>
+                <div class="mt-6 text-[#6e6e73] leading-8 text-[17px]"><p>Комбинирую качественные и количественные методы. Анализирую продуктовые метрики и дополняю инсайтами через CustDev.</p></div>
+            </details>
+            <details class="group py-6">
+                <summary class="flex cursor-pointer list-none items-center justify-between"><span class="text-left text-xl font-medium tracking-tight">Решения в условиях неопределённости?</span><span class="ml-6 text-3xl font-light text-[#86868b] transition-transform duration-300 group-open:rotate-45">+</span></summary>
+                <div class="mt-6 text-[#6e6e73] leading-8 text-[17px]"><p>Опираюсь на комбинацию продуктовой логики и качественных инсайтов, выбирая вариант с наименьшим риском.</p></div>
+            </details>
+            <details class="group py-6">
+                <summary class="flex cursor-pointer list-none items-center justify-between"><span class="text-left text-xl font-medium tracking-tight">Случай использования JTBD?</span><span class="ml-6 text-3xl font-light text-[#86868b] transition-transform duration-300 group-open:rotate-45">+</span></summary>
+                <div class="mt-6 text-[#6e6e73] leading-8 text-[17px]"><p>В B2B-CRM мы перешли от функций изменения статуса к пониманию контекста работы клиента, что сократило время операций.</p></div>
+            </details>
+            <details class="group py-6">
+                <summary class="flex cursor-pointer list-none items-center justify-between"><span class="text-left text-xl font-medium tracking-tight">Кейс влияния на метрику?</span><span class="ml-6 text-3xl font-light text-[#86868b] transition-transform duration-300 group-open:rotate-45">+</span></summary>
+                <div class="mt-6 text-[#6e6e73] leading-8 text-[17px]"><p>Редизайн карточки заявки CRM сократил время обработки на 25–30%.</p></div>
+            </details>
+            <details class="group py-6">
+                <summary class="flex cursor-pointer list-none items-center justify-between"><span class="text-left text-xl font-medium tracking-tight">Какие AI-инструменты я использую?</span><span class="ml-6 text-3xl font-light text-[#86868b] transition-transform duration-300 group-open:rotate-45">+</span></summary>
+                <div class="mt-6 text-[#6e6e73] leading-8 text-[17px]"><p>ChatGPT для гипотез, Codex для прототипов на React, Gemini для альтернативных флоу.</p></div>
+            </details>
+            <details class="group py-6">
+                <summary class="flex cursor-pointer list-none items-center justify-between"><span class="text-left text-xl font-medium tracking-tight">Вклад в AI-сценарии?</span><span class="ml-6 text-3xl font-light text-[#86868b] transition-transform duration-300 group-open:rotate-45">+</span></summary>
+                <div class="mt-6 text-[#6e6e73] leading-8 text-[17px]"><p>Проектировал AI-assisted UX, снижая нагрузку на пользователя в ERP-системах через AI-flow.</p></div>
+            </details>
+            <details class="group py-6">
+                <summary class="flex cursor-pointer list-none items-center justify-between"><span class="text-left text-xl font-medium tracking-tight">Если дизайн не принят бизнесом?</span><span class="ml-6 text-3xl font-light text-[#86868b] transition-transform duration-300 group-open:rotate-45">+</span></summary>
+                <div class="mt-6 text-[#6e6e73] leading-8 text-[17px]"><p>Уточняю ограничения и аргументирую решение через исследования или предлагаю компромиссные варианты.</p></div>
+            </details>
+            <details class="group py-6">
+                <summary class="flex cursor-pointer list-none items-center justify-between"><span class="text-left text-xl font-medium tracking-tight">Работа с Service Blueprint?</span><span class="ml-6 text-3xl font-light text-[#86868b] transition-transform duration-300 group-open:rotate-45">+</span></summary>
+                <div class="mt-6 text-[#6e6e73] leading-8 text-[17px]"><p>Работал с backstage-процессами для синхронизации запросов между сервисами в ERP.</p></div>
+            </details>
+            <details class="group py-6">
+                <summary class="flex cursor-pointer list-none items-center justify-between"><span class="text-left text-xl font-medium tracking-tight">Формализация требований в ТЗ?</span><span class="ml-6 text-3xl font-light text-[#86868b] transition-transform duration-300 group-open:rotate-45">+</span></summary>
+                <div class="mt-6 text-[#6e6e73] leading-8 text-[17px]"><p>Регулярно описываю user flows, edge cases и acceptance criteria в Jira и Confluence.</p></div>
+            </details>
+            <details class="group py-6">
+                <summary class="flex cursor-pointer list-none items-center justify-between"><span class="text-left text-xl font-medium tracking-tight">Эффективность коммуникаций?</span><span class="ml-6 text-3xl font-light text-[#86868b] transition-transform duration-300 group-open:rotate-45">+</span></summary>
+                <div class="mt-6 text-[#6e6e73] leading-8 text-[17px]"><p>Исследовал Adoption Rate новых функций через сегментацию ролей в CRM-платформе.</p></div>
+            </details>
+        </div>
+    </section>
+
+    <!-- Контакты -->
+    <section id="contact" class="py-24 border-t border-gray-100 text-center fade-in">
+        <h2 class="text-3xl font-medium tracking-tight mb-4">Обсудим ваш продукт?</h2>
+        <p class="text-[#6e6e73] text-lg mb-10 max-w-lg mx-auto leading-relaxed">Забронируйте 15-минутный звонок, чтобы разобрать узкие места вашей системы. Только конкретика и профессиональный разбор.</p>
+        <div class="flex flex-col items-center gap-6">
+            <a href="https://planerka.app/stanislav-dovidenko-exsl9q/15min" target="_blank" rel="noopener" class="px-10 py-4 bg-[#1d1d1f] text-white text-base font-medium rounded-full hover:bg-black transition-all shadow-lg hover:scale-105">Записаться на звонок</a>
+            <div class="text-sm text-[#6e6e73]">
+                Или свяжитесь напрямую:
+                <a href="https://t.me/StasDoDesign" class="underline underline-offset-4 hover:text-black transition-colors ml-2 font-medium">Telegram</a>
+                <span class="mx-2">•</span>
+                <a href="mailto:stasdodesign@gmail.com" class="underline underline-offset-4 hover:text-black transition-colors font-medium">Email</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Подвал -->
+    <footer class="footer">
+        <div class="footer-top">
+            <p class="name"><a href="https://case.stanislavdovidenko.com/">Станислав Довиденко</a></p>
+            <p class="role">UX · AI Product Designer · Москва</p>
+        </div>
+        <div class="footer-logo">Д0виденко</div>
+        <div class="footer-bottom">
+            <span>© 2026 Dovidenko</span>
+            <span>All rights reserved</span>
+        </div>
+        <div class="font-credit">Typeface: ZVEZDA NHZDN by Kuznetsov Konstantin</div>
+    </footer>
+
+    <!-- Скрипты -->
+    <script src="js/main.js"></script>
 </body>
 </html>
