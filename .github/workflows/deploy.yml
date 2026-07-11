@@ -65,17 +65,28 @@ jobs:
           mkdir -p _site/apps/garage
           cp -r apps/garage/dist/* _site/apps/garage/
 
-      # =========================
-      # PAGES DEPLOY
-      # =========================
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: _site
+# =========================
+# PAGES DEPLOY
+# =========================
 
-  deploy-pages:
-    needs: deploy
-    runs-on: ubuntu-latest
+- name: Upload Pages artifact
+  uses: actions/upload-pages-artifact@v3
+  with:
+    path: _site
 
-    steps:
-      - uses: actions/deploy-pages@v4
+deploy-pages:
+  needs: deploy
+  runs-on: ubuntu-latest
+
+  permissions:
+    pages: write
+    id-token: write
+
+  environment:
+    name: github-pages
+    url: ${{ steps.deployment.outputs.page_url }}
+
+  steps:
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
