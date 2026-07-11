@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Кейс Mokka — Эстетичная забота и лёгкость в финтехе</title>
+
+  <!-- Favicon & SEO Meta Tags -->
+  <link rel="icon" type="image/jpeg" href="mokka_favicon.jpg" />
+  <link rel="apple-touch-icon" href="mokka_favicon.jpg" />
+  <meta name="description" content="Дизайн-кейс редизайна финтех-сервиса Мокка: переход от тревожного интерфейса к эстетичной заботе и геймификации." />
+  <meta property="og:title" content="Кейс Mokka — Эстетичная забота" />
+  <meta property="og:description" content="Как превратить финансовые обязательства в безопасный и вдохновляющий шопинг для женской аудитории 25-45 лет." />
+  <meta property="og:image" content="mokka_preview_cover.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Tailwind CSS & Google Fonts -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rubik:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+</head>
+<body class="bg-gradient-to-b from-[#ffffff] to-[#fffbf9] antialiased">
+
+  <!-- Fixed Header -->
+  <header class="glass fixed top-0 left-0 w-full z-50 border-b border-orange-100/40 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a id="brandLink" href="../index.html" class="text-sm font-semibold tracking-tight hover:opacity-80 transition-opacity flex items-center gap-2">
+        <span class="w-2.5 h-2.5 rounded-full bg-[#FF5A1E]"></span>
+        <span data-i18n="nav.brand">Станислав Довиденко</span>
+      </a>
+      
+      <nav class="desktop-nav hidden gap-8 text-xs font-semibold uppercase tracking-wider text-gray-500 absolute left-1/2 -translate-x-1/2">
+        <a href="#intro" class="hover:text-[#FF5A1E] transition-colors" data-i18n="nav.intro">О концепте</a>
+        <a href="#impact" class="hover:text-[#FF5A1E] transition-colors" data-i18n="nav.impact">Импакт</a>
+        <a href="#solutions" class="hover:text-[#FF5A1E] transition-colors" data-i18n="nav.solutions">Решения</a>
+        <a href="#prototype" class="hover:text-[#FF5A1E] transition-colors" data-i18n="nav.prototype">Прототип</a>
+        <a href="#reflection" class="hover:text-[#FF5A1E] transition-colors" data-i18n="nav.reflection">Рефлексия</a>
+      </nav>
+
+      <div class="flex items-center gap-5">
+        <!-- Social Icons -->
+        <div class="hidden sm:flex items-center gap-3">
+          <a href="https://t.me/StasDoDesign" class="text-gray-400 hover:text-[#FF5A1E] transition-colors" target="_blank" aria-label="Telegram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+          </a>
+          <a href="mailto:stasdodesign@gmail.com" class="text-gray-400 hover:text-[#FF5A1E] transition-colors" aria-label="Email">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </a>
+        </div>
+
+        <!-- Language switcher -->
+        <div class="flex items-center bg-orange-50/60 border border-orange-100 rounded-full p-0.5 text-xs font-bold">
+          <button class="lang-btn px-3 py-1 rounded-full transition-all" data-lang="ru">RU</button>
+          <button class="lang-btn px-3 py-1 rounded-full transition-all" data-lang="en">EN</button>
+        </div>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="mobileMenuToggle" class="mobile-nav-toggle text-xs font-bold text-gray-500 uppercase tracking-wider hidden" type="button" aria-controls="mobileMenu" aria-expanded="false">
+          <span data-i18n="nav.menu">Меню</span>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Mobile dropdown menu -->
+    <div id="mobileMenu" class="hidden bg-white/95 backdrop-blur-xl border-b border-orange-100 absolute w-full px-6 py-8 flex flex-col gap-6 shadow-xl transition-all duration-300">
+      <nav class="flex flex-col gap-4 text-lg font-medium text-gray-900">
+        <a href="#intro" class="hover:text-[#FF5A1E] transition-colors" data-i18n="nav.intro">О концепте</a>
+        <a href="#impact" class="hover:text-[#FF5A1E] transition-colors" data-i18n="nav.impact">Импакт</a>
+        <a href="#solutions" class="hover:text-[#FF5A1E] transition-colors" data-i18n="nav.solutions">Решения</a>
+        <a href="#prototype" class="hover:text-[#FF5A1E] transition-colors" data-i18n="nav.prototype">Прототип</a>
+        <a href="#reflection" class="hover:text-[#FF5A1E] transition-colors" data-i18n="nav.reflection">Рефлексия</a>
+      </nav>
+      <div class="h-px bg-orange-50 w-full"></div>
+      <div class="flex items-center gap-6">
+        <a href="https://t.me/StasDoDesign" target="_blank" class="text-gray-400 hover:text-[#FF5A1E] transition-colors">Telegram</a>
+        <a href="mailto:stasdodesign@gmail.com" class="text-gray-400 hover:text-[#FF5A1E] transition-colors">Email</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main class="pt-32 pb-20 px-6 max-w-5xl mx-auto overflow-hidden">
+    
+    <section class="fade-in mb-16 text-center sm:text-left">
+      <div class="flex flex-wrap justify-center sm:justify-start gap-2 mb-6">
+        <span class="px-3 py-1 bg-orange-50 text-[#FF5A1E] text-[10px] font-bold uppercase tracking-widest rounded-full" data-i18n="hero.tag1">Fintech UX</span>
+        <span class="px-3 py-1 bg-rose-50 text-rose-500 text-[10px] font-bold uppercase tracking-widest rounded-full" data-i18n="hero.tag2">Aesthetic Care</span>
+        <span class="px-3 py-1 bg-[#1d1d1f]/5 text-gray-600 text-[10px] font-bold uppercase tracking-widest rounded-full" data-i18n="hero.tag3">High Fidelity Prototype</span>
+      </div>
+      
+      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-display font-bold tracking-tight mb-8 leading-[1.1]" data-i18n="hero.title">
+        Mokka: Аванс на твой вкус
+      </h1>
+      
+      <p class="text-lg sm:text-xl md:text-2xl text-gray-500 font-light leading-relaxed mb-12 max-w-3xl" data-i18n="hero.subtitle">
+        Как превратить финансовые обязательства в эстетичную заботу, безопасность и лёгкость для женской аудитории 25–45 лет.
+      </p>
+
+      <!-- Role, Focus, Context Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 p-8 bg-white/70 border border-orange-100/60 rounded-[32px] shadow-sm backdrop-blur">
+        <div>
+          <p class="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-2" data-i18n="roleGrid.label1">Роль</p>
+          <p class="text-gray-700 text-sm font-semibold mb-1" data-i18n="roleGrid.val1_title">Lead Product Designer</p>
+          <p class="text-gray-500 text-xs leading-relaxed" data-i18n="roleGrid.val1_desc">UX архитектура, интерактивный прототип, анимации & копирайтинг.</p>
+        </div>
+        <div class="border-t md:border-t-0 md:border-l border-orange-100/50 pt-4 md:pt-0 md:pl-6">
+          <p class="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-2" data-i18n="roleGrid.label2">Фокус</p>
+          <p class="text-gray-700 text-sm font-semibold mb-1" data-i18n="roleGrid.val2_title">Aesthetic Care System</p>
+          <p class="text-gray-500 text-xs leading-relaxed" data-i18n="roleGrid.val2_desc">Уход от «кредитной тревожности» за счет мягкой геометрии, пастели и деликатных формулировок.</p>
+        </div>
+        <div class="border-t md:border-t-0 md:border-l border-orange-100/50 pt-4 md:pt-0 md:pl-6">
+          <p class="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-2" data-i18n="roleGrid.label3">Контекст</p>
+          <p class="text-gray-700 text-sm font-semibold mb-1" data-i18n="roleGrid.val3_title">Mokka Mobile Concept</p>
+          <p class="text-gray-500 text-xs leading-relaxed" data-i18n="roleGrid.val3_desc">Качественный скачок от сухих транзакций к эмоциональному, поддерживающему финтех-компаньону.</p>
+        </div>
+      </div>	
+    </section>
+
+    <!-- Key Visual Device Showcase -->
+    <section class="fade-in mb-24 relative">
+      <div class="relative w-full aspect-[16/9] min-h-[340px] rounded-[40px] overflow-hidden bg-gradient-to-tr from-[#FFF0E8] via-[#FFFBF9] to-[#FFEAE0] border border-orange-100/80 shadow-xl flex items-center justify-center">
+        
+        <!-- Abstract glowing circles inside background -->
+        <div class="absolute w-[300px] h-[300px] rounded-full bg-orange-300/10 blur-[60px] top-4 left-10"></div>
+        <div class="absolute w-[240px] h-[240px] rounded-full bg-rose-300/10 blur-[50px] bottom-4 right-10"></div>
+
+        <!-- CSS Styled Mobile Phone Mockup -->
+        <div class="relative w-[180px] sm:w-[220px] h-[320px] sm:h-[390px] bg-[#1d1d1f] rounded-[36px] p-2 sm:p-2.5 shadow-2xl border-4 border-gray-800/90 overflow-hidden transform hover:scale-[1.03] transition-transform duration-500">
+          <!-- Screen inner -->
+          <div class="w-full h-full bg-white rounded-[28px] overflow-hidden flex flex-col justify-between p-3 relative text-[9px] sm:text-[10px]">
+            <!-- Camera notch -->
+            <div class="absolute top-1 left-1/2 -translate-x-1/2 w-16 h-3.5 bg-[#1d1d1f] rounded-full z-10"></div>
+            
+            <!-- Phone Header -->
+            <div class="pt-3 flex justify-between items-center text-gray-400 text-[8px] font-mono">
+              <span class="ml-1 font-semibold text-gray-800">09:41</span>
+              <div class="flex gap-1 mr-1">
+                <span>📶</span>
+                <span>🔋</span>
+              </div>
+            </div>
+
+            <!-- Mokka UI content mock -->
+            <div class="flex-1 flex flex-col justify-between mt-2.5">
+              <!-- Mokka Logo & Balance -->
+              <div class="bg-gradient-to-br from-[#FFF5F0] to-[#FFEBE0] p-2.5 rounded-2xl border border-orange-100/60">
+                <div class="flex justify-between items-center mb-1">
+                  <span class="font-display font-extrabold text-[#FF5A1E] tracking-tight text-[11px] sm:text-[12px]">mokka</span>
+                  <span class="px-1.5 py-0.5 bg-orange-500 text-white rounded-full text-[6px] uppercase font-bold tracking-wide">Активен</span>
+                </div>
+                <p class="text-gray-400 text-[7px] uppercase tracking-wider" data-i18n="hero.mock_advance">Доступный аванс</p>
+                <p class="text-lg font-display font-extrabold text-[#1d1d1f] leading-none mt-0.5">85 000 ₽</p>
+              </div>
+
+              <!-- Promo block -->
+              <div class="bg-rose-50 border border-rose-100 p-2 rounded-2xl my-2">
+                <p class="font-semibold text-rose-700 text-[8px] flex items-center gap-1">
+                  🌸 <span data-i18n="hero.mock_promo">Летний розыгрыш!</span>
+                </p>
+                <p class="text-[7px] text-rose-500 mt-0.5" data-i18n="hero.mock_promo_text">Выиграй 1 000 ₽ в Золотое Яблоко</p>
+              </div>
+
+              <!-- Lower visual grid -->
+              <div class="grid grid-cols-3 gap-1 mb-1">
+                <div class="bg-gray-50 border border-gray-100 p-1.5 rounded-xl text-center">
+                  <span class="text-xs">💳</span>
+                  <p class="text-[6px] text-gray-500 mt-0.5" data-i18n="hero.mock_serv1">Кэш</p>
+                </div>
+                <div class="bg-gray-50 border border-gray-100 p-1.5 rounded-xl text-center">
+                  <span class="text-xs">🎁</span>
+                  <p class="text-[6px] text-gray-500 mt-0.5" data-i18n="hero.mock_serv2">Подарок</p>
+                </div>
+                <div class="bg-gray-50 border border-gray-100 p-1.5 rounded-xl text-center">
+                  <span class="text-xs">🚀</span>
+                  <p class="text-[6px] text-gray-500 mt-0.5" data-i18n="hero.mock_serv3">Бустер</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Phone Bottom bar -->
+            <div class="h-6 border-t border-gray-50 flex justify-around items-center text-[8px] text-gray-400">
+              <span class="text-[#FF5A1E] font-medium">🏠</span>
+              <span>⚡</span>
+              <span>🎁</span>
+              <span>👤</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Decorative UI bubble 1 -->
+        <div class="absolute top-10 right-[15%] hidden lg:flex bg-white/90 border border-orange-100 p-4 rounded-2xl shadow-lg items-center gap-3 max-w-[200px] backdrop-blur animate-bounce" style="animation-duration: 4s;">
+          <span class="text-2xl">🧸</span>
+          <div>
+            <p class="text-xs font-bold text-gray-800" data-i18n="hero.bubble1_title">Мария, 28 лет</p>
+            <p class="text-[10px] text-gray-500" data-i18n="hero.bubble1_desc">Бьюти-блогер. Лимит: 85к</p>
+          </div>
+        </div>
+
+        <!-- Decorative UI bubble 2 -->
+        <div class="absolute bottom-10 left-[15%] hidden lg:flex bg-white/90 border border-rose-100 p-4 rounded-2xl shadow-lg items-center gap-3 max-w-[200px] backdrop-blur animate-bounce" style="animation-duration: 5s; animation-delay: 1s;">
+          <span class="text-2xl">🪙</span>
+          <div>
+            <p class="text-xs font-bold text-[#FF5A1E]" data-i18n="hero.bubble2_title">Скретч-карта</p>
+            <p class="text-[10px] text-gray-500" data-i18n="hero.bubble2_desc">Интерактивный слой монеткой</p>
+          </div>
+        </div>
+
+      </div>
+      <p class="text-center text-xs text-gray-400 mt-6 italic" data-i18n="hero.caption">
+        Дизайн-система Mokka: Эстетическая мягкость, гибкая персонализация и игровой опыт.
+      </p>
+    </section>
+
+    <!-- Intro Section: Concept & DNA -->
+    <section id="intro" class="px-2 py-16 border-t border-orange-100/30">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-12 items-start">
+        <div class="fade-in">
+          <p class="mb-4 text-[10px] font-bold uppercase tracking-widest text-[#FF5A1E]" data-i18n="intro.kicker">Концепция</p>
+          <h2 class="text-3xl sm:text-5xl font-display font-semibold tracking-tight leading-tight" data-i18n="intro.title">
+            Финтех как бережный компаньон
+          </h2>
+        </div>
+        <div class="fade-in space-y-8">
+          <p class="text-lg text-gray-500 font-light leading-relaxed" data-i18n="intro.lead">
+            Классический финтех полон тревожных алертов, угрожающих красных надписей и пугающих слов вроде «Долг». Для женщин 25–45 лет финансовые операции должны быть пространством комфорта, безопасности и уюта. Перепроектировал Mokka, убрав когнитивное напряжение и добавив искреннюю заботу в каждый экран.
+          </p>
+          <div class="grid gap-4 md:grid-cols-3" id="introCards">
+            <!-- Rendered dynamically by JS -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Solved Pain Points / Impact (Импакт редизайна) -->
+    <section id="impact" class="fade-in mb-24 bg-[#1d1d1f] text-white p-10 md:p-16 rounded-[40px] overflow-hidden relative shadow-lg">
+      <!-- Background subtle glows -->
+      <div class="absolute w-[200px] h-[200px] rounded-full bg-orange-500/10 blur-[50px] -top-10 -right-10"></div>
+      
+      <p class="text-[10px] font-bold uppercase tracking-widest text-orange-400 mb-4" data-i18n="impact.kicker">Импакт редизайна</p>
+      <h2 class="text-3xl sm:text-4xl font-display font-semibold mb-10 text-white" data-i18n="impact.title">🎯 Эмоциональные результаты проекта</h2>
+      
+      <ul class="space-y-8" id="impactPoints">
+        <!-- Rendered dynamically by JS -->
+      </ul>
+    </section>
+
+    <!-- Pain points comparison -->
+    <section class="fade-in mb-24">
+      <h3 class="text-2xl sm:text-3xl font-display font-semibold mb-8 text-center" data-i18n="painPoints.title">Как меняется форма, когда ДНК остается прежней</h3>
+      
+      <div class="table-wrap overflow-x-auto rounded-[28px] border border-orange-100/60 bg-white shadow-sm">
+        <table class="w-full min-w-[700px] text-left border-collapse">
+          <thead class="bg-orange-50/40 text-[10px] font-bold uppercase tracking-wider text-gray-400 border-b border-orange-100/40">
+            <tr>
+              <th class="px-6 py-4" data-i18n="painPoints.col_feature">Сценарий / Аспект</th>
+              <th class="px-6 py-4 text-rose-500" data-i18n="painPoints.col_legacy">Старый тревожный финтех</th>
+              <th class="px-6 py-4 text-[#FF5A1E]" data-i18n="painPoints.col_mokka">Бережная концепция Mokka</th>
+            </tr>
+          </thead>
+          <tbody id="comparisonRows" class="divide-y divide-orange-50/20 text-xs text-gray-600">
+            <!-- Rendered dynamically by JS -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Deep Dive / Detailed Solutions -->
+    <section id="solutions" class="space-y-24 border-t border-orange-100/30 pt-20">
+      <div class="text-center max-w-2xl mx-auto mb-16 fade-in">
+        <p class="text-[10px] font-bold uppercase tracking-widest text-[#FF5A1E] mb-4" data-i18n="solutions.kicker">Архитектура решений</p>
+        <h2 class="text-3xl sm:text-4xl font-display font-semibold" data-i18n="solutions.title">Детальный разбор ключевых сценариев</h2>
+      </div>
+
+      <!-- Solutions grid rendered dynamically -->
+      <div id="solutionsRoot" class="space-y-24">
+        <!-- Rendered dynamically by JS -->
+      </div>
+    </section>
+
+    <!-- Live Prototype Showcase Section -->
+    <section id="prototype" class="fade-in my-28 border border-orange-100/60 py-16 bg-gradient-to-tr from-[#FFF7F2] to-[#FFFBF9] rounded-[40px] px-8 sm:px-12 shadow-sm relative overflow-hidden">
+      <!-- Background graphic dots -->
+      <div class="absolute top-0 right-0 w-40 h-40 bg-orange-300/5 rounded-full blur-3xl"></div>
+      
+      <div class="flex flex-col md:flex-row items-center gap-12 relative z-10">
+        <div class="flex-1 text-center sm:text-left">
+          <span class="px-3 py-1 bg-orange-50 text-[#FF5A1E] text-[10px] font-bold uppercase tracking-widest rounded-full" data-i18n="prototype.kicker">Interactive Sandbox</span>
+          <h2 class="text-3xl sm:text-4xl font-display font-semibold mt-4 mb-6" data-i18n="prototype.title">Запустите интерактивный прототип</h2>
+          
+          <p class="text-base text-gray-500 font-light leading-relaxed mb-8" data-i18n="prototype.description">
+            Статичные картинки не передают теплоты интерфейса, плавности переключения палитр и отклика игрового скретч-слоя. Я перенес макеты в живой, полностью рабочий код. Запустите симулятор и оцените отзывчивость интерфейса.
+          </p>
+
+          <div class="flex flex-col sm:flex-row items-center gap-4">
+            <a href="https://mokka.stanislavdovidenko.com/" target="_blank" class="inline-flex items-center justify-center bg-[#FF5A1E] text-white font-semibold px-8 py-4 rounded-full hover:bg-orange-600 transition shadow-lg shadow-orange-200 text-sm">
+              <span data-i18n="prototype.btn">Запустить Live Preview</span>
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </a>
+            <div class="text-xs text-gray-400 sm:text-left text-center">
+              <p><span data-i18n="prototype.pass_label">Пароль для доступа:</span></p>
+			  <a href="mailto:stasdodesign@gmail.com" class="underline text-gray-600 hover:text-[#FF5A1E] transition-colors font-medium" data-i18n="prototype.pass_note">Напишите мне на почту</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="flex-1 w-full flex justify-center">
+          <!-- Glassy Prototype mockup visual card -->
+          <div class="bg-white/80 border border-orange-100/60 p-6 rounded-3xl shadow-lg max-w-sm w-full backdrop-blur-md">
+            <div class="flex justify-between items-center mb-4">
+              <div class="flex gap-1.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-yellow-400"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-green-400"></span>
+              </div>
+              <span class="text-[9px] font-mono text-gray-400">mokka.stanislavdovidenko.com</span>
+            </div>
+            <div class="bg-orange-50/50 rounded-2xl p-4 text-center border border-orange-100/40">
+              <span class="text-3xl block mb-2">🔒</span>
+              <p class="text-xs font-bold text-gray-700" data-i18n="prototype.card_title">Защищенный демонстрационный стенд</p>
+              <p class="text-[10px] text-gray-400 mt-1" data-i18n="prototype.card_text">Разработано по заказу для безопасного продуктового тестирования гипотез.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Professional Reflection -->
+    <section id="reflection" class="fade-in mb-24 bg-gray-50 p-10 md:p-16 rounded-[40px] border border-orange-100/30">
+      <h2 class="text-2xl sm:text-3xl font-display font-semibold mb-8" data-i18n="reflection.title">Рефлексия: Будущее за заботливым финтехом</h2>
+      <div class="space-y-6 text-sm sm:text-base text-gray-600 font-light leading-relaxed" id="reflectionParagraphs">
+        <!-- Rendered dynamically by JS -->
+      </div>
+    </section>
+
+    <!-- Concluding Section: Rapid Prototype Disclaimer -->
+    <section class="fade-in mb-24 border border-rose-100 bg-rose-50/30 rounded-[32px] p-8 text-center max-w-3xl mx-auto">
+      <span class="text-xl">💡</span>
+      <h4 class="text-base font-bold text-gray-800 mt-2 mb-3" data-i18n="disclaimer.title">Продуктовое примечание</h4>
+      <p class="text-xs sm:text-sm text-gray-500 leading-relaxed max-w-xl mx-auto" data-i18n="disclaimer.text">
+        Данный интерактивный симулятор спроектирован в качестве высокоточного прототипа для валидации эмоциональных и игровых гипотез бренда Mokka. Финальная реализация дизайна на прод-платформе будет опираться на созданные нами в коде спецификации.
+      </p>
+    </section>
+
+    <!-- Contact & Booking Section -->
+    <section id="contact" class="py-16 border-t border-orange-100/30 text-center fade-in bg-white/40 rounded-[40px]">
+      <h2 class="text-3xl sm:text-4xl font-display font-semibold mb-4 text-[#FF5A1E]" data-i18n="contact.title">
+        Обсудим ваш продукт?
+      </h2>
+      <p class="text-gray-500 text-base sm:text-lg mb-10 max-w-xl mx-auto leading-relaxed font-light" data-i18n="contact.subtitle">
+        Забронируйте короткую сессию, чтобы разобрать интерфейсные сценарии, выявить точки роста и спроектировать решения потребительского уровня.
+      </p>
+      
+      <a id="discussLink" href="https://planerka.app/stanislav-dovidenko-exsl9q/15min" target="_blank" class="inline-flex items-center justify-center px-10 py-4 rounded-full bg-black text-white text-sm font-semibold hover:scale-[1.03] transition-transform duration-300 shadow-md hover:bg-gray-900">
+        <span data-i18n="contact.button">Обсудить проект</span>
+      </a>
+
+      <div class="mt-8 text-xs sm:text-sm text-gray-500 flex items-center justify-center gap-3 flex-wrap">
+        <span data-i18n="contact.or">Или напрямую:</span>
+        <a href="https://t.me/StasDoDesign" target="_blank" class="underline text-gray-600 hover:text-[#FF5A1E] transition-colors font-medium">Telegram</a>
+        <span>•</span>
+        <a href="mailto:stasdodesign@gmail.com" class="underline text-gray-600 hover:text-[#FF5A1E] transition-colors font-medium">Email</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-orange-100/30 bg-white/60 px-6 py-12">
+    <div class="max-w-5xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-6">
+      <div class="text-center sm:text-left">
+        <p class="font-semibold text-sm text-gray-900" data-i18n="footer.info">Станислав Довиденко: UX · AI Product Designer · Москва</p>
+        <p class="text-xs text-gray-400 mt-1" data-i18n="footer.copy">© 2026 Dovidenko · Все права защищены</p>
+      </div>
+      
+      <!-- Social links -->
+      <div class="flex items-center gap-4 text-xs font-semibold uppercase tracking-wider text-gray-400">
+        <a href="https://t.me/designat0r" target="_blank" class="hover:text-[#FF5A1E] transition-colors">Telegram Portfolio</a>
+        <span>•</span>
+        <a href="https://instagram.com/stasdodesign" target="_blank" class="hover:text-[#FF5A1E] transition-colors">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Complete Bilingual Translation Data Dictionary
+    const translations = {
+      ru: {
+        nav: {
+          brand: "Станислав Довиденко",
+          intro: "О концепте",
+          impact: "Импакт",
+          solutions: "Решения",
+          prototype: "Прототип",
+          reflection: "Рефлексия",
+          menu: "Меню"
+        },
+        hero: {
+          tag1: "Финтех UX",
+          tag2: "Эстетичная забота",
+          tag3: "Живой прототип",
+          title: "Mokka: Аванс на твой вкус",
+          subtitle: "Как превратить финансовые обязательства в эстетичную заботу, безопасность и лёгкость для женской аудитории 25–45 лет.",
+          mock_advance: "Доступный аванс",
+          mock_promo: "Летний розыгрыш!",
+          mock_promo_text: "Выиграй 1000 ₽ в Золотое Яблоко",
+          mock_serv1: "Кэш",
+          mock_serv2: "Подарок",
+          mock_serv3: "Бустер",
+          bubble1_title: "Мария, 28 лет",
+          bubble1_desc: "Бьюти-блогер. Лимит: 85к",
+          bubble2_title: "Скретч-карта",
+          bubble2_desc: "Интерактивный слой монеткой",
+          caption: "Дизайн-система Mokka: Эстетическая мягкость, гибкая персонализация и игровой опыт."
+        },
+        roleGrid: {
+          label1: "Роль",
+          val1_title: "Lead Product Designer",
+          val1_desc: "UX архитектура, интерактивный прототип, анимации & копирайтинг.",
+          label2: "Фокус",
+          val2_title: "Aesthetic Care System",
+          val2_desc: "Уход от «кредитной тревожности» за счет мягкой геометрии, пастели и деликатных формулировок.",
+          label3: "Контекст",
+          val3_title: "Mokka Mobile Concept",
+          val3_desc: "Качественный скачок от сухих транзакций к эмоциональному, поддерживающему финтех-компаньону."
+        },
+        intro: {
+          kicker: "Концепция",
+          title: "Финтех как бережный компаньон",
+          lead: "Классический финтех полон тревожных алертов, угрожающих красных надписей и пугающих слов вроде «Долг». Для женщин 25–45 лет финансовые операции должны быть пространством комфорта, безопасности и уюта. Перепроектировал Mokka, убрав когнитивное напряжение и добавив искреннюю заботу в каждый экран.",
+          cards: [
+            { title: "Текст-забота", text: "Никаких жестких терминов. Мы используем мягкое 'Использовано из аванса' вместо давящего 'Долг' и создаем ощущение поддержки." },
+            { title: "Тема под настроение", text: "4 палитры оформления: от нежной персиковой до глубокой ночной с неоновыми акцентами для вечернего комфорта глаз." },
+            { title: "Игровой дух", text: "Вместо сухих баннеров рассрочки мы вовлекаем пользователя через интерактивные скретч-карты и счастливые билеты." }
+          ]
+        },
+        impact: {
+          kicker: "Импакт редизайна",
+          title: "🎯 Эмоциональные результаты проекта",
+          points: [
+            { label: "Снижение финансовой тревожности", text: "Абсолютный отказ от красных алертов и внедрение мягкой цветовой кодировки позволили создать терапевтический финтех-опыт." },
+            { label: "Взрывной рост вовлеченности", text: "Интерактивная лотерея с физическим стиранием скретч-слоя монеткой превратила рутинную покупку в долгожданный приз." },
+            { label: "Персонализация под ЦА", text: "Гибкие профили клиенток (Мария, Анна, Елена) с мгновенной подстройкой лимитов, категорий и контента под их ежедневные сценарии." },
+            { label: "Когнитивная разгрузка", text: "Замена стандартных выпадающих списков браузера на кастомные анимированные селекторы со скрытием избыточных полей." }
+          ]
+        },
+        painPoints: {
+          title: "Как меняется форма, когда ДНК остается прежней",
+          col_feature: "Сценарий / Аспект",
+          col_legacy: "Старый тревожный финтех",
+          col_mokka: "Бережная концепция Mokka",
+          rows: [
+            { f: "Термины задолженности", l: "«Задолженность», «Долг», «Просрочено»", m: "«Использовано из аванса», «Комфортный платеж»" },
+            { f: "Цветовая гамма", l: "Красные предупреждения, жесткие темные рамки", m: "Мягкие персиковые, розовые тона, теплый оранжевый" },
+            { f: "Лимиты и Слайдеры", l: "Сухая фиксированная сумма без контекста", m: "Адаптивные лимиты с фокусом на Марию, Анну или Елену" },
+            { f: "Промо-кампании", l: "Статичные баннеры «Оформи кредит онлайн»", m: "Летний розыгрыш с анимированным стиранием монеткой" }
+          ]
+        },
+        solutions: {
+          kicker: "Архитектура решений",
+          title: "Детальный разбор ключевых сценариев",
+          items: [
+            {
+              num: "1",
+              title: "Персонализированные профили и лимиты",
+              desc: "Вместо безликих цифр приложение подстраивается под тип покупателя. Реализовал интерактивные профили: бьюти-блогер Мария (лимит 85к), мама двоих детей Анна (120к) и маркетолог Елена (150к) с мгновенным адаптированием каталога партнерских магазинов под их интересы.",
+              feat_label: "Ключевая фича:",
+              feat_text: "Плавная смена 4 цветовых тем (Classic, Warm, Minimal, Dark-Night) в одно касание.",
+              visual_emoji: "🌸"
+            },
+            {
+              num: "2",
+              title: "Игровой путь: «Летний Розыгрыш»",
+              desc: "Превратил банальное начисление кэшбэка в полноценный квест. Пользователь регистрируется, видит шкалу прогресса и после покупки получает счастливый билет с уникальным ID. Главная фишка — интерактивный скретч-слой, который нужно стереть пальцем или курсором для получения приза.",
+              feat_label: "Ключевая фича:",
+              feat_text: "Полная симуляция стирания фольги монеткой со звуком победы и генерацией уникального ID билета.",
+              visual_emoji: "🪙"
+            },
+            {
+              num: "3",
+              title: "Мокка-Кэш и безопасность PCI-DSS",
+              desc: "Для переводов наличных спроектирован лаконичный калькулятор со слайдерами срока и суммы. Форма привязки новой банковской карты разработана со строгим соблюдением стандартов безопасности PCI-DSS, включая маски ввода и динамическую проверку бренда карты (Visa, MasterCard, МИР).",
+              feat_label: "Ключевая фича:",
+              feat_text: "Кастомные раскрывающиеся списки с иконками и анимацией вместо стандартных элементов браузера.",
+              visual_emoji: "🛡️"
+            },
+            {
+              num: "4",
+              title: "Оплата по QR и микро-сервисы",
+              desc: "Для офлайн-ритейла реализован двухрежимный сканер: быстрое сканирование QR-кода на кассе с анимированной рамкой видоискателя, либо демонстрация собственного штрихкода. Интегрированы полезные микро-сервисы: пополнение связи, перенос даты платежа и оформление подарочных сертификатов.",
+              feat_label: "Ключевая фича:",
+              feat_text: "Возможность продления платежа на 30 дней за фиксированную комиссию для полного спокойствия.",
+              visual_emoji: "🤳"
+            }
+          ]
+        },
+        prototype: {
+          kicker: "Interactive Sandbox",
+          title: "Запустите интерактивный прототип",
+          description: "Статичные картинки не передают теплоты интерфейса, плавности переключения палитр и отклика игрового скретч-слоя. Я перенес макеты в живой, полностью рабочий код. Запустите симулятор и оцените отзывчивость интерфейса.",
+          btn: "Запустить Live Preview",
+          pass_label: "Пароль для доступа:",
+          pass_note: "Напишите мне на почту",
+          card_title: "Защищенный демонстрационный стенд",
+          card_text: "Разработано по заказу для безопасного продуктового тестирования гипотез."
+        },
+        reflection: {
+          title: "Рефлексия: Будущее за заботливым финтехом",
+          paragraphs: [
+            "Редизайн Mokka наглядно доказывает, что технологичные продукты не обязаны быть сухими. Заменяя холодный 'финансовый' копирайтинг на теплые слова заботы и окружая пользователя эстетически выверенным визуалом, мы кардинально повышаем лояльность и снижаем барьер первого использования.",
+            "Для нас, как продуктовых дизайнеров, важным вызовом было сохранить идеальный баланс: сделать интерфейс мягким, женственным и дружелюбным, но при этом предельно надежным, соответствующим жестким стандартам безопасности данных (PCI-DSS) и производительности в реальном времени.",
+            "Высокоточные прототипы, собранные на живом коде HTML/TypeScript — это лучший способ продать идею стейкхолдерам и провести точные исследования на реальных людях. Макеты больше не пылятся в Figma, они живут в вебе."
+          ]
+        },
+        disclaimer: {
+          title: "Продуктовое примечание",
+          text: "Данный интерактивный симулятор спроектирован в качестве высокоточного прототипа для валидации эмоциональных и игровых гипотез бренда Mokka. Финальная реализация дизайна на прод-платформе будет опираться на созданные нами в коде спецификации."
+        },
+        contact: {
+          title: "Обсудим ваш продукт?",
+          subtitle: "Забронируйте короткую сессию, чтобы разобрать интерфейсные сценарии, выявить точки роста и спроектировать решения потребительского уровня.",
+          button: "Обсудить проект",
+          or: "Или напрямую:"
+        },
+        footer: {
+          info: "Станислав Довиденко: UX · AI Product Designer · Москва",
+          copy: "© 2026 Dovidenko · Все права защищены"
+        }
+      },
+      en: {
+        nav: {
+          brand: "Stanislav Dovidenko",
+          intro: "Concept",
+          impact: "Impact",
+          solutions: "Solutions",
+          prototype: "Prototype",
+          reflection: "Reflection",
+          menu: "Menu"
+        },
+        hero: {
+          tag1: "Fintech UX",
+          tag2: "Aesthetic Care",
+          tag3: "Live Prototype",
+          title: "Mokka: Advance of Your Choice",
+          subtitle: "How to transform financial obligations into aesthetic care, safety, and lightness for a female audience aged 25–45.",
+          mock_advance: "Available Advance",
+          mock_promo: "Summer Raffle!",
+          mock_promo_text: "Win 1000 ₽ at Gold Apple",
+          mock_serv1: "Cash",
+          mock_serv2: "Gift",
+          mock_serv3: "Booster",
+          bubble1_title: "Maria, 28 y.o.",
+          bubble1_desc: "Beauty Blogger. Limit: 85k",
+          bubble2_title: "Scratch Card",
+          bubble2_desc: "Interactive layer erased with coin",
+          caption: "Mokka Design System: Aesthetic softness, flexible personalization, and playful experience."
+        },
+        roleGrid: {
+          label1: "Role",
+          val1_title: "Lead Product Designer",
+          val1_desc: "UX architecture, interactive prototyping, micro-animations & copywriting.",
+          label2: "Focus",
+          val2_title: "Aesthetic Care System",
+          val2_desc: "Eliminating 'debt anxiety' through soft geometry, pastel gradients, and comforting microcopy.",
+          label3: "Context",
+          val3_title: "Mokka Mobile Concept",
+          val3_desc: "A major evolution from dry transactional feeds to a reassuring, supportive fintech companion."
+        },
+        intro: {
+          kicker: "Concept",
+          title: "Fintech as a Reassuring Companion",
+          lead: "Classic fintech is cluttered with anxious alerts, flashing warnings, and stressful words like 'Debt'. For women aged 25–45, financial operations should feel comfortable, secure, and light. We redesigned Mokka by removing cognitive strain and integrating warm care into every single screen.",
+          cards: [
+            { title: "Empathetic Microcopy", text: "No harsh terminology. We use gentle phrasing like 'Used from advance' instead of demanding debt alerts to foster comfort." },
+            { title: "Mood-Based Themes", text: "4 distinct visual schemes: from sweet peach to a rich twilight mode with neon highlights for pleasant evening viewing." },
+            { title: "Playful Engagement", text: "Instead of dry loan banners, we engage the user through interactive scratch cards and unique lucky tickets." }
+          ]
+        },
+        impact: {
+          kicker: "Design Impact",
+          title: "🎯 Emotional Project Outcomes",
+          points: [
+            { label: "Lowered Financial Anxiety", text: "A complete departure from stressful red alerts, replaced by calming organic status codes for a therapeutic fintech experience." },
+            { label: "Surge in User Engagement", text: "An interactive raffle with real-time scratch card mechanics turned mundane transactions into delightful play." },
+            { label: "Lifestyle-Driven Customization", text: "Adaptive persona profiles (Maria, Anna, Elena) that tailor limits and catalog recommendations to their real-world routines." },
+            { label: "Minimized Cognitive Friction", text: "Replaced generic native selects with custom-crafted animated selectors, keeping forms tidy and clean." }
+          ]
+        },
+        painPoints: {
+          title: "Preserving Brand DNA Across Design Civilizations",
+          col_feature: "Scenario / Aspect",
+          col_legacy: "Anxious Legacy Fintech",
+          col_mokka: "Supportive Mokka Redesign",
+          rows: [
+            { f: "Outstanding Balance Phrasing", l: "'Debt', 'Overdue amount', 'Outstanding'", m: "'Used from advance', 'Comfortable payment'" },
+            { f: "Color Codes & Aesthetics", l: "Red flashing alerts, rigid gray tables", m: "Soft peach, pastel roses, warm organic orange" },
+            { f: "Limits & Sliders", l: "Rigid static numbers without human context", m: "Adaptive limits tailored for active persona lifestyles" },
+            { f: "Marketing & Promos", l: "Intrusive static text banners to 'Apply Now'", m: "Engaging summer sweepstakes with interactive scratch coins" }
+          ]
+        },
+        solutions: {
+          kicker: "Solutions Architecture",
+          title: "Detailed breakdown of key user scenarios",
+          items: [
+            {
+              num: "1",
+              title: "Personalized Profiles & Limits",
+              desc: "Rather than displaying raw numeric rows, the application dynamically adjusts to the user's lifestyle. We integrated interactive persona states: beauty blogger Maria (85k limit), mother of two children Anna (120k), and marketer Elena (150k), fine-tuning catalog grids instantly to match their interests.",
+              feat_label: "Core Feature:",
+              feat_text: "Smooth transition across 4 organic themes (Classic, Warm, Minimal, Dark-Night) in a single tap.",
+              visual_emoji: "🌸"
+            },
+            {
+              num: "2",
+              title: "Gamified Sweepstakes: 'Summer Raffle'",
+              desc: "We transformed standard cashback incentives into a delightful quest. The user signs up, monitors their progress tracker, and receives a stylized lucky ticket with a unique ID after buying. The highlight: an interactive scratch card that can be rubbed clean with a coin to unlock rewards.",
+              feat_label: "Core Feature:",
+              feat_text: "Immersive canvas-based coin scratch emulation with satisfying feedback and ticket generation.",
+              visual_emoji: "🪙"
+            },
+            {
+              num: "3",
+              title: "Mokka Cash & PCI-DSS Safety Compliance",
+              desc: "Designed an elegant micro-calculator with intuitive duration and transfer amount sliders. The credit card attachment form is modeled under strict security protocols (PCI-DSS compliance) featuring input masking and instant card brand identification (Visa, MasterCard, MIR).",
+              feat_label: "Core Feature:",
+              feat_text: "Custom-animated dropdown pickers with checkmark confirmations instead of boring native select fields.",
+              visual_emoji: "🛡️"
+            },
+            {
+              num: "4",
+              title: "QR Payments & Essential Micro-Services",
+              desc: "An intuitive scan engine optimized for retail checkouts: dynamic viewfinder scanner for checkout registers or custom display code generation. Reassuring micro-utilities are fully supported: cellular top-ups, payment date postponements, and digital gift certificate shops.",
+              feat_label: "Core Feature:",
+              feat_text: "Flexible payment date snoozing for 30 days with a flat fee for stress-free shopping.",
+              visual_emoji: "🤳"
+            }
+          ]
+        },
+        prototype: {
+          kicker: "Interactive Sandbox",
+          title: "Launch Interactive Prototype",
+          description: "Static mockups fail to capture the warmth of the layout, responsive theme-shifting, and playful touch of scratch cards. I built a fully operational, live frontend model. Start the simulator and feel the tactile feedback of the experience.",
+          btn: "Launch Live Preview",
+          pass_label: "Access Password:",
+          pass_note: "Email me directly",
+          card_title: "Protected Demonstration Sandbox",
+          card_text: "Commissioned as a high-fidelity test model to securely validate emotional and game-mechanic hypotheses."
+        },
+        reflection: {
+          title: "Reflection: The Future belongs to Empathetic Fintech",
+          paragraphs: [
+            "Our work with Mokka demonstrates that utility-driven applications do not have to look clinical. By refining cold transactional copy into caring narratives and dressing the UI in soothing aesthetics, we significantly boost user retention and lower entry barriers.",
+            "As product designers, our chief challenge lay in the harmony of two worlds: crafting a soft, welcoming, female-friendly companion while ensuring robust security (PCI-DSS compliance) and real-time frontend reliability.",
+            "High-fidelity prototypes compiled directly in native web code (HTML/TypeScript) are the ultimate tool to align stakeholder vision and execute meaningful user testing. Visual assets are no longer locked in static frames; they belong directly in the browser."
+          ]
+        },
+        disclaimer: {
+          title: "Product Disclaimer",
+          text: "This interactive simulator was built as a high-fidelity conceptual prototype to test and validate the emotional and gamified hypotheses of the Mokka brand. Final production implementation will align with the frontend code specifications defined here."
+        },
+        contact: {
+          title: "Let's discuss your product",
+          subtitle: "Book a brief product session to audit user paths, address cognitive friction points, and craft delightful consumer-grade experiences.",
+          button: "Discuss Project",
+          or: "Or reach out directly:"
+        },
+        footer: {
+          info: "Stanislav Dovidenko: UX · AI Product Designer · Moscow",
+          copy: "© 2026 Dovidenko · All rights reserved"
+        }
+      }
+    };
+
+    // State
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlLang = urlParams.get("lang");
+    let currentLang = (urlLang === "en" || urlLang === "ru") ? urlLang : (localStorage.getItem("lang") || "ru");
+
+    // Helper to traverse translations object
+    function getValue(path, obj) {
+      return path.split('.').reduce((acc, part) => acc && acc[part], obj);
+    }
+
+    // Set Language
+    function setLanguage(lang) {
+      currentLang = lang;
+      localStorage.setItem("lang", lang);
+      
+      // Update URL query parameter without reloading
+      const url = new URL(window.location);
+      url.searchParams.set("lang", lang);
+      window.history.replaceState({}, "", url);
+
+      const data = translations[lang];
+
+      // Update brand link dynamically based on language
+      const brandLink = document.getElementById("brandLink");
+      if (brandLink) {
+        brandLink.href = lang === "en" ? "../en.html" : "../index.html";
+      }
+
+      // Update discuss project link dynamically based on language
+      const discussLink = document.getElementById("discussLink");
+      if (discussLink) {
+        discussLink.href = lang === "en" ? "https://calendly.com/stanislavskii-yo/15min" : "https://planerka.app/stanislav-dovidenko-exsl9q/15min";
+      }
+
+      // Update basic element translation
+      document.querySelectorAll("[data-i18n]").forEach((node) => {
+        const path = node.dataset.i18n;
+        const value = getValue(path, data);
+        if (value && typeof value === "string") {
+          node.textContent = value;
+        }
+      });
+
+      // Update specific placeholders or values
+      document.querySelectorAll("[data-i18n-href]").forEach((node) => {
+        const path = node.dataset.i18nHref;
+        const value = getValue(path, data);
+        if (value && typeof value === "string") {
+          node.href = value;
+        }
+      });
+
+      // Render Dynamic arrays
+      renderIntroCards(data.intro.cards);
+      renderImpactPoints(data.impact.points);
+      renderComparisonRows(data.painPoints.rows);
+      renderSolutions(data.solutions.items);
+      renderReflection(data.reflection.paragraphs);
+
+      // Language buttons highlight
+      document.querySelectorAll(".lang-btn").forEach((btn) => {
+        const isActive = btn.dataset.lang === lang;
+        btn.classList.toggle("bg-[#FF5A1E]", isActive);
+        btn.classList.toggle("text-white", isActive);
+        btn.classList.toggle("shadow-sm", isActive);
+        btn.classList.toggle("text-gray-500", !isActive);
+        btn.classList.toggle("hover:text-gray-800", !isActive);
+      });
+    }
+
+    // Dynamic Renderers
+    function renderIntroCards(cards) {
+      const container = document.getElementById("introCards");
+      if (!container) return;
+      container.innerHTML = cards.map(card => `
+        <article class="bg-white p-6 border border-orange-100/40 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+          <h3 class="font-display font-bold text-[#FF5A1E] text-base mb-2">${card.title}</h3>
+          <p class="text-xs text-gray-500 leading-relaxed font-light">${card.text}</p>
+        </article>
+      `).join('');
+    }
+
+    function renderImpactPoints(points) {
+      const container = document.getElementById("impactPoints");
+      if (!container) return;
+      container.innerHTML = points.map(pt => `
+        <li class="flex items-start gap-4">
+          <span class="text-orange-400 font-semibold text-lg leading-none mt-0.5">•</span>
+          <div>
+            <p class="text-white font-semibold text-base sm:text-lg mb-1">${pt.label}</p>
+            <p class="text-gray-400 text-sm font-light leading-relaxed">${pt.text}</p>
+          </div>
+        </li>
+      `).join('');
+    }
+
+    function renderComparisonRows(rows) {
+      const container = document.getElementById("comparisonRows");
+      if (!container) return;
+      container.innerHTML = rows.map(row => `
+        <tr class="hover:bg-orange-50/10 transition-colors">
+          <td class="px-6 py-4 font-semibold text-gray-800">${row.f}</td>
+          <td class="px-6 py-4 text-rose-500/90 font-light italic">${row.l}</td>
+          <td class="px-6 py-4 text-[#FF5A1E] font-medium">${row.m}</td>
+        </tr>
+      `).join('');
+    }
+
+    function renderSolutions(items) {
+      const container = document.getElementById("solutionsRoot");
+      if (!container) return;
+      container.innerHTML = items.map((item, index) => {
+        const isEven = index % 2 === 0;
+        let videoSrc = "profiles.mp4";
+        if (item.num === "2") videoSrc = "summer.mp4";
+        else if (item.num === "3") videoSrc = "mokka-cash.mp4";
+        else if (item.num === "4") videoSrc = "qr.mp4";
+
+        return `
+          <div class="flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-12 border-b border-orange-50/20 pb-16 last:border-b-0">
+            <!-- Content -->
+            <div class="flex-1 space-y-6">
+              <div class="flex items-center gap-4">
+                <span class="font-mono text-xs font-bold text-white bg-[#FF5A1E] w-6 h-6 rounded-full flex items-center justify-center">${item.num}</span>
+                <span class="h-px bg-orange-100/60 flex-1"></span>
+              </div>
+              <h3 class="text-2xl sm:text-3xl font-display font-semibold text-gray-900">${item.title}</h3>
+              <p class="text-gray-500 font-light leading-relaxed text-sm sm:text-base">${item.desc}</p>
+              
+              <div class="p-4 bg-orange-50/30 rounded-2xl border border-orange-100/40">
+                <p class="text-xs font-bold text-[#FF5A1E] uppercase tracking-wider mb-1">${item.feat_label}</p>
+                <p class="text-xs text-gray-600 font-light">${item.feat_text}</p>
+              </div>
+            </div>
+
+            <!-- Visual video showcase adapted to Mokka case -->
+            <div class="flex-1 w-full relative aspect-[4/3] rounded-[22px] sm:rounded-[22px] overflow-hidden bg-gradient-to-tr from-[#FFF7F4] to-[#FFFBF9] border border-orange-100/60 shadow-xl">
+              <video 
+                class="absolute top-0 left-0 w-full h-full object-cover" 
+                src="${videoSrc}" 
+                title="${item.title}"
+                autoplay muted controls loop playsinline>
+              </video>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function renderReflection(paragraphs) {
+      const container = document.getElementById("reflectionParagraphs");
+      if (!container) return;
+      container.innerHTML = paragraphs.map(p => `
+        <p class="leading-relaxed mb-4 font-light text-gray-600">${p}</p>
+      `).join('');
+    }
+
+    // Toggle Mobile Menu
+    const mobileMenuToggle = document.getElementById("mobileMenuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+    
+    if (mobileMenuToggle && mobileMenu) {
+      mobileMenuToggle.addEventListener("click", () => {
+        const isOpen = !mobileMenu.classList.contains("hidden");
+        mobileMenu.classList.toggle("hidden", isOpen);
+        mobileMenuToggle.setAttribute("aria-expanded", String(!isOpen));
+      });
+      
+      // Auto close mobile menu on nav link click
+      mobileMenu.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+          mobileMenuToggle.setAttribute("aria-expanded", "false");
+        });
+      });
+    }
+
+    // Language Change Event Listeners
+    document.querySelectorAll(".lang-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        setLanguage(btn.dataset.lang);
+      });
+    });
+
+    // Intersection Observer for Scroll Animations
+    function setupScrollObserver() {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.08 });
+
+      document.querySelectorAll(".fade-in").forEach((el) => {
+        observer.observe(el);
+      });
+    }
+
+    // Init Page on Load
+    document.addEventListener("DOMContentLoaded", () => {
+      setLanguage(currentLang);
+      setupScrollObserver();
+    });
+  </script>
+</body>
+</html>

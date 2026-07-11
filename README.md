@@ -1,71 +1,149 @@
-# [Product Design Portfolio]
-[Product Design Portfolio]: https://stasdodesign.github.io/product-design-portfolio/en.html
-Stanislav Dovidenko Product Design Portfolio. 2026. Includes case studies for Sber, Ingosstrakh, and Luma One
+# Stanislav Dovidenko
 
-# Stanislav Dovidenko  
-### Product Designer of Systems & AI Interfaces
+### Senior Product Designer · AI Products · Enterprise Systems · Creative Technology
 
-> Designing complex enterprise systems, AI-driven products, and scalable design systems.
+Designing AI-native products, enterprise platforms, and interactive systems that transform technical complexity into intuitive user experiences.
 
-🌐 Live portfolio: https://stasdodesign.github.io/product-design-portfolio/en.html  
-📍 Focus: Enterprise UX · AI Interfaces · Fintech · Design Systems  
+🌐 Portfolio: https://stanislavdovidenko.com
 
 ---
 
-## ⚡ Selected Work
+## About
 
-### 🏦 Sber — Enterprise UX & Internal Platforms  
-Designing complex internal systems for large-scale financial infrastructure.  
-→ https://stasdodesign.github.io/product-design-portfolio/sber-usersoft/en.html
+I design products where UX meets engineering.
 
----
+For over 20 years I've been building digital products, with the last 8+ years focused on Enterprise, FinTech and AI. My work combines product thinking, interaction design and technical prototyping to make complex systems understandable, predictable and enjoyable.
 
-### 🧾 Ingosstrakh — Insurance Ecosystem  
-Redesign of core insurance flows and digital service architecture.  
-→ https://stasdodesign.github.io/product-design-portfolio/ingosstrakh/en.html
+I believe the biggest challenge in modern software is no longer building technology — it's making sophisticated systems feel natural to use.
+
+Today I work across AI interfaces, enterprise platforms, creative technology and design systems.
 
 ---
 
-### 🧠 Luma One — AI Product Interface  
-AI-driven interface design for next-gen product experience.  
-→ https://stasdodesign.github.io/product-design-portfolio/luma-one/en.html
+## Selected Products
+
+### 🎧 APEX: DJ Console
+
+Professional web-native DJ platform built with Web Audio API and Web MIDI.
+
+Features include:
+
+- Real-time audio engine
+- MIDI Learn
+- Hardware controller support
+- Zero-install browser experience
+
+https://apex.stanislavdovidenko.com
 
 ---
 
-### 🧩 Design Systems Work  
-Scalable component systems for enterprise and fintech products.  
-→ [https://stasdodesign.github.io/product-design-portfolio/design-system.html](https://stasdodesign.github.io/jedi-css/index.html)
+### 👗 Stylo.you
+
+AI-powered fashion platform using Google Gemini.
+
+Features include:
+
+- AI outfit generation
+- Smart Closet
+- Personal style assistant
+- Social fashion ecosystem
+
+https://stylo.you
 
 ---
 
-## 🧭 Design Philosophy
+### 🧠 Luma One
 
-I work at the intersection of:
+Spatial UI research project exploring Human-AI interaction and adaptive interfaces for future operating systems.
 
-- **Systems thinking** — products as interconnected logic, not screens  
-- **AI-native UX** — making AI usable, predictable, and controllable  
-- **Enterprise complexity** — reducing cognitive load in dense workflows  
-- **Design systems** — consistency at scale across large products  
+https://luma-one-gray.vercel.app
 
 ---
 
-## 🧠 What I solve
+### 🏦 Enterprise Design
 
-- Complex multi-step enterprise flows  
-- AI-assisted decision interfaces  
-- Legacy system modernization  
-- Design system architecture  
+Product design for enterprise platforms serving hundreds of thousands of users.
+
+Projects include:
+
+- Sber
+- Ingosstrakh
+
+Areas:
+
+- Enterprise UX
+- Design Systems
+- AI Integration
+- Research
+- Product Strategy
+
+Portfolio:
+
+https://stanislavdovidenko.com
 
 ---
 
-## 📬 Contact
+## Expertise
 
-Open to collaboration on:
-- AI products  
-- Enterprise platforms  
-- Fintech UX  
-- Design systems at scale  
+- Product Design
+- UX Strategy
+- AI Interaction Design
+- Enterprise UX
+- Design Systems
+- Spatial UI
+- Human-AI Interaction
+- Web Audio API
+- Product Discovery
+- Prototyping
+- React & Next.js
+- Frontend Collaboration
 
 ---
 
-> “Good design is not how it looks. It’s how complex systems become usable.”
+## Design Philosophy
+
+I design products that make complexity disappear.
+
+Whether I'm building enterprise platforms, AI assistants or creative tools, my goal is always the same:
+
+Create interfaces that help people think less about software and more about their work.
+
+---
+
+## Currently Interested In
+
+- AI Products
+- Enterprise SaaS
+- Creative Technology
+- Spatial Computing
+- Human-AI Interaction
+- Design Systems
+
+---
+
+## Portfolio
+
+🌐 https://stanislavdovidenko.com
+
+## Live Products
+
+🎧 APEX DJ Console  
+https://apex.stanislavdovidenko.com
+
+👗 Stylo.you  
+https://stylo.you
+
+🧠 Luma One  
+https://luma-one-gray.vercel.app
+
+---
+
+## Contact
+
+Open to Product Design, AI, Enterprise SaaS and Creative Technology collaborations.
+
+LinkedIn:
+https://www.linkedin.com/in/stanislavdovidenko
+
+Portfolio:
+https://stanislavdovidenko.com
