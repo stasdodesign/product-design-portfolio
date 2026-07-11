@@ -65,13 +65,13 @@ jobs:
           mkdir -p _site/apps/garage
           cp -r apps/garage/dist/* _site/apps/garage/
 
-      # =========================
-      # PAGES DEPLOY
-      # =========================
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: _site
+# =========================
+# PAGES DEPLOY
+# =========================
+- name: Upload Pages artifact
+  uses: actions/upload-pages-artifact@v3
+  with:
+    path: _site
 
 deploy-pages:
   needs: deploy
@@ -88,4 +88,8 @@ deploy-pages:
   steps:
     - name: Deploy to GitHub Pages
       id: deployment
+<<<<<<< HEAD
       uses: actions/deploy-pages@v4
+=======
+      uses: actions/deploy-pages@v4
+>>>>>>> d8aa5f40b9a997a2a9ec714a0fa9b5ca90848a41
