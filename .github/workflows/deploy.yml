@@ -73,9 +73,19 @@ jobs:
         with:
           path: _site
 
-  deploy-pages:
-    needs: deploy
-    runs-on: ubuntu-latest
+deploy-pages:
+  needs: deploy
+  runs-on: ubuntu-latest
 
-    steps:
-      - uses: actions/deploy-pages@v4
+  permissions:
+    pages: write
+    id-token: write
+
+  environment:
+    name: github-pages
+    url: ${{ steps.deployment.outputs.page_url }}
+
+  steps:
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
