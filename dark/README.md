@@ -2,7 +2,7 @@
 
 An interactive catalog of 72 UX dark patterns.
 
-🔗 Live project: [Open Explorer](http://case.stanislavdovidenko.com/dark/)  
+🔗 Live project: [Open Explorer](http://stanislavdovidenko.com/dark/)  
 🔗 GitHub repo: https://github.com/stasdodesign/dark-patterns-explorer
 
 Built to make UX influence visible.
