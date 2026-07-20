@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ingosstrakh Ecosystem — Lead Product Designer Portfolio</title>
+
+  <meta name="description" content="Кейсы Ингосстрах: Трансформация бизнес-требований в масштабируемые дизайн-решения. B2B/B2C, BNPL, геймификация." />
+  <meta property="og:title" content="Ingosstrakh Ecosystem — Станислав Довиденко" />
+  <meta property="og:description" content="Экосистема Ингосстраха: От барьеров к росту (Senior/Lead Product Designer)." />
+
+  <!-- Tailwind CSS & Google Fonts -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rubik:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+</head>
+<body class="bg-gradient-to-b from-[#ffffff] to-[#f4f7fb] antialiased">
+
+  <header class="glass fixed top-0 left-0 w-full z-50 border-b border-blue-100/50 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a id="brandLink" href="../index.html" class="text-sm font-semibold tracking-tight hover:opacity-80 transition-opacity flex items-center gap-2">
+        <span class="w-2.5 h-2.5 rounded-full bg-[#1D4ED8]"></span>
+        <span data-i18n="nav.brand">Станислав Довиденко</span>
+      </a>
+      
+      <nav class="desktop-nav hidden md:flex gap-8 text-sm	 font-semibold tracking-wider text-gray-500 absolute left-1/2 -translate-x-1/2">
+        <a href="#intro" class="hover:text-[#1D4ED8] transition-colors" data-i18n="nav.intro">О концепте</a>
+        <a href="#impact" class="hover:text-[#1D4ED8] transition-colors" data-i18n="nav.impact">Импакт</a>
+        <a href="#solutions" class="hover:text-[#1D4ED8] transition-colors" data-i18n="nav.solutions">Решения</a>
+        <a href="#reflection" class="hover:text-[#1D4ED8] transition-colors" data-i18n="nav.reflection">Рефлексия</a>
+      </nav>
+
+      <div class="flex items-center gap-6">
+	  
+      <div class="desktop-nav hidden md:flex items-center gap-4 social-row-isolated">
+        <a href="https://t.me/designat0r" class="jedi-social-icon" target="_blank">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+        </a>
+        <a href="https://instagram.com/stasdodesign" class="jedi-social-icon" target="_blank">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+        </a>
+        <a href="https://facebook.com/stasdodesign" class="jedi-social-icon" target="_blank">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+      </div>
+        <div class="flex items-center bg-blue-50 border border-blue-100 rounded-full p-0.5 text-xs font-bold">
+          <button class="lang-btn px-3 py-1 rounded-full transition-all" data-lang="ru">RU</button>
+          <button class="lang-btn px-3 py-1 rounded-full transition-all" data-lang="en">EN</button>
+        </div>
+
+        <button id="mobileMenuToggle" class="mobile-nav-toggle text-xs font-bold text-gray-500 uppercase tracking-wider md:hidden" type="button" aria-controls="mobileMenu" aria-expanded="false"  onclick="toggleMenu()">
+          <span data-i18n="nav.menu">Меню</span>
+        </button>
+      </div>
+    </div>
+    
+    <div id="mobileMenu" class="hidden glass border-b border-blue-100 absolute w-full px-6 py-8 flex flex-col gap-6 shadow-xl transition-all duration-300">
+      
+	  <nav class="flex flex-col gap-4 text-lg font-medium text-gray-900">
+        <a href="#intro" class="hover:text-[#1D4ED8] transition-colors" data-i18n="nav.intro">О концепте</a>
+        <a href="#impact" class="hover:text-[#1D4ED8] transition-colors" data-i18n="nav.impact">Импакт</a>
+        <a href="#solutions" class="hover:text-[#1D4ED8] transition-colors" data-i18n="nav.solutions">Решения</a>
+        <a href="#reflection" class="hover:text-[#1D4ED8] transition-colors" data-i18n="nav.reflection">Рефлексия</a>
+      </nav>
+	  
+    <div class="h-px bg-gray-100 w-full"></div>
+
+    <div class="flex items-center gap-6">
+       <a href="https://t.me/designat0r" class="jedi-social-icon" target="_blank">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+       </a>
+       <a href="https://instagram.com/stasdodesign" class="jedi-social-icon" target="_blank">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+       </a>
+       <a href="https://facebook.com/stasdodesign" class="jedi-social-icon" target="_blank">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+       </a>
+    </div>
+	
+    </div>
+  </header>
+
+  <main class="pt-32 pb-20 px-6 max-w-5xl mx-auto overflow-hidden">
+    
+    <section class="fade-in mb-16 text-center sm:text-left">
+      <div class="flex flex-wrap justify-center sm:justify-start gap-2 mb-6">
+        <span class="px-3 py-1 bg-blue-50 text-blue-600 text-[10px] font-bold uppercase tracking-widest rounded-full" data-i18n="hero.tag1">Ecosystem UX</span>
+        <span class="px-3 py-1 bg-indigo-50 text-indigo-500 text-[10px] font-bold uppercase tracking-widest rounded-full" data-i18n="hero.tag2">B2B/B2C</span>
+        <span class="px-3 py-1 bg-gray-100 text-gray-600 text-[10px] font-bold uppercase tracking-widest rounded-full" data-i18n="hero.tag3">Enterprise Design</span>
+      </div>
+      
+      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-display font-bold tracking-tight mb-8 leading-[1.1]" data-i18n="hero.title">
+        Ингосстрах: От барьеров к росту
+      </h1>
+      
+      <p class="text-lg sm:text-xl md:text-2xl text-gray-500 font-light leading-relaxed mb-12 max-w-3xl" data-i18n="hero.subtitle">
+        Как сложная интеграция банковских и страховых систем превратилась в интуитивный B2B/B2C продукт с прямым влиянием на P&L компании.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 p-8 bg-white/70 border border-blue-100/60 rounded-[32px] shadow-sm backdrop-blur">
+        <div>
+          <p class="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-2" data-i18n="roleGrid.label1">Роль</p>
+          <p class="text-gray-700 text-sm font-semibold mb-1" data-i18n="roleGrid.val1_title">Lead Product Designer</p>
+          <p class="text-gray-500 text-xs leading-relaxed" data-i18n="roleGrid.val1_desc">Управление командой, проектирование сложных интеграций (АИС, банковские шлюзы), roadmap на 2024.</p>
+        </div>
+        <div class="border-t md:border-t-0 md:border-l border-blue-100/50 pt-4 md:pt-0 md:pl-6">
+          <p class="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-2" data-i18n="roleGrid.label2">Фокус</p>
+          <p class="text-gray-700 text-sm font-semibold mb-1" data-i18n="roleGrid.val2_title">Resilience UX & Gamification</p>
+          <p class="text-gray-500 text-xs leading-relaxed" data-i18n="roleGrid.val2_desc">Снижение когнитивной нагрузки при оплатах, геймификация для мотивации 23 000+ агентов.</p>
+        </div>
+        <div class="border-t md:border-t-0 md:border-l border-blue-100/50 pt-4 md:pt-0 md:pl-6">
+          <p class="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-2" data-i18n="roleGrid.label3">Контекст</p>
+          <p class="text-gray-700 text-sm font-semibold mb-1" data-i18n="roleGrid.val3_title">Ingosstrakh Ecosystem</p>
+          <p class="text-gray-500 text-xs leading-relaxed" data-i18n="roleGrid.val3_desc">Сквозной дизайн-опыт, объединяющий независимые банковские и страховые ИТ-инфраструктуры.</p>
+        </div>
+      </div>	
+    </section>
+
+    <section class="fade-in mb-24 relative">
+      <div class="relative w-full aspect-[16/9] min-h-[340px] rounded-[40px] overflow-hidden bg-gradient-to-tr from-[#E8F0FF] via-[#F4F7FB] to-[#E0E8FF] border border-blue-100/80 shadow-xl flex items-center justify-center">
+        
+        <div class="absolute w-[300px] h-[300px] rounded-full bg-blue-400/10 blur-[60px] top-4 left-10"></div>
+        <div class="absolute w-[240px] h-[240px] rounded-full bg-indigo-300/10 blur-[50px] bottom-4 right-10"></div>
+
+        <div class="relative w-[180px] sm:w-[220px] h-[320px] sm:h-[390px] bg-[#1d1d1f] rounded-[36px] p-2 sm:p-2.5 shadow-2xl border-4 border-gray-800/90 overflow-hidden transform hover:scale-[1.03] transition-transform duration-500">
+          <div class="w-full h-full bg-white rounded-[28px] overflow-hidden flex flex-col justify-between p-3 relative text-[9px] sm:text-[10px]">
+            <div class="absolute top-1 left-1/2 -translate-x-1/2 w-16 h-3.5 bg-[#1d1d1f] rounded-full z-10"></div>
+            
+            <div class="pt-3 flex justify-between items-center text-gray-400 text-[8px] font-mono">
+              <span class="ml-1 font-semibold text-gray-800">09:41</span>
+              <div class="flex gap-1 mr-1"><span>📶</span><span>🔋</span></div>
+            </div>
+
+            <div class="flex-1 flex flex-col justify-between mt-2.5">
+              <div class="bg-gradient-to-br from-[#1D4ED8] to-[#1E3A8A] p-2.5 rounded-2xl shadow-md text-white">
+                <div class="flex justify-between items-center mb-1">
+                  <span class="font-display font-extrabold tracking-tight text-[11px] sm:text-[12px]">INGO PAY</span>
+                  <span class="px-1.5 py-0.5 bg-blue-400/30 text-white rounded-full text-[6px] uppercase font-bold tracking-wide">Premium</span>
+                </div>
+                <p class="text-blue-200 text-[7px] uppercase tracking-wider" data-i18n="hero.mock_advance">Баланс Ингорублей</p>
+                <p class="text-lg font-display font-extrabold text-white leading-none mt-0.5">5 150 ₽</p>
+              </div>
+
+              <div class="bg-orange-50 border border-orange-100 p-2 rounded-2xl my-2">
+                <p class="font-semibold text-orange-700 text-[8px] flex items-center gap-1">
+                  ☕ <span data-i18n="hero.mock_promo">Акция с Coffeport</span>
+                </p>
+                <p class="text-[7px] text-orange-500 mt-0.5" data-i18n="hero.mock_promo_text">Выпусти карту — получи бонус мгновенно</p>
+              </div>
+
+              <div class="grid grid-cols-3 gap-1 mb-1">
+                <div class="bg-gray-50 border border-gray-100 p-1.5 rounded-xl text-center">
+                  <span class="text-xs">🛡️</span>
+                  <p class="text-[6px] text-gray-500 mt-0.5" data-i18n="hero.mock_serv1">Полисы</p>
+                </div>
+                <div class="bg-gray-50 border border-gray-100 p-1.5 rounded-xl text-center">
+                  <span class="text-xs">🎁</span>
+                  <p class="text-[6px] text-gray-500 mt-0.5" data-i18n="hero.mock_serv2">Подарить</p>
+                </div>
+                <div class="bg-gray-50 border border-gray-100 p-1.5 rounded-xl text-center">
+                  <span class="text-xs">💳</span>
+                  <p class="text-[6px] text-gray-500 mt-0.5" data-i18n="hero.mock_serv3">Рассрочка</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="h-6 border-t border-gray-50 flex justify-around items-center text-[8px] text-gray-400">
+              <span class="text-[#1D4ED8] font-medium">🏠</span><span>📊</span><span>🎁</span><span>👤</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="absolute top-10 right-[15%] hidden lg:flex bg-white/90 border border-blue-100 p-4 rounded-2xl shadow-lg items-center gap-3 max-w-[230px] backdrop-blur animate-bounce" style="animation-duration: 4s;">
+          <span class="text-2xl">🚗</span>
+          <div>
+            <p class="text-xs font-bold text-gray-800" data-i18n="hero.bubble1_title">Оплата КАСКО</p>
+            <p class="text-[10px] text-gray-500" data-i18n="hero.bubble1_desc">Mokka BNPL: Сегодня 0 ₽</p>
+          </div>
+        </div>
+
+        <div class="absolute bottom-10 left-[15%] hidden lg:flex bg-white/90 border border-indigo-100 p-4 rounded-2xl shadow-lg items-center gap-3 max-w-[200px] backdrop-blur animate-bounce" style="animation-duration: 5s; animation-delay: 1s;">
+          <span class="text-2xl">📈</span>
+          <div>
+            <p class="text-xs font-bold text-[#1D4ED8]" data-i18n="hero.bubble2_title">Кабинет Агента</p>
+            <p class="text-[10px] text-gray-500" data-i18n="hero.bubble2_desc">Новые лимиты: 30К Ингорублей</p>
+          </div>
+        </div>
+
+      </div>
+      <p class="text-center text-xs text-gray-400 mt-6 italic" data-i18n="hero.caption">
+        Унификация Ingo Pay, Phygital-воронки и геймификация дашбордов для масштабирования экосистемы.
+      </p>
+    </section>
+
+    <section id="intro" class="px-2 py-16 border-t border-blue-100/40">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-12 items-start">
+        <div class="fade-in">
+          <p class="mb-4 text-[10px] font-bold uppercase tracking-widest text-[#1D4ED8]" data-i18n="intro.kicker">Концепция</p>
+          <h2 class="text-3xl sm:text-5xl font-display font-semibold tracking-tight leading-tight" data-i18n="intro.title">
+            Инженерия бизнес-процессов
+          </h2>
+        </div>
+        <div class="fade-in space-y-8">
+          <p class="text-lg text-gray-500 font-light leading-relaxed" data-i18n="intro.lead">
+            Моя задача как Lead-дизайнера заключалась не только в создании UI, но и в прямом влиянии на P&L. Страхование — это высокорисковый продукт с огромным трением. Мы перестроили сценарии так, чтобы управлять лояльностью, снижать когнитивный барьер при крупных платежах и бесшовно автоматизировать работу 23 000+ агентов.
+          </p>
+          <div class="grid gap-4 md:grid-cols-3" id="introCards"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="impact" class="fade-in mb-24 bg-[#0a0f1c] text-white p-10 md:p-16 rounded-[40px] overflow-hidden relative shadow-lg">
+      <div class="absolute w-[200px] h-[200px] rounded-full bg-blue-500/20 blur-[50px] -top-10 -right-10"></div>
+      
+      <p class="text-[10px] font-bold uppercase tracking-widest text-blue-400 mb-4" data-i18n="impact.kicker">Импакт редизайна</p>
+      <h2 class="text-3xl sm:text-4xl font-display font-semibold mb-10 text-white" data-i18n="impact.title">🎯 Бизнес-результаты и Метрики</h2>
+      
+      <ul class="space-y-8" id="impactPoints"></ul>
+    </section>
+
+    <section class="fade-in mb-24">
+      <h3 class="text-2xl sm:text-3xl font-display font-semibold mb-8 text-center" data-i18n="painPoints.title">Эволюция барьеров в точки роста</h3>
+      
+      <div class="table-wrap overflow-x-auto rounded-[28px] border border-blue-100/60 bg-white shadow-sm">
+        <table class="w-full min-w-[700px] text-left border-collapse">
+          <thead class="bg-blue-50/40 text-[10px] font-bold uppercase tracking-wider text-gray-400 border-b border-blue-100/40">
+            <tr>
+              <th class="px-6 py-4" data-i18n="painPoints.col_feature">Бизнес-задача / Проблема</th>
+              <th class="px-6 py-4 text-red-400" data-i18n="painPoints.col_legacy">Старый подход (Барьер)</th>
+              <th class="px-6 py-4 text-[#1D4ED8]" data-i18n="painPoints.col_mokka">UX-Решение Ингосстрах</th>
+            </tr>
+          </thead>
+          <tbody id="comparisonRows" class="divide-y divide-blue-50/50 text-xs text-gray-600"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="solutions" class="space-y-24 border-t border-blue-100/40 pt-20">
+      <div class="text-center max-w-2xl mx-auto mb-16 fade-in">
+        <p class="text-[10px] font-bold uppercase tracking-widest text-[#1D4ED8] mb-4" data-i18n="solutions.kicker">Архитектура решений</p>
+        <h2 class="text-3xl sm:text-4xl font-display font-semibold" data-i18n="solutions.title">Детальный разбор 5 стратегических кейсов</h2>
+      </div>
+	  
+      <!-- Solutions grid rendered dynamically -->
+      <div id="solutionsRoot" class="space-y-24">
+        <!-- Rendered dynamically by JS -->
+      </div>
+    </section>
+	
+<section id="awards" class="relative w-full max-w-5xl mx-auto overflow-hidden bg-gradient-to-br from-[#0F172A] via-[#1E3A8A] to-[#172554] text-white py-20 px-6 sm:px-12 rounded-[40px] shadow-xl my-16 border border-blue-400/20 antialiased font-sans transition-all duration-500">
+  
+  <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none rounded-[40px]">
+    <div class="absolute w-[400px] h-[400px] bg-blue-500/30 rounded-full blur-[100px] -top-20 -left-20"></div>
+    <div class="absolute w-[300px] h-[300px] bg-indigo-500/20 rounded-full blur-[80px] bottom-0 right-0"></div>
+  </div>
+
+  <div class="relative z-10">
+    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-12 gap-6">
+      <div>
+        <p class="text-blue-300 text-[10px] sm:text-xs font-bold uppercase tracking-widest mb-2" data-award-i18n="kicker">Признание рынка 2024-2025</p>
+        <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight" data-award-i18n="title">Тройная победа ИНГО</h2>
+      </div>
+      
+      <div class="flex items-center bg-white/10 backdrop-blur-md border border-white/20 rounded-full p-1 text-xs font-bold">
+        <button class="award-lang-btn px-4 py-1.5 rounded-full transition-all bg-white text-blue-900 shadow-sm" data-lang="ru">RU</button>
+        <button class="award-lang-btn px-4 py-1.5 rounded-full transition-all text-white/70 hover:text-white" data-lang="en">EN</button>
+      </div>
+    </div>
+
+    <p class="text-lg sm:text-xl text-blue-100/90 font-light leading-relaxed max-w-3xl mb-14" data-award-i18n="intro">
+      Инго Экосистема от Ингосстрах победила сразу в номинациях престижных премий в финтехе и лояльности. Поздравляю нашу супер профи команду и наших любимых клиентов!!! Ура!! Всем ИНГО!! 🎉
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      
+      <a href="https://fintechawardsrussia.ru/winners2023-2027" target="_blank" rel="noopener noreferrer" class="group relative block bg-white/10 hover:bg-white/15 border border-white/10 hover:border-white/30 backdrop-blur-xl p-8 rounded-3xl transition-all duration-300 hover:-translate-y-1">
+        <svg class="absolute top-6 right-6 w-5 h-5 text-white/30 group-hover:text-white/70 transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+          <polyline points="15 3 21 3 21 9"></polyline>
+          <line x1="10" y1="14" x2="21" y2="3"></line>
+        </svg>
+
+        <div class="w-16 h-16 bg-gradient-to-br from-blue-400 to-indigo-600 rounded-2xl flex items-center justify-center text-3xl shadow-lg mb-6 group-hover:scale-105 transition-transform">
+          🏆
+        </div>
+        <h3 class="text-sm font-semibold text-blue-200 mb-2 uppercase tracking-wide">FinTech Award Russia 2025</h3>
+        <p class="text-lg font-bold text-white leading-tight" data-award-i18n="award1">Retail Banking FinTech Project of the Year 2025</p>
+      </a>
+
+      <a href="https://www.loyaltyawards.ru/winners2024-2028" target="_blank" rel="noopener noreferrer" class="group relative block bg-white/10 hover:bg-white/15 border border-white/10 hover:border-white/30 backdrop-blur-xl p-8 rounded-3xl transition-all duration-300 hover:-translate-y-1">
+        <svg class="absolute top-6 right-6 w-5 h-5 text-white/30 group-hover:text-white/70 transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+          <polyline points="15 3 21 3 21 9"></polyline>
+          <line x1="10" y1="14" x2="21" y2="3"></line>
+        </svg>
+
+        <div class="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-500 rounded-2xl flex items-center justify-center text-3xl shadow-lg mb-6 group-hover:scale-105 transition-transform">
+          💎
+        </div>
+        <h3 class="text-sm font-semibold text-purple-200 mb-2 uppercase tracking-wide">Loyalty & CX Awards 2025</h3>
+        <p class="text-lg font-bold text-white leading-tight" data-award-i18n="award2">Лучший клиентский опыт в страховом секторе</p>
+      </a>
+
+      <a href="https://fininnovation.ru/winners2024-2028" target="_blank" rel="noopener noreferrer" class="group relative block bg-white/10 hover:bg-white/15 border border-white/10 hover:border-white/30 backdrop-blur-xl p-8 rounded-3xl transition-all duration-300 hover:-translate-y-1">
+        <svg class="absolute top-6 right-6 w-5 h-5 text-white/30 group-hover:text-white/70 transition-colors duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+          <polyline points="15 3 21 3 21 9"></polyline>
+          <line x1="10" y1="14" x2="21" y2="3"></line>
+        </svg>
+
+        <div class="w-16 h-16 bg-gradient-to-br from-emerald-400 to-teal-600 rounded-2xl flex items-center justify-center text-3xl shadow-lg mb-6 group-hover:scale-105 transition-transform">
+          🌍
+        </div>
+        <h3 class="text-sm font-semibold text-emerald-200 mb-2 uppercase tracking-wide">Finance Innovation 2024</h3>
+        <p class="text-lg font-bold text-white leading-tight" data-award-i18n="award3">Экосистема года — ИНГО ЭКОСИСТЕМА</p>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+    <section id="reflection"  class="fade-in my-28 border border-blue-100/60 py-16 bg-gradient-to-tr from-[#F4F7FB] to-[#FFFFFF] rounded-[40px] px-8 sm:px-12 shadow-sm relative overflow-hidden pt-10">
+      <h2 class="text-3xl sm:text-4xl font-display font-semibold mt-4 mb-6" data-i18n="reflection.title">Роль Lead-дизайнера: от UI до формирования P&L</h2>
+      <div class="space-y-6 text-sm sm:text-base text-gray-600 font-light leading-relaxed" id="reflectionParagraphs"></div>
+    </section>
+
+    <section id="contact" class="py-16 border-t border-blue-100/30 text-center fade-in bg-white/40 rounded-[40px]">
+      <h2 class="text-3xl sm:text-4xl font-display font-semibold mb-4 text-[#1D4ED8]" data-i18n="contact.title">
+        Обсудим ваш продукт?
+      </h2>
+      <p class="text-gray-500 text-base sm:text-lg mb-10 max-w-xl mx-auto leading-relaxed font-light" data-i18n="contact.subtitle">
+        Свяжитесь со мной, чтобы разобрать интерфейсные сценарии, выявить точки роста и спроектировать B2B/B2C решения enterprise-уровняРазработана архитектура мультиэквайрингового компонента, в который бесшовно интегрированы BNPL-сервис и банковская рассрочка как нативные способы оплаты наряду с традиционными картами и СБП
+      </p>
+
+      <a id="discussLink" href="https://planerka.app/stanislav-dovidenko-exsl9q/15min" target="_blank" class="inline-flex items-center justify-center px-10 py-4 rounded-full bg-black text-white text-sm font-semibold hover:scale-[1.03] transition-transform duration-300 shadow-md hover:bg-gray-900">
+        <span data-i18n="contact.button">Обсудить проект</span>
+      </a>
+
+      <div class="mt-8 text-xs sm:text-sm text-gray-500 flex items-center justify-center gap-3 flex-wrap">
+        <span data-i18n="contact.or">Или напрямую:</span>
+        <a href="https://t.me/StasDoDesign" target="_blank" class="underline text-gray-600 hover:text-[#1D4ED8] transition-colors font-medium">Telegram</a>
+        <span>•</span>
+        <a href="mailto:stasdodesign@gmail.com" class="underline text-gray-600 hover:text-[#1D4ED8] transition-colors font-medium">Email</a>
+      </div>	  
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-orange-100/30 bg-white/60 px-6 py-12">
+    <div class="max-w-5xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-6">
+      <div class="text-center sm:text-left">
+        <p class="font-semibold text-sm text-gray-900" data-i18n="footer.info">Станислав Довиденко: UX · AI Product Designer · Москва</p>
+        <p class="text-xs text-gray-400 mt-1" data-i18n="footer.copy">© 2026 Dovidenko · Все права защищены</p>
+      </div>
+      
+      <!-- Social links -->
+      <div class="flex items-center gap-4 text-xs font-semibold uppercase tracking-wider text-gray-400">
+        <a href="https://t.me/designat0r" target="_blank" class="hover:text-[#1D4ED8] transition-colors">Telegram Portfolio</a>
+        <span>•</span>
+        <a href="https://instagram.com/stasdodesign" target="_blank" class="hover:text-[#1D4ED8] transition-colors">Instagram</a>
+      </div>
+    </div>
+  </footer>
+  
+  <script>
+    // Complete Bilingual Translation Data Dictionary (Ingosstrakh Content)
+    const translations = {
+      ru: {
+        nav: {
+          brand: "Станислав Довиденко",
+          intro: "О концепте",
+          impact: "Импакт",
+          solutions: "Решения",
+          prototype: "Архитектура",
+          reflection: "Рефлексия",
+          menu: "Меню"
+        },
+        hero: {
+          tag1: "Ecosystem UX",
+          tag2: "B2B / B2C",
+          tag3: "Enterprise Design",
+          title: "Ингосстрах: От барьеров к росту",
+          subtitle: "Как сложная интеграция банковских и страховых систем превратилась в интуитивный B2B/B2C продукт с прямым влиянием на P&L компании.",
+          mock_advance: "Баланс Ингорублей",
+          mock_promo: "Акция с Coffeport",
+          mock_promo_text: "Выпусти карту — получи бонус мгновенно",
+          mock_serv1: "Полисы",
+          mock_serv2: "Подарить",
+          mock_serv3: "Рассрочка",
+          bubble1_title: "Оплата КАСКО",
+          bubble1_desc: "Mokka BNPL: Сегодня 0 ₽",
+          bubble2_title: "Кабинет Агента",
+          bubble2_desc: "Новые лимиты: 30К Ингорублей",
+          caption: "Унификация Ingo Pay, Phygital-воронки и геймификация дашбордов для масштабирования экосистемы."
+        },
+        roleGrid: {
+          label1: "Роль",
+          val1_title: "Lead Product Designer",
+          val1_desc: "Управление командой, проектирование сложных интеграций (АИС, банковские шлюзы), формирование roadmap на 2024 год.",
+          label2: "Фокус",
+          val2_title: "Resilience UX & Gamification",
+          val2_desc: "Снижение когнитивной нагрузки при оплатах, геймификация для мотивации 23 000+ агентов.",
+          label3: "Контекст",
+          val3_title: "Ingosstrakh Ecosystem",
+          val3_desc: "Сквозной дизайн-опыт, объединяющий независимые банковские и страховые ИТ-инфраструктуры."
+        },
+        intro: {
+          kicker: "Концепция",
+          title: "Инженерия бизнес-процессов",
+          lead: "Моя задача как Lead-дизайнера заключалась не только в создании UI, но и в прямом влиянии на P&L. Страхование — это высокорисковый продукт с огромным трением. Мы перестроили сценарии так, чтобы управлять лояльностью, снижать когнитивный барьер при крупных платежах и бесшовно автоматизировать работу 23 000+ агентов.",
+          cards: [
+            { title: "Resilience UX", text: "Сценарии удержания (Recovery Flow) и экраны ожидания с таймерами, спасающие конверсию в моменты системных задержек банковского скоринга." },
+            { title: "B2B Автоматизация", text: "Кнопка «Обновить из АИС», мгновенно предзаполняющая профили, исключившая ошибки ручного ввода при выпуске карт." },
+            { title: "Геймификация продаж", text: "Индивидуальные прогресс-бары и сценарий «Дарение баллов клиенту», превратившие дашборд агента в активный инструмент «дожима» сделки." }
+          ]
+        },
+        impact: {
+          kicker: "Импакт редизайна",
+          title: "🎯 Бизнес-результаты и Метрики",
+          points: [
+            { label: "Рост продаж КАСКО и ОСАГО", text: "+24% аплифт пролонгаций полисов внутри экосистемы и +47% рост среднего чека ОСАГО (до 11 370 ₽) за счет внедрения рассрочки (BNPL)." },
+            { label: "Оптимизация выдачи карт", text: "Выпущено более 16 300 банковских карт через новый бесшовный канал IngoGate, объединивший 3 независимые системы." },
+            { label: "Мотивация агентской сети", text: "База активных агентов выросла на 434 человека, сгенерирована 5 151 новая регистрация за счет реферальных механик." },
+            { label: "Снижение стоимости привлечения", text: "Mobile-First Phygital-акция с QR-кодами дала конверсию 1,89% из офлайн-посетителя кафе в выпуск цифровой карты." }
+          ]
+        },
+        painPoints: {
+          title: "Эволюция барьеров в точки роста",
+          col_feature: "Бизнес-задача / Проблема",
+          col_legacy: "Старый подход (Барьер)",
+          col_mokka: "UX-Решение Ингосстрах",
+          rows: [
+            { f: "Дорогой полис КАСКО (отток на оплате)", l: "Разовое списание крупной суммы (>100k ₽)", m: "BNPL и Рассрочка с акцентом «Сегодня 0 ₽»" },
+            { f: "Ошибки сотрудников при выдаче", l: "Множественный ручной ввод в 3 системах", m: "Единый сквозной Stepper + Автозаполнение из АИС" },
+            { f: "Низкие продажи кросс-продуктов", l: "Непрозрачная и сухая статистика", m: "Виджеты достижений и дарение баллов клиентам" },
+            { f: "Дорогое привлечение аудитории", l: "Дорогие медийные каналы рекламы", m: "Быстрая Phygital QR-воронка (офлайн в онлайн)" }
+          ]
+        },
+        solutions: {
+          kicker: "Архитектура решений",
+          title: "Детальный разбор 5 стратегических кейсов",
+          items: [
+            {
+              num: "1",
+              title: "BNPL и Рассрочка: Снятие финансовых барьеров",
+              desc: "Высокая стоимость КАСКО создавала отток. Разработана архитектура мультиэквайрингового компонента, в который бесшовно интегрированы BNPL-сервис и банковская рассрочка как нативные способы оплаты наряду с традиционными картами и СБП Главный акцент сместили на доступность платежа. Для моментов задержек скоринга внедрены экраны ожидания (59 и 119 сек), а также Recovery Flow при отказах.",
+              feat_label: "Ключевая фича:",
+              feat_text: "Resilience UX не давал пользователю покинуть процесс, предлагая альтернативы мгновенно.",
+              visual_emoji: "💳"
+            },
+            {
+              num: "2",
+              title: "IngoGate: Оптимизация работы сотрудников",
+              desc: "Процесс выдачи карт в офисах был медленным из-за Агентского портала, Банка и АИС. Внедрена кнопка «Обновить из АИС» для переноса данных в 1 клик. Спроектирован единый Stepper (Анкета → Заявка → Документы → Договор).",
+              feat_label: "Ключевая фича:",
+              feat_text: "Design QA: нативные инструкции по фотофиксации паспорта предотвратили брак из-за бликов.",
+              visual_emoji: "🏢"
+            },
+            {
+              num: "3",
+              title: "Геймификация и Лояльность агентской сети",
+              desc: "Агенты (23 000+ чел) не были мотивированы продавать нестраховые продукты. Разработаны дашборды, виджеты прогресса и личные цели. Внедрен революционный сценарий «Дарение баллов клиенту», ставший рычагом закрытия сделки.",
+              feat_label: "Ключевая фича:",
+              feat_text: "Кабинет агента превратился из модуля статистики в мощный инструмент активных продаж.",
+              visual_emoji: "🎮"
+            },
+            {
+              num: "4",
+              title: "Phygital-Маркетинг: Дешевое привлечение",
+              desc: "Для быстрого привлечения аудитории в банковские продукты без медийного бюджета, спроектированы Mobile-First интерфейсы для кросс-акций. Пользователь сканирует QR-код (например, на тейбл-тенте в Coffeport) и за 2 минуты выпускает цифровую карту.",
+              feat_label: "Ключевая фича:",
+              feat_text: "Путь пользователя адаптирован для использования «на ходу» с мгновенным бонусом.",
+              visual_emoji: "📲"
+            },
+            {
+              num: "5",
+              title: "Унификация компонентов Ingo Pay",
+              desc: "Под моим руководством команда провела масштабную унификацию платежных компонентов (iOS, Android, Web). Это позволило радикально сократить Time-to-Market новых фичей для всей экосистемы и обеспечить бесшовный сквозной опыт.",
+              feat_label: "Design Systems:",
+              feat_text: "Масштабируемость + Интеграции",
+            }					
+          ]
+        },
+        prototype: {
+          kicker: "Design Systems",
+          title: "Унификация компонентов Ingo Pay",
+          description: "Под моим руководством команда провела масштабную унификацию платежных компонентов (iOS, Android, Web). Это позволило радикально сократить Time-to-Market новых фичей для всей экосистемы и обеспечить бесшовный сквозной опыт.",
+          card_title: "Масштабируемость + Интеграции",
+          card_text: "Связка Агентского Портала (Legacy АП), банковских шлюзов и АИС в единой логике."
+        },
+        reflection: {
+          title: "Роль Lead-дизайнера: от UI до формирования P&L",
+          paragraphs: [
+            "В этом проекте я работал в тесной связке с CPO, напрямую участвуя в формировании продуктовой дорожной карты на 2024 год. Мой инженерный бэкграунд (Физтех) позволил успешно курировать сложные проекты на стыке IT-интеграций, сохраняя высокий уровень UX.",
+            "Для нас, как продуктовых дизайнеров, важным вызовом было перевести неповоротливые страховые механизмы на язык заботы и геймификации, соблюдая жесткие финансовые регламенты.",
+            "Результаты доказывают: системный UX напрямую конвертируется в миллионные прибыли, лояльность 4800 агентов и рост среднего чека на 47%."
+          ]
+        },
+        contact: {
+          title: "Обсудим ваш продукт?",
+          subtitle: "Свяжитесь со мной, чтобы разобрать интерфейсные сценарии, выявить точки роста и спроектировать B2B/B2C решения enterprise-уровня",
+          button: "Обсудить проект",
+		  or: "Или напрямую:"
+        },
+        footer: {
+          info: "Станислав Довиденко: Lead Product Designer · Москва",
+          copy: "© 2026 Dovidenko · Все права защищены"
+        }
+      },
+      en: {
+        nav: {
+          brand: "Stanislav Dovidenko",
+          intro: "Concept",
+          impact: "Impact",
+          solutions: "Case Studies",
+          prototype: "Architecture",
+          reflection: "Reflection",
+          menu: "Menu"
+        },
+        hero: {
+          tag1: "Ecosystem UX",
+          tag2: "B2B / B2C",
+          tag3: "Enterprise Design",
+          title: "Ingosstrakh: From Friction to Growth",
+          subtitle: "How complex integration of banking and insurance systems turned into an intuitive B2B/B2C product directly impacting company P&L.",
+          mock_advance: "Ingo Points Balance",
+          mock_promo: "Coffeport Promo",
+          mock_promo_text: "Issue a card — get instant bonus",
+          mock_serv1: "Policies",
+          mock_serv2: "Gift",
+          mock_serv3: "BNPL",
+          bubble1_title: "CASCO Payment",
+          bubble1_desc: "Mokka BNPL: 0 ₽ Today",
+          bubble2_title: "Agent Portal",
+          bubble2_desc: "New Limits: 30K Points",
+          caption: "Unification of Ingo Pay, Phygital funnels, and gamified dashboards scaling the ecosystem."
+        },
+        roleGrid: {
+          label1: "Role",
+          val1_title: "Lead Product Designer",
+          val1_desc: "Team management, complex integration architecture (AIS, bank gateways), 2024 roadmap planning.",
+          label2: "Focus",
+          val2_title: "Resilience UX & Gamification",
+          val2_desc: "Lowering cognitive load for payments, gamification to motivate 4,800+ field agents.",
+          label3: "Context",
+          val3_title: "Ingosstrakh Ecosystem",
+          val3_desc: "A seamless end-to-end UX unifying legacy banking and insurance IT infrastructures."
+        },
+        intro: {
+          kicker: "Concept",
+          title: "Business Process Engineering",
+          lead: "My role as Lead Designer wasn't just crafting UI; it was directly impacting the P&L. Insurance is a high-risk, high-friction product. We redesigned scenarios to manage loyalty, lower the cognitive barrier for large payments, and seamlessly automate workflows for 4,800+ agents.",
+          cards: [
+            { title: "Resilience UX", text: "Recovery flows and waiting screens with timers that save conversions during inevitable banking API delays." },
+            { title: "B2B Automation", text: "A 'Fetch from AIS' feature that auto-filled profiles instantly, eliminating manual data entry errors." },
+            { title: "Sales Gamification", text: "Personalized progress bars and the 'Gift points to client' scenario turned a dry dashboard into an active closing tool." }
+          ]
+        },
+        impact: {
+          kicker: "Design Impact",
+          title: "🎯 Business Results & Metrics",
+          points: [
+            { label: "CASCO & OSAGO Sales Growth", text: "+24% uplift in ecosystem policy renewals and +47% average check increase via BNPL installment introduction." },
+            { label: "Card Issuance Optimization", text: "Over 16,300 bank cards successfully issued through the new seamless IngoGate channel." },
+            { label: "Agent Network Motivation", text: "Active agent base grew by 434 users, generating 5,151 new client registrations via referral mechanics." },
+            { label: "Lowered Customer Acquisition Cost", text: "Mobile-first Phygital QR campaigns yielded a 1.89% conversion rate from offline cafe visitor to digital card issuer." }
+          ]
+        },
+        painPoints: {
+          title: "Evolving Barriers into Growth Drivers",
+          col_feature: "Business Problem",
+          col_legacy: "Legacy Approach (Barrier)",
+          col_mokka: "Ingosstrakh UX Solution",
+          rows: [
+            { f: "Expensive CASCO policies (checkout drops)", l: "Lump sum payment of large amounts (>100k ₽)", m: "BNPL/Installments focused on '0 ₽ Today'" },
+            { f: "Agent errors issuing cards", l: "Manual typing across 3 disjointed systems", m: "Unified Stepper + AIS Database Autofill" },
+            { f: "Low cross-product sales", l: "Opaque and dry reward statistics", m: "Achievement widgets & client point gifting" },
+            { f: "High acquisition costs", l: "Expensive media advertising channels", m: "Rapid Phygital QR funnel (offline to online)" }
+          ]
+        },
+        solutions: {
+          kicker: "Solutions Architecture",
+          title: "Deep Dive into 5 Strategic Case Studies",
+          items: [
+            {
+              num: "1",
+              title: "BNPL & Installments: Removing Financial Barriers",
+              desc: "High policy costs caused funnel drop-offs. Engineered a multi-acquiring component architecture, seamlessly integrating BNPL-service and bank installments as native payment methods alongside traditional cards and SBP. Implemented resilience UX (59s/119s waiting screens and recovery flows) for banking API delays.",
+              feat_label: "Core Feature:",
+              feat_text: "Resilience UX prevented users from abandoning the process by offering immediate alternative options.",
+              visual_emoji: "💳"
+            },
+            {
+              num: "2",
+              title: "IngoGate: Employee Workflow Optimization",
+              desc: "Card issuance in field offices was slow due to fragmented systems. Introduced an 'Update from AIS' button for 1-click data transfer. Engineered a unified Stepper flow (Profile → Application → Docs → Contract).",
+              feat_label: "Core Feature:",
+              feat_text: "Design QA: Native ID photo-capture guidelines prevented rejections caused by glare.",
+              visual_emoji: "🏢"
+            },
+            {
+              num: "3",
+              title: "Agent Network Gamification & Loyalty",
+              desc: "4,800+ agents lacked motivation to sell non-insurance products. Designed customized dashboards, progress widgets, and goals. Launched a revolutionary 'Gift points to client' flow that became a powerful deal-closing lever.",
+              feat_label: "Core Feature:",
+              feat_text: "The agent portal evolved from a static statistics module into a proactive sales instrument.",
+              visual_emoji: "🎮"
+            },
+            {
+              num: "4",
+              title: "Phygital Marketing: Low-Cost Acquisition",
+              desc: "To quickly attract audiences to banking products without media budgets, designed Mobile-First cross-promo interfaces. A user scans a QR code (e.g., at a Coffeport table) and issues a digital card in under 2 minutes.",
+              feat_label: "Core Feature:",
+              feat_text: "On-the-go user journeys featuring immediate tangible bonus rewards.",
+              visual_emoji: "📲"
+            },
+           {
+              num: "5",
+              title: "Ingo Pay Component Unification",
+              desc: "Under my leadership, the team executed a massive unification of payment components across iOS, Android, and Web. This radically reduced Time-to-Market for new features and ensured a seamless end-to-end experience.",
+              feat_label: "Design Systems:",
+              feat_text: "Scalability + Integrations",
+            }			
+          ]
+        },
+        prototype: {
+          kicker: "Design Systems",
+          title: "Ingo Pay Component Unification",
+          description: "Under my leadership, the team executed a massive unification of payment components across iOS, Android, and Web. This radically reduced Time-to-Market for new features and ensured a seamless end-to-end experience.",
+          card_title: "Scalability + Integrations",
+          card_text: "Linking the Legacy Agent Portal, bank gateways, and AIS databases into a cohesive logic framework."
+        },
+        reflection: {
+          title: "Lead Designer Role: From UI to P&L Impact",
+          paragraphs: [
+            "In this project, I worked closely with the CPO, directly participating in the 2024 product roadmap strategy. My engineering background (MIPT) allowed me to successfully oversee complex IT integrations while maintaining high UX standards.",
+            "Our primary challenge was translating rigid, archaic insurance mechanisms into a language of care and gamification, all while adhering to strict financial regulations.",
+            "The results prove it: systemic UX directly converts into millions in profit, loyalty of 4,800 agents, and a 47% increase in the average check."
+          ]
+        },
+        contact: {
+          title: "Let's discuss your product",
+          subtitle: "Reach out to audit your interface scenarios, uncover growth points, and architect enterprise-grade B2B/B2C solutions",
+          button: "Discuss Project",
+		  or: "Or reach out directly:"
+        },
+        footer: {
+          info: "Stanislav Dovidenko: Lead Product Designer · Moscow",
+          copy: "© 2026 Dovidenko · All rights reserved"
+        }
+      }
+    };
+	
+// Award
+const awardTranslations = {
+    ru: {
+      kicker: "Признание рынка 2024-2025",
+      title: "Тройная победа ИНГО",
+      intro: "Инго Экосистема от Ингосстрах победила сразу в номинациях престижных премий в финтехе и лояльности. Поздравляю нашу супер профи команду и наших любимых клиентов!!! Ура!! Всем ИНГО!! 🎉",
+      award1: "Retail Banking FinTech Project of the Year 2025",
+      award2: "Лучший клиентский опыт в страховом секторе",
+      award3: "Экосистема года — ИНГО ЭКОСИСТЕМА"
+    },
+    en: {
+      kicker: "Market Recognition 2024-2025",
+      title: "Triple Victory for INGO",
+      intro: "The Ingosstrakh Ecosystem won in multiple categories of prestigious fintech and loyalty awards. Congratulations to our super professional team and our beloved clients!!! Hooray!! INGO for everyone!! 🎉",
+      award1: "Retail Banking FinTech Project of the Year 2025",
+      award2: "Best Customer Experience in the Insurance Sector",
+      award3: "Ecosystem of the Year — INGO ECOSYSTEM"
+    }
+  };
+
+  document.querySelectorAll('.award-lang-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const lang = e.target.dataset.lang;
+      
+      // Update buttons styling
+      document.querySelectorAll('.award-lang-btn').forEach(b => {
+        b.classList.remove('bg-white', 'text-blue-900', 'shadow-sm');
+        b.classList.add('text-white/70');
+      });
+      e.target.classList.add('bg-white', 'text-blue-900', 'shadow-sm');
+      e.target.classList.remove('text-white/70');
+
+      // Update text
+      document.querySelectorAll('[data-award-i18n]').forEach(el => {
+        const key = el.dataset.awardI18n;
+        el.textContent = awardTranslations[lang][key];
+      });
+    });
+  });
+  
+    // State
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlLang = urlParams.get("lang");
+    let currentLang = (urlLang === "en" || urlLang === "ru") ? urlLang : (localStorage.getItem("lang") || "ru");
+
+    function getValue(path, obj) {
+      return path.split('.').reduce((acc, part) => acc && acc[part], obj);
+    }
+
+    // Set Language
+    function setLanguage(lang) {
+      currentLang = lang;
+      localStorage.setItem("lang", lang);
+      
+	  // Update URL query parameter without reloading
+      const url = new URL(window.location);
+      url.searchParams.set("lang", lang);
+      window.history.replaceState({}, "", url);
+
+      const data = translations[lang];
+	  
+	  // Update brand link dynamically based on language
+      const brandLink = document.getElementById("brandLink");
+      if (brandLink) {
+        brandLink.href = lang === "en" ? "../en.html" : "../index.html";
+      }
+	  
+	  // Update discuss project link dynamically based on language
+      const discussLink = document.getElementById("discussLink");
+      if (discussLink) {
+        discussLink.href = lang === "en" ? "https://calendly.com/stanislavskii-yo/15min" : "https://planerka.app/stanislav-dovidenko-exsl9q/15min";
+      }
+	
+	  // Update basic element translation
+      document.querySelectorAll("[data-i18n]").forEach((node) => {
+        const path = node.dataset.i18n;
+        const value = getValue(path, data);
+        if (value && typeof value === "string") {
+          node.textContent = value;
+        }
+      });
+
+      // Render Dynamic arrays
+      renderIntroCards(data.intro.cards);
+      renderImpactPoints(data.impact.points);
+      renderComparisonRows(data.painPoints.rows);
+      renderSolutions(data.solutions.items);
+      renderReflection(data.reflection.paragraphs);
+
+      // Language buttons highlight
+      document.querySelectorAll(".lang-btn").forEach((btn) => {
+        const isActive = btn.dataset.lang === lang;
+        btn.classList.toggle("bg-[#1D4ED8]", isActive);
+        btn.classList.toggle("text-white", isActive);
+        btn.classList.toggle("shadow-sm", isActive);
+        btn.classList.toggle("text-gray-500", !isActive);
+        btn.classList.toggle("hover:text-gray-800", !isActive);
+      });
+    }
+
+    // Dynamic Renderers
+    function renderIntroCards(cards) {
+      const container = document.getElementById("introCards");
+      if (!container) return;
+      container.innerHTML = cards.map(card => `
+        <article class="bg-white p-6 border border-blue-100/60 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+          <h3 class="font-display font-bold text-[#1D4ED8] text-base mb-2">${card.title}</h3>
+          <p class="text-xs text-gray-500 leading-relaxed font-light">${card.text}</p>
+        </article>
+      `).join('');
+    }
+
+    function renderImpactPoints(points) {
+      const container = document.getElementById("impactPoints");
+      if (!container) return;
+      container.innerHTML = points.map(pt => `
+        <li class="flex items-start gap-4">
+          <span class="text-blue-400 font-semibold text-lg leading-none mt-0.5">•</span>
+          <div>
+            <p class="text-white font-semibold text-base sm:text-lg mb-1">${pt.label}</p>
+            <p class="text-gray-400 text-sm font-light leading-relaxed">${pt.text}</p>
+          </div>
+        </li>
+      `).join('');
+    }
+
+    function renderComparisonRows(rows) {
+      const container = document.getElementById("comparisonRows");
+      if (!container) return;
+      container.innerHTML = rows.map(row => `
+        <tr class="hover:bg-blue-50/30 transition-colors">
+          <td class="px-6 py-4 font-semibold text-gray-800">${row.f}</td>
+          <td class="px-6 py-4 text-red-400 font-light italic">${row.l}</td>
+          <td class="px-6 py-4 text-[#1D4ED8] font-medium">${row.m}</td>
+        </tr>
+      `).join('');
+    }
+	
+    function renderSolutions(items) {
+      const container = document.getElementById("solutionsRoot");
+      if (!container) return;
+      container.innerHTML = items.map((item, index) => {
+        const isEven = index % 2 === 0;
+        let videoSrc = "bnpl.mp4";
+        if (item.num === "2") videoSrc = "ingogate.mp4";
+        else if (item.num === "3") videoSrc = "gift.mp4";
+        else if (item.num === "4") videoSrc = "coffeeport.mp4";
+		else if (item.num === "5") videoSrc = "payment.mp4";
+        return `
+          <div class="flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-12 border-b border-orange-50/20 pb-16 last:border-b-0">
+            <!-- Content -->
+            <div class="flex-1 space-y-6">
+              <div class="flex items-center gap-4">
+                <span class="font-mono text-xs font-bold text-white bg-[#1D4ED8] w-6 h-6 rounded-full flex items-center justify-center">${item.num}</span>
+                <span class="h-px bg-blue-100/60 flex-1"></span>
+              </div>
+              <h3 class="text-2xl sm:text-3xl font-display font-semibold text-gray-900">${item.title}</h3>
+              <p class="text-gray-500 font-light leading-relaxed text-sm sm:text-base">${item.desc}</p>
+              
+              <div class="p-4 bg-blue-50/30 rounded-2xl border border-blue-100/60">
+                <p class="text-xs font-bold text-[#1D4ED8] uppercase tracking-wider mb-1">${item.feat_label}</p>
+                <p class="text-xs text-gray-600 font-light">${item.feat_text}</p>
+              </div>
+            </div>
+
+            <!-- Visual video showcase adapted to Mokka case -->
+            <div class="flex-1 w-full relative aspect-[4/3] rounded-[22px] sm:rounded-[22px] overflow-hidden bg-gradient-to-tr from-[#E8F0FF] to-[#FFFFFF] border border-blue-100/60 shadow-xl">
+              <video 
+                class="absolute top-0 left-0 w-full h-full object-cover" 
+                src="${videoSrc}" 
+                title="${item.title}"
+                autoplay muted controls loop playsinline>
+              </video>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+	
+
+    function renderReflection(paragraphs) {
+      const container = document.getElementById("reflectionParagraphs");
+      if (!container) return;
+      container.innerHTML = paragraphs.map(p => `
+        <p class="leading-relaxed mb-4 font-light text-gray-600">${p}</p>
+      `).join('');
+    }
+
+    // Toggle Mobile Menu
+    function isMenuOpen() {
+      return !document.getElementById('mobileMenu').classList.contains('hidden');
+    }
+
+    function openMenu() {
+      document.getElementById('mobileMenu').classList.remove('hidden');
+      document.getElementById('mobileMenuToggle').setAttribute('aria-expanded', 'true');
+    }
+
+    function closeMenu() {
+      document.getElementById('mobileMenu').classList.add('hidden');
+      document.getElementById('mobileMenuToggle').setAttribute('aria-expanded', 'false');
+    }
+
+    function toggleMenu(forceState) {
+      const shouldOpen = typeof forceState === 'boolean' ? forceState : !isMenuOpen();
+
+      if (shouldOpen) {
+        openMenu();
+        return;
+      }
+
+      closeMenu();
+    }
+
+    
+    document.addEventListener('click', (event) => {
+      if (!isMenuOpen()) {
+        return;
+      }
+
+      const menu = document.getElementById('mobileMenu');
+      const toggleButton = document.getElementById('mobileMenuToggle');
+
+      if (menu.contains(event.target) || toggleButton.contains(event.target)) {
+        return;
+      }
+
+      closeMenu();
+    });
+
+
+    // Language Listeners
+    document.querySelectorAll(".lang-btn").forEach((btn) => {
+      btn.addEventListener("click", () => setLanguage(btn.dataset.lang));
+    });
+
+    // Scroll Animations
+    function setupScrollObserver() {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.08 });
+
+      document.querySelectorAll(".fade-in").forEach((el) => {
+        observer.observe(el);
+      });
+    }
+
+    // Init
+    document.addEventListener("DOMContentLoaded", () => {
+      setLanguage(currentLang);
+      setupScrollObserver();
+    });
+  </script>
+</body>
+</html>
