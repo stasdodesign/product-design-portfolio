@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru" class="h-full bg-[#0B0F19] text-white antialiased">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>APEX: TwinMind — Variant B (AR)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=SF+Pro+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'SF Pro Display', -apple-system, sans-serif; -webkit-tap-highlight-color: transparent; }
+        .mono { font-family: 'JetBrains Mono', monospace; }
+        @keyframes ar-pulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(255, 59, 48, 0.4); border-color: rgba(255, 59, 48, 1); } 50% { box-shadow: 0 0 30px 10px rgba(255, 59, 48, 0.6); border-color: rgba(255, 59, 48, 0.5); } }
+        .ar-active { animation: ar-pulse 2s infinite; }
+        .hold-active { transform: scale(0.97); background-color: #FF3B30 !important; }
+    </style>
+</head>
+<body class="h-full overflow-hidden select-none bg-[#070A10]">
+
+    <!-- AR HUD HEADER -->
+    <div class="absolute top-0 left-0 right-0 p-6 z-20 flex justify-between items-start pointer-events-none">
+        <div>
+            <div class="text-[#00F0FF] text-xs font-bold mono tracking-widest">AR SCANNING...</div>
+            <div class="text-[#8A99AD] text-[10px]">ZONE: GPP-2</div>
+        </div>
+        <div class="bg-red-500/10 border border-red-500/20 px-3 py-1 rounded text-red-400 text-xs font-bold mono animate-pulse">
+            ! ANOMALY DETECTED
+        </div>
+    </div>
+
+    <!-- AR VIEWPORT -->
+    <main class="h-full w-full relative flex items-center justify-center">
+        <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: linear-gradient(#00F0FF 1px, transparent 1px), linear-gradient(90deg, #00F0FF 1px, transparent 1px); background-size: 60px 60px;"></div>
+
+        <!-- AR OBJECT (Clickable) -->
+        <div id="ar-object" class="relative w-72 h-72 rounded-2xl border-2 border-red-500 bg-[#161F33]/30 backdrop-blur-sm flex flex-col items-center justify-center cursor-pointer transition-all ar-active hover:bg-[#161F33]/50">
+            <span class="absolute -top-3 bg-red-500 text-black text-[10px] font-bold px-3 py-0.5 rounded-full">FAULTY UNIT</span>
+            <div class="text-4xl">⚙️</div>
+            <div class="mt-4 text-xl font-bold">P-102</div>
+            <div class="text-xs text-red-400 font-mono mt-1">VIB: 342Hz</div>
+            <div class="absolute bottom-4 text-[10px] text-[#8A99AD] uppercase tracking-widest animate-bounce">Tap to Inspect</div>
+        </div>
+
+        <!-- CONTEXT MODAL (Hidden by default) -->
+        <div id="modal" class="absolute inset-0 bg-black/80 backdrop-blur-md z-50 hidden flex-col justify-end pb-10 px-6 transition-opacity duration-300 opacity-0">
+            <div class="bg-[#161F33] w-full max-w-md mx-auto rounded-2xl border border-[#24324D] p-6 shadow-2xl transform translate-y-10 transition-transform duration-300" id="modal-card">
+                
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-xl font-bold">Pump P-102</h2>
+                    <button id="close" class="w-8 h-8 rounded-full bg-[#0B0F19] border border-[#24324D] text-[#8A99AD]">&times;</button>
+                </div>
+
+                <div class="space-y-4 mb-6">
+                    <div class="bg-[#0B0F19] p-4 rounded-xl border border-[#24324D]">
+                        <div class="flex justify-between text-xs text-[#8A99AD] mb-1"><span>Status</span><span class="text-red-500 font-bold">CRITICAL</span></div>
+                        <p class="text-sm">Bearing failure imminent (18h). Legacy part unavailable.</p>
+                    </div>
+                    <div class="border border-[#00F0FF]/30 bg-[#00F0FF]/5 p-4 rounded-xl">
+                        <div class="flex justify-between text-xs text-[#00F0FF] mb-1"><span class="font-bold">Suggestion</span><span>100% Fit</span></div>
+                        <p class="text-sm text-[#E2E8F0]">Switch to <span class="font-bold">Kazan-V4</span>. In stock (Sector B).</p>
+                    </div>
+                </div>
+
+                <button id="ar-scada-btn" class="w-full h-16 bg-red-500/10 border-2 border-red-500 text-red-500 font-bold rounded-xl relative overflow-hidden uppercase tracking-wider text-sm">
+                    <div id="ar-progress" class="absolute left-0 top-0 bottom-0 bg-red-600/40 w-0 transition-all duration-75"></div>
+                    <span class="relative z-10">Hold to Shutdown (3s)</span>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const obj = document.getElementById('ar-object');
+        const modal = document.getElementById('modal');
+        const card = document.getElementById('modal-card');
+        const close = document.getElementById('close');
+        
+        // Open Modal
+        obj.addEventListener('click', () => {
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                card.classList.remove('translate-y-10');
+            }, 10);
+        });
+
+        // Close Modal
+        close.addEventListener('click', () => {
+            card.classList.add('translate-y-10');
+            modal.classList.add('opacity-0');
+            setTimeout(() => modal.classList.add('hidden'), 300);
+        });
+
+        // SCADA Logic
+        const btn = document.getElementById('ar-scada-btn');
+        const bar = document.getElementById('ar-progress');
+        let interval, progress = 0;
+
+        const start = () => {
+            btn.classList.add('hold-active');
+            progress = 0;
+            interval = setInterval(() => {
+                progress += 50;
+                bar.style.width = (progress / 3000 * 100) + '%';
+                if (progress >= 3000) {
+                    clearInterval(interval);
+                    btn.className = "w-full h-16 bg-emerald-500 text-[#0B0F19] font-bold rounded-xl flex items-center justify-center uppercase tracking-wider text-sm";
+                    btn.innerText = "SAFE STATE LOCKED";
+                    obj.classList.remove('ar-active', 'border-red-500');
+                    obj.classList.add('border-emerald-500');
+                    setTimeout(() => close.click(), 1000);
+                }
+            }, 50);
+        };
+        const cancel = () => {
+            btn.classList.remove('hold-active');
+            clearInterval(interval);
+            bar.style.width = '0%';
+        };
+
+        btn.addEventListener('mousedown', start);
+        btn.addEventListener('mouseup', cancel);
+        btn.addEventListener('touchstart', (e) => { e.preventDefault(); start(); });
+        btn.addEventListener('touchend', cancel);
+    </script>
+</body>
+</html>
