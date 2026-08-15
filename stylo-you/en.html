@@ -39,9 +39,20 @@
             <a href="index.html">RU</a>
             <span aria-current="page">EN</span>
           </div>
-          <button class="mobile-menu-toggle" id="mobileMenuToggle" type="button" aria-controls="mobileMenu" aria-expanded="false">
-            Menu
-          </button>
+            <div class="flex items-center gap-5 lg:hidden">
+    <a href="index.html"
+       class="text-[15px] font-medium tracking-[-0.01em] text-gray-500 hover:text-black transition-colors duration-200">
+        RU
+    </a>
+    <button id="mobileMenuToggle"
+        class="text-base font-medium text-gray-500 z-50"
+        type="button"
+        aria-controls="mobileMenu"
+        aria-expanded="false"
+        onclick="toggleMenu()">
+        Menu
+    </button>
+</div>
         </div>
       </div>
       <div class="mobile-menu mobile-menu-scroll" id="mobileMenu">

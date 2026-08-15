@@ -92,9 +92,20 @@
                     <a href="en.html" class="px-3 py-1 text-gray-500 hover:text-black transition-colors">EN</a>
                 </div>
 
-            <button id="mobileMenuToggle" class="text-base font-medium text-gray-500 lg:hidden z-50" type="button" aria-controls="mobileMenu" aria-expanded="false" onclick="toggleMenu()">
-                Меню
-            </button>
+<div class="flex items-center gap-5 lg:hidden">
+    <a href="en.html"
+       class="text-[15px] font-medium tracking-[-0.01em] text-gray-500 hover:text-black transition-colors duration-200">
+        EN
+    </a>
+    <button id="mobileMenuToggle"
+        class="text-base font-medium text-gray-500 z-50"
+        type="button"
+        aria-controls="mobileMenu"
+        aria-expanded="false"
+        onclick="toggleMenu()">
+        Меню
+    </button>
+</div>
             </div>
         </div>
 
@@ -137,23 +148,31 @@
         <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-[#7AC0FF]/10 rounded-full blur-[120px] pointer-events-none z-0"></div>
         <div class="absolute bottom-0 left-1/4 w-[600px] h-[600px] bg-[#42E3B4]/10 rounded-full blur-[150px] pointer-events-none z-0"></div>
         
-        <div class="brand-shell relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pt-20">
+        <div class="brand-shell relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-6 pt-20">
             <div class="brand-shell__content w-full flex flex-col lg:grid lg:grid-cols-2 items-center gap-8">
-                <div class="max-w-2xl relative z-10">
+                <div class="max-w-2xl relative z-10 pr-10">
                     <div class="flex items-center gap-4 mb-2">
-                        <p class="brand-eyebrow">B2B / B2C / Fintech / SaaS / AI / Enterprise</p>
+                        <p class="brand-eyebrow">B2B · Финтех · SaaS · AI-агенты · Enterprise-системы</p>
                     </div>
                     <h1 class="brand-headline flex flex-col mb-4">
                         <span class="block brand-headline__base  ">Проектирую логику систем.</span>
-                        <span class="simple-word simple-word--hero">Понятный путь для пользователя.</span>
+                        <span class="simple-word simple-word--hero">Выстраиваю безошибочные сценарии.</span>
                     </h1>
                     <p class="brand-copy text-lg md:text-xl text-slate-400 leading-relaxed max-w-2xl mb-4">
-                        Мой фокус — сложные B2B-интерфейсы и внутренние порталы, где функциональность решает всё.
-                    </p>
-                    <div class="brand-actions flex flex-row items-center gap-4 mt-8">
-                        <a class="brand-button px-6 sm:px-8 py-4 rounded-full bg-white text-slate-900 transition-all hover:scale-105 active:scale-95 duration-200 inline-flex items-center justify-center text-center whitespace-nowrap font-semibold" href="#work">К проектам</a>
-                        <a target="_blank" rel="noopener" class="brand-button brand-button--secondary px-6 sm:px-8 py-4 rounded-full border border-slate-700 text-white transition-all hover:scale-105 active:scale-95 duration-200 inline-flex items-center justify-center text-center whitespace-nowrap font-semibold" href="https://planerka.app/stanislav-dovidenko-exsl9q/15min">Обсудить проект</a>
-                    </div>
+                        Я превращаю запутанную бизнес-логику, легаси-архитектуру и разрозненные массивы данных в простые, отказоустойчивые цифровые продукты.</p>
+<div class="brand-actions flex flex-row items-center gap-4 mt-8">
+    <a target="_blank"
+       rel="noopener"
+       class="brand-button px-6 sm:px-8 py-4 rounded-full bg-white text-slate-900 transition-all hover:scale-105 active:scale-95 duration-200 inline-flex items-center justify-center text-center whitespace-nowrap font-semibold"
+       href="https://planerka.app/stanislav-dovidenko-exsl9q/15min">
+        Разобрать вашу систему
+    </a>
+
+    <a class="brand-button brand-button--secondary px-6 sm:px-8 py-4 rounded-full border border-slate-700 text-white transition-all hover:scale-105 active:scale-95 duration-200 inline-flex items-center justify-center text-center whitespace-nowrap font-semibold"
+       href="#work">
+        Смотреть проекты
+    </a>
+</div>
                 </div>
                 <div class="order-first lg:order-none flex justify-center lg:justify-end">
                     <img src="images/Dash.png" class="w-full w-full lg:scale-110 object-contain drop-shadow-2xl" alt="Dashboard Preview">
@@ -234,8 +253,8 @@
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
             <!-- APEX TwinMind -->
-            <a href="./twinmind/" class="group project-card block bg-white rounded-[32px] p-3 border border-orange-100/40 shadow-sm hover:shadow-xl transition-all duration-300">
-                <div class="aspect-[16/9] w-full rounded-[24px] overflow-hidden bg-[#FFF5F0] relative mb-6">
+            <a href="./twinmind/" class="group project-card block bg-white rounded-[32px] p-3 border border-slate-100/40 shadow-sm hover:shadow-xl transition-all duration-300">
+                <div class="aspect-[16/9] w-full rounded-[24px] overflow-hidden bg-[#F3F4F6] relative mb-6">
                     <img src="images/cover_twinmind.jpg" loading="lazy" alt="Stylo.You Case Study" class="w-full h-full object-cover transition-all duration-1000 group-hover:scale-105">
                 </div>
                 <div class="p-8">
@@ -250,8 +269,8 @@
             </a>
 
             <!-- APEX Dj Console -->
-            <a href="https://www.producthunt.com/products/apex-dj-console" target="_blank" class="group project-card block bg-white rounded-[32px] p-3 border border-orange-100/40 shadow-sm hover:shadow-xl transition-all duration-300">
-    <div class="aspect-[16/9] w-full rounded-[24px] overflow-hidden bg-[#FFF5F0] relative mb-6">
+            <a href="https://www.producthunt.com/products/apex-dj-console" target="_blank" class="group project-card block bg-white rounded-[32px] p-3 border border-slate-100/40 shadow-sm hover:shadow-xl transition-all duration-300">
+    <div class="aspect-[16/9] w-full rounded-[24px] overflow-hidden bg-[#F3F4F6] relative mb-6">
     <img src="images/cover_apex_dj.jpg" loading="lazy" alt="APEX DJ Console Case Study" class="w-full h-full object-cover transition-all duration-1000 group-hover:scale-105">
   </div>
   <div class="p-8">
@@ -265,8 +284,8 @@
             </a>
 
             <!-- Stylo.You -->
-            <a href="./stylo-you/index.html" class="group project-card block bg-white rounded-[32px] p-3 border border-orange-100/40 shadow-sm hover:shadow-xl transition-all duration-300">
-                <div class="aspect-[16/9] w-full rounded-[24px] overflow-hidden bg-[#FFF5F0] relative mb-6">
+            <a href="./stylo-you/index.html" class="group project-card block bg-white rounded-[32px] p-3 border border-slate-100/40 shadow-sm hover:shadow-xl transition-all duration-300">
+                <div class="aspect-[16/9] w-full rounded-[24px] overflow-hidden bg-[#F3F4F6] relative mb-6">
                     <img src="images/cover_stylo-you.jpg" loading="lazy" alt="Stylo.You Case Study" class="w-full h-full object-cover transition-all duration-1000 group-hover:scale-105">
                 </div>
                 <div class="p-8">
@@ -280,8 +299,8 @@
             </a>
             
             <!-- Luma One -->
-            <a href="./luma-one/index.html"  class="group project-card block bg-white rounded-[32px] p-3 border border-orange-100/40 shadow-sm hover:shadow-xl transition-all duration-300">
-                <div class="aspect-[16/9] w-full rounded-[24px] overflow-hidden bg-[#FFF5F0] relative mb-6">
+            <a href="./luma-one/index.html"  class="group project-card block bg-white rounded-[32px] p-3 border border-slate-100/40 shadow-sm hover:shadow-xl transition-all duration-300">
+                <div class="aspect-[16/9] w-full rounded-[24px] overflow-hidden bg-[#F3F4F6] relative mb-6">
                     <img src="images/cover_luma.jpg" loading="lazy" alt="Luma One Case Study" class="w-full h-full object-cover transition-all duration-1000 group-hover:scale-105">
                 </div>
                 <div class="p-8">
@@ -295,7 +314,7 @@
             </a>
 
             <a href="mokka/index.html" class="group project-card block bg-white rounded-[32px] p-3 border border-orange-100/40 shadow-sm hover:shadow-xl transition-all duration-300">
-    <div class="aspect-[16/9] w-full rounded-[24px] overflow-hidden bg-[#FFF5F0] relative mb-6">
+    <div class="aspect-[16/9] w-full rounded-[24px] overflow-hidden bg-[#F3F4F6] relative mb-6">
         <!-- В качестве обложки используется мокка-превью из папки кейса -->
         <img src="images/cover_mokka.jpg" loading="lazy" alt="Mokka Aesthetic Fintech Case Study" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
     </div>
@@ -339,7 +358,7 @@
             </a>
 
             <a href="./racktables/index.html" class="group project-card block bg-white rounded-[32px] p-3 border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300">
-                <div class="aspect-[16/9] w-full rounded-[24px] overflow-hidden bg-[#0f172a] relative mb-6">
+                <div class="aspect-[16/9] w-full rounded-[24px] overflow-hidden bg-[#F3F4F6] relative mb-6">
                     <img src="images/cover_racktables.jpg" loading="lazy" alt="RackTables Redesign" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                 </div>
                 <div class="px-5 pb-5">
@@ -367,7 +386,7 @@
             </a>
 
             <a href="https://jedi.stanislavdovidenko.com/software_store.html" target="_blank" rel="noopener" class="group project-card block bg-white rounded-[32px] p-3 border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300">
-                <div class="aspect-[16/9] w-full rounded-[24px] overflow-hidden bg-[#fff] relative mb-6">
+                <div class="aspect-[16/9] w-full rounded-[24px] overflow-hidden bg-[#F3F4F6] relative mb-6">
                     <img src="images/cover_software-store.jpg" loading="lazy" alt="Software Store" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                 </div>
                 <div class="px-5 pb-5">
@@ -634,35 +653,37 @@
 
       <!-- HEADER -->
       <h2 class="text-4xl md:text-5xl font-semibold tracking-tight text-black">
-        Дизайнер продуктов и AI-систем
+        Продуктовый дизайнер и архитектор ИИ-систем
       </h2>
 
       <p class="text-[#6e6e73] text-lg md:text-xl mt-3">
-        Создаю интерфейсы для сложных enterprise и AI-продуктов
+        Проектирую логику и отказоустойчивые интерфейсы для сложных корпоративных и ИИ-продуктов.
       </p>
 
       <!-- LEAD TEXT -->
       <div class="mt-10 space-y-6 text-[#6e6e73] text-lg md:text-xl leading-relaxed">
 
         <p>
-          Я занимаюсь дизайном более <span class="text-black font-medium">20 лет</span>,
-          работая с продуктами уровня enterprise и системами с высокой нагрузкой.
+          Более <span class="text-black font-medium">20 лет</span> я создаю цифровые 
+          продукты для высоконагруженных enterprise-систем и масштабных ИТ-инфраструктур.</p>
         </p>
 
         <p>
-          Работал с командами и продуктами компаний:
-          <span class="text-black font-medium">Sber, Gazprom, KPMG, Ingosstrakh</span>,
-          проектируя интерфейсы для систем с сотнями тысяч пользователей.
+          Я проектировал решения для таких лидеров рынка, как
+          <span class="text-black font-medium">Сбер, Газпром, KPMG, Ингосстрах</span>.
+          Созданными мной интерфейсами пользуются сотни тысяч человек.
         </p>
 
         <p>
-          Сегодня фокус — AI-инструменты и продуктовые системы нового поколения:
-          от UX для AI-агентов до внедрения LLM-инструментов в продуктовые процессы.
+          Сейчас мой главный фокус — автономные ИИ-инструменты и системы нового поколения: 
+          от проектирования взаимодействия с ИИ-агентами (Agentic UX) до интеграции сложных 
+          LLM-сценариев в реальные бизнес-процессы.
         </p>
 
         <p>
-          Я продолжаю работать “в полях”, потому что дизайн для меня — это
-          и визуал, и способ влиять на бизнес-метрики и поведение систем.
+          Я глубоко погружаюсь в производство и логику разработки, 
+          потому что дизайн для меня — это не просто эстетика, 
+          а управление поведением системы и достижение измеримых бизнес-результатов.
         </p>
 
       </div>
@@ -672,22 +693,22 @@
 
         <div>
           <div class="text-2xl font-semibold text-black">20+</div>
-          <div class="text-sm text-[#6e6e73]">лет опыта</div>
+          <div class="text-sm text-[#6e6e73]">Лет опыта</div>
         </div>
 
         <div>
           <div class="text-2xl font-semibold text-black">300K+</div>
-          <div class="text-sm text-[#6e6e73]">пользователей</div>
+          <div class="text-sm text-[#6e6e73]">Активных пользователей</div>
         </div>
 
         <div>
-          <div class="text-2xl font-semibold text-black">30+</div>
-          <div class="text-sm text-[#6e6e73]">дизайнеров в командах</div>
+          <div class="text-2xl font-semibold text-black">10+</div>
+          <div class="text-sm text-[#6e6e73]">Запущенных продуктов</div>
         </div>
 
         <div>
           <div class="text-2xl font-semibold text-black">-67%</div>
-          <div class="text-sm text-[#6e6e73]">time-to-market</div>
+          <div class="text-sm text-[#6e6e73]">Сокращение Time-to-Market</div>
         </div>
 
       </div>
@@ -1169,7 +1190,7 @@
         <h2 class="text-3xl font-medium tracking-tight mb-4">Обсудим ваш продукт?</h2>
         <p class="text-[#6e6e73] text-lg mb-10 max-w-lg mx-auto leading-relaxed">Забронируйте 15-минутный звонок, чтобы разобрать узкие места вашей системы. Только конкретика и профессиональный разбор.</p>
         <div class="flex flex-col items-center gap-6">
-            <a href="https://planerka.app/stanislav-dovidenko-exsl9q/15min" target="_blank" rel="noopener" class="px-10 py-4 bg-[#1d1d1f] text-white text-base font-medium rounded-full hover:bg-black transition-all shadow-lg hover:scale-105">Обсудить проект</a>
+            <a href="https://planerka.app/stanislav-dovidenko-exsl9q/15min" target="_blank" rel="noopener" class="px-10 py-4 bg-[#1d1d1f] text-white text-base font-medium rounded-full hover:bg-black transition-all shadow-lg hover:scale-105">Разобрать вашу систему</a>
             <div class="text-sm text-[#6e6e73]">
                 Или свяжитесь напрямую:
                 <a href="https://t.me/StasDoDesign" class="underline underline-offset-4 hover:text-black transition-colors ml-2 font-medium">Telegram</a>

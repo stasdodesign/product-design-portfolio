@@ -32,14 +32,6 @@
 
 <body class="bg-gradient-to-b from-[#ffffff] to-[#f8f9fa] text-[#1d1d1f] antialiased">
 
-<!-- Interactive Background -->
-<div class="laser-background" aria-hidden="true">
-    <div class="laser-background__beam laser-background__beam--primary"></div>
-    <div class="laser-background__beam laser-background__beam--secondary"></div>
-    <div class="laser-background__flare laser-background__flare--one"></div>
-    <div class="laser-background__flare laser-background__flare--two"></div>
-</div>
-
 <!-- Global Header -->
 <header id="header" class="site-header hero-mode fixed top-0 left-0 w-full bg-white/85 backdrop-blur-xl border-b border-gray-100 z-50 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 grid grid-cols-2 lg:grid-cols-[auto_1fr_auto] items-center">
@@ -92,9 +84,20 @@
                 <span class="px-3 py-1 bg-white rounded-full shadow-sm text-black">EN</span>
             </div>
             
-            <button id="mobileMenuToggle" class="text-base font-medium text-gray-500 lg:hidden z-50" type="button" aria-controls="mobileMenu" aria-expanded="false" onclick="toggleMenu()">
-                Menu
-            </button>
+            <div class="flex items-center gap-5 lg:hidden">
+    <a href="index.html"
+       class="text-[15px] font-medium tracking-[-0.01em] text-gray-500 hover:text-black transition-colors duration-200">
+        RU
+    </a>
+    <button id="mobileMenuToggle"
+        class="text-base font-medium text-gray-500 z-50"
+        type="button"
+        aria-controls="mobileMenu"
+        aria-expanded="false"
+        onclick="toggleMenu()">
+        Меню
+    </button>
+</div>
         </div>
     </div>
 
@@ -137,31 +140,35 @@
     <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-[#7AC0FF]/10 rounded-full blur-[120px] pointer-events-none z-0"></div>
     <div class="absolute bottom-0 left-1/4 w-[600px] h-[600px] bg-[#42E3B4]/10 rounded-full blur-[150px] pointer-events-none z-0"></div>
     
-    <div class="brand-shell relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 pt-20">
+    <div class="brand-shell relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-6 pt-20">
         <div class="brand-shell__content w-full flex flex-col lg:grid lg:grid-cols-2 items-center gap-8">
-            <div class="max-w-2xl relative z-10">
+            <div class="max-w-2xl relative z-10 pr-10">
                 <div class="flex items-center gap-4 mb-4">
-                    <p class="brand-eyebrow">B2B / B2C / Fintech / SaaS / AI / Enterprise</p>
+                    <p class="brand-eyebrow">B2B · FinTech · SaaS · Agentic UX · Enterprise Systems</p>
                 </div>
                 <h1 class="brand-headline flex flex-col mb-4">
-                    <span class="block brand-headline__base ">Designing system logic.</span>
-                    <span class="simple-word simple-word--hero">Clear paths for users.</span>
+                    <span class="block brand-headline__base ">Architecting System Logic.</span>
+                    <span class="simple-word simple-word--hero">Engineering Deterministic User Journeys.</span>
                 </h1>
                 <p class="brand-copy text-lg md:text-xl text-slate-400 leading-relaxed max-w-2xl mb-4">
-                    My focus is on complex B2B interfaces and internal portals where functionality drives everything.
+                    I transform chaotic business requirements, legacy data structures, and unpredictable 
+                    AI behaviors into clean, resilient, and fault-tolerant digital products. 
+                    My focus is on high-load enterprise platforms where systemic stability directly drives operational efficiency.
                 </p>
+ 
     <div class="brand-actions flex flex-row items-center gap-4 mt-8">
-    <a href="#work" 
-       class="brand-button px-6 sm:px-8 py-4 rounded-full bg-white text-slate-900 transition-all hover:scale-105 active:scale-95 duration-200 inline-flex items-center justify-center text-center whitespace-nowrap font-semibold">
-       View Projects
+    <a target="_blank"
+       rel="noopener"
+       class="brand-button px-6 sm:px-8 py-4 rounded-full bg-white text-slate-900 transition-all hover:scale-105 active:scale-95 duration-200 inline-flex items-center justify-center text-center whitespace-nowrap font-semibold"
+       href="https://calendly.com/stanislavskii-yo/15min">
+        Book Strategic Audit
     </a>
-    <a href="https://calendly.com/stanislavskii-yo/15min" 
-       target="_blank" 
-       rel="noopener" 
-       class="brand-button brand-button--secondary px-6 sm:px-8 py-4 rounded-full border border-slate-700 text-white transition-all hover:scale-105 active:scale-95 duration-200 inline-flex items-center justify-center text-center whitespace-nowrap font-semibold">
-       Hire Me
-    </a>                   
-    </div>
+
+    <a class="brand-button brand-button--secondary px-6 sm:px-8 py-4 rounded-full border border-slate-700 text-white transition-all hover:scale-105 active:scale-95 duration-200 inline-flex items-center justify-center text-center whitespace-nowrap font-semibold"
+       href="#work">
+        Explore Case Studies
+    </a>
+</div>
             </div>
             <div class="order-first lg:order-none flex justify-center lg:justify-end">
                 <img src="images/Dash.png" alt="System Interface Preview" class="w-full w-full lg:scale-110 object-contain drop-shadow-2xl">
@@ -193,7 +200,7 @@
 
         <!-- Ingosstrakh -->
         <a href="./ingosstrakh/en.html" class="project-card block bg-white rounded-3xl overflow-hidden border border-gray-100 fade-in cursor-pointer">
-            <div class="h-72 md:h-80 bg-[#fdf8f5] relative overflow-hidden border border-orange-100/50 group">
+            <div class="h-72 md:h-80 bg-[#f4f7f9] relative overflow-hidden border border-orange-100/50 group">
                 <img src="images/cover_ingos.jpg" alt="Ingosstrakh Case Study" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
             </div>
             <div class="p-8">
@@ -210,7 +217,7 @@
         </a>
 		
 			<a href="./ingo-ecosystem/index.html" class="project-card block bg-white rounded-3xl overflow-hidden border border-gray-100 cursor-pointer">
-                <div class="h-72 md:h-80 bg-[#fdf8f5] relative overflow-hidden border border-orange-100/50 group">
+                <div class="h-72 md:h-80 bg-[#f4f7f9] relative overflow-hidden border border-orange-100/50 group">
                     <img src="images/cover_ingosstrakh.jpg" loading="lazy" alt="Ингосстрах Ecosystem" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                 </div>
                 <div class="p-8">
@@ -245,8 +252,8 @@
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
         <!-- APEX Dj Console -->
-        <a href="https://www.producthunt.com/products/apex-dj-console" target="_blank" class="group project-card block bg-white rounded-[32px] p-3 border border-orange-100/40 shadow-sm hover:shadow-xl transition-all duration-300">
-    <div class="aspect-[16/9] w-full rounded-[24px] overflow-hidden bg-[#FFF5F0] relative mb-6">
+        <a href="https://www.producthunt.com/products/apex-dj-console" target="_blank" class="group project-card block bg-white rounded-[32px] p-3 border border-slate-100/40 shadow-sm hover:shadow-xl transition-all duration-300">
+    <div class="aspect-[16/9] w-full rounded-[24px] overflow-hidden bg-[#F3F4F6] relative mb-6">
     <img src="images/cover_apex_dj.jpg" loading="lazy" alt="APEX DJ Console Case Study" class="w-full h-full object-cover transition-all duration-1000 group-hover:scale-105">
   </div>
   <div class="p-8">
@@ -260,8 +267,8 @@
         </a>
 
         <!-- Stylo.You -->
-        <a href="./stylo-you/en.html" class="group project-card block bg-white rounded-[32px] p-3 border border-orange-100/40 shadow-sm hover:shadow-xl transition-all duration-300">
-    <div class="aspect-[16/9] w-full rounded-[24px] overflow-hidden bg-[#FFF5F0] relative mb-6">
+        <a href="./stylo-you/en.html" class="group project-card block bg-white rounded-[32px] p-3 border border-slate-100/40 shadow-sm hover:shadow-xl transition-all duration-300">
+    <div class="aspect-[16/9] w-full rounded-[24px] overflow-hidden bg-[#F3F4F6] relative mb-6">
                 <img src="images/cover_stylo-you.jpg" alt="Stylo.You Case Study" loading="lazy" class="w-full h-full object-cover transition-all duration-1000 group-hover:scale-105">
             </div>
             <div class="p-8">
@@ -277,8 +284,8 @@
         </a>
 
         <!-- Luma One -->
-        <a href="./luma-one/en.html" class="group project-card block bg-white rounded-[32px] p-3 border border-orange-100/40 shadow-sm hover:shadow-xl transition-all duration-300">
-    <div class="aspect-[16/9] w-full rounded-[24px] overflow-hidden bg-[#FFF5F0] relative mb-6">
+        <a href="./luma-one/en.html" class="group project-card block bg-white rounded-[32px] p-3 border border-slate-100/40 shadow-sm hover:shadow-xl transition-all duration-300">
+    <div class="aspect-[16/9] w-full rounded-[24px] overflow-hidden bg-[#F3F4F6] relative mb-6">
                 <img src="images/cover_luma.jpg" alt="Luma One Case Study" loading="lazy" class="w-full h-full object-cover transition-all duration-700 group-hover:scale-105">
             </div>
             <div class="p-8">
@@ -326,7 +333,7 @@
 
         <!-- Cart Optimization -->
         <a href="/apps/cart/index.html?lang=en" class="group project-card block bg-white rounded-[32px] p-3 border border-slate-100 shadow-sm hover:shadow-xl hover:border-slate-200 transition-all duration-300">
-            <div class="aspect-[16/9] w-full rounded-[24px] overflow-hidden bg-[#fff] relative mb-6">
+            <div class="aspect-[16/9] w-full rounded-[24px] overflow-hidden bg-[#F3F4F6] relative mb-6">
                 <img src="images/cover_cart.jpg" alt="Cart Optimization Prototype" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
             </div>
             <div class="px-5 pb-5">
@@ -341,7 +348,7 @@
 
         <!-- RackTables -->
         <a href="./racktables/en.html" class="group project-card block bg-white rounded-[32px] p-3 border border-slate-100 shadow-sm hover:shadow-xl hover:border-slate-200 transition-all duration-300">
-            <div class="aspect-[16/9] w-full rounded-[24px] overflow-hidden bg-[#0f172a] relative mb-6">
+            <div class="aspect-[16/9] w-full rounded-[24px] overflow-hidden bg-[#F3F4F6] relative mb-6">
                 <img src="images/cover_racktables.jpg" alt="RackTables Redesign Prototype" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
             </div>
             <div class="px-5 pb-5">
@@ -356,7 +363,7 @@
 
         <!-- Logistics Dashboard -->
         <a href="https://jedi.stanislavdovidenko.com/logistics_dashboard_v1.html" target="_blank" rel="noopener" class="group project-card block bg-white rounded-[32px] p-3 border border-slate-100 shadow-sm hover:shadow-xl hover:border-slate-200 transition-all duration-300">
-            <div class="aspect-[16/9] w-full rounded-[24px] overflow-hidden bg-[#f3f4f6] relative mb-6">
+            <div class="aspect-[16/9] w-full rounded-[24px] overflow-hidden bg-[#F3F4F6] relative mb-6">
                 <img src="images/cover_logistics.jpg" alt="Logistics Dashboard Prototype" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
             </div>
             <div class="px-5 pb-5">
@@ -371,7 +378,7 @@
 
         <!-- Software Store -->
         <a href="https://jedi.stanislavdovidenko.com/software_store.html" target="_blank" rel="noopener" class="group project-card block bg-white rounded-[32px] p-3 border border-slate-100 shadow-sm hover:shadow-xl hover:border-slate-200 transition-all duration-300">
-            <div class="aspect-[16/9] w-full rounded-[24px] overflow-hidden bg-[#fff] relative mb-6">
+            <div class="aspect-[16/9] w-full rounded-[24px] overflow-hidden bg-[#F3F4F6] relative mb-6">
                 <img src="images/cover_software-store.jpg" alt="Software Store Prototype" loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
             </div>
             <div class="px-5 pb-5">
@@ -660,35 +667,37 @@
 
       <!-- HEADER -->
       <h2 class="text-4xl md:text-5xl font-semibold tracking-tight text-black">
-        Product Designer & AI Systems Designer
+        Product Designer & AI Systems Architect
       </h2>
 
       <p class="text-[#6e6e73] text-lg md:text-xl mt-3">
-        Designing interfaces for complex enterprise and AI-driven products
+        Designing infrastructure and deterministic interfaces for complex enterprise and AI-driven products.
       </p>
 
       <!-- LEAD TEXT -->
       <div class="mt-10 space-y-6 text-[#6e6e73] text-lg md:text-xl leading-relaxed">
 
         <p>
-          I’ve been working in design for over <span class="text-black font-medium">20 years</span>,
-          building products in enterprise environments and high-scale systems.
+          I’ve been working in design for over <span class="text-black font-medium">20 years</span>, 
+          building resilient product systems in high-load enterprise environments and large-scale operations.
         </p>
 
         <p>
-          I’ve collaborated with teams and products from companies such as
+          I’ve collaborated with teams and core products for industry leaders such as
           <span class="text-black font-medium">Sber, Gazprom, KPMG, and Ingosstrakh</span>,
-          designing interfaces used by hundreds of thousands of users.
+          architecting workflows utilized by hundreds of thousands of active users.
         </p>
 
         <p>
-          My current focus is on AI tools and next-generation product systems —
-          from UX for AI agents to integrating LLM-powered workflows into real products.
+          My current focus is on autonomous AI tooling and next-generation product systems — 
+          bridging the gap between heavy technical architecture and clean agentic UX, 
+          moving from traditional static screens to multi-agent LLM workflows.
         </p>
 
         <p>
-          I stay close to production work because design, for me, is about visuals 
-          and influencing product behavior and business outcomes.
+          I stay closely tied to production execution because design, to me, 
+          goes far beyond aesthetics: it is about orchestrating product behavior 
+          and driving measurable business outcomes.
         </p>
 
       </div>
@@ -698,22 +707,22 @@
 
         <div>
           <div class="text-2xl font-semibold text-black">20+</div>
-          <div class="text-sm text-[#6e6e73]">years of experience</div>
+          <div class="text-sm text-[#6e6e73]">Years of Experience</div>
         </div>
 
         <div>
           <div class="text-2xl font-semibold text-black">300K+</div>
-          <div class="text-sm text-[#6e6e73]">users impacted</div>
+          <div class="text-sm text-[#6e6e73]">Users Impacted</div>
         </div>
 
         <div>
-          <div class="text-2xl font-semibold text-black">30+</div>
-          <div class="text-sm text-[#6e6e73]">designers in teams</div>
+          <div class="text-2xl font-semibold text-black">10+</div>
+          <div class="text-sm text-[#6e6e73]">Products Designed</div>
         </div>
 
         <div>
           <div class="text-2xl font-semibold text-black">-67%</div>
-          <div class="text-sm text-[#6e6e73]">time-to-market</div>
+          <div class="text-sm text-[#6e6e73]">Time-to-Market Acceleration</div>
         </div>
 
       </div>
@@ -1168,7 +1177,7 @@
     <h2 class="text-3xl font-medium tracking-tight mb-4">Ready to discuss your product?</h2>
     <p class="text-[#6e6e73] text-lg mb-10 max-w-lg mx-auto leading-relaxed">Book a 15-minute discovery call to identify your system's bottlenecks and define a clear roadmap. No fluff, just professional insights.</p>
     <div class="flex flex-col items-center gap-6">
-        <a href="https://calendly.com/stanislavskii-yo/15min" target="_blank" rel="noopener" class="px-10 py-4 bg-[#1d1d1f] text-white text-base font-medium rounded-full hover:bg-black hover:scale-105 transition-all shadow-lg">Schedule a call</a>
+        <a href="https://calendly.com/stanislavskii-yo/15min" target="_blank" rel="noopener" class="px-10 py-4 bg-[#1d1d1f] text-white text-base font-medium rounded-full hover:bg-black hover:scale-105 transition-all shadow-lg">Book Strategic Audit</a>
         <div class="text-sm text-[#6e6e73]">
             Or reach out directly:
             <a href="https://t.me/StasDoDesign" class="underline underline-offset-4 hover:text-black transition-colors ml-2 font-medium">Telegram</a>
