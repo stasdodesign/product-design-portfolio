@@ -24,7 +24,7 @@
 <body class="bg-gradient-to-b from-[#fcfcfd] via-[#fafafa] to-[#f5f5f7] text-[#1d1d1f] antialiased">
   <header class="fixed top-0 left-0 z-50 w-full border-b border-gray-100 bg-white/70 backdrop-blur-xl transition-all duration-300">
     <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-      <a href="../en.html" class="text-sm font-medium tracking-tight transition-opacity hover:opacity-80">
+      <a href="../en.html" class="text-m font-medium tracking-tight transition-opacity hover:opacity-80">
         Stanislav Dovidenko
       </a>
 
@@ -51,16 +51,21 @@
         <a href="index.html" class="px-3 py-1 text-gray-500 hover:text-black transition-colors">RU</a>
         <span class="px-3 py-1 bg-white rounded-full shadow-sm text-black">EN</span>
       </div>
-        <button
-          id="mobileMenuToggle"
-          class="text-sm font-medium text-gray-500 md:hidden"
-          type="button"
-          aria-controls="mobileMenu"
-          aria-expanded="false"
-          onclick="toggleMenu()"
-        >
-          Menu
-        </button>
+
+            <div class="flex items-center gap-5 md:hidden">
+    <a href="index.html"
+       class="text-[15px] font-medium tracking-[-0.01em] text-gray-500 hover:text-black transition-colors duration-200">
+        RU
+    </a>
+    <button id="mobileMenuToggle"
+        class="text-base font-medium text-gray-500 z-50"
+        type="button"
+        aria-controls="mobileMenu"
+        aria-expanded="false"
+        onclick="toggleMenu()">
+        Menu
+    </button>
+</div>
       </div>
     </div>
                                          

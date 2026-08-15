@@ -25,7 +25,7 @@
 <body class="antialiased">
 
         <header class="glass fixed top-0 left-0 w-full bg-white/85 backdrop-blur-xl z-50 border-b border-gray-100 transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center lg:grid lg:grid-cols-[auto_1fr_auto]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 grid grid-cols-2 lg:grid-cols-[auto_1fr_auto] items-center">
 
       <a id="brand-link" href="../index.html#branding" class="text-base font-extrabold tracking-tight text-black sm:text-base" aria-label="Coca-Cola case study" data-i18n="nav.brand" data-i18n-href="nav.brandLink">
         Станислав Довиденко
@@ -39,15 +39,40 @@
         <a class="transition hover:text-black" href="#final" data-i18n="nav.final">Вопрос</a>
       </nav>
 
-      <div class="site-actions">
-        <div class="desktop-lang rounded-full bg-neutral-100 p-1 text-xs font-extrabold">
-          <button class="lang-btn rounded-full px-3 py-1.5 transition" type="button" data-lang="ru" aria-pressed="true">RU</button>
-          <button class="lang-btn rounded-full px-3 py-1.5 transition" type="button" data-lang="en" aria-pressed="false">EN</button>
-        </div>
-        <button id="mobileMenuToggle" class="mobile-toggle" type="button" aria-controls="mobileMenu" aria-expanded="false" aria-label="Меню" data-i18n="nav.menu">
-          Меню
+<div class="site-actions">
+    <div class="desktop-lang rounded-full bg-neutral-100 p-1 text-xs font-extrabold">
+        <button class="lang-btn rounded-full px-3 py-1.5 transition"
+                type="button"
+                data-lang="ru"
+                aria-pressed="true">
+            RU
         </button>
-      </div>
+
+        <button class="lang-btn rounded-full px-3 py-1.5 transition"
+                type="button"
+                data-lang="en"
+                aria-pressed="false">
+            EN
+        </button>
+    </div>
+
+    <div class="mobile-actions">
+         
+        <span id="mobileCurrentLang" class="mobile-current-lang">RU</span>
+
+        <span class="mobile-divider"></span>
+
+        <button id="mobileMenuToggle"
+                class="mobile-toggle"
+                type="button"
+                aria-controls="mobileMenu"
+                aria-expanded="false"
+                aria-label="Меню"
+                data-i18n="nav.menu">
+            Меню
+        </button>
+    </div>
+</div>
     </div>
  <div id="mobileMenu"
 class="hidden lg:hidden bg-white/95 backdrop-blur-xl border-b border-gray-100 absolute top-full left-0 w-full max-h-[calc(100vh-72px)] overflow-y-auto px-4 sm:px-6 lg:px-8 py-2 flex flex-col gap-6 shadow-xl mobile-menu-scroll">
@@ -61,10 +86,7 @@ class="hidden lg:hidden bg-white/95 backdrop-blur-xl border-b border-gray-100 ab
       
       <div class="h-px bg-gray-200 w-full"></div>
 
-      <div class="flex w-max rounded-full bg-neutral-100 p-1 text-xs font-extrabold">
-        <button class="lang-btn rounded-full px-5 py-1.5 transition" type="button" data-lang="ru" aria-pressed="true">RU</button>
-        <button class="lang-btn rounded-full px-5 py-1.5 transition" type="button" data-lang="en" aria-pressed="false">EN</button>
-      </div>
+ 
     </div>
   </header>
 
@@ -169,7 +191,7 @@ class="hidden lg:hidden bg-white/95 backdrop-blur-xl border-b border-gray-100 ab
       </div>
     </section>
 
-<section id="contact" class="py-24 px-6 border-t border-neutral-200 text-center fade-in bg-white" >
+<section id="contact" class="py-24 border-t border-neutral-200 text-center fade-in bg-white" >
   
   <h2 class="text-3xl sm:text-4xl font-semibold tracking-tight mb-4" data-i18n="contact.title">
     Обсудим ваш продукт?
@@ -243,6 +265,7 @@ class="hidden lg:hidden bg-white/95 backdrop-blur-xl border-b border-gray-100 ab
 </footer>
 
   <script>
+    
     const translations = {
       ru: {
         nav: {
@@ -846,7 +869,11 @@ function setLanguage(lang) {
 if (btn && data.contact.buttonHref) {
   btn.href = data.contact.buttonHref;
 }
+const mobileLang = document.getElementById("mobileCurrentLang");
 
+if (mobileLang) {
+  mobileLang.textContent = lang.toUpperCase();
+}    
   // Текст
   document.querySelectorAll("[data-i18n]").forEach((node) => {
     const value = getValue(node.dataset.i18n, data);
@@ -926,7 +953,7 @@ if (btn && data.contact.buttonHref) {
               <span class="h-px flex-1 bg-neutral-200"></span>
             </div>
             <p class="mb-3 text-xs font-black uppercase tracking-[0.28em] text-neutral-400">${era.englishTitle}</p>
-            <h2 class="mb-5 text-4xl font-black leading-[0.96] tracking-tight sm:text-5xl lg:text-6xl break-words hyphens-auto">${era.title}</h2>
+            <h2 class="mb-5 text-4xl font-black leading-[0.96] tracking-tight sm:text-5xl lg:text-6xl">${era.title}</h2>
             <p class="mb-4 text-xl font-semibold leading-relaxed text-neutral-800">${era.subtitle}</p>
             <p class="mb-8 text-base font-light leading-relaxed text-neutral-600 sm:text-lg">${era.description}</p>
             <div class="grid gap-3 sm:grid-cols-2">
@@ -941,7 +968,7 @@ if (btn && data.contact.buttonHref) {
         `;
 
         return `
-          <section id="era-${era.year}" class="era-grid overflow-hidden px-5 py-24 lg:px-8 lg:py-32" style="background:${era.bg}">
+          <section id="era-${era.year}" class="era-grid px-5 py-24 lg:px-8 lg:py-32" style="background:${era.bg}">
             <div class="mx-auto grid max-w-7xl gap-12 lg:grid-cols-2 lg:items-center">
               ${imageColumn}
               ${textColumn}
@@ -1023,7 +1050,7 @@ const langFromUrl = params.get("lang");
 
 const savedLang = langFromUrl || localStorage.getItem("lang") || "ru";
 
-setLanguage(savedLang);    
+setLanguage(savedLang);
   </script>
 </body>
 </html>
