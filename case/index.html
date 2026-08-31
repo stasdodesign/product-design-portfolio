@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="ru" class="h-full scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Станислав Довиденко — продуктовый дизайнер систем и AI-интерфейсов</title>
+    <meta name="description" content="Продуктовый дизайнер. Проектирую сложные enterprise-системы, AI-интерфейсы и цифровые продукты. Кейсы: Sber, fintech, AI-экосистемы и дизайн-системы.">
+    <meta name="color-scheme" content="dark">
+    <meta property="og:title" content="Станислав Довиденко — продуктовый дизайнер систем и AI-интерфейсов" />
+    <meta property="og:description" content="Проектирую сложные системы и AI-продукты. Кейсы enterprise UX, fintech и дизайн-систем." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Станислав Довиденко — продуктовый дизайнер систем и AI-интерфейсов" />
+    <meta name="twitter:description" content="Enterprise UX, AI-интерфейсы, сложные системы и продуктовый дизайн." />
+          <!-- Favicon & SEO Meta Tags -->
+  <link rel="icon" type="image/jpeg" href="/images/StasDoDesign_logo-256.jpg" />
+  <link rel="apple-touch-icon" href="/images/StasDoDesign_logo-256.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&family=Unbounded:wght@600;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ink: "#06101d",
+                        ocean: "#0b1830",
+                        panel: "#10223c",
+                        cyan: "#38bdf8",
+                        teal: "#2dd4bf",
+                        mint: "#22c55e",
+                        line: "rgba(148, 163, 184, 0.18)",
+                        'light-bg': '#f8f9fa',
+                        'light-text': '#1d1d1f',
+                        'light-muted': '#6e6e73'
+                    },
+                    boxShadow: {
+                        glow: "0 0 0 1px rgba(56, 189, 248, 0.10), 0 24px 80px rgba(6, 16, 29, 0.55)",
+                        neon: "0 0 24px rgba(45, 212, 191, 0.18)",
+                        'card-light': '0 8px 30px rgba(0,0,0,0.05)'
+                    },
+                    fontFamily: {
+                        sans: ["Manrope", "Inter", "ui-sans-serif", "system-ui"],
+                        display: ["Space Grotesk", "Unbounded", "ui-sans-serif", "system-ui"],
+                        mono: ["IBM Plex Mono", "ui-monospace", "SFMono-Regular", "monospace"],
+                        serif: ["Cormorant Garamond", "Georgia", "serif"]
+                    },
+                    backgroundImage: {
+                        mesh: "radial-gradient(circle at top left, rgba(45, 212, 191, 0.16), transparent 28%), radial-gradient(circle at top right, rgba(56, 189, 248, 0.18), transparent 32%), linear-gradient(180deg, rgba(6, 16, 29, 0.98) 0%, rgba(5, 10, 20, 1) 100%)"
+                    }
+                }
+            }
+        };
+    </script>
+</head>
+<body class="h-full overflow-y-auto text-slate-100 antialiased font-sans">
+
+    <!-- Навигация (тёмная) -->
+    <header class="nav-blur fixed top-0 left-0 w-full z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 grid grid-cols-2 lg:grid-cols-[auto_1fr_auto] items-center gap-4">
+            <a href="/index.html" class="text-base font-semibold tracking-tight hover:text-teal transition-colors whitespace-nowrap text-white">
+                Станислав Довиденко
+            </a>
+            
+            <nav class="hidden lg:flex justify-center gap-8 text-sm text-slate-300 font-medium">
+                <a href="#work" class="hover:text-teal transition-colors">Проекты</a>
+                <a href="#laboratory" class="hover:text-teal transition-colors">AI R&D</a>
+                <a href="#about" class="hover:text-teal transition-colors">Обо мне</a>
+                <a href="#contact" class="hover:text-teal transition-colors">Контакты</a>
+            </nav>
+
+            <div class="flex items-center gap-6 justify-end">
+                <div class="hidden lg:flex items-center gap-4">
+                    <a href="https://t.me/designat0r" class="text-slate-400 hover:text-teal" aria-label="Telegram" target="_blank">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+                    </a>
+                    <a href="https://instagram.com/stasdodesign" class="text-slate-400 hover:text-teal" aria-label="Instagram" target="_blank">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                    </a>
+                    <a href="https://facebook.com/stasdodesign" class="text-slate-400 hover:text-teal" aria-label="Facebook" target="_blank">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                    </a>
+                </div>
+                <div class=" hidden lg:flex items-center p-0.5 text-s font-medium">
+                    <a href="mailto:stasdodesign@gmail.com" target="_blank" class="px-3 py-1 bg-teal/90 rounded-full shadow text-black hover:scale-105">Написать мне</a>
+                </div>
+<button id="mobileMenuToggle" 
+        class="lg:hidden text-slate-300 hover:text-teal transition-colors flex items-center gap-2"
+        type="button"
+        aria-controls="mobileMenu"
+        aria-expanded="false"
+        onclick="toggleMenu()">
+    <span id="menuText" class="text-sm font-medium">Меню</span>
+</button>
+            </div>
+        </div>
+    </header>
+<!-- Мобильное меню -->
+<div id="mobileMenu" 
+     class="hidden lg:hidden fixed top-[64px] left-0 w-full bg-[#040c18]/95 backdrop-blur-xl border-b border-white/10 z-40 max-h-[calc(100vh-64px)] overflow-y-auto">
+    
+    <nav class="flex flex-col px-6 py-6 gap-1">
+        <a href="#work" 
+           class="mobile-nav-link text-white text-lg font-medium py-3 border-b border-white/5 hover:text-teal transition-colors"
+           onclick="closeMenu()">
+            Проекты
+        </a>
+        <a href="#laboratory" 
+           class="mobile-nav-link text-white text-lg font-medium py-3 border-b border-white/5 hover:text-teal transition-colors"
+           onclick="closeMenu()">
+            AI R&D
+        </a>
+        <a href="#about" 
+           class="mobile-nav-link text-white text-lg font-medium py-3 border-b border-white/5 hover:text-teal transition-colors"
+           onclick="closeMenu()">
+            Обо мне
+        </a>
+        <a href="#contact" 
+           class="mobile-nav-link text-white text-lg font-medium py-3 border-b border-white/5 hover:text-teal transition-colors"
+           onclick="closeMenu()">
+            Контакты
+        </a>
+    </nav>
+
+    <div class="px-6 py-6 border-t border-white/10">
+        <div class="flex items-center gap-5">
+            <a href="https://t.me/StasDoDesign" 
+               class="text-slate-400 hover:text-teal transition-colors" 
+               aria-label="Telegram"
+                target="_blank">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/>
+                </svg>
+            </a>
+            <a href="https://instagram.com/stasdodesign" 
+               class="text-slate-400 hover:text-teal transition-colors" 
+               aria-label="Instagram"
+                target="_blank">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+                </svg>
+            </a>
+            <a href="https://facebook.com/stasdodesign" 
+               class="text-slate-400 hover:text-teal transition-colors" 
+               aria-label="Email"
+                target="_blank">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                </svg>
+            </a>
+        </div>
+        <div class="mt-6 flex items-center gap-2">
+                <a href="mailto:stasdodesign@gmail.com" target="_blank" class="px-3 py-1 bg-teal/90 rounded-full shadow text-black hover:scale-105">Написать мне</a>
+                 </div>
+    </div>
+</div>
+    <!-- Hero (тёмный, как в первой части) -->
+    <section class="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden hero-gradient">
+        <div class="absolute inset-0 z-0 opacity-15" style="background-image: linear-gradient(rgba(148,163,184,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(148,163,184,0.08) 1px, transparent 1px); background-size: 44px 44px;"></div>
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-cyan/10 rounded-full blur-[120px] pointer-events-none z-0"></div>
+        <div class="absolute bottom-0 left-1/4 w-[600px] h-[600px] bg-teal/10 rounded-full blur-[150px] pointer-events-none z-0"></div>
+        
+        <div class="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-6">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="max-w-2xl">
+                    <div class="inline-flex items-center gap-2 rounded-full border border-teal/30 bg-teal/10 px-4 py-1.5 text-xs uppercase tracking-[0.2em] text-teal mb-6">
+                        <span class="h-1.5 w-1.5 rounded-full bg-teal"></span>
+                        B2B · Финтех · SaaS · AI-агенты · Enterprise
+                    </div>
+                    <h1 class="font-display font-bold text-3xl sm:text-6xl lg:text-6xl leading-[0.95] tracking-tight text-white">
+                        Проектирую логику систем.
+                        <span class="block text-teal mt-2">Выстраиваю безошибочные сценарии.</span>
+                    </h1>
+                    <p class="mt-6 text-lg md:text-xl text-slate-300 leading-relaxed max-w-xl">
+                        Превращаю запутанную бизнес-логику, легаси-архитектуру и разрозненные данные в простые, отказоустойчивые цифровые продукты.
+                    </p>
+                    <div class="flex flex-wrap gap-4 mt-10">
+                        <a href="https://planerka.app/stanislav-dovidenko-exsl9q/15min" target="_blank" class="px-8 py-4 rounded-full bg-white text-slate-900 font-semibold transition hover:scale-105 shadow-glow">
+                            Разобрать вашу систему
+                        </a>
+                        <a href="#work" class="btn-ghost px-8 py-4 rounded-full font-semibold hover:scale-105">
+                            Смотреть проекты
+                        </a>
+                    </div>
+                </div>
+                <div class="flex justify-center lg:justify-end">
+                    <img src="/images/cases.png" alt="Dashboard Preview" class="w-full max-w-md lg:max-w-lg object-contain drop-shadow-2xl opacity-90">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция проектов: 3 кейса в тёмном неоновом стиле, но с данными из портфолио -->
+    <section id="work" class="py-20 px-6 max-w-7xl mx-auto">
+        <div class="mb-16">
+            <p class="text-sm uppercase tracking-[0.3em] text-teal mb-3">Избранные кейсы</p>
+            <h2 class="font-display text-4xl md:text-5xl font-bold text-white">Проекты за предыдущие четыре года</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Кейс 1: Sber User Soft -->
+            <a href="https://stanislavdovidenko.com/sber-usersoft/index.html" class="project-card block rounded-3xl overflow-hidden cursor-pointer group">
+                <div class="h-52 bg-[#0f1f33] relative overflow-hidden border-b border-white/10">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='300' viewBox='0 0 600 300'%3E%3Crect width='600' height='300' fill='%230b1830'/%3E%3Ccircle cx='150' cy='120' r='60' fill='%2338bdf8' opacity='0.4'/%3E%3Ccircle cx='300' cy='100' r='80' fill='%232dd4bf' opacity='0.3'/%3E%3Ccircle cx='450' cy='140' r='70' fill='%2322c55e' opacity='0.3'/%3E%3Ctext x='100' y='250' fill='white' font-family='monospace' font-size='16'%3EAI Agent · Enterprise%3C/text%3E%3C/svg%3E" alt="Sber User Soft" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                </div>
+                <div class="p-6 md:p-7">
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="badge-dark px-3 py-1 text-xs rounded-full">Enterprise</span>
+                        <span class="badge-teal px-3 py-1 text-xs rounded-full">AI Agent</span>
+                    </div>
+                    <p class="text-xs uppercase tracking-widest text-slate-400 mb-3">Sber · Enterprise AI</p>
+                    <h3 class="text-3xl font-display font-bold tracking-tight text-white mb-4">300K+<br>пользователей</h3>
+                    <p class="text-slate-300 font-light leading-relaxed mb-6">Спроектировал омниканальную AI-экосистему и единый сценарий работы для сотрудников.</p>
+                    <div class="pt-5 border-t border-white/10 space-y-4 text-sm">
+                        <div><span class="text-slate-500">Проблема:</span> разрозненные профили</div>
+                        <div><span class="text-slate-500">Решение:</span> омниканальная экосистема</div>
+                        <div><span class="text-slate-500">Результат:</span> <span class="text-teal">300K+ сотрудников</span></div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Кейс 2: Ingosstrakh BNPL -->
+            <a href="https://stanislavdovidenko.com/ingosstrakh/index.html" class="project-card block rounded-3xl overflow-hidden cursor-pointer group">
+                <div class="h-52 bg-[#2a1a0e] relative overflow-hidden border-b border-white/10">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='300' viewBox='0 0 600 300'%3E%3Crect width='600' height='300' fill='%23140f0a'/%3E%3Cpath d='M20 180 L120 80 L220 160 L330 40 L450 120 L580 60' stroke='%23fdba74' stroke-width='6' fill='none'/%3E%3Crect x='250' y='140' width='140' height='40' rx='8' fill='%23fb923c' opacity='0.8'/%3E%3Ctext x='50' y='240' fill='%23fdba74' font-family='monospace' font-size='14'%3EBNPL · +10% конверсия%3C/text%3E%3C/svg%3E" alt="Ingosstrakh BNPL" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                </div>
+                <div class="p-6 md:p-7">
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="badge-dark px-3 py-1 text-xs rounded-full">Fintech</span>
+                        <span class="badge-orange px-3 py-1 text-xs rounded-full">B2C/B2B</span>
+                        <span class="badge-green px-3 py-1 text-xs rounded-full">BNPL</span>
+                    </div>
+                    <p class="text-xs uppercase tracking-widest text-slate-400 mb-3">Ингосстрах · Fintech / Insurance</p>
+                    <h3 class="text-3xl font-display font-bold tracking-tight text-white mb-4">+10%<br>конверсия</h3>
+                    <p class="text-slate-300 font-light leading-relaxed mb-6">+47% средний чек после внедрения сквозного сценария рассрочки.</p>
+                    <div class="pt-5 border-t border-white/10 space-y-4 text-sm">
+                        <div><span class="text-slate-500">Проблема:</span> 0,27% выбор рассрочки</div>
+                        <div><span class="text-slate-500">Решение:</span> сквозной BNPL на Web/iOS/Android</div>
+                        <div><span class="text-slate-500">Результат:</span> <span class="text-orange-300">7,5% выбор рассрочки</span></div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Кейс 3: Ingosstrakh Ecosystem -->
+            <a href="https://stanislavdovidenko.com/ingo-ecosystem/index.html" class="project-card block rounded-3xl overflow-hidden cursor-pointer group">
+                <div class="h-52 bg-[#100e24] relative overflow-hidden border-b border-white/10">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='300' viewBox='0 0 600 300'%3E%3Crect width='600' height='300' fill='%230f172a'/%3E%3Ccircle cx='150' cy='120' r='50' fill='%23a78bfa' opacity='0.6'/%3E%3Ccircle cx='300' cy='180' r='60' fill='%2338bdf8' opacity='0.4'/%3E%3Ccircle cx='450' cy='110' r='45' fill='%232dd4bf' opacity='0.5'/%3E%3Ctext x='200' y='250' fill='white' font-family='monospace' font-size='14'%3EINGO PAY · INGO ID%3C/text%3E%3C/svg%3E" alt="Ingosstrakh Ecosystem" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                </div>
+                <div class="p-6 md:p-7">
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="badge-dark px-3 py-1 text-xs rounded-full">Ecosystem UX</span>
+                        <span class="badge-orange px-3 py-1 text-xs rounded-full">B2C/B2B</span>
+                        <span class="badge-teal px-3 py-1 text-xs rounded-full">Enterprise Design</span>
+                    </div>
+                    <p class="text-xs uppercase tracking-widest text-slate-400 mb-3">Ингосстрах · Ecosystem</p>
+                    <h3 class="text-3xl font-display font-bold tracking-tight text-white mb-4">16,3K+<br>карт</h3>
+                    <p class="text-slate-300 font-light leading-relaxed mb-6">Экосистема лояльности и подписки, связавшая страхование, финтех и B2B.</p>
+                    <div class="pt-5 border-t border-white/10 space-y-4 text-sm">
+                        <div><span class="text-slate-500">Проблема:</span> уход клиентов, нет экосистемы</div>
+                        <div><span class="text-slate-500">Решение:</span> ИНГО+ и Ингосстрах Бонус</div>
+                        <div><span class="text-slate-500">Результат:</span> <span class="text-teal">16,3K карт, 6,1K клиентов</span></div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Дополнительные секции: AI R&D и Контакты в тёмном стиле -->
+<section id="laboratory" class="py-16 px-4 sm:px-6 max-w-7xl mx-auto">
+    <div class="grid md:grid-cols-2 gap-8 lg:gap-10 items-center bg-white/5 rounded-[1.5rem] sm:rounded-[2rem] border border-white/10 p-5 sm:p-8 lg:p-12 shadow-glow backdrop-blur overflow-hidden">
+        
+        <!-- Левая колонка -->
+        <div class="min-w-0">
+            <p class="text-sm uppercase tracking-[0.25em] text-teal mb-4">AI R&D</p>
+            <h2 class="font-display text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight">
+                Jedi AI Copilot
+            </h2>
+            <p class="mt-4 text-slate-300 text-base sm:text-lg leading-relaxed">
+                Новые паттерны AI-интерфейсов для разработки внутри enterprise design system. 
+                AI внутри кода, а не рядом.
+            </p>
+            <div class="flex flex-wrap gap-3 mt-6">
+                <span class="px-4 py-2 bg-teal/10 border border-teal/30 text-teal rounded-full text-xs sm:text-sm">
+                    Principal Product Designer
+                </span>
+            </div>
+        </div>
+
+        <!-- Правая колонка с кодом -->
+        <div class="min-w-0 rounded-2xl border border-cyan/20 bg-slate-950/60 p-4 sm:p-6 shadow-glow overflow-hidden">
+            <div class="flex items-center justify-between text-[10px] sm:text-xs uppercase tracking-widest text-slate-500 mb-3 sm:mb-4">
+                <span>styles.css</span>
+                <span>Jedi IDE</span>
+            </div>
+            
+            <div class="overflow-x-auto">
+                <pre class="font-mono text-[11px] sm:text-sm leading-6 sm:leading-7 text-slate-300 whitespace-pre-wrap break-words"><span class="text-cyan">.product-card</span> {
+  <span class="text-sky-300">color</span>: <span class="text-slate-500">--</span><span class="text-white/60">jedi-color-brand-primary</span> <span class="ml-1 inline-block h-3 w-3 rounded-sm bg-cyan align-middle"></span>
+  <span class="text-sky-300">padding</span>: <span class="text-white/60">var(--jedi-spacing-m)</span>
+  <span class="text-sky-300">border-color</span>: <span class="text-emerald-300">semantic.success</span> <span class="text-white/40">→ var(--jedi-status-success)</span>
+}</pre>
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+    <section id="about" class="py-36 px-6 max-w-7xl mx-auto text-center">
+        <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-6">Станислав Довиденко</h2>
+        <p class="text-slate-400 max-w-2xl mx-auto text-lg">UX · AI Product Designer · Москва. Более 10 лет проектирую сложные системы и AI-продукты для финтеха и enterprise.</p>
+    </section>
+
+    <!-- Контакты (тёмный вариант) -->
+    <section id="contact" class="py-14 sm:py-20 lg:py-24 px-4 sm:px-6 border-t border-white/10 text-center">
+        <h2 class="font-display text-3xl md:text-4xl font-bold text-white mb-4">Обсудим ваш продукт?</h2>
+        <p class="text-slate-400 text-lg mb-10 max-w-lg mx-auto leading-relaxed">Забронируйте 15-минутный звонок, чтобы разобрать узкие места вашей системы.</p>
+        <div class="flex flex-col items-center gap-6">
+            <a href="https://planerka.app/stanislav-dovidenko-exsl9q/15min" target="_blank" class="btn-neon px-10 py-4 rounded-full font-semibold text-base hover:scale-105">Разобрать вашу систему</a>
+            <div class="text-sm text-slate-400">
+                Или свяжитесь напрямую:
+                <a href="https://t.me/StasDoDesign" class="underline underline-offset-4 hover:text-teal ml-2 font-medium">Telegram</a>
+                <span class="mx-2">•</span>
+                <a href="mailto:stasdodesign@gmail.com" class="underline underline-offset-4 hover:text-teal font-medium">Email</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Подвал -->
+    <footer class="footer-dark py-10 px-6 text-center text-sm text-slate-500">
+        <div class="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto gap-4">
+            
+            <div>© 2026 Dovidenko · All rights reserved</div>
+            <div class="flex gap-4">
+                <a href="https://t.me/designat0r" class="hover:text-teal transition-colors" target="_blank">Telegram Portfolio</a>
+                <span>•</span>
+                <a href="https://instagram.com/stasdodesign" class="hover:text-teal transition-colors" target="_blank">Instagram</a>
+                <span>•</span>
+                <a href="http://linkedin.com/in/stasdodesign" class="hover:text-teal transition-colors" target="_blank">Linkedin</a>
+        </div>
+    </footer>
+
+    <script>
+        // плавный скролл для якорей (без лишних библиотек)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+    <script>
+    function toggleMenu() {
+        const menu = document.getElementById('mobileMenu');
+        const icon = document.getElementById('menuIcon');
+        const text = document.getElementById('menuText');
+        const isOpen = !menu.classList.contains('hidden');
+        
+        if (isOpen) {
+            // Закрыть
+            menu.classList.add('hidden');
+            icon.textContent = '☰';
+            text.textContent = 'Меню';
+        } else {
+            // Открыть
+            menu.classList.remove('hidden');
+            icon.textContent = '✕';
+            text.textContent = 'Закрыть';
+        }
+    }
+
+    function closeMenu() {
+        const menu = document.getElementById('mobileMenu');
+        const icon = document.getElementById('menuIcon');
+        const text = document.getElementById('menuText');
+        
+        menu.classList.add('hidden');
+        icon.textContent = '☰';
+        text.textContent = 'Меню';
+    }
+
+    // Закрывать меню при клике вне его
+    document.addEventListener('click', function(event) {
+        const menu = document.getElementById('mobileMenu');
+        const toggle = document.getElementById('mobileMenuToggle');
+        
+        if (!menu.classList.contains('hidden') && 
+            !menu.contains(event.target) && 
+            !toggle.contains(event.target)) {
+            closeMenu();
+        }
+    });
+
+    // Закрывать меню при изменении размера экрана на десктоп
+    window.addEventListener('resize', function() {
+        if (window.innerWidth >= 1024) {
+            closeMenu();
+        }
+    });
+
+    // Закрывать меню по клавише Escape
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            closeMenu();
+        }
+    });
+</script>
+</body>
+</html>
